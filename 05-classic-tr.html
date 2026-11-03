@@ -21,7 +21,45 @@
 .ss-photo-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding:5px 4px 16px}.ss-photo-strip button{flex:0 0 170px;scroll-snap-align:start;border:0;padding:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}.ss-photo-strip img{width:100%;height:185px;object-fit:cover;display:block;border-radius:4px}.ss-photo-strip span{display:block;font-size:13px;line-height:1.45;margin-top:8px}.ss-detail-photos{margin:26px 0}.ss-photo-strip button:focus-visible{outline:3px solid currentColor;outline-offset:2px}.ss-gallery-figure img{object-fit:contain}
 /* language-navigation:start */
 nav.site-language-switch{display:flex!important;position:relative!important;justify-content:flex-end;align-items:center;gap:5px;padding:5px 5%;min-height:34px;margin:0;z-index:11;background:transparent;font:13px/1.4 Arial,sans-serif;letter-spacing:0;text-transform:none;border-bottom:1px solid #8883}nav.site-language-switch a{display:inline-flex;align-items:center;justify-content:center;min-width:38px;min-height:26px;padding:3px 8px;text-decoration:none;color:inherit;font:inherit;letter-spacing:0;border:1px solid transparent}nav.site-language-switch a[aria-current=page]{border-color:currentColor;font-weight:700}nav.site-language-switch a:focus-visible{outline:2px solid currentColor;outline-offset:2px}html[lang=az] .hero-title,html[lang=tr] .hero-title{overflow-wrap:normal}@media(max-width:640px){nav.site-language-switch{padding-inline:20px;font-size:12px}}
-/* language-navigation:end *//* content-completion: additions inherit each retained concept palette */
+/* language-navigation:end */
+/* Mobile usability fixes: keep desktop composition and all photo crops intact. */
+@media (max-width:760px) {
+  nav.site-language-switch a { min-width:44px; min-height:44px; }
+}
+@media (max-width:600px) {
+  body.day .day-header {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:10px 16px;
+    height:auto;
+    padding:12px 5%;
+  }
+  body.day .day-brand-signature { min-width:0; }
+  body.day .day-menu { margin:0; min-width:44px; justify-self:end; }
+  body.day .day-header-book {
+    grid-column:1 / -1;
+    width:100%;
+    min-width:0;
+    min-height:44px;
+    white-space:normal;
+    justify-content:space-between;
+    font-size:14px;
+    padding:10px 14px;
+  }
+  body.day .day-header-book span { display:inline; }
+  body.day .day-nav { top:100%; }
+}
+@media (max-width:600px) {
+  body.day .day-visit { grid-template-columns:minmax(0,1fr); }
+  body.day .day-visit > * { min-width:0; }
+  body.day .day-visit h2 { font-size:clamp(48px,16vw,72px); overflow-wrap:break-word; }
+}
+@media (max-width:600px) {
+  body.day .day-intro { grid-template-columns:minmax(0,1fr); }
+  body.day .day-intro > * { min-width:0; }
+  body.day .day-intro h2 { font-size:clamp(48px,16vw,70px); overflow-wrap:break-word; }
+}
+/* content-completion: additions inherit each retained concept palette */
 .cc-block{padding:64px max(6.7vw,24px);border-top:1px solid var(--line);color:inherit}.cc-inner{max-width:1200px;margin:auto}.cc-kicker{font:12px/1.5 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 16px}.cc-block h2{font:inherit;font-family:Georgia,serif;font-size:clamp(30px,3vw,44px);line-height:1.2;margin:0 0 22px;max-width:800px}.cc-block p{font-size:17px;line-height:1.7;max-width:760px}.cc-block .cc-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.cc-link{font:inherit;font-size:16px;line-height:1.4;background:transparent;border:1px solid currentColor;color:inherit;padding:12px 18px;min-height:46px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:left}.cc-link:hover{text-decoration:underline;text-underline-offset:4px}.cc-list{display:flex;flex-wrap:wrap;gap:10px 24px;padding:0;list-style:none;font-size:16px;margin:24px 0}.cc-contact{margin-top:24px;max-width:440px;font-size:16px;line-height:1.7}.cc-contact address{font-style:normal;margin:14px 0}.cc-contact a{display:block;text-decoration:underline;text-underline-offset:4px;margin:6px 0;overflow-wrap:anywhere}.cc-contact small{font-size:13px;line-height:1.6;display:block;margin-top:14px;opacity:.8}.cc-catalogue-note{font:14px/1.7 Arial,sans-serif;text-align:center;max-width:800px;padding:26px 24px;margin:auto}.cc-memberships .package-card h3{white-space:normal}.cc-memberships .day-package h3{font-size:44px}.cc-memberships .day-package>p:not(.day-eyebrow){font-size:15px;max-width:none}.cc-memberships .day-package button{font-size:14px}.cc-memberships .day-package-note,.cc-memberships .package-note{font-size:13px}.cc-memberships .day-package-heading>p:last-child{font-size:16px;max-width:760px;margin:auto}.cc-block[data-concept="03"]{background:var(--day-cream);color:var(--day-red)}.cc-block[data-concept="03"] h2{font-family:var(--day-serif)}.cc-faq details>p{font-size:16px;line-height:1.75}.cc-faq summary{overflow-wrap:anywhere}@media(max-width:640px){.cc-block{padding:40px 24px}.cc-block p{font-size:16px}.cc-contact{font-size:16px}.cc-memberships .day-package h3{font-size:36px}}
 /* Catalogue additions; the three existing concept layouts retain their own styles. */
 .ss-catalogue-dialog .ss-catalogue-notice{font-size:12px;line-height:1.65;border-left:2px solid var(--accent,#766044);padding:10px 14px;margin:18px 0 24px;background:color-mix(in srgb,var(--accent,#766044) 6%,transparent)}
@@ -90,7 +128,7 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
   </div></section>
   <p class="cc-catalogue-note">Yayımlanan hizmet listesinin tamamı için kategorileri inceleyin. Güncel hizmetler, süreler ve koşullar kulüple teyit edilmelidir.</p><section class="cc-block" data-concept="05" id="club" aria-labelledby="club-title"><div class="cc-inner"><p class="cc-kicker">Sultan Saba’nın ruhu</p><h2 id="club-title">Keyifle vakit geçireceğiniz alanlar</h2><p>Kadınlar düşünülerek kurulan Sultan Saba, doğanın dengesinden ve Doğu’nun güzellik ritüellerinden ilham alıyor. Bakü’nün içinde hamam, yüz ve vücut bakımı, güzellik hizmetleri ve hareket programlarıyla kendinize zaman ayırın. Suyun sesi ve sakin atmosfer, günlük hayatın telaşına bir ara vermeye davet ediyor.</p><ul class="cc-list"><li>Türk hamamı</li><li>Havuz</li><li>Dinlenme alanı</li><li>Fitness stüdyosu</li><li>Fin saunası</li><li>Yüz ve vücut bakımı</li><li>Saç ve tırnak salonu</li><li>Slim Cafe</li><li>Sultan Saba mağazası</li><li>Vücut bakım programları</li></ul><button type="button" class="cc-link" data-facilities>Olanakları incele ↗</button></div></section><section class="packages section-pad cc-memberships" id="packages" aria-labelledby="packages-title"><div class="ornament light" aria-hidden="true"><span>❧</span></div><div class="section-title"><p class="eyebrow">Kulüp üyelikleri</p><h2 id="packages-title">Yıl boyunca kendinize zaman ayırın.</h2><p>Fitness stüdyosundan havuza ve grup derslerine uzanan üyelik seçeneklerini keşfedin.</p></div><div class="package-grid"><article class="package-card"><span class="package-icon" aria-hidden="true">I</span><p class="eyebrow">KULÜBÜ BÜTÜNÜYLE KEŞFEDİN</p><h3>Gold</h3><p>Fitness, havuz, dinlenme alanı, sauna ve hamam; ayrıca Fit&amp;Fun grup programları.</p><span class="package-detail">3, 6 veya 12 ay · güncel koşulları teyit edin</span><button type="button" class="button button-outline" data-package="gold">Üyeliği incele <span aria-hidden="true">→</span></button></article><article class="package-card"><span class="package-icon" aria-hidden="true">II</span><p class="eyebrow">GÜNLÜK RİTMİNİZ</p><h3>Basic</h3><p>Fitness stüdyosu, havuz, dinlenme alanı, sauna ve hamam.</p><span class="package-detail">3, 6 veya 12 ay · güncel koşulları teyit edin</span><button type="button" class="button button-outline" data-package="basic">Üyeliği incele <span aria-hidden="true">→</span></button></article><article class="package-card"><span class="package-icon" aria-hidden="true">III</span><p class="eyebrow">BİRLİKTE HAREKET</p><h3>Fit&amp;Fun</h3><p>Aerobik, su aerobiği, Pilates ve dans dahil grup dersleri.</p><span class="package-detail">3, 6 veya 12 ay · güncel koşulları teyit edin</span><button type="button" class="button button-outline" data-package="fitfun">Üyeliği incele <span aria-hidden="true">→</span></button></article></div><p class="package-note">Hizmetler resmî sitenin erişilebilen kaynaklarına dayanır. Güncel fiyat, süre, kapsam ve müsaitlik mekânla teyit edilmelidir. Bu önizleme rezervasyon oluşturmaz.</p></section>
   <section class="gallery section-pad" id="gallery" aria-labelledby="gallery-title"><div class="section-title"><p class="eyebrow">İÇERİDEN BİR BAKIŞ</p><h2 id="gallery-title">Sultan Saba’nın dünyası</h2><p>Mermer, sıcak ışık ve sizi karşılayan mekânlar.</p></div><div class="gallery-row"><figure><button type="button" data-gallery="p01" aria-label="Mermer hamamı görüntüleyin"><img src="assets/library/v2/uygulama/01-mermer-kemer.webp" alt="Sultan Saba mermer hamamı, fotoğraf üzerinden yapay zekâ ile düzenlendi" width="1122" height="1402" loading="lazy"><span aria-hidden="true">+</span></button><figcaption>Hamam</figcaption></figure><figure><button type="button" data-gallery="p15" aria-label="Dinlenme alanını görüntüleyin"><img src="assets/library/v2/uygulama/15-akvaryum-dinlenme.webp" alt="Sultan Saba’nın akvaryumlu dinlenme alanı, fotoğraf üzerinden yapay zekâ ile düzenlendi" width="1122" height="1402" loading="lazy"><span aria-hidden="true">+</span></button><figcaption>Biraz daha kalmak için</figcaption></figure><figure><button type="button" data-gallery="p04" aria-label="Bakım odasını görüntüleyin"><img src="assets/library/v2/uygulama/04-bakim-odasi.webp" alt="Sultan Saba bakım odası, fotoğraf üzerinden yapay zekâ ile düzenlendi" width="1122" height="1402" loading="lazy"><span aria-hidden="true">+</span></button><figcaption>Sessiz bir an</figcaption></figure></div><button class="text-link" type="button" data-gallery="hamam">Tüm fotoğrafları görüntüleyin <span aria-hidden="true">→</span></button><p class="gallery-source">Sultan Saba mekân fotoğrafları üzerinden yapay zekâ ile yapılan düzenlemeler.</p></section>
-  <section class="cc-block" data-concept="05" id="occasions" aria-labelledby="occasions-title"><div class="cc-inner"><p class="cc-kicker">Özel günler</p><h2 id="occasions-title">Hatırlamaya değer bir anı paylaşın.</h2><p>Sultan Saba’da gelin hamamı ve kına organizasyonlarını keşfedin. Tarih, kişi sayısı ve düzenlemeler işletmeyle kararlaştırılır.</p><div class="cc-actions"><button type="button" class="cc-link" data-event="bridal-hamam">Gelin hamamı ↗</button><button type="button" class="cc-link" data-event="henna-event">Kına etkinliği ↗</button></div></div></section><section class="visit section-pad" id="visit" aria-labelledby="visit-title"><div class="visit-card"><div class="visit-intro"><span class="visit-fleur" aria-hidden="true">❧</span><p class="eyebrow">ZİYARETİNİZ</p><h2 id="visit-title">Sıcak bir karşılama.<br><em>Size ait bir an.</em></h2><p>Deneyiminizi seçin, Sultan Saba’da kendinize biraz zaman ayırın.</p><button class="button" type="button" data-book>Ziyaret planla <span aria-hidden="true">→</span></button><p class="visit-location">Sultan Saba Spa Club<br>Bakü, Azerbaycan</p><div class="cc-contact"><strong>Kulüple iletişime geçin</strong><address>C. Məmmədquluzadə Caddesi 73F, Bakü, Azerbaycan</address><a href="tel:+994125941122">+994 (12) 594 11 22</a><a href="tel:+994125941155">+994 (12) 594 11 55</a><a href="https://api.whatsapp.com/send?phone=994702161155">https://api.whatsapp.com/send?phone=994702161155</a><a href="https://sultansaba.az/sultansabais/index.php?lang=az&amp;page=07" target="_blank" rel="noopener">Resmî web sitesi ↗</a><small>İletişim bilgileri resmî siteden alınmıştır. Gelmeden önce güncel çalışma saatlerini ve ziyaret koşullarını teyit edin.</small></div></div><div class="faq cc-faq"><details open><summary>Bakım seçimini nasıl yapabilirim?<span aria-hidden="true">+</span></summary><p>Yayımlanan uygulamaları görmek için bir hizmet kategorisi açın. Tek bir uygulama seçerek randevu demosunu deneyebilirsiniz. Uygunluk ve güncel müsaitlik için ekiple görüşün.</p></details><details><summary>Üyelikler neleri kapsıyor?<span aria-hidden="true">+</span></summary><p>Gold, Basic ve Fit&amp;Fun farklı alan ve ders erişimleri sunar. Programları inceleyip güncel koşullar ve fiyatlar için kulüple iletişime geçin.</p></details><details><summary>Gelmeden önce neleri bilmeliyim?<span aria-hidden="true">+</span></summary><p>Çalışma saatleri, hazırlık, yanınızda getirmeniz gerekenler ve seçtiğiniz hizmetin güncel fiyatı için Sultan Saba’yla görüşün.</p></details><details><summary>Bu site randevu oluşturuyor mu?<span aria-hidden="true">+</span></summary><p>Hayır. Randevu akışındaki uzmanlar ve saatler örnek veridir. Hiçbir talep gönderilmez, ödeme alınmaz ve rezervasyon oluşturulmaz.</p></details></div></div></section>
+  <section class="cc-block" data-concept="05" id="occasions" aria-labelledby="occasions-title"><div class="cc-inner"><p class="cc-kicker">Özel günler</p><h2 id="occasions-title">Hatırlamaya değer bir anı paylaşın.</h2><p>Sultan Saba’da gelin hamamı ve kına organizasyonlarını keşfedin. Tarih, kişi sayısı ve düzenlemeler işletmeyle kararlaştırılır.</p><div class="cc-actions"><button type="button" class="cc-link" data-event="bridal-hamam">Gelin hamamı ↗</button><button type="button" class="cc-link" data-event="henna-event">Kına etkinliği ↗</button></div></div></section><section class="visit section-pad" id="visit" aria-labelledby="visit-title"><div class="visit-card"><div class="visit-intro"><span class="visit-fleur" aria-hidden="true">❧</span><p class="eyebrow">ZİYARETİNİZ</p><h2 id="visit-title">Sıcak bir karşılama.<br><em>Size ait bir an.</em></h2><p>Deneyiminizi seçin, Sultan Saba’da kendinize biraz zaman ayırın.</p><button class="button" type="button" data-book>Ziyaret planla <span aria-hidden="true">→</span></button><p class="visit-location">Sultan Saba Spa Club<br>Bakü, Azerbaycan</p><div class="cc-contact"><strong>Kulüple iletişime geçin</strong><address>C. Məmmədquluzadə Caddesi 73F, Bakü, Azerbaycan</address><a href="tel:+994125941122">+994 (12) 594 11 22</a><a href="tel:+994125941155">+994 (12) 594 11 55</a><a href="https://api.whatsapp.com/send?phone=994702161155">WhatsApp</a><a href="https://sultansaba.az/sultansabais/index.php?lang=az&amp;page=07" target="_blank" rel="noopener">Resmî web sitesi ↗</a><small>İletişim bilgileri resmî siteden alınmıştır. Gelmeden önce güncel çalışma saatlerini ve ziyaret koşullarını teyit edin.</small></div></div><div class="faq cc-faq"><details open><summary>Bakım seçimini nasıl yapabilirim?<span aria-hidden="true">+</span></summary><p>Yayımlanan uygulamaları görmek için bir hizmet kategorisi açın. Tek bir uygulama seçerek randevu demosunu deneyebilirsiniz. Uygunluk ve güncel müsaitlik için ekiple görüşün.</p></details><details><summary>Üyelikler neleri kapsıyor?<span aria-hidden="true">+</span></summary><p>Gold, Basic ve Fit&amp;Fun farklı alan ve ders erişimleri sunar. Programları inceleyip güncel koşullar ve fiyatlar için kulüple iletişime geçin.</p></details><details><summary>Gelmeden önce neleri bilmeliyim?<span aria-hidden="true">+</span></summary><p>Çalışma saatleri, hazırlık, yanınızda getirmeniz gerekenler ve seçtiğiniz hizmetin güncel fiyatı için Sultan Saba’yla görüşün.</p></details><details><summary>Bu site randevu oluşturuyor mu?<span aria-hidden="true">+</span></summary><p>Hayır. Randevu akışındaki uzmanlar ve saatler örnek veridir. Hiçbir talep gönderilmez, ödeme alınmaz ve rezervasyon oluşturulmaz.</p></details></div></div></section>
   <section class="farewell" aria-label="Ziyaretinizi planlayın"><div class="small-ornament" aria-hidden="true">◆</div><p>Biraz zaman<br>ayırın <em>kendinize.</em></p><button class="text-link" type="button" data-book>Sizi ağırlamayı bekliyoruz <span aria-hidden="true">→</span></button></section>
 </main>
 <footer class="site-footer"><a class="footer-brand" href="#home" aria-label="Sultan Saba ana sayfa"><img src="assets/wordmark.png" alt="Sultan Saba Spa Club" width="1536" height="1024"></a><nav aria-label="Alt menü"><a href="#services">Spa ve iyi yaşam</a><a href="#packages">Kulüp üyelikleri</a><a href="#gallery">Galeri</a><a href="#visit">Ziyaretiniz</a></nav><div class="footer-bottom"><span>Tasarım konsepti · Örnek rezervasyon</span><a href="index-tr.html">Tüm konseptleri keşfedin <span aria-hidden="true">↗</span></a><span>05 — SULTAN SABA KLASİK</span></div></footer>
@@ -3227,24 +3265,41 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
   document.body.appendChild(dialog);
   const body = $('.ss-dialog-content', dialog);
   let opener = null, kind = '', galleryItems = C.gallery || [], galleryIndex = 0, ignoreBackdropUntil = 0;
-  let catalogueState = {category:'',query:''}, state = {};
+  let catalogueState = {category:'',query:''}, state = {}, galleryReturn = null;
   const reset = () => { state = {step:0,serviceId:'',specialist:'any',date:'',time:'',confirmed:false}; };
   reset();
   const focusTitle = () => { dialog.scrollTop=0; body.scrollTop=0; $('#ss-title', dialog)?.focus({preventScroll:true}); };
   function open(type) {
     if (!dialog.open) opener = document.activeElement;
+    if (type !== 'gallery') galleryReturn = null;
     kind = type;
+    $('[data-close]',dialog).setAttribute('aria-label', U.close);
     document.body.classList.add('ss-modal-open');
     if (!dialog.open) dialog.showModal();
   }
+  function returnFromGallery() {
+    if(kind!=='gallery' || !galleryReturn) return false;
+    const previous=galleryReturn;
+    open(previous.kind);
+    body.replaceChildren(...previous.nodes);
+    if(previous.focus?.isConnected) previous.focus.focus({preventScroll:true});
+    else $('#ss-title',dialog)?.focus({preventScroll:true});
+    dialog.scrollTop=previous.dialogScroll;body.scrollTop=previous.bodyScroll;
+    return true;
+  }
+  const dismiss = () => { if(!returnFromGallery()) dialog.close(); };
+  dialog.addEventListener('cancel', e => {
+    if(kind==='gallery' && galleryReturn){e.preventDefault();returnFromGallery();}
+  });
   dialog.addEventListener('close', () => {
+    galleryReturn = null;
     document.body.classList.remove('ss-modal-open');
     if (opener?.isConnected) opener.focus({preventScroll:true});
   });
   dialog.addEventListener('click', e => {
     if (e.target !== dialog || performance.now() < ignoreBackdropUntil) return;
     const r = dialog.getBoundingClientRect();
-    if(e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom) dialog.close();
+    if(e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom) dismiss();
   });
   // Explicit month and weekday tables avoid incomplete platform Azerbaijani locale support.
   const startDate = (() => {
@@ -3371,13 +3426,16 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
     open('facility');
     body.innerHTML=title(U.facility,facilities.length===1?facilities[0].name:U.facility)+facilities.map(f=>`<section class="ss-facility-item">${facilities.length===1?'':`<h3>${esc(f.name)}</h3>`}<p>${esc(f.description)}</p>${source(f.sourceUrl)}</section>`).join('')+notice()+contactBlock();focusTitle();
   }
-  function showGallery(id) {
+  function showGallery(id, fromDetail=false) {
+    if(!fromDetail) galleryReturn=null;
     galleryItems=C.gallery || [];if(!galleryItems.length)return;
     id=C.photoAliases?.[id] || id;galleryIndex=Math.max(0,galleryItems.findIndex(x=>x.id===id));open('gallery');renderGallery();
   }
   function renderGallery(focusSelector) {
     const g=galleryItems[galleryIndex];if(!g)return;
-    body.innerHTML=title(U.gallery,g.name || media(g.id).name || '')+`<figure class="ss-gallery-figure">${img(g.id,'gallery',g.id)}<figcaption>${esc(media(g.id).credit || '')}</figcaption></figure><div class="ss-gallery-nav"><button type="button" class="ss-secondary" data-gallery-prev aria-label="${esc(U.previousPhoto)}">← ${esc(U.previous)}</button><span aria-live="polite">${galleryIndex+1} / ${galleryItems.length}</span><button type="button" class="ss-secondary" data-gallery-next aria-label="${esc(U.nextPhoto)}">${esc(U.next)} →</button></div>`;
+    const backLabel=galleryReturn ? `${U.back}: ${galleryReturn.title}` : '';
+    $('[data-close]',dialog).setAttribute('aria-label',backLabel || U.close);
+    body.innerHTML=(galleryReturn?`<button type="button" class="ss-text-back" data-gallery-return>← ${esc(backLabel)}</button>`:'')+title(U.gallery,g.name || media(g.id).name || '')+`<figure class="ss-gallery-figure">${img(g.id,'gallery',g.id)}<figcaption>${esc(media(g.id).credit || '')}</figcaption></figure><div class="ss-gallery-nav"><button type="button" class="ss-secondary" data-gallery-prev aria-label="${esc(U.previousPhoto)}">← ${esc(U.previous)}</button><span aria-live="polite">${galleryIndex+1} / ${galleryItems.length}</span><button type="button" class="ss-secondary" data-gallery-next aria-label="${esc(U.nextPhoto)}">${esc(U.next)} →</button></div>`;
     if(focusSelector)$(focusSelector,dialog)?.focus();else focusTitle();
   }
   document.addEventListener('input',e=>{if(e.target.id==='ss-catalogue-search'){catalogueState.query=e.target.value;renderResults();}});
@@ -3385,9 +3443,10 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
     // A second click on the just-replaced confirmation button must not activate a contact link underneath.
     if(kind==='success' && performance.now()<ignoreBackdropUntil && e.detail>1){e.preventDefault();return;}
     const t=e.target.closest('button,a');if(!t)return;
-    const handled=t.matches('[data-close],[data-book],[data-service],[data-package],[data-event],[data-facilities],[data-facility],[data-contact],[data-detail-photo],[data-gallery],[data-gallery-prev],[data-gallery-next],[data-menu],[data-filter],[data-restart],[data-entry],[data-choose],[data-return-catalogue],[data-catalogue-category],[data-clear-search]');
+    const handled=t.matches('[data-close],[data-book],[data-service],[data-package],[data-event],[data-facilities],[data-facility],[data-contact],[data-detail-photo],[data-gallery],[data-gallery-prev],[data-gallery-next],[data-gallery-return],[data-menu],[data-filter],[data-restart],[data-entry],[data-choose],[data-return-catalogue],[data-catalogue-category],[data-clear-search]');
     if(handled)e.preventDefault();
-    if(t.matches('[data-close]')){dialog.close();return;}
+    if(t.matches('[data-close]')){dismiss();return;}
+    if(t.matches('[data-gallery-return]')){returnFromGallery();return;}
     if(t.matches('[data-book]')){startBooking(t.dataset.book);return;}
     if(t.matches('[data-service]')){category(t.dataset.service)?showCatalogue(t.dataset.service):showService(t.dataset.service);return;}
     if(t.matches('[data-package]')){showMembership(t.dataset.package);return;}
@@ -3400,9 +3459,10 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
     if(t.matches('[data-catalogue-category]')){catalogueState.category=t.dataset.catalogueCategory;const active=kind;active==='booking'?renderBooking(false):showCatalogue('',true,false);$(`[data-catalogue-category="${catalogueState.category}"]`,dialog)?.focus();return;}
     if(t.matches('[data-clear-search]')){catalogueState.query='';const input=$('#ss-catalogue-search',dialog);if(input){input.value='';input.focus();}renderResults();return;}
     if(t.matches('[data-detail-photo]')){
+      galleryReturn=dialog.open && ['service','catalogue','booking'].includes(kind) ? {kind,nodes:Array.from(body.childNodes),title:$('#ss-title',dialog)?.textContent || U.catalogue,focus:t,dialogScroll:dialog.scrollTop,bodyScroll:body.scrollTop} : null;
       const s=category(t.dataset.photoService) || findService(t.dataset.photoService);
       const ids=s?(s.photos || photosFor(s)):[];galleryItems=ids.map(id=>({id,name:media(id).name}));
-      if(!galleryItems.length){showGallery(t.dataset.detailPhoto);return;}
+      if(!galleryItems.length){showGallery(t.dataset.detailPhoto,true);return;}
       galleryIndex=Math.max(0,galleryItems.findIndex(x=>x.id===t.dataset.detailPhoto));open('gallery');renderGallery();return;
     }
     if(t.matches('[data-gallery]')){showGallery(t.dataset.gallery);return;}

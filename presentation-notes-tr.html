@@ -1,4 +1,42 @@
 <!doctype html><html style="background-color:#f3f0e8;color-scheme:light" lang="tr"><head><meta name="theme-color" content="#f3f0e8"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sultan Saba — Tasarım notları</title><style>*{box-sizing:border-box}body{margin:0;background:#f1eee7;color:#282723;font:16px/1.7 Arial,sans-serif}main{max-width:1000px;padding:55px 6%;margin:auto}a{color:inherit;text-underline-offset:5px}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.15}h1{font-size:clamp(42px,6vw,70px);letter-spacing:-2px}h2{font-size:34px}article{border-top:1px solid #c6c0b3;padding:32px 0;margin:20px 0}small{font-size:12px;color:#646055}p{max-width:66ch}figure{margin:24px 0}img{width:100%;height:auto;border:1px solid #c6c0b3}figcaption{font-size:12px;margin-top:8px;color:#646055}.pair{display:grid;grid-template-columns:3fr 1fr;align-items:start;gap:18px}li{margin:10px 0}.note{padding:24px;background:#e4e1d5;font-size:14px}a:focus-visible{outline:3px solid #354531;outline-offset:5px}@media(max-width:600px){.pair{grid-template-columns:1fr}.pair img:last-child{max-width:230px;margin:auto}main{padding-top:28px}}/* language-navigation:start */
 nav.site-language-switch{display:flex!important;position:relative!important;justify-content:flex-end;align-items:center;gap:5px;padding:5px 5%;min-height:34px;margin:0;z-index:11;background:transparent;font:13px/1.4 Arial,sans-serif;letter-spacing:0;text-transform:none;border-bottom:1px solid #8883}nav.site-language-switch a{display:inline-flex;align-items:center;justify-content:center;min-width:38px;min-height:26px;padding:3px 8px;text-decoration:none;color:inherit;font:inherit;letter-spacing:0;border:1px solid transparent}nav.site-language-switch a[aria-current=page]{border-color:currentColor;font-weight:700}nav.site-language-switch a:focus-visible{outline:2px solid currentColor;outline-offset:2px}html[lang=az] .hero-title,html[lang=tr] .hero-title{overflow-wrap:normal}@media(max-width:640px){nav.site-language-switch{padding-inline:20px;font-size:12px}}
-/* language-navigation:end */</style></head><body><nav class="site-language-switch" aria-label="Site dili"><a href="presentation-notes-az.html" lang="az" hreflang="az" title="Azərbaycanca">AZ</a><a href="presentation-notes-tr.html" lang="tr" hreflang="tr" title="Türkçe" aria-current="page">TR</a><a href="presentation-notes.html" lang="en" hreflang="en" title="English">EN</a></nav><main><a href="index-tr.html">← Üç tasarım seçeneği</a><p><small>SULTAN SABA · WEB SİTESİ TASARIM ÇALIŞMASI · EBSO</small></p><h1>Sohbetin<br>başladığı yer.</h1><p>Bu üç konsept, Sultan Saba’nın mekânlarını ve hizmetlerini internette nasıl sunabileceğini araştırıyor. Her biri, aynı temel deneyimleri ve örnek bir rezervasyon akışını farklı bir görsel kimlikle sunuyor.</p>
+/* language-navigation:end */
+/* Mobile usability fixes: keep desktop composition and all photo crops intact. */
+@media (max-width:760px) {
+  nav.site-language-switch a { min-width:44px; min-height:44px; }
+}
+@media (max-width:600px) {
+  body.day .day-header {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:10px 16px;
+    height:auto;
+    padding:12px 5%;
+  }
+  body.day .day-brand-signature { min-width:0; }
+  body.day .day-menu { margin:0; min-width:44px; justify-self:end; }
+  body.day .day-header-book {
+    grid-column:1 / -1;
+    width:100%;
+    min-width:0;
+    min-height:44px;
+    white-space:normal;
+    justify-content:space-between;
+    font-size:14px;
+    padding:10px 14px;
+  }
+  body.day .day-header-book span { display:inline; }
+  body.day .day-nav { top:100%; }
+}
+@media (max-width:600px) {
+  body.day .day-visit { grid-template-columns:minmax(0,1fr); }
+  body.day .day-visit > * { min-width:0; }
+  body.day .day-visit h2 { font-size:clamp(48px,16vw,72px); overflow-wrap:break-word; }
+}
+@media (max-width:600px) {
+  body.day .day-intro { grid-template-columns:minmax(0,1fr); }
+  body.day .day-intro > * { min-width:0; }
+  body.day .day-intro h2 { font-size:clamp(48px,16vw,70px); overflow-wrap:break-word; }
+}
+</style></head><body><nav class="site-language-switch" aria-label="Site dili"><a href="presentation-notes-az.html" lang="az" hreflang="az" title="Azərbaycanca">AZ</a><a href="presentation-notes-tr.html" lang="tr" hreflang="tr" title="Türkçe" aria-current="page">TR</a><a href="presentation-notes.html" lang="en" hreflang="en" title="English">EN</a></nav><main><a href="index-tr.html">← Üç tasarım seçeneği</a><p><small>SULTAN SABA · WEB SİTESİ TASARIM ÇALIŞMASI · EBSO</small></p><h1>Sohbetin<br>başladığı yer.</h1><p>Bu üç konsept, Sultan Saba’nın mekânlarını ve hizmetlerini internette nasıl sunabileceğini araştırıyor. Her biri, aynı temel deneyimleri ve örnek bir rezervasyon akışını farklı bir görsel kimlikle sunuyor.</p>
 <article><small>SEÇENEK 01 / SULTAN SABA KLASİK</small><h2>Tanıdık bir imza.</h2><p>Mevcut amblem ve kaligrafik logonun etrafında şekillenen, ağırbaşlı ve simetrik bir spa web sitesi. Ceviz, şampanya ve fildişi tonları, süslü çerçeveler ve doğrudan menü yapısı markaya geleneksel bir duruş kazandırıyor.</p><p><strong>Referanslar:</strong> Hürrem Sultan Hamamı ve Çırağan Palace Spa: klasik konuk ağırlama sunumu ve hizmetlerin kolayca keşfedilmesi.</p><div class="pair"><img src="previews/localized/05-classic-tr-1440.png" alt="SULTAN SABA KLASİK masaüstü"><img src="previews/localized/05-classic-tr-390.png" alt="SULTAN SABA KLASİK mobil"></div><p><a href="05-classic-tr.html">Sultan Saba Klasik’i aç →</a></p></article><article><small>SEÇENEK 02 / SULTAN SABA’DA BİR GÜN</small><h2>Çarpıcı. Kişisel. Akılda kalıcı.</h2><p>Daha cesur bir editoryal kompozisyon, büyük tipografi ve asimetrik bir fotoğraf düzeni. Anlatı, olası bir günü izliyor: hamamda geçirilen zaman, kişisel bakım ve ardından kafede bir mola.</p><p><strong>Ana referans:</strong> Deneyimi kendine özgü biçimde anlatmasıyla Othership. Sonucu belirleyen, Sultan Saba’nın kendi hizmetleri ve fotoğraflarıdır.</p><div class="pair"><img src="previews/localized/03-day-tr-1440.png" alt="Sultan Saba’da Bir Gün masaüstü önizlemesi"><img src="previews/localized/03-day-tr-390.png" alt="Sultan Saba’da Bir Gün mobil önizlemesi"></div><p><a href="03-day-tr.html">Sultan Saba’da Bir Gün’ü aç →</a></p></article><article><small>SEÇENEK 03 / RİTÜEL</small><h2>Sıcak. Samimi. Zamansız.</h2><p>Sıcak koyu tonlar, fildişi yazılar ve çerçeveli fotoğraflar daha sakin, daha kişisel bir atmosfer yaratıyor. Anlatıyı mermer hamam başlatıyor; sayfa ardından tek tek deneyimler ve onları çevreleyen mekânlar arasında ilerliyor.</p><p><strong>Ana referans:</strong> AIRE Ancient Baths: ritüel anlatısı, mekân duygusu ve belirgin bir rezervasyon daveti. Bu, Sultan Saba’ya özgü bir yorumdur.</p><div class="pair"><img src="previews/localized/01-ritual-tr-1440.png" alt="Ritüel masaüstü önizlemesi"><img src="previews/localized/01-ritual-tr-390.png" alt="Ritüel mobil önizlemesi"></div><p><a href="01-ritual-tr.html">Ritüel’i aç →</a></p></article><article><h2>Görüşlerinizle şekillenecek.</h2><p>Bu web sitesi tasarım seçenekleri birer başlangıç noktasıdır. Fotoğraflar, metinler, renkler, tipografi, sayfa düzenleri ve rezervasyon akışı tercihlerinize ve işletmenizin ihtiyaçlarına göre geliştirilebilir.</p><p>Her tasarımı açın, hizmetleri keşfedin ve örnek rezervasyon akışını deneyin. Gerçek bir randevu veya ödeme oluşturulmaz.</p></article></main></body></html>

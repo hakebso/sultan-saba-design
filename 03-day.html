@@ -87,7 +87,45 @@ body.day .day-header-book{background:var(--day-cream);color:var(--day-red);borde
 .ss-photo-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding:5px 4px 16px}.ss-photo-strip button{flex:0 0 170px;scroll-snap-align:start;border:0;padding:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}.ss-photo-strip img{width:100%;height:185px;object-fit:cover;display:block;border-radius:4px}.ss-photo-strip span{display:block;font-size:13px;line-height:1.45;margin-top:8px}.ss-detail-photos{margin:26px 0}.ss-photo-strip button:focus-visible{outline:3px solid currentColor;outline-offset:2px}.ss-gallery-figure img{object-fit:contain}
 /* language-navigation:start */
 nav.site-language-switch{display:flex!important;position:relative!important;justify-content:flex-end;align-items:center;gap:5px;padding:5px 5%;min-height:34px;margin:0;z-index:11;background:transparent;font:13px/1.4 Arial,sans-serif;letter-spacing:0;text-transform:none;border-bottom:1px solid #8883}nav.site-language-switch a{display:inline-flex;align-items:center;justify-content:center;min-width:38px;min-height:26px;padding:3px 8px;text-decoration:none;color:inherit;font:inherit;letter-spacing:0;border:1px solid transparent}nav.site-language-switch a[aria-current=page]{border-color:currentColor;font-weight:700}nav.site-language-switch a:focus-visible{outline:2px solid currentColor;outline-offset:2px}html[lang=az] .hero-title,html[lang=tr] .hero-title{overflow-wrap:normal}@media(max-width:640px){nav.site-language-switch{padding-inline:20px;font-size:12px}}
-/* language-navigation:end *//* content-completion: additions inherit each retained concept palette */
+/* language-navigation:end */
+/* Mobile usability fixes: keep desktop composition and all photo crops intact. */
+@media (max-width:760px) {
+  nav.site-language-switch a { min-width:44px; min-height:44px; }
+}
+@media (max-width:600px) {
+  body.day .day-header {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:10px 16px;
+    height:auto;
+    padding:12px 5%;
+  }
+  body.day .day-brand-signature { min-width:0; }
+  body.day .day-menu { margin:0; min-width:44px; justify-self:end; }
+  body.day .day-header-book {
+    grid-column:1 / -1;
+    width:100%;
+    min-width:0;
+    min-height:44px;
+    white-space:normal;
+    justify-content:space-between;
+    font-size:14px;
+    padding:10px 14px;
+  }
+  body.day .day-header-book span { display:inline; }
+  body.day .day-nav { top:100%; }
+}
+@media (max-width:600px) {
+  body.day .day-visit { grid-template-columns:minmax(0,1fr); }
+  body.day .day-visit > * { min-width:0; }
+  body.day .day-visit h2 { font-size:clamp(48px,16vw,72px); overflow-wrap:break-word; }
+}
+@media (max-width:600px) {
+  body.day .day-intro { grid-template-columns:minmax(0,1fr); }
+  body.day .day-intro > * { min-width:0; }
+  body.day .day-intro h2 { font-size:clamp(48px,16vw,70px); overflow-wrap:break-word; }
+}
+/* content-completion: additions inherit each retained concept palette */
 .cc-block{padding:64px max(6.7vw,24px);border-top:1px solid var(--line);color:inherit}.cc-inner{max-width:1200px;margin:auto}.cc-kicker{font:12px/1.5 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 16px}.cc-block h2{font:inherit;font-family:Georgia,serif;font-size:clamp(30px,3vw,44px);line-height:1.2;margin:0 0 22px;max-width:800px}.cc-block p{font-size:17px;line-height:1.7;max-width:760px}.cc-block .cc-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.cc-link{font:inherit;font-size:16px;line-height:1.4;background:transparent;border:1px solid currentColor;color:inherit;padding:12px 18px;min-height:46px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:left}.cc-link:hover{text-decoration:underline;text-underline-offset:4px}.cc-list{display:flex;flex-wrap:wrap;gap:10px 24px;padding:0;list-style:none;font-size:16px;margin:24px 0}.cc-contact{margin-top:24px;max-width:440px;font-size:16px;line-height:1.7}.cc-contact address{font-style:normal;margin:14px 0}.cc-contact a{display:block;text-decoration:underline;text-underline-offset:4px;margin:6px 0;overflow-wrap:anywhere}.cc-contact small{font-size:13px;line-height:1.6;display:block;margin-top:14px;opacity:.8}.cc-catalogue-note{font:14px/1.7 Arial,sans-serif;text-align:center;max-width:800px;padding:26px 24px;margin:auto}.cc-memberships .package-card h3{white-space:normal}.cc-memberships .day-package h3{font-size:44px}.cc-memberships .day-package>p:not(.day-eyebrow){font-size:15px;max-width:none}.cc-memberships .day-package button{font-size:14px}.cc-memberships .day-package-note,.cc-memberships .package-note{font-size:13px}.cc-memberships .day-package-heading>p:last-child{font-size:16px;max-width:760px;margin:auto}.cc-block[data-concept="03"]{background:var(--day-cream);color:var(--day-red)}.cc-block[data-concept="03"] h2{font-family:var(--day-serif)}.cc-faq details>p{font-size:16px;line-height:1.75}.cc-faq summary{overflow-wrap:anywhere}@media(max-width:640px){.cc-block{padding:40px 24px}.cc-block p{font-size:16px}.cc-contact{font-size:16px}.cc-memberships .day-package h3{font-size:36px}}
 /* Catalogue additions; the three existing concept layouts retain their own styles. */
 .ss-catalogue-dialog .ss-catalogue-notice{font-size:12px;line-height:1.65;border-left:2px solid var(--accent,#766044);padding:10px 14px;margin:18px 0 24px;background:color-mix(in srgb,var(--accent,#766044) 6%,transparent)}
@@ -185,7 +223,7 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
     <button class="day-gallery-face" type="button" data-gallery="p13"><img src="assets/library/v2/uygulama/13-cilt-bakimi.webp" alt="Facial care at Sultan Saba, photo-based AI edit" loading="lazy"><span>Come back to yourself <i aria-hidden="true">↗</i></span></button>
   </div></section>
 
-  <section class="cc-block" data-concept="03" id="occasions" aria-labelledby="occasions-title"><div class="cc-inner"><p class="cc-kicker">Special occasions</p><h2 id="occasions-title">Share a moment worth remembering.</h2><p>Discover bridal hamam and henna celebrations at Sultan Saba. Dates, group size and arrangements are agreed with the venue.</p><div class="cc-actions"><button type="button" class="cc-link" data-event="bridal-hamam">Bridal hamam ↗</button><button type="button" class="cc-link" data-event="henna-event">Henna celebration ↗</button></div></div></section><section class="day-visit" id="visit" aria-labelledby="visit-title"><div class="day-visit-intro"><p class="day-eyebrow">Sultan Saba · Baku, Azerbaijan</p><h2 id="visit-title">Your time.<br><em>Your day.</em></h2><p>Choose what brings you here.<br>We’ll help you imagine the rest.</p><button class="day-button day-button-light" type="button" data-book>Book a visit <span aria-hidden="true">↗</span></button><p class="day-visit-note">This design preview demonstrates a single appointment.<br>No reservation is sent or confirmed.</p><div class="cc-contact"><strong>Contact the club</strong><address>C. Mammadguluzade Street 73F, Baku, Azerbaijan</address><a href="tel:+994125941122">+994 (12) 594 11 22</a><a href="tel:+994125941155">+994 (12) 594 11 55</a><a href="https://api.whatsapp.com/send?phone=994702161155">https://api.whatsapp.com/send?phone=994702161155</a><a href="https://sultansaba.az/sultansabais/index.php?lang=az&amp;page=07" target="_blank" rel="noopener">Official website ↗</a><small>Contact details are published on the official website. Confirm current opening hours and arrangements before visiting.</small></div></div><div class="day-faq cc-faq"><details><summary>How do I choose a treatment?<span aria-hidden="true">+</span></summary><p>Open a service category to explore the published treatments. Choose an individual treatment to try the appointment preview. The team can confirm suitability and current availability.</p></details><details><summary>What do memberships include?<span aria-hidden="true">+</span></summary><p>Gold, Basic and Fit&amp;Fun have different facilities and class access. Explore each programme and contact the club for current terms and prices.</p></details><details><summary>What should I know before visiting?<span aria-hidden="true">+</span></summary><p>Contact Sultan Saba to confirm opening hours, preparation, what to bring and the current price of your chosen service.</p></details><details><summary>Does this website make a reservation?<span aria-hidden="true">+</span></summary><p>No. The appointment flow is a demonstration with sample specialists and times. It sends no request, takes no payment and creates no reservation.</p></details></div></section>
+  <section class="cc-block" data-concept="03" id="occasions" aria-labelledby="occasions-title"><div class="cc-inner"><p class="cc-kicker">Special occasions</p><h2 id="occasions-title">Share a moment worth remembering.</h2><p>Discover bridal hamam and henna celebrations at Sultan Saba. Dates, group size and arrangements are agreed with the venue.</p><div class="cc-actions"><button type="button" class="cc-link" data-event="bridal-hamam">Bridal hamam ↗</button><button type="button" class="cc-link" data-event="henna-event">Henna celebration ↗</button></div></div></section><section class="day-visit" id="visit" aria-labelledby="visit-title"><div class="day-visit-intro"><p class="day-eyebrow">Sultan Saba · Baku, Azerbaijan</p><h2 id="visit-title">Your time.<br><em>Your day.</em></h2><p>Choose what brings you here.<br>We’ll help you imagine the rest.</p><button class="day-button day-button-light" type="button" data-book>Book a visit <span aria-hidden="true">↗</span></button><p class="day-visit-note">This design preview demonstrates a single appointment.<br>No reservation is sent or confirmed.</p><div class="cc-contact"><strong>Contact the club</strong><address>C. Mammadguluzade Street 73F, Baku, Azerbaijan</address><a href="tel:+994125941122">+994 (12) 594 11 22</a><a href="tel:+994125941155">+994 (12) 594 11 55</a><a href="https://api.whatsapp.com/send?phone=994702161155">WhatsApp</a><a href="https://sultansaba.az/sultansabais/index.php?lang=az&amp;page=07" target="_blank" rel="noopener">Official website ↗</a><small>Contact details are published on the official website. Confirm current opening hours and arrangements before visiting.</small></div></div><div class="day-faq cc-faq"><details><summary>How do I choose a treatment?<span aria-hidden="true">+</span></summary><p>Open a service category to explore the published treatments. Choose an individual treatment to try the appointment preview. The team can confirm suitability and current availability.</p></details><details><summary>What do memberships include?<span aria-hidden="true">+</span></summary><p>Gold, Basic and Fit&amp;Fun have different facilities and class access. Explore each programme and contact the club for current terms and prices.</p></details><details><summary>What should I know before visiting?<span aria-hidden="true">+</span></summary><p>Contact Sultan Saba to confirm opening hours, preparation, what to bring and the current price of your chosen service.</p></details><details><summary>Does this website make a reservation?<span aria-hidden="true">+</span></summary><p>No. The appointment flow is a demonstration with sample specialists and times. It sends no request, takes no payment and creates no reservation.</p></details></div></section>
 </main>
 <footer class="day-footer"><div class="day-footer-top"><a class="day-logo" href="#">SULTAN SABA<span>MAKE TIME FOR YOURSELF.</span></a><a href="#main" class="day-back-top">Back to the beginning <span aria-hidden="true">↑</span></a></div><div class="day-footer-bottom"><p>Design concept · Illustrative booking</p><a href="index-en.html">Explore all concepts <span aria-hidden="true">↗</span></a><p>A day at Sultan Saba</p></div></footer>
 
@@ -3321,24 +3359,41 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
   document.body.appendChild(dialog);
   const body = $('.ss-dialog-content', dialog);
   let opener = null, kind = '', galleryItems = C.gallery || [], galleryIndex = 0, ignoreBackdropUntil = 0;
-  let catalogueState = {category:'',query:''}, state = {};
+  let catalogueState = {category:'',query:''}, state = {}, galleryReturn = null;
   const reset = () => { state = {step:0,serviceId:'',specialist:'any',date:'',time:'',confirmed:false}; };
   reset();
   const focusTitle = () => { dialog.scrollTop=0; body.scrollTop=0; $('#ss-title', dialog)?.focus({preventScroll:true}); };
   function open(type) {
     if (!dialog.open) opener = document.activeElement;
+    if (type !== 'gallery') galleryReturn = null;
     kind = type;
+    $('[data-close]',dialog).setAttribute('aria-label', U.close);
     document.body.classList.add('ss-modal-open');
     if (!dialog.open) dialog.showModal();
   }
+  function returnFromGallery() {
+    if(kind!=='gallery' || !galleryReturn) return false;
+    const previous=galleryReturn;
+    open(previous.kind);
+    body.replaceChildren(...previous.nodes);
+    if(previous.focus?.isConnected) previous.focus.focus({preventScroll:true});
+    else $('#ss-title',dialog)?.focus({preventScroll:true});
+    dialog.scrollTop=previous.dialogScroll;body.scrollTop=previous.bodyScroll;
+    return true;
+  }
+  const dismiss = () => { if(!returnFromGallery()) dialog.close(); };
+  dialog.addEventListener('cancel', e => {
+    if(kind==='gallery' && galleryReturn){e.preventDefault();returnFromGallery();}
+  });
   dialog.addEventListener('close', () => {
+    galleryReturn = null;
     document.body.classList.remove('ss-modal-open');
     if (opener?.isConnected) opener.focus({preventScroll:true});
   });
   dialog.addEventListener('click', e => {
     if (e.target !== dialog || performance.now() < ignoreBackdropUntil) return;
     const r = dialog.getBoundingClientRect();
-    if(e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom) dialog.close();
+    if(e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom) dismiss();
   });
   // Explicit month and weekday tables avoid incomplete platform Azerbaijani locale support.
   const startDate = (() => {
@@ -3465,13 +3520,16 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
     open('facility');
     body.innerHTML=title(U.facility,facilities.length===1?facilities[0].name:U.facility)+facilities.map(f=>`<section class="ss-facility-item">${facilities.length===1?'':`<h3>${esc(f.name)}</h3>`}<p>${esc(f.description)}</p>${source(f.sourceUrl)}</section>`).join('')+notice()+contactBlock();focusTitle();
   }
-  function showGallery(id) {
+  function showGallery(id, fromDetail=false) {
+    if(!fromDetail) galleryReturn=null;
     galleryItems=C.gallery || [];if(!galleryItems.length)return;
     id=C.photoAliases?.[id] || id;galleryIndex=Math.max(0,galleryItems.findIndex(x=>x.id===id));open('gallery');renderGallery();
   }
   function renderGallery(focusSelector) {
     const g=galleryItems[galleryIndex];if(!g)return;
-    body.innerHTML=title(U.gallery,g.name || media(g.id).name || '')+`<figure class="ss-gallery-figure">${img(g.id,'gallery',g.id)}<figcaption>${esc(media(g.id).credit || '')}</figcaption></figure><div class="ss-gallery-nav"><button type="button" class="ss-secondary" data-gallery-prev aria-label="${esc(U.previousPhoto)}">← ${esc(U.previous)}</button><span aria-live="polite">${galleryIndex+1} / ${galleryItems.length}</span><button type="button" class="ss-secondary" data-gallery-next aria-label="${esc(U.nextPhoto)}">${esc(U.next)} →</button></div>`;
+    const backLabel=galleryReturn ? `${U.back}: ${galleryReturn.title}` : '';
+    $('[data-close]',dialog).setAttribute('aria-label',backLabel || U.close);
+    body.innerHTML=(galleryReturn?`<button type="button" class="ss-text-back" data-gallery-return>← ${esc(backLabel)}</button>`:'')+title(U.gallery,g.name || media(g.id).name || '')+`<figure class="ss-gallery-figure">${img(g.id,'gallery',g.id)}<figcaption>${esc(media(g.id).credit || '')}</figcaption></figure><div class="ss-gallery-nav"><button type="button" class="ss-secondary" data-gallery-prev aria-label="${esc(U.previousPhoto)}">← ${esc(U.previous)}</button><span aria-live="polite">${galleryIndex+1} / ${galleryItems.length}</span><button type="button" class="ss-secondary" data-gallery-next aria-label="${esc(U.nextPhoto)}">${esc(U.next)} →</button></div>`;
     if(focusSelector)$(focusSelector,dialog)?.focus();else focusTitle();
   }
   document.addEventListener('input',e=>{if(e.target.id==='ss-catalogue-search'){catalogueState.query=e.target.value;renderResults();}});
@@ -3479,9 +3537,10 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
     // A second click on the just-replaced confirmation button must not activate a contact link underneath.
     if(kind==='success' && performance.now()<ignoreBackdropUntil && e.detail>1){e.preventDefault();return;}
     const t=e.target.closest('button,a');if(!t)return;
-    const handled=t.matches('[data-close],[data-book],[data-service],[data-package],[data-event],[data-facilities],[data-facility],[data-contact],[data-detail-photo],[data-gallery],[data-gallery-prev],[data-gallery-next],[data-menu],[data-filter],[data-restart],[data-entry],[data-choose],[data-return-catalogue],[data-catalogue-category],[data-clear-search]');
+    const handled=t.matches('[data-close],[data-book],[data-service],[data-package],[data-event],[data-facilities],[data-facility],[data-contact],[data-detail-photo],[data-gallery],[data-gallery-prev],[data-gallery-next],[data-gallery-return],[data-menu],[data-filter],[data-restart],[data-entry],[data-choose],[data-return-catalogue],[data-catalogue-category],[data-clear-search]');
     if(handled)e.preventDefault();
-    if(t.matches('[data-close]')){dialog.close();return;}
+    if(t.matches('[data-close]')){dismiss();return;}
+    if(t.matches('[data-gallery-return]')){returnFromGallery();return;}
     if(t.matches('[data-book]')){startBooking(t.dataset.book);return;}
     if(t.matches('[data-service]')){category(t.dataset.service)?showCatalogue(t.dataset.service):showService(t.dataset.service);return;}
     if(t.matches('[data-package]')){showMembership(t.dataset.package);return;}
@@ -3494,9 +3553,10 @@ nav.site-language-switch{display:flex!important;position:relative!important;just
     if(t.matches('[data-catalogue-category]')){catalogueState.category=t.dataset.catalogueCategory;const active=kind;active==='booking'?renderBooking(false):showCatalogue('',true,false);$(`[data-catalogue-category="${catalogueState.category}"]`,dialog)?.focus();return;}
     if(t.matches('[data-clear-search]')){catalogueState.query='';const input=$('#ss-catalogue-search',dialog);if(input){input.value='';input.focus();}renderResults();return;}
     if(t.matches('[data-detail-photo]')){
+      galleryReturn=dialog.open && ['service','catalogue','booking'].includes(kind) ? {kind,nodes:Array.from(body.childNodes),title:$('#ss-title',dialog)?.textContent || U.catalogue,focus:t,dialogScroll:dialog.scrollTop,bodyScroll:body.scrollTop} : null;
       const s=category(t.dataset.photoService) || findService(t.dataset.photoService);
       const ids=s?(s.photos || photosFor(s)):[];galleryItems=ids.map(id=>({id,name:media(id).name}));
-      if(!galleryItems.length){showGallery(t.dataset.detailPhoto);return;}
+      if(!galleryItems.length){showGallery(t.dataset.detailPhoto,true);return;}
       galleryIndex=Math.max(0,galleryItems.findIndex(x=>x.id===t.dataset.detailPhoto));open('gallery');renderGallery();return;
     }
     if(t.matches('[data-gallery]')){showGallery(t.dataset.gallery);return;}
