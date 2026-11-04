@@ -15,5 +15,4287 @@ catalogue.version='demo-simplified-2026-11-04-r2';
 catalogue.serviceCategories.push({id:'cosmetology',name:'Kozmetoloji',names:{tr:'Kozmetoloji',az:'Kosmetologiya',ru:'Косметология'},active:true});
 catalogue.rules=Object.assign({},catalogue.rules,{simplifiedCatalogue:true,cafeOrderPilot:false,cafeRewardPilot:false,allowSourceMenuDemoOrders:false,serviceConsultationPolicy:'disabled'});
 catalogue.evidence=Object.assign({},catalogue.evidence,{asOf:'2026-11-04',sourceSnapshot:'source-catalogue/',sourceInventoryCount:126,currentLiveAvailabilityVerified:false,sourceCountedServiceCount:111,extraConsultationCount:1,notice:{tr:'Hizmet adları kaynak listeden; fiyatlar, tarihler, uzman ve kapasite demo koşullarıdır.',az:'Xidmət adları mənbə siyahısındandır; qiymətlər, tarixlər, mütəxəssis və tutum demo şərtləridir.',ru:'Названия из исходного каталога; цены, даты, специалисты и вместимость — условия демо.'}});
+
+// Four-language content only. Source snapshots and historical transaction terms remain untouched.
+const contentTranslations={
+  "services": {
+    "src-traditional-turkish-bath": {
+      "names": {
+        "tr": "Geleneksel Türk hamamı",
+        "az": "Ənənəvi türk hamamı",
+        "ru": "Традиционный турецкий хаммам",
+        "en": "Traditional Turkish bath"
+      },
+      "descriptions": {
+        "tr": "Kese ve köpük masajı.",
+        "az": "Kisələnmə və köpük masajı.",
+        "ru": "Отшелушивание тела рукавицей кесе и пенный массаж.",
+        "en": "Body exfoliation with a kese glove and foam massage."
+      }
+    },
+    "src-aromatic-foam-bath": {
+      "names": {
+        "tr": "Aromatik köpük hamamı",
+        "az": "Ətirli köpük hamamı",
+        "ru": "Ароматный пенный хаммам",
+        "en": "Aromatic foam bath"
+      },
+      "descriptions": {
+        "tr": "Hamamın mermer göbek taşında aromatik köpük uygulaması.",
+        "az": "Hamamın mərmər masasında ətirli köpüklə qulluq.",
+        "ru": "Ароматная пена на мраморном столе хаммама.",
+        "en": "Aromatic foam applied on the hamam marble table."
+      }
+    },
+    "src-kese-bath": {
+      "names": {
+        "tr": "Kese",
+        "az": "Kisələnmə",
+        "ru": "Кесе",
+        "en": "Kese exfoliation"
+      },
+      "descriptions": {
+        "tr": "Vücuda kese uygulanması.",
+        "az": "Xüsusi kisə ilə bədənin təmizlənməsi.",
+        "ru": "Отшелушивание тела рукавицей кесе.",
+        "en": "Body exfoliation using a kese glove."
+      }
+    },
+    "src-sultan-saba-ritual": {
+      "names": {
+        "tr": "Sultan Saba ritüeli",
+        "az": "Sultan Saba ritualı",
+        "ru": "Ритуал Sultan Saba",
+        "en": "Sultan Saba ritual"
+      },
+      "descriptions": {
+        "tr": "Siyah sabun, kese, köpük masajı ve Lokum peelingi.",
+        "az": "Qara sabun, kisələnmə, köpük masajı və Lokum skrabı.",
+        "ru": "Чёрное мыло, кесе, пенный массаж и скраб Lokum.",
+        "en": "Black soap, kese exfoliation, foam massage and Lokum scrub."
+      }
+    },
+    "src-sultan-saba-peeling": {
+      "names": {
+        "tr": "Sultan Saba peelingi",
+        "az": "Sultan Saba pilinqi",
+        "ru": "Пилинг Sultan Saba",
+        "en": "Sultan Saba peeling"
+      },
+      "descriptions": {
+        "tr": "Sultan Saba Lokum, yağ ve tuzla vücut peelingi.",
+        "az": "Sultan Saba Lokum, yağ və duz ilə bədən pilinqi.",
+        "ru": "Пилинг тела с Lokum Sultan Saba, маслом и солью.",
+        "en": "Body exfoliation with Sultan Saba Lokum, oil and salt."
+      }
+    },
+    "src-chi-yang-massage": {
+      "names": {
+        "tr": "Chi-Yang (İsveç) masajı",
+        "az": "Çin-Yanq (İsveç) masajı",
+        "ru": "Массаж Чи-Ян (шведский)",
+        "en": "Chi-Yang (Swedish) massage"
+      },
+      "descriptions": {
+        "tr": "Tercihlerinize göre uyarlanan bireysel masaj.",
+        "az": "İstəyinizə uyğunlaşdırılan fərdi masaj.",
+        "ru": "Индивидуальный массаж с учётом ваших предпочтений.",
+        "en": "An individual massage adapted to your preferences."
+      }
+    },
+    "src-hot-oil-massage": {
+      "names": {
+        "tr": "Sıcak yağlı SPA masajı",
+        "az": "İsti yağlı SPA masajı",
+        "ru": "SPA-массаж с тёплым маслом",
+        "en": "Hot oil spa massage"
+      },
+      "descriptions": {
+        "tr": "Sıcak yağla vücut masajı.",
+        "az": "İsti yağla bədən masajı.",
+        "ru": "Массаж тела с тёплым маслом.",
+        "en": "Body massage using warm oil."
+      }
+    },
+    "src-chakra-stone-massage": {
+      "names": {
+        "tr": "Çakra taşlarıyla masaj",
+        "az": "Çakra daşları ilə masaj",
+        "ru": "Массаж камнями чакр",
+        "en": "Chakra stone massage"
+      },
+      "descriptions": {
+        "tr": "Isıtılmış volkanik taşlarla vücut masajı.",
+        "az": "İsidilmiş vulkanik daşlarla bədən masajı.",
+        "ru": "Массаж тела нагретыми вулканическими камнями.",
+        "en": "Body massage using heated volcanic stones."
+      }
+    },
+    "src-head-massage": {
+      "names": {
+        "tr": "Baş masajı",
+        "az": "Baş masajı",
+        "ru": "Массаж головы",
+        "en": "Head massage"
+      },
+      "descriptions": {
+        "tr": "Baş, sırt ve omuzlara hafif ve orta basınçlı masaj.",
+        "az": "Baş, kürək və çiyinlərə yüngül və orta təzyiqli masaj.",
+        "ru": "Массаж головы, спины и плеч с лёгким или средним нажимом.",
+        "en": "Light to medium pressure massage for your head, back and shoulders."
+      }
+    },
+    "src-indian-head-hair-mask": {
+      "names": {
+        "tr": "Hint baş masajı ve saç maskesi",
+        "az": "Hind baş masajı və saç maskası",
+        "ru": "Индийский массаж головы и маска для волос",
+        "en": "Indian head massage and hair mask"
+      },
+      "descriptions": {
+        "tr": "Sırt, baş ve omuz masajının ardından saç maskesi.",
+        "az": "Kürək, baş və çiyin masajından sonra saç maskası.",
+        "ru": "Массаж спины, головы и плеч, затем маска для волос.",
+        "en": "Back, head and shoulder massage followed by a hair mask."
+      }
+    },
+    "src-shirodhara-massage": {
+      "names": {
+        "tr": "Shirodhara masajı",
+        "az": "Şirodhara masajı",
+        "ru": "Массаж Широдхара",
+        "en": "Shirodhara massage"
+      },
+      "descriptions": {
+        "tr": "Shirodhara masajı. Uygulama ayrıntılarını uzmanla netleştirin.",
+        "az": "Şirodhara masajı. Tətbiq detallarını mütəxəssislə dəqiqləşdirin.",
+        "ru": "Массаж Широдхара. Уточните детали сеанса у специалиста.",
+        "en": "Shirodhara massage. Confirm the session details with the specialist."
+      }
+    },
+    "src-lomi-lomi-massage": {
+      "names": {
+        "tr": "Lomi Lomi masajı",
+        "az": "Lomi Lomi masajı",
+        "ru": "Массаж Ломи-Ломи",
+        "en": "Lomi Lomi massage"
+      },
+      "descriptions": {
+        "tr": "Hawaii tarzı hareketler ve dokunuşlarla vücut masajı.",
+        "az": "Havay üslubunda hərəkətlər və toxunuşlarla bədən masajı.",
+        "ru": "Гавайский массаж с плавными движениями и растяжкой.",
+        "en": "Hawaiian style massage using flowing touch and stretching."
+      }
+    },
+    "src-sultan-saba-candle-massage": {
+      "names": {
+        "tr": "Sultan Saba mum masajı",
+        "az": "Sultan Saba şam masajı",
+        "ru": "Свечной массаж Sultan Saba",
+        "en": "Sultan Saba candle massage"
+      },
+      "descriptions": {
+        "tr": "Isıtılmış mum yağıyla masaj. Vücut sargısının dahil olup olmadığını teyit edin.",
+        "az": "İsidilmiş şam yağı ilə masaj. Bədən bükməsinin daxil olub-olmadığını dəqiqləşdirin.",
+        "ru": "Массаж тёплым свечным маслом. Уточните, входит ли обёртывание.",
+        "en": "Massage with warmed candle oil. Ask whether a body wrap is included."
+      }
+    },
+    "src-herbal-massage": {
+      "names": {
+        "tr": "Bitki keseleriyle masaj",
+        "az": "Bitki kisələri ilə masaj",
+        "ru": "Массаж травяными мешочками",
+        "en": "Herbal compress massage"
+      },
+      "descriptions": {
+        "tr": "Bitkisel keselerle vücut masajı.",
+        "az": "Bitki tərkibli xüsusi vasitələrlə bədən masajı.",
+        "ru": "Массаж тела травяными компрессами.",
+        "en": "Body massage using herbal compress tools."
+      }
+    },
+    "src-local-massage": {
+      "names": {
+        "tr": "Bölgesel masaj",
+        "az": "Lokal masaj",
+        "ru": "Локальный массаж",
+        "en": "Local massage"
+      },
+      "descriptions": {
+        "tr": "Seçilen vücut bölgesine yönelik masaj.",
+        "az": "Seçilmiş bədən nahiyəsinə yönələn masaj.",
+        "ru": "Массаж выбранной области тела.",
+        "en": "Massage focused on a chosen area."
+      }
+    },
+    "src-foot-reflexology": {
+      "names": {
+        "tr": "Ayak refleksolojisi",
+        "az": "Ayaq refleksologiyası",
+        "ru": "Рефлексология стоп",
+        "en": "Foot reflexology"
+      },
+      "descriptions": {
+        "tr": "Ayaktaki noktalara basınç uygulaması ve ayak masajı.",
+        "az": "Ayaqdakı nöqtələrə təzyiq və ayaq masajı.",
+        "ru": "Воздействие на точки стоп с последующим массажем стоп.",
+        "en": "Pressure applied to points on the feet, followed by foot massage."
+      }
+    },
+    "src-foot-massage": {
+      "names": {
+        "tr": "Ayak masajı",
+        "az": "Ayaq masajı",
+        "ru": "Массаж стоп",
+        "en": "Foot massage"
+      },
+      "descriptions": {
+        "tr": "El ve parmak basıncıyla ayak masajı.",
+        "az": "Əl və barmaq təzyiqi ilə ayaq masajı.",
+        "ru": "Массаж стоп руками и пальцами.",
+        "en": "Foot massage using hand and finger pressure."
+      }
+    },
+    "src-foot-massage-sultan-mask": {
+      "names": {
+        "tr": "Ayak masajı ve Sultan maskesi",
+        "az": "Ayaq masajı və Sultan maskası",
+        "ru": "Массаж стоп и маска Sultan",
+        "en": "Foot massage and Sultan mask"
+      },
+      "descriptions": {
+        "tr": "Ayak masajı ve bakım, son aşamada serinletici jel uygulaması.",
+        "az": "Ayaq masajı və qulluq, sonda sərinləşdirici gel tətbiqi.",
+        "ru": "Массаж и уход за стопами с охлаждающим гелем в завершение.",
+        "en": "Foot massage and care, finished with a cooling gel."
+      }
+    },
+    "src-anti-cellulite-massage": {
+      "names": {
+        "tr": "Selülit masajı",
+        "az": "Anti-sellülit masajı",
+        "ru": "Массаж «Антицеллюлитный»",
+        "en": "Anti-cellulite massage"
+      },
+      "descriptions": {
+        "tr": "Selülit masajı olarak sunulan vücut uygulaması.",
+        "az": "Anti-sellülit adı ilə təqdim olunan bədən masajı.",
+        "ru": "Массаж тела, указанный в каталоге как антицеллюлитный.",
+        "en": "A body massage offered as an anti-cellulite treatment."
+      }
+    },
+    "src-styx-oil-gel-massage": {
+      "names": {
+        "tr": "STYX yağ veya jel masajı",
+        "az": "STYX yağı və ya geli ilə masaj",
+        "ru": "Массаж с маслом или гелем STYX",
+        "en": "STYX oil or gel massage"
+      },
+      "descriptions": {
+        "tr": "Aroma Derm vücut bakımı öncesinde STYX yağ veya jel masajı.",
+        "az": "Aroma Derm bədən qulluğundan əvvəl STYX yağı və ya geli ilə masaj.",
+        "ru": "Массаж маслом или гелем STYX перед уходом Aroma Derm.",
+        "en": "Massage with STYX oil or gel before Aroma Derm body care."
+      }
+    },
+    "src-classic-aroma-derm-facial": {
+      "names": {
+        "tr": "Aroma Derm klasik yüz bakımı",
+        "az": "Aroma Derm klassik üz qulluğu",
+        "ru": "Классический уход за лицом Aroma Derm",
+        "en": "Aroma Derm classic facial"
+      },
+      "descriptions": {
+        "tr": "Cilt tipine göre temizleme, maske ve kremle masaj.",
+        "az": "Dəri tipinə uyğun təmizləmə, maska və krem ilə masaj.",
+        "ru": "Очищение, маска и массаж с кремом по типу кожи.",
+        "en": "Cleansing, mask and cream massage selected for the skin type."
+      }
+    },
+    "src-prestige-facial": {
+      "names": {
+        "tr": "Prestij yüz bakımı",
+        "az": "Prestij üz qulluğu",
+        "ru": "Уход за лицом «Престиж»",
+        "en": "Prestige facial"
+      },
+      "descriptions": {
+        "tr": "Prestij yüz bakımı. Uygulama ayrıntılarını uzmanla netleştirin.",
+        "az": "Prestij üz qulluğu. Tətbiq detallarını mütəxəssislə dəqiqləşdirin.",
+        "ru": "Уход Prestige. Уточните этапы процедуры у специалиста.",
+        "en": "Prestige facial. Confirm the session details with the specialist."
+      }
+    },
+    "src-amethyst-facial": {
+      "names": {
+        "tr": "Ametist taşlarıyla yüz bakımı",
+        "az": "Ametist daşları ilə üz qulluğu",
+        "ru": "Уход за лицом с аметистом",
+        "en": "Amethyst stone facial"
+      },
+      "descriptions": {
+        "tr": "Temizleme, ampul, iki maske ve ametist taşlarıyla yüz masajı.",
+        "az": "Təmizləmə, ampula, iki maska və ametist daşları ilə üz masajı.",
+        "ru": "Очищение, ампула, две маски и массаж лица аметистовыми камнями.",
+        "en": "Cleansing, ampoule, two masks and an amethyst stone facial massage."
+      }
+    },
+    "src-eye-area-care": {
+      "names": {
+        "tr": "Göz çevresi bakımı",
+        "az": "Gözətrafı dəriyə qulluq",
+        "ru": "Уход за областью вокруг глаз",
+        "en": "Eye area care"
+      },
+      "descriptions": {
+        "tr": "Göz çevresine yönelik bakım ve masaj.",
+        "az": "Gözətrafı dəriyə qulluq və masaj.",
+        "ru": "Уход и массаж области вокруг глаз.",
+        "en": "Care and massage for the eye area."
+      }
+    },
+    "src-express-aroma-derm-facial": {
+      "names": {
+        "tr": "Aroma Derm ekspres yüz bakımı",
+        "az": "Aroma Derm ekspress üz qulluğu",
+        "ru": "Экспресс-уход за лицом Aroma Derm",
+        "en": "Aroma Derm express facial"
+      },
+      "descriptions": {
+        "tr": "Aroma Derm ürünleriyle kısa yüz bakımı.",
+        "az": "Aroma Derm məhsulları ilə qısa üz qulluğu.",
+        "ru": "Короткий уход за лицом с продуктами Aroma Derm.",
+        "en": "A shorter facial using Aroma Derm products."
+      }
+    },
+    "src-aroma-derm-ampoule-facial": {
+      "names": {
+        "tr": "Aroma Derm ampullü yüz bakımı",
+        "az": "Aroma Derm ampulaları ilə üz qulluğu",
+        "ru": "Уход за лицом с ампулами Aroma Derm",
+        "en": "Aroma Derm ampoule facial"
+      },
+      "descriptions": {
+        "tr": "Aroma Derm ampulüyle yüz bakımı.",
+        "az": "Aroma Derm ampulası ilə üz qulluğu.",
+        "ru": "Уход за лицом с ампулой Aroma Derm.",
+        "en": "Facial care with an Aroma Derm ampoule."
+      }
+    },
+    "src-aroma-derm-extra-facial": {
+      "names": {
+        "tr": "Aroma Derm Extra yüz bakımı",
+        "az": "Aroma Derm Extra üz qulluğu",
+        "ru": "Уход за лицом Aroma Derm Extra",
+        "en": "Aroma Derm Extra facial"
+      },
+      "descriptions": {
+        "tr": "Ampul ve konsantreyle yüz bakımı.",
+        "az": "Ampula və konsentrat ilə üz qulluğu.",
+        "ru": "Уход за лицом с ампулой и концентратом.",
+        "en": "Facial care with an ampoule and concentrate."
+      }
+    },
+    "src-lifting-vitamin-mask": {
+      "names": {
+        "tr": "Lifting vitamin maskesi",
+        "az": "Liftinq vitamin maskası",
+        "ru": "Витаминная лифтинг-маска",
+        "en": "Lifting vitamin mask"
+      },
+      "descriptions": {
+        "tr": "Vitamin maskesi ve elle masaj. Süre 50 veya 60 dakika; mekânla teyit edin.",
+        "az": "Vitamin maskası və əl masajı. Müddət 50 və ya 60 dəqiqədir; məkanla dəqiqləşdirin.",
+        "ru": "Витаминная маска и ручной массаж. В источнике указано 50 или 60 минут; уточните в салоне.",
+        "en": "Vitamin mask with manual massage. The duration is 50 or 60 minutes; confirm with the venue."
+      }
+    },
+    "src-modelage-mask": {
+      "names": {
+        "tr": "Modelage maskesi",
+        "az": "Modelage maskası",
+        "ru": "Маска Modelage",
+        "en": "Modelage mask"
+      },
+      "descriptions": {
+        "tr": "Modelage yüz maskesi. Cildinize uygunluğunu uzmanla konuşun.",
+        "az": "Modelage üz maskası. Dərinizə uyğunluğu barədə mütəxəssislə danışın.",
+        "ru": "Маска Modelage для лица. Обсудите соответствие вашему типу кожи со специалистом.",
+        "en": "A Modelage face mask. Discuss suitability for your skin with the specialist."
+      }
+    },
+    "src-face-mask": {
+      "names": {
+        "tr": "Yüz maskesi",
+        "az": "Üz maskası",
+        "ru": "Маска для лица",
+        "en": "Face mask"
+      },
+      "descriptions": {
+        "tr": "Cilde göre seçilen yüz maskesi.",
+        "az": "Dəriyə uyğun üz maskası.",
+        "ru": "Маска, подобранная для кожи лица.",
+        "en": "Face mask selected for the skin."
+      }
+    },
+    "src-face-massage": {
+      "names": {
+        "tr": "Yüz masajı",
+        "az": "Üz masajı",
+        "ru": "Массаж лица",
+        "en": "Face massage"
+      },
+      "descriptions": {
+        "tr": "Temizleme, tonik, peeling ve yüz masajı.",
+        "az": "Təmizləmə, tonik, skrab və üz masajı.",
+        "ru": "Очищение, тонизирование, скраб и массаж лица.",
+        "en": "Cleansing, toning, scrub and facial massage."
+      }
+    },
+    "src-express-skin-burst-up-care": {
+      "names": {
+        "tr": "Ekspres cilt bakımı",
+        "az": "Ekspress dəri qulluğu",
+        "ru": "Экспресс-уход за кожей",
+        "en": "Express skin care"
+      },
+      "descriptions": {
+        "tr": "Ekspres cilt bakımı. Uygulama ayrıntılarını uzmanla netleştirin.",
+        "az": "Ekspress dəri qulluğu. Tətbiq detallarını mütəxəssislə dəqiqləşdirin.",
+        "ru": "Короткий уход за кожей. Уточните этапы у специалиста.",
+        "en": "Express skin care. Confirm the session details with the specialist."
+      }
+    },
+    "src-chakra-balance": {
+      "names": {
+        "tr": "Çakra dengeleme",
+        "az": "Çakra balansı",
+        "ru": "Баланс чакр",
+        "en": "Chakra balance"
+      },
+      "descriptions": {
+        "tr": "Çakra dengeleme uygulaması hakkında ekipten bilgi alın.",
+        "az": "Çakra balansı tətbiqi barədə komandadan məlumat alın.",
+        "ru": "Уточните у команды содержание сеанса «Баланс чакр».",
+        "en": "Ask the team about the chakra balance session."
+      }
+    },
+    "src-body-wrap": {
+      "names": {
+        "tr": "Vücut sargısı",
+        "az": "Bədən bükməsi",
+        "ru": "Обертывание тела",
+        "en": "Body wrap"
+      },
+      "descriptions": {
+        "tr": "Isıtıcı örtükle vücut bakımı.",
+        "az": "İsidici örtük ilə bədən qulluğu.",
+        "ru": "Уход за телом с согревающим одеялом.",
+        "en": "Body care using a warming blanket."
+      }
+    },
+    "src-aroma-derm-body-wrap": {
+      "names": {
+        "tr": "Aroma Derm vücut sargısı",
+        "az": "Aroma Derm bədən bükməsi",
+        "ru": "Обертывание Aroma Derm",
+        "en": "Aroma Derm body wrap"
+      },
+      "descriptions": {
+        "tr": "Aroma Derm jelleriyle vücut sargısı.",
+        "az": "Aroma Derm gelləri ilə bədən bükməsi.",
+        "ru": "Обёртывание с гелями Aroma Derm.",
+        "en": "Body wrap using Aroma Derm gels."
+      }
+    },
+    "src-aroma-derm-bandage": {
+      "names": {
+        "tr": "Aroma Derm bandaj sargısı",
+        "az": "Aroma Derm bandaj sarğısı",
+        "ru": "Бандажное обертывание Aroma Derm",
+        "en": "Aroma Derm bandage wrap"
+      },
+      "descriptions": {
+        "tr": "Yağ ve bakım ürünleriyle bandaj uygulaması.",
+        "az": "Yağ və qulluq məhsulları ilə bandaj tətbiqi.",
+        "ru": "Бандажное нанесение масел и средств ухода за телом.",
+        "en": "Bandage application with oils and body care products."
+      }
+    },
+    "src-jet-shower": {
+      "names": {
+        "tr": "Hidromasaj duşu",
+        "az": "Hidromasaj duşu",
+        "ru": "Гидромассажный душ",
+        "en": "Jet shower"
+      },
+      "descriptions": {
+        "tr": "Seçilen vücut bölgelerine yönlendirilen su akışı.",
+        "az": "Seçilmiş bədən nahiyələrinə istiqamətləndirilən su axını.",
+        "ru": "Регулируемые струи воды направляются на выбранные участки тела.",
+        "en": "Adjustable water jets directed to selected body areas."
+      }
+    },
+    "src-starvac-vacuum": {
+      "names": {
+        "tr": "Starvac vakum masajı",
+        "az": "Starvac vakuum masajı",
+        "ru": "Вакуумный массаж Starvac",
+        "en": "Starvac vacuum massage"
+      },
+      "descriptions": {
+        "tr": "Cihazla vakum masajı. 30, 40 ve 50 dakikalık seçenekleri ekiple netleştirin.",
+        "az": "Cihazla vakuum masajı. 30, 40 və 50 dəqiqəlik seçimləri komanda ilə dəqiqləşdirin.",
+        "ru": "Аппаратный вакуумный массаж. Уточните варианты на 30, 40 и 50 минут.",
+        "en": "Device assisted vacuum massage. Ask the team about the 30, 40 and 50 minute options."
+      }
+    },
+    "src-pressotherapy": {
+      "names": {
+        "tr": "Pressoterapi",
+        "az": "Pressoterapiya",
+        "ru": "Прессотерапия",
+        "en": "Pressotherapy"
+      },
+      "descriptions": {
+        "tr": "Bacaklara değişken hava basıncı uygulayan cihazla bakım.",
+        "az": "Ayaqlara dəyişən hava təzyiqi tətbiq edən cihazla qulluq.",
+        "ru": "Аппаратный уход с чередующимся давлением воздуха на ноги.",
+        "en": "Device assisted care applying alternating air pressure to the legs."
+      }
+    },
+    "src-myostimulation": {
+      "names": {
+        "tr": "Miyostimülasyon",
+        "az": "Miostimulyasiya",
+        "ru": "Миостимуляция",
+        "en": "Myostimulation"
+      },
+      "descriptions": {
+        "tr": "Elektrik impulslarıyla cihaz uygulaması. Uygunluğunu uzmanla konuşun.",
+        "az": "Elektrik impulsları ilə cihaz tətbiqi. Uyğunluğu barədə mütəxəssislə danışın.",
+        "ru": "Аппаратная процедура с электрическими импульсами. Обсудите пригодность со специалистом.",
+        "en": "A device application using electrical impulses. Discuss suitability with the specialist."
+      }
+    },
+    "src-vibromassage": {
+      "names": {
+        "tr": "Vibrasyon masajı",
+        "az": "Vibromasaj",
+        "ru": "Вибромассаж",
+        "en": "Vibromassage"
+      },
+      "descriptions": {
+        "tr": "Cihazla vibrasyon masajı.",
+        "az": "Cihazla vibrasiya masajı.",
+        "ru": "Аппаратный вибрационный массаж.",
+        "en": "Device assisted vibration massage."
+      }
+    },
+    "src-laser-epilation": {
+      "names": {
+        "tr": "Lazer epilasyon · ön görüşme",
+        "az": "Lazer epilyasiyası · ilkin görüş",
+        "ru": "Лазерная эпиляция · консультация",
+        "en": "Laser hair removal · consultation"
+      },
+      "descriptions": {
+        "tr": "Lazer epilasyon için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Lazer epilyasiyası üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Лазерная эпиляция · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Laser hair removal. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-laser-skin-care": {
+      "names": {
+        "tr": "Lazerle cilt bakımı · ön görüşme",
+        "az": "Lazer ilə dəri qulluğu · ilkin görüş",
+        "ru": "Лазерный уход за кожей · консультация",
+        "en": "Laser skin care · consultation"
+      },
+      "descriptions": {
+        "tr": "Lazerle cilt bakımı için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Lazer ilə dəri qulluğu üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Лазерный уход за кожей · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Laser skin care. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-laser-acne-care": {
+      "names": {
+        "tr": "Akneye yönelik lazer uygulaması · ön görüşme",
+        "az": "Akneyə yönəlik lazer tətbiqi · ilkin görüş",
+        "ru": "Лазерная процедура при акне · консультация",
+        "en": "Laser acne care · consultation"
+      },
+      "descriptions": {
+        "tr": "Akneye yönelik lazer uygulaması için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Akneyə yönəlik lazer tətbiqi üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Лазерная процедура при акне · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Laser acne care. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-laser-pigmentation": {
+      "names": {
+        "tr": "Pigmentasyona yönelik lazer uygulaması · ön görüşme",
+        "az": "Piqmentasiyaya yönəlik lazer tətbiqi · ilkin görüş",
+        "ru": "Лазерная процедура при пигментации · консультация",
+        "en": "Laser pigmentation care · consultation"
+      },
+      "descriptions": {
+        "tr": "Pigmentasyona yönelik lazer uygulaması için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Piqmentasiyaya yönəlik lazer tətbiqi üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Лазерная процедура при пигментации · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Laser pigmentation care. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-laser-couperose": {
+      "names": {
+        "tr": "Kuperoza yönelik lazer uygulaması · ön görüşme",
+        "az": "Kuperoza yönəlik lazer tətbiqi · ilkin görüş",
+        "ru": "Лазерная процедура при куперозе · консультация",
+        "en": "Laser couperose care · consultation"
+      },
+      "descriptions": {
+        "tr": "Kuperoza yönelik lazer uygulaması için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Kuperoza yönəlik lazer tətbiqi üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Лазерная процедура при куперозе · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Laser couperose care. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-facial-cleansing": {
+      "names": {
+        "tr": "Yüz temizliği",
+        "az": "Üz təmizlənməsi",
+        "ru": "Чистка лица",
+        "en": "Facial cleansing"
+      },
+      "descriptions": {
+        "tr": "Yüz temizliğine yönelik bakım. Uygulama yöntemini uzmanla netleştirin.",
+        "az": "Üzün təmizlənməsi üçün qulluq. Tətbiq üsulunu mütəxəssislə dəqiqləşdirin.",
+        "ru": "Очищение лица. Уточните метод у специалиста.",
+        "en": "A facial cleansing session. Confirm the approach with the specialist."
+      }
+    },
+    "src-complete-facial": {
+      "names": {
+        "tr": "Tam yüz bakımı",
+        "az": "Tam üz qulluğu",
+        "ru": "Комплексный уход за лицом",
+        "en": "Complete facial care"
+      },
+      "descriptions": {
+        "tr": "Tam yüz bakımının aşamalarını cildinize göre uzmanla konuşun.",
+        "az": "Tam üz qulluğunun mərhələlərini dərinizə uyğun müzakirə edin.",
+        "ru": "Обсудите этапы комплексного ухода за лицом и соответствие вашему типу кожи.",
+        "en": "Discuss the steps of a complete facial and suitability for your skin."
+      }
+    },
+    "src-chemical-peel": {
+      "names": {
+        "tr": "Kimyasal peeling · ön görüşme",
+        "az": "Kimyəvi pilinq · ilkin görüş",
+        "ru": "Химический пилинг · консультация",
+        "en": "Chemical peel · consultation"
+      },
+      "descriptions": {
+        "tr": "Kimyasal peeling için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Kimyəvi pilinq üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Химический пилинг · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Chemical peel. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-face-mesotherapy": {
+      "names": {
+        "tr": "Yüz mezoterapisi · ön görüşme",
+        "az": "Üz mezoterapiyası · ilkin görüş",
+        "ru": "Мезотерапия лица · консультация",
+        "en": "Facial mesotherapy · consultation"
+      },
+      "descriptions": {
+        "tr": "Yüz mezoterapisi için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Üz mezoterapiyası üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Мезотерапия лица · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Facial mesotherapy. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-hair-mesotherapy": {
+      "names": {
+        "tr": "Saç mezoterapisi · ön görüşme",
+        "az": "Saç mezoterapiyası · ilkin görüş",
+        "ru": "Мезотерапия волосистой части головы · консультация",
+        "en": "Hair mesotherapy · consultation"
+      },
+      "descriptions": {
+        "tr": "Saç mezoterapisi için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Saç mezoterapiyası üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Мезотерапия волосистой части головы · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Hair mesotherapy. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-3d-face-care": {
+      "names": {
+        "tr": "3D lifting yüz bakımı · ön görüşme",
+        "az": "3D liftinq üz qulluğu · ilkin görüş",
+        "ru": "3D-лифтинг уход за лицом · консультация",
+        "en": "3D lifting facial care · consultation"
+      },
+      "descriptions": {
+        "tr": "3D lifting yüz bakımı için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "3D liftinq üz qulluğu üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: 3D-лифтинг уход за лицом · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about 3D lifting facial care. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-biorevitalisation": {
+      "names": {
+        "tr": "Biorevitalizasyon · ön görüşme",
+        "az": "Biorevitalizasiya · ilkin görüş",
+        "ru": "Биоревитализация · консультация",
+        "en": "Biorevitalisation · consultation"
+      },
+      "descriptions": {
+        "tr": "Biorevitalizasyon için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Biorevitalizasiya üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Биоревитализация · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Biorevitalisation. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-prp-face": {
+      "names": {
+        "tr": "Yüz için PRP · ön görüşme",
+        "az": "Üz üçün PRP · ilkin görüş",
+        "ru": "PRP для лица · консультация",
+        "en": "Facial PRP · consultation"
+      },
+      "descriptions": {
+        "tr": "Yüz için PRP için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Üz üçün PRP üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: PRP для лица · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Facial PRP. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-prp-hair": {
+      "names": {
+        "tr": "Saç için PRP · ön görüşme",
+        "az": "Saç üçün PRP · ilkin görüş",
+        "ru": "PRP для волосистой части головы · консультация",
+        "en": "Hair PRP · consultation"
+      },
+      "descriptions": {
+        "tr": "Saç için PRP için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Saç üçün PRP üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: PRP для волосистой части головы · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Hair PRP. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-plasma-face": {
+      "names": {
+        "tr": "Plazma yüz bakımı · ön görüşme",
+        "az": "Plazma üz qulluğu · ilkin görüş",
+        "ru": "Плазменный уход за лицом · консультация",
+        "en": "Plasma facial care · consultation"
+      },
+      "descriptions": {
+        "tr": "Plazma yüz bakımı için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Plazma üz qulluğu üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Плазменный уход за лицом · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Plasma facial care. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-plasma-hair": {
+      "names": {
+        "tr": "Plazma saç bakımı · ön görüşme",
+        "az": "Plazma saç qulluğu · ilkin görüş",
+        "ru": "Плазменный уход за волосистой частью головы · консультация",
+        "en": "Plasma hair care · consultation"
+      },
+      "descriptions": {
+        "tr": "Plazma saç bakımı için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Plazma saç qulluğu üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Плазменный уход за волосистой частью головы · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Plasma hair care. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-meso-botox": {
+      "names": {
+        "tr": "Mezobotoks · ön görüşme",
+        "az": "Mezobotoks · ilkin görüş",
+        "ru": "Мезоботокс · консультация",
+        "en": "Mesobotox · consultation"
+      },
+      "descriptions": {
+        "tr": "Mezobotoks için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Mezobotoks üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Мезоботокс · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Mesobotox. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-botox": {
+      "names": {
+        "tr": "Botoks · ön görüşme",
+        "az": "Botoks · ilkin görüş",
+        "ru": "Ботокс · консультация",
+        "en": "Botox · consultation"
+      },
+      "descriptions": {
+        "tr": "Botoks için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Botoks üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Ботокс · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Botox. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-filler": {
+      "names": {
+        "tr": "Dolgu · ön görüşme",
+        "az": "Filler · ilkin görüş",
+        "ru": "Филлеры · консультация",
+        "en": "Filler · consultation"
+      },
+      "descriptions": {
+        "tr": "Dolgu için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Filler üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Филлеры · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Filler. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-permanent-eyes": {
+      "names": {
+        "tr": "Göz kalıcı makyajı · ön görüşme",
+        "az": "Gözlər üçün permanent makiyaj · ilkin görüş",
+        "ru": "Перманентный макияж глаз · консультация",
+        "en": "Permanent eye makeup · consultation"
+      },
+      "descriptions": {
+        "tr": "Göz kalıcı makyajı için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Gözlər üçün permanent makiyaj üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Перманентный макияж глаз · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Permanent eye makeup. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-permanent-brows": {
+      "names": {
+        "tr": "Kaş kalıcı makyajı · ön görüşme",
+        "az": "Qaş üçün permanent makiyaj · ilkin görüş",
+        "ru": "Перманентный макияж бровей · консультация",
+        "en": "Permanent brow makeup · consultation"
+      },
+      "descriptions": {
+        "tr": "Kaş kalıcı makyajı için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Qaş üçün permanent makiyaj üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Перманентный макияж бровей · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Permanent brow makeup. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-permanent-lips": {
+      "names": {
+        "tr": "Dudak kalıcı makyajı · ön görüşme",
+        "az": "Dodaq üçün permanent makiyaj · ilkin görüş",
+        "ru": "Перманентный макияж губ · консультация",
+        "en": "Permanent lip makeup · consultation"
+      },
+      "descriptions": {
+        "tr": "Dudak kalıcı makyajı için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Dodaq üçün permanent makiyaj üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Перманентный макияж губ · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Permanent lip makeup. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-tattoo": {
+      "names": {
+        "tr": "Dövme · ön görüşme",
+        "az": "Tatu · ilkin görüş",
+        "ru": "Татуировка · консультация",
+        "en": "Tattoo · consultation"
+      },
+      "descriptions": {
+        "tr": "Dövme için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Tatu üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Татуировка · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Tattoo. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-body-mesotherapy": {
+      "names": {
+        "tr": "Vücut mezoterapisi · ön görüşme",
+        "az": "Bədən mezoterapiyası · ilkin görüş",
+        "ru": "Мезотерапия тела · консультация",
+        "en": "Body mesotherapy · consultation"
+      },
+      "descriptions": {
+        "tr": "Vücut mezoterapisi için uzman ön görüşmesi. Bu randevu ön görüşmedir; uygulama içermez.",
+        "az": "Bədən mezoterapiyası üçün mütəxəssislə ilkin görüş. Bu qəbul ilkin görüşdür; prosedur daxil deyil.",
+        "ru": "Консультация специалиста: Мезотерапия тела · консультация. Запись включает консультацию, без проведения процедуры.",
+        "en": "Specialist consultation about Body mesotherapy. The appointment is a consultation; treatment is not included."
+      }
+    },
+    "src-classic-manicure": {
+      "names": {
+        "tr": "Klasik manikür",
+        "az": "Klassik manikür",
+        "ru": "Классический маникюр",
+        "en": "Classic manicure"
+      },
+      "descriptions": {
+        "tr": "Tırnak bakımı ve oje. Süre yaklaşık; kuruma süresi ayrıca eklenir.",
+        "az": "Dırnaq qulluğu və lak. Müddət təxminidir; quruma vaxtı əlavədir.",
+        "ru": "Уход за ногтями и покрытие лаком. Время приблизительное, без сушки.",
+        "en": "Nail care and polish. Duration is approximate and excludes drying time."
+      }
+    },
+    "src-classic-pedicure": {
+      "names": {
+        "tr": "Klasik pedikür",
+        "az": "Klassik pedikür",
+        "ru": "Классический педикюр",
+        "en": "Classic pedicure"
+      },
+      "descriptions": {
+        "tr": "Pedikür, peeling, krem ve oje. Süre yaklaşık. Kuruma süresi ayrıca eklenir.",
+        "az": "Pedikür, skrab, krem və örtük. Müddət təxminidir. Quruma vaxtı əlavədir.",
+        "ru": "Педикюр, скраб, крем и лак. Время приблизительное; сушка требует дополнительного времени.",
+        "en": "Pedicure, scrub, cream and polish. Duration is approximate. Drying time is additional."
+      }
+    },
+    "src-spa-manicure": {
+      "names": {
+        "tr": "SPA manikür",
+        "az": "SPA manikürü",
+        "ru": "SPA-маникюр",
+        "en": "Spa manicure"
+      },
+      "descriptions": {
+        "tr": "Manikür, peeling, shea yağı, krem ve oje. Süre yaklaşık. Kuruma süresi ayrıca eklenir.",
+        "az": "Manikür, skrab, karite yağı, krem və örtük. Müddət təxminidir. Quruma vaxtı əlavədir.",
+        "ru": "Маникюр, скраб, масло ши, крем и лак. Время приблизительное, без сушки.",
+        "en": "Manicure, scrub, shea oil, cream and polish. Duration is approximate. Drying time is additional."
+      }
+    },
+    "src-spa-pedicure": {
+      "names": {
+        "tr": "SPA pedikür",
+        "az": "SPA pedikürü",
+        "ru": "SPA-педикюр",
+        "en": "Spa pedicure"
+      },
+      "descriptions": {
+        "tr": "Pedikür, peeling, maske, shea yağı, krem ve oje. Süre yaklaşık. Kuruma süresi ayrıca eklenir.",
+        "az": "Pedikür, skrab, maska, karite yağı, krem və örtük. Müddət təxminidir. Quruma vaxtı əlavədir.",
+        "ru": "Педикюр, скраб, маска, масло ши, крем и лак. Время приблизительное, без сушки.",
+        "en": "Pedicure, scrub, mask, shea oil, cream and polish. Duration is approximate. Drying time is additional."
+      }
+    },
+    "src-brazil-manicure": {
+      "names": {
+        "tr": "Brezilya manikürü",
+        "az": "Braziliya manikürü",
+        "ru": "Бразильский маникюр",
+        "en": "Brazilian manicure"
+      },
+      "descriptions": {
+        "tr": "Tırnak bakımı ve oje. Süre yaklaşık; kuruma süresi ayrıca eklenir.",
+        "az": "Dırnaq qulluğu və lak. Müddət təxminidir; quruma vaxtı əlavədir.",
+        "ru": "Уход за ногтями и покрытие лаком. Время приблизительное, без сушки.",
+        "en": "Nail care and polish. Duration is approximate and excludes drying time."
+      }
+    },
+    "src-brazil-pedicure": {
+      "names": {
+        "tr": "Brezilya pedikürü",
+        "az": "Braziliya pedikürü",
+        "ru": "Бразильский педикюр",
+        "en": "Brazilian pedicure"
+      },
+      "descriptions": {
+        "tr": "Tırnak bakımı ve oje. Süre yaklaşık; kuruma süresi ayrıca eklenir.",
+        "az": "Dırnaq qulluğu və lak. Müddət təxminidir; quruma vaxtı əlavədir.",
+        "ru": "Уход за ногтями и покрытие лаком. Время приблизительное, без сушки.",
+        "en": "Nail care and polish. Duration is approximate and excludes drying time."
+      }
+    },
+    "src-shellac-polish": {
+      "names": {
+        "tr": "Shellac oje",
+        "az": "Shellac örtüyü",
+        "ru": "Покрытие Shellac",
+        "en": "Shellac polish"
+      },
+      "descriptions": {
+        "tr": "Tırnaklara Shellac oje uygulaması.",
+        "az": "Dırnaqlara Shellac örtüyü.",
+        "ru": "Покрытие ногтей Shellac.",
+        "en": "Shellac polish application for your nails."
+      }
+    },
+    "src-shellac-classic-manicure": {
+      "names": {
+        "tr": "Shellac ile klasik manikür",
+        "az": "Shellac ilə klassik manikür",
+        "ru": "Классический маникюр с Shellac",
+        "en": "Classic manicure with Shellac"
+      },
+      "descriptions": {
+        "tr": "Tırnak bakımı ve Shellac oje.",
+        "az": "Dırnaq qulluğu və Shellac örtüyü.",
+        "ru": "Уход за ногтями с покрытием Shellac.",
+        "en": "Nail care with Shellac polish."
+      }
+    },
+    "src-shellac-classic-pedicure": {
+      "names": {
+        "tr": "Shellac ile klasik pedikür",
+        "az": "Shellac ilə klassik pedikür",
+        "ru": "Классический педикюр с Shellac",
+        "en": "Classic pedicure with Shellac"
+      },
+      "descriptions": {
+        "tr": "Pedikür, peeling, krem ve oje. Süre yaklaşık.",
+        "az": "Pedikür, skrab, krem və örtük. Müddət təxminidir.",
+        "ru": "Педикюр, скраб, крем и лак. Время приблизительное.",
+        "en": "Pedicure, scrub, cream and polish. Duration is approximate."
+      }
+    },
+    "src-shellac-spa-manicure": {
+      "names": {
+        "tr": "Shellac ile SPA manikür",
+        "az": "Shellac ilə SPA manikürü",
+        "ru": "SPA-маникюр с Shellac",
+        "en": "Spa manicure with Shellac"
+      },
+      "descriptions": {
+        "tr": "Manikür, peeling, shea yağı, krem ve oje. Süre yaklaşık.",
+        "az": "Manikür, skrab, karite yağı, krem və örtük. Müddət təxminidir.",
+        "ru": "Маникюр, скраб, масло ши, крем и лак. Время приблизительное.",
+        "en": "Manicure, scrub, shea oil, cream and polish. Duration is approximate."
+      }
+    },
+    "src-shellac-spa-pedicure": {
+      "names": {
+        "tr": "Shellac ile SPA pedikür",
+        "az": "Shellac ilə SPA pedikürü",
+        "ru": "SPA-педикюр с Shellac",
+        "en": "Spa pedicure with Shellac"
+      },
+      "descriptions": {
+        "tr": "Pedikür, peeling, maske, shea yağı, krem ve oje. Süre yaklaşık.",
+        "az": "Pedikür, skrab, maska, karite yağı, krem və örtük. Müddət təxminidir.",
+        "ru": "Педикюр, скраб, маска, масло ши, крем и лак. Время приблизительное.",
+        "en": "Pedicure, scrub, mask, shea oil, cream and polish. Duration is approximate."
+      }
+    },
+    "src-shellac-brazil-manicure": {
+      "names": {
+        "tr": "Shellac ile Brezilya manikürü",
+        "az": "Shellac ilə Braziliya manikürü",
+        "ru": "Бразильский маникюр с Shellac",
+        "en": "Brazilian manicure with Shellac"
+      },
+      "descriptions": {
+        "tr": "Brezilya manikürü ve Shellac oje.",
+        "az": "Braziliya manikürü və Shellac örtüyü.",
+        "ru": "Бразильский маникюр с покрытием Shellac.",
+        "en": "Brazilian manicure with Shellac polish."
+      }
+    },
+    "src-shellac-brazil-pedicure": {
+      "names": {
+        "tr": "Shellac ile Brezilya pedikürü",
+        "az": "Shellac ilə Braziliya pedikürü",
+        "ru": "Бразильский педикюр с Shellac",
+        "en": "Brazilian pedicure with Shellac"
+      },
+      "descriptions": {
+        "tr": "Brezilya pedikürü ve Shellac oje.",
+        "az": "Braziliya pedikürü və Shellac örtüyü.",
+        "ru": "Бразильский педикюр с покрытием Shellac.",
+        "en": "Brazilian pedicure with Shellac polish."
+      }
+    },
+    "src-shellac-french": {
+      "names": {
+        "tr": "Shellac ile French manikür",
+        "az": "Shellac ilə fransız manikürü",
+        "ru": "Французский маникюр с Shellac",
+        "en": "French Shellac polish"
+      },
+      "descriptions": {
+        "tr": "French tarzı Shellac. Süre 35 veya 45 dakika; mekânla teyit edin.",
+        "az": "Fransız üslubunda Shellac. Müddət 35 və ya 45 dəqiqədir; məkanla dəqiqləşdirin.",
+        "ru": "Французское покрытие Shellac. В источнике указано 35 или 45 минут; уточните в салоне.",
+        "en": "French style Shellac. The duration is 35 or 45 minutes; confirm with the venue."
+      }
+    },
+    "src-shellac-magnetic": {
+      "names": {
+        "tr": "Manyetik Shellac",
+        "az": "Maqnitli Shellac",
+        "ru": "Магнитное покрытие Shellac",
+        "en": "Magnetic Shellac polish"
+      },
+      "descriptions": {
+        "tr": "Manyetik Shellac ile tırnak tasarımı.",
+        "az": "Maqnitli Shellac ilə dırnaq dizaynı.",
+        "ru": "Дизайн ногтей с магнитным Shellac.",
+        "en": "Nail design using magnetic Shellac."
+      }
+    },
+    "src-shellac-removal": {
+      "names": {
+        "tr": "Shellac çıkarma",
+        "az": "Shellac təmizlənməsi",
+        "ru": "Снятие Shellac",
+        "en": "Shellac removal"
+      },
+      "descriptions": {
+        "tr": "Shellac ojenin çıkarılması.",
+        "az": "Shellac örtüyünün təmizlənməsi.",
+        "ru": "Снятие покрытия Shellac.",
+        "en": "Removal of Shellac polish."
+      }
+    },
+    "src-minx-manicure": {
+      "names": {
+        "tr": "Minx manikür",
+        "az": "Minx manikürü",
+        "ru": "Маникюр Minx",
+        "en": "Minx manicure"
+      },
+      "descriptions": {
+        "tr": "Manikür ve Minx kaplama.",
+        "az": "Manikür və Minx örtüyü.",
+        "ru": "Маникюр с покрытием Minx.",
+        "en": "Manicure with Minx application."
+      }
+    },
+    "src-minx-pedicure": {
+      "names": {
+        "tr": "Minx pedikür",
+        "az": "Minx pedikürü",
+        "ru": "Педикюр Minx",
+        "en": "Minx pedicure"
+      },
+      "descriptions": {
+        "tr": "Pedikür ve Minx kaplama.",
+        "az": "Pedikür və Minx örtüyü.",
+        "ru": "Педикюр с покрытием Minx.",
+        "en": "Pedicure with Minx application."
+      }
+    },
+    "src-minx-polish": {
+      "names": {
+        "tr": "Minx kaplama",
+        "az": "Minx örtüyü",
+        "ru": "Покрытие Minx",
+        "en": "Minx application"
+      },
+      "descriptions": {
+        "tr": "Tırnaklara Minx kaplama.",
+        "az": "Dırnaqlara Minx örtüyü.",
+        "ru": "Покрытие ногтей Minx.",
+        "en": "Minx application for your nails."
+      }
+    },
+    "src-minx-single-nail": {
+      "names": {
+        "tr": "Tek tırnağa Minx kaplama",
+        "az": "Bir dırnağa Minx örtüyü",
+        "ru": "Покрытие Minx на один ноготь",
+        "en": "Minx application on one nail"
+      },
+      "descriptions": {
+        "tr": "Tek tırnağa Minx kaplama.",
+        "az": "Bir dırnağa Minx örtüyü.",
+        "ru": "Покрытие Minx на одном ногте.",
+        "en": "Minx application on one nail."
+      }
+    },
+    "src-standard-nail-polish": {
+      "names": {
+        "tr": "Standart oje",
+        "az": "Adi dırnaq lakı",
+        "ru": "Обычное покрытие лаком",
+        "en": "Standard nail polish"
+      },
+      "descriptions": {
+        "tr": "Tırnaklara standart oje uygulaması.",
+        "az": "Dırnaqlara adi lak tətbiqi.",
+        "ru": "Покрытие ногтей обычным лаком.",
+        "en": "Standard nail polish application."
+      }
+    },
+    "src-gel-extensions": {
+      "names": {
+        "tr": "Jel tırnak uzatma",
+        "az": "Gel ilə dırnaq uzadılması",
+        "ru": "Наращивание ногтей гелем",
+        "en": "Gel nail extensions"
+      },
+      "descriptions": {
+        "tr": "Jelle tırnak uzatma.",
+        "az": "Gel ilə dırnaqların uzadılması.",
+        "ru": "Наращивание ногтей гелем.",
+        "en": "Nail extensions using gel."
+      }
+    },
+    "src-gel-removal-care": {
+      "names": {
+        "tr": "Jel tırnak çıkarma ve bakım",
+        "az": "Gel dırnaqların çıxarılması və qulluq",
+        "ru": "Снятие геля и уход",
+        "en": "Gel removal and nail care"
+      },
+      "descriptions": {
+        "tr": "Jel tırnak çıkarma ve tırnak bakımı.",
+        "az": "Gel dırnaqların çıxarılması və dırnaq qulluğu.",
+        "ru": "Снятие геля и последующий уход за ногтями.",
+        "en": "Gel removal followed by nail care."
+      }
+    },
+    "src-gel-correction": {
+      "names": {
+        "tr": "Jel tırnak düzeltme",
+        "az": "Gel dırnaqların korreksiyası",
+        "ru": "Коррекция гелевых ногтей",
+        "en": "Gel nail correction"
+      },
+      "descriptions": {
+        "tr": "Jel tırnaklara düzeltme uygulaması.",
+        "az": "Gel dırnaqların korreksiyası.",
+        "ru": "Коррекция гелевых ногтей.",
+        "en": "Correction of gel nails."
+      }
+    },
+    "src-gel-single-correction": {
+      "names": {
+        "tr": "Tek jel tırnak düzeltme",
+        "az": "Bir gel dırnağın korreksiyası",
+        "ru": "Коррекция одного гелевого ногтя",
+        "en": "Single gel nail correction"
+      },
+      "descriptions": {
+        "tr": "Tek jel tırnağa düzeltme uygulaması.",
+        "az": "Bir gel dırnağın korreksiyası.",
+        "ru": "Коррекция одного гелевого ногтя.",
+        "en": "Correction of one gel nail."
+      }
+    },
+    "src-artificial-nails": {
+      "names": {
+        "tr": "Takma tırnak uygulaması",
+        "az": "Süni dırnaq tətbiqi",
+        "ru": "Накладные ногти",
+        "en": "Artificial nail application"
+      },
+      "descriptions": {
+        "tr": "Takma tırnak uygulama seçeneklerini salonla netleştirin.",
+        "az": "Süni dırnaq tətbiqi üçün seçimləri salonla dəqiqləşdirin.",
+        "ru": "Уточните варианты накладных ногтей в салоне.",
+        "en": "Confirm artificial nail application options with the salon."
+      }
+    },
+    "src-brazilian-wax": {
+      "names": {
+        "tr": "Brezilya ağda",
+        "az": "Braziliya epilyasiyası",
+        "ru": "Бразильская восковая эпиляция",
+        "en": "Brazilian wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-bikini-wax": {
+      "names": {
+        "tr": "Bikini ağda",
+        "az": "Bikini nahiyəsinin epilyasiyası",
+        "ru": "Восковая эпиляция зоны бикини",
+        "en": "Bikini wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-underarm-wax": {
+      "names": {
+        "tr": "Koltuk altı ağda",
+        "az": "Qoltuqaltı epilyasiya",
+        "ru": "Восковая эпиляция подмышек",
+        "en": "Underarm wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-half-leg-wax": {
+      "names": {
+        "tr": "Yarım bacak ağda",
+        "az": "Yarım ayaq epilyasiyası",
+        "ru": "Восковая эпиляция голеней",
+        "en": "Half leg wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-full-leg-wax": {
+      "names": {
+        "tr": "Tam bacak ağda",
+        "az": "Tam ayaq epilyasiyası",
+        "ru": "Восковая эпиляция ног полностью",
+        "en": "Full leg wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-arm-wax": {
+      "names": {
+        "tr": "Tam kol ağda",
+        "az": "Tam qol epilyasiyası",
+        "ru": "Восковая эпиляция рук полностью",
+        "en": "Full arm wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-face-wax": {
+      "names": {
+        "tr": "Yüz ağda",
+        "az": "Üz epilyasiyası",
+        "ru": "Восковая эпиляция лица",
+        "en": "Facial hair removal"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-abdomen-wax": {
+      "names": {
+        "tr": "Karın ağda",
+        "az": "Qarın nahiyəsinin epilyasiyası",
+        "ru": "Восковая эпиляция живота",
+        "en": "Abdomen hair removal"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-full-back-wax": {
+      "names": {
+        "tr": "Sırt ağda",
+        "az": "Bel nahiyəsinin epilyasiyası",
+        "ru": "Восковая эпиляция спины полностью",
+        "en": "Back wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-full-abdomen-wax": {
+      "names": {
+        "tr": "Tam karın ağda",
+        "az": "Qarın nahiyəsinin tam epilyasiyası",
+        "ru": "Восковая эпиляция живота полностью",
+        "en": "Full abdomen hair removal"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-full-body-wax": {
+      "names": {
+        "tr": "Tüm vücut ağda",
+        "az": "Tam bədən epilyasiyası",
+        "ru": "Восковая эпиляция всего тела",
+        "en": "Full body hair removal"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-lip-chin-wax": {
+      "names": {
+        "tr": "Dudak üstü ve çene ağda",
+        "az": "Dodaq üstü və çənə epilyasiyası",
+        "ru": "Восковая эпиляция верхней губы и подбородка",
+        "en": "Lip and chin wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-full-leg-bikini-wax": {
+      "names": {
+        "tr": "Tam bacak ve bikini ağda",
+        "az": "Tam ayaq və bikini epilyasiyası",
+        "ru": "Восковая эпиляция ног и бикини",
+        "en": "Full leg and bikini wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-full-leg-brazilian-wax": {
+      "names": {
+        "tr": "Tam bacak ve Brezilya ağda",
+        "az": "Tam ayaq və Braziliya epilyasiyası",
+        "ru": "Восковая эпиляция ног и бразильская",
+        "en": "Full leg and Brazilian wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-brow-wax": {
+      "names": {
+        "tr": "Kaş ağda",
+        "az": "Qaşların mumla formalaşdırılması",
+        "ru": "Восковая эпиляция бровей",
+        "en": "Brow wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-chest-wax": {
+      "names": {
+        "tr": "Göğüs ağda",
+        "az": "Sinə nahiyəsinin epilyasiyası",
+        "ru": "Восковая эпиляция груди",
+        "en": "Chest wax"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-false-lashes": {
+      "names": {
+        "tr": "Takma kirpik",
+        "az": "Süni kirpik tətbiqi",
+        "ru": "Накладные ресницы",
+        "en": "False lash application"
+      },
+      "descriptions": {
+        "tr": "Takma kirpik uygulaması. Tarzı ve randevu süresini salonla netleştirin.",
+        "az": "Süni kirpiklərin tətbiqi. Üslubu və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Накладные ресницы. Уточните стиль и длительность в салоне.",
+        "en": "False lash application. Confirm the style and appointment duration with the salon."
+      }
+    },
+    "src-brow-shaping": {
+      "names": {
+        "tr": "Kaş şekillendirme",
+        "az": "Qaş korreksiyası",
+        "ru": "Коррекция формы бровей",
+        "en": "Eyebrow shaping"
+      },
+      "descriptions": {
+        "tr": "Kaş şekillendirme.",
+        "az": "Qaş formasının korreksiyası.",
+        "ru": "Коррекция формы бровей.",
+        "en": "Eyebrow shaping."
+      }
+    },
+    "src-day-evening-makeup": {
+      "names": {
+        "tr": "Gündüz ve gece makyajı",
+        "az": "Gündüz və axşam makiyajı",
+        "ru": "Дневной и вечерний макияж",
+        "en": "Day and evening makeup"
+      },
+      "descriptions": {
+        "tr": "Gündüz veya gece için makyaj.",
+        "az": "Gündüz və ya axşam üçün makiyaj.",
+        "ru": "Макияж для дневного или вечернего мероприятия.",
+        "en": "Makeup for daytime or an evening occasion."
+      }
+    },
+    "src-bridal-makeup": {
+      "names": {
+        "tr": "Gelin makyajı",
+        "az": "Toy makiyajı",
+        "ru": "Свадебный макияж",
+        "en": "Bridal makeup"
+      },
+      "descriptions": {
+        "tr": "Düğün günü için makyaj. Prova makyajının dahil olup olmadığını teyit edin.",
+        "az": "Toy günü üçün makiyaj. Sınaq makiyajının daxil olub-olmadığını dəqiqləşdirin.",
+        "ru": "Свадебный макияж. Уточните, входит ли пробный макияж.",
+        "en": "Makeup for your wedding day. Confirm whether a makeup trial is included."
+      }
+    },
+    "src-slimming-consultation": {
+      "names": {
+        "tr": "Vücut bakım programları · ön görüşme",
+        "az": "Bədən qulluğu proqramları · ilkin görüş",
+        "ru": "Программы ухода за телом · консультация",
+        "en": "Body care programmes · consultation"
+      },
+      "descriptions": {
+        "tr": "Vücut bakım programları için ön görüşme. Uygulama içermez.",
+        "az": "Bədən qulluğu proqramları üçün ilkin görüş. Prosedur daxil deyil.",
+        "ru": "Предварительная консультация по программам ухода за телом, без проведения процедуры.",
+        "en": "A consultation about body care programmes. Treatment is not included."
+      }
+    },
+    "massage": {
+      "names": {
+        "tr": "Sultan Masajı",
+        "az": "Sultan masajı",
+        "ru": "Султан массаж",
+        "en": "Sultan massage"
+      }
+    },
+    "hamam": {
+      "names": {
+        "tr": "Geleneksel Hamam",
+        "az": "Ənənəvi hamam",
+        "ru": "Традиционный хаммам",
+        "en": "Traditional hamam"
+      }
+    },
+    "facial": {
+      "names": {
+        "tr": "Işıltılı Cilt Bakımı",
+        "az": "Parlaq dəri qulluğu",
+        "ru": "Уход за сиянием кожи",
+        "en": "Radiance facial"
+      }
+    },
+    "hair": {
+      "names": {
+        "tr": "Saç Bakımı ve Şekillendirme",
+        "az": "Saç qulluğu və düzümü",
+        "ru": "Уход и укладка волос",
+        "en": "Hair care and styling"
+      }
+    },
+    "body-care": {
+      "names": {
+        "tr": "Vücut bakımı",
+        "az": "Bədən qulluğu",
+        "ru": "Уход за телом",
+        "en": "Body care"
+      }
+    },
+    "pressotherapy": {
+      "names": {
+        "tr": "Pressoterapi",
+        "az": "Pressoterapiya",
+        "ru": "Прессотерапия",
+        "en": "Pressotherapy"
+      }
+    },
+    "manicure": {
+      "names": {
+        "tr": "Manikür",
+        "az": "Manikür",
+        "ru": "Маникюр",
+        "en": "Manicure"
+      }
+    },
+    "pedicure": {
+      "names": {
+        "tr": "Pedikür",
+        "az": "Pedikür",
+        "ru": "Педикюр",
+        "en": "Pedicure"
+      }
+    },
+    "makeup": {
+      "names": {
+        "tr": "Makyaj",
+        "az": "Makiyaj",
+        "ru": "Макияж",
+        "en": "Makeup"
+      }
+    },
+    "brows-lashes": {
+      "names": {
+        "tr": "Kaş ve kirpik bakımı",
+        "az": "Qaş və kirpik qulluğu",
+        "ru": "Уход за бровями и ресницами",
+        "en": "Brow and lash care"
+      }
+    },
+    "epilation": {
+      "names": {
+        "tr": "Epilasyon",
+        "az": "Epilyasiya",
+        "ru": "Эпиляция",
+        "en": "Hair removal"
+      }
+    }
+  },
+  "programs": {
+    "src-aerobics": {
+      "names": {
+        "tr": "Aerobik",
+        "az": "Aerobika",
+        "ru": "Аэробика",
+        "en": "Aerobics"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-aqua-aerobics": {
+      "names": {
+        "tr": "Su aerobiği",
+        "az": "Akvaaerobika",
+        "ru": "Аквааэробика",
+        "en": "Aqua aerobics"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-pilates": {
+      "names": {
+        "tr": "Pilates",
+        "az": "Pilates",
+        "ru": "Пилатес",
+        "en": "Pilates"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-zumba": {
+      "names": {
+        "tr": "Zumba",
+        "az": "Zumba",
+        "ru": "Зумба",
+        "en": "Zumba"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-oriental-dance": {
+      "names": {
+        "tr": "Oryantal dans",
+        "az": "Şərq rəqsləri",
+        "ru": "Восточные танцы",
+        "en": "Oriental dance"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-total-body-workout": {
+      "names": {
+        "tr": "Tüm vücut antrenmanı",
+        "az": "Bütün bədən məşqi",
+        "ru": "Тренировка всего тела",
+        "en": "Total body workout"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "pilates": {
+      "names": {
+        "tr": "Mat Pilates",
+        "az": "Mat Pilates",
+        "ru": "Мат Пилатес",
+        "en": "Mat Pilates"
+      }
+    },
+    "swimming": {
+      "names": {
+        "tr": "Yüzme başlangıç",
+        "az": "Başlanğıc üzgüçülük",
+        "ru": "Плавание для начинающих",
+        "en": "Beginner swimming"
+      }
+    },
+    "swimming-advanced": {
+      "names": {
+        "tr": "Yüzme devam",
+        "az": "Davam üzgüçülük",
+        "ru": "Продвинутое плавание",
+        "en": "Continuing swimming"
+      }
+    }
+  },
+  "informationItems": {
+    "src-aroma-oil-body-care": {
+      "names": {
+        "tr": "Aromatik yağlarla vücut bakımı",
+        "az": "Ətirli yağlarla bədən qulluğu",
+        "ru": "Уход за телом с ароматическими маслами",
+        "en": "Aroma oil body care"
+      },
+      "descriptions": {
+        "tr": "Aromatik yağlarla vücut bakımı. Süreyi ve uygulama ayrıntılarını netleştirin.",
+        "az": "Ətirli yağlarla bədən qulluğu. Müddət və tətbiq detallarını dəqiqləşdirin.",
+        "ru": "Уход за телом с ароматическими маслами. Уточните длительность и способ нанесения.",
+        "en": "Body care with aromatic oils. Confirm the duration and application details."
+      }
+    },
+    "src-rose-oil-body-care": {
+      "names": {
+        "tr": "Gül yağıyla vücut bakımı",
+        "az": "Qızılgül yağı ilə bədən qulluğu",
+        "ru": "Уход за телом с розовым маслом",
+        "en": "Rose oil body care"
+      },
+      "descriptions": {
+        "tr": "Gül yağıyla vücut bakımı.",
+        "az": "Qızılgül yağı ilə bədən qulluğu.",
+        "ru": "Уход за телом с розовым маслом.",
+        "en": "Body care using rose oil."
+      }
+    },
+    "src-nail-design": {
+      "names": {
+        "tr": "Tırnak tasarımı",
+        "az": "Dırnaq dizaynı",
+        "ru": "Дизайн ногтей",
+        "en": "Nail design"
+      },
+      "descriptions": {
+        "tr": "Tırnak tasarımı seçeneklerini salon ekibiyle konuşun.",
+        "az": "Dırnaq dizaynı seçimlərini salon komandası ilə müzakirə edin.",
+        "ru": "Обсудите варианты дизайна ногтей с командой салона.",
+        "en": "Explore nail design options with the salon team."
+      }
+    },
+    "src-hand-mask": {
+      "names": {
+        "tr": "El maskesi",
+        "az": "Əl üçün maska",
+        "ru": "Маска для рук",
+        "en": "Hand mask"
+      },
+      "descriptions": {
+        "tr": "Eller için maskeyle bakım.",
+        "az": "Əllər üçün maska ilə qulluq.",
+        "ru": "Уход за руками с маской.",
+        "en": "Hand care with a mask."
+      }
+    },
+    "src-hot-wax": {
+      "names": {
+        "tr": "Sıcak ağda",
+        "az": "İsti mumla epilyasiya",
+        "ru": "Горячий воск",
+        "en": "Hot wax hair removal"
+      },
+      "descriptions": {
+        "tr": "Epilasyon alanını ve randevu süresini salonla netleştirin.",
+        "az": "Epilyasiya sahəsi və qəbul müddətini salonla dəqiqləşdirin.",
+        "ru": "Уточните зону удаления волос и длительность записи в салоне.",
+        "en": "Confirm the hair removal area and appointment duration with the salon."
+      }
+    },
+    "src-lash-application": {
+      "names": {
+        "tr": "Kirpik uygulaması (yöntem teyit bekliyor)",
+        "az": "Kirpik əkimi (üsul dəqiqləşdirilir)",
+        "ru": "Процедура для ресниц (метод уточняется)",
+        "en": "Eyelash application (method to confirm)"
+      },
+      "descriptions": {
+        "tr": "Kirpik uygulamasının kesin yöntemini ve uygunluğunu uzmanla netleştirin.",
+        "az": "Kirpik tətbiqinin konkret üsulu və uyğunluğunu mütəxəssislə dəqiqləşdirin.",
+        "ru": "Уточните точный метод работы с ресницами и пригодность у специалиста.",
+        "en": "Confirm the exact eyelash application method and suitability with the specialist."
+      }
+    },
+    "src-hair-care": {
+      "names": {
+        "tr": "Saç bakımı",
+        "az": "Saça qulluq",
+        "ru": "Уход за волосами",
+        "en": "Hair care"
+      },
+      "descriptions": {
+        "tr": "Saç bakım seçeneklerini salon ekibiyle konuşun. Hizmet ve randevu ayrıntılarını netleştirin.",
+        "az": "Saçınıza qulluq seçimlərini salon komandası ilə müzakirə edin. Xidmət və qəbul detallarını dəqiqləşdirin.",
+        "ru": "Обсудите варианты ухода за волосами и детали записи с командой салона.",
+        "en": "Explore hair care options with the salon team and confirm the treatment and appointment details."
+      }
+    }
+  },
+  "supplements": {
+    "src-decollete-care": {
+      "names": {
+        "tr": "Dekolte bakımı",
+        "az": "Dekolte zonasına qulluq",
+        "ru": "Уход за декольте",
+        "en": "Décolleté care"
+      },
+      "descriptions": {
+        "tr": "Boyun ve göğüs bölgesi bakımı; yüz bakımına eklenebilir.",
+        "az": "Boyun və sinə zonasına qulluq; üz qulluğuna əlavə edilə bilər.",
+        "ru": "Уход за шеей и зоной декольте в дополнение к уходу за лицом.",
+        "en": "Neck and chest area care that can be added to a facial."
+      }
+    },
+    "src-foot-mask": {
+      "names": {
+        "tr": "Ayak için ek maske",
+        "az": "Ayaq üçün əlavə maska",
+        "ru": "Дополнительная маска для стоп",
+        "en": "Foot mask add-on"
+      },
+      "descriptions": {
+        "tr": "Ayak bakımına ek maske uygulaması.",
+        "az": "Ayaq qulluğuna əlavə maska tətbiqi.",
+        "ru": "Маска в дополнение к уходу за стопами.",
+        "en": "A mask to add to your foot care."
+      }
+    }
+  },
+  "facilities": {
+    "hamam": {
+      "names": {
+        "tr": "Türk hamamı",
+        "az": "Türk hamamı",
+        "ru": "Турецкий хаммам",
+        "en": "Turkish hamam"
+      },
+      "descriptions": {
+        "tr": "Özel bakım odası bulunan hamam.",
+        "az": "Fərdi qulluq otağı olan hamam.",
+        "ru": "Хаммам с отдельной процедурной комнатой.",
+        "en": "Hamam with a private treatment room."
+      }
+    },
+    "pool": {
+      "names": {
+        "tr": "Havuz",
+        "az": "Hovuz",
+        "ru": "Бассейн",
+        "en": "Swimming pool"
+      },
+      "descriptions": {
+        "tr": "Yüzme havuzu ve havuz kenarı dinlenme alanı.",
+        "az": "Üzgüçülük hovuzu və hovuzkənarı istirahət sahəsi.",
+        "ru": "Плавательный бассейн с зоной отдыха у воды.",
+        "en": "Swimming pool with a poolside rest area."
+      }
+    },
+    "rest-area": {
+      "names": {
+        "tr": "Dinlenme alanı",
+        "az": "İstirahət sahəsi",
+        "ru": "Зона отдыха",
+        "en": "Rest area"
+      },
+      "descriptions": {
+        "tr": "Havuz kenarındaki dinlenme alanında ziyaretinize sakin bir mola ekleyin.",
+        "az": "Hovuzkənarı istirahət sahəsində ziyarətinizə sakit bir fasilə əlavə edin.",
+        "ru": "Зона отдыха у бассейна.",
+        "en": "Take a quiet pause in the poolside rest area."
+      }
+    },
+    "fitness": {
+      "names": {
+        "tr": "Fitness stüdyosu",
+        "az": "Fitnes studiyası",
+        "ru": "Фитнес-студия",
+        "en": "Fitness studio"
+      },
+      "descriptions": {
+        "tr": "Technogym ekipmanıyla fitness stüdyosu.",
+        "az": "Technogym avadanlıqları ilə fitnes studiyası.",
+        "ru": "Фитнес-студия с оборудованием Technogym.",
+        "en": "A fitness studio with Technogym equipment."
+      }
+    },
+    "sauna": {
+      "names": {
+        "tr": "Fin saunası",
+        "az": "Fin saunası",
+        "ru": "Финская сауна",
+        "en": "Finnish sauna"
+      },
+      "descriptions": {
+        "tr": "Wellness alanında sauna.",
+        "az": "Wellness sahəsində sauna.",
+        "ru": "Сауна в wellness-зоне.",
+        "en": "Sauna within the wellness area."
+      }
+    },
+    "wellbeing": {
+      "names": {
+        "tr": "Yüz ve vücut bakımı",
+        "az": "Üz və bədən qulluğu",
+        "ru": "Уход за лицом и телом",
+        "en": "Face and body care"
+      },
+      "descriptions": {
+        "tr": "Yüz ve vücut bakımına ayrılan alan.",
+        "az": "Üz və bədən qulluğu üçün ayrılmış məkan.",
+        "ru": "Зона ухода за лицом и телом.",
+        "en": "A space for facial and body care."
+      }
+    },
+    "hair-nail-spa": {
+      "names": {
+        "tr": "Saç ve tırnak salonu",
+        "az": "Saç və dırnaq salonu",
+        "ru": "Салон волос и ногтей",
+        "en": "Hairdresser and Nail Spa"
+      },
+      "descriptions": {
+        "tr": "Saç ve tırnak bakım salonu.",
+        "az": "Saç və dırnaq qulluğu üçün salon.",
+        "ru": "Салон ухода за волосами и ногтями.",
+        "en": "Salon for hair and nail care."
+      }
+    },
+    "slim-cafe": {
+      "names": {
+        "tr": "Slim Cafe",
+        "az": "Slim Cafe",
+        "ru": "Slim Cafe",
+        "en": "Slim Cafe"
+      },
+      "descriptions": {
+        "tr": "Ziyaretinizden önce veya sonra kafede mola verin. Menü ve fiyatları mekândan öğrenin.",
+        "az": "Ziyarətinizdən əvvəl və ya sonra kafedə fasilə verin. Menyu və qiymətləri məkandan öyrənin.",
+        "ru": "Кафе для перерыва до или после посещения. Меню и цены уточняйте у команды.",
+        "en": "Pause at the café before or after your visit. Ask the team for the menu and prices."
+      }
+    },
+    "shop": {
+      "names": {
+        "tr": "Sultan Saba mağazası",
+        "az": "Sultan Saba mağazası",
+        "ru": "Магазин Sultan Saba",
+        "en": "Sultan Saba shop"
+      },
+      "descriptions": {
+        "tr": "La Sultane de Saba ve Aroma Derm ürünlerini keşfedin. Mevcut ürünleri mağazadan öğrenin.",
+        "az": "La Sultane de Saba və Aroma Derm məhsullarını kəşf edin. Mövcud məhsulları mağazadan öyrənin.",
+        "ru": "Магазин продуктов La Sultane de Saba и Aroma Derm. Актуальный ассортимент уточняйте в магазине.",
+        "en": "Explore La Sultane de Saba and Aroma Derm products. Ask the shop about the current selection."
+      }
+    },
+    "slimming-programmes": {
+      "names": {
+        "tr": "Vücut bakım programları",
+        "az": "Bədən qulluğu proqramları",
+        "ru": "Программы ухода за телом",
+        "en": "Body care programmes"
+      },
+      "descriptions": {
+        "tr": "Vücut bakım paketleri hakkında ekipten bilgi alın. İçeriği, süreyi ve fiyatı birlikte netleştirin.",
+        "az": "Bədən qulluğu paketləri barədə komandadan məlumat alın. Tərkib, müddət və qiyməti birlikdə dəqiqləşdirin.",
+        "ru": "Уточните у команды состав, длительность и стоимость программ ухода за телом.",
+        "en": "Ask the team about body care packages and confirm their contents, duration and price."
+      }
+    },
+    "wellness-entry": {
+      "names": {
+        "tr": "Hamam, sauna ve havuz erişimi",
+        "az": "Hamam, sauna və hovuz girişi",
+        "ru": "Вход в хаммам, сауну и бассейн",
+        "en": "Hamam, sauna and pool access"
+      }
+    },
+    "pool-entry": {
+      "names": {
+        "tr": "Havuz erişimi",
+        "az": "Hovuz girişi",
+        "ru": "Вход в бассейн",
+        "en": "Pool access"
+      }
+    },
+    "fitness-entry": {
+      "names": {
+        "tr": "Spor salonu erişimi",
+        "az": "İdman zalı girişi",
+        "ru": "Вход в тренажёрный зал",
+        "en": "Fitness studio access"
+      }
+    }
+  },
+  "membershipOffers": {
+    "src-basic-3m": {
+      "names": {
+        "tr": "Basic · 3 ay",
+        "az": "Basic · 3 ay",
+        "ru": "Basic · 3 мес.",
+        "en": "Basic · 3 months"
+      },
+      "descriptions": {
+        "tr": "Fitness stüdyosu ve wellness alanına erişim.",
+        "az": "Fitnes studiyası və wellness sahəsinə giriş.",
+        "en": "Access to the fitness studio and wellness area.",
+        "ru": "Доступ в фитнес-студию и wellness-зону."
+      }
+    },
+    "src-basic-6m": {
+      "names": {
+        "tr": "Basic · 6 ay",
+        "az": "Basic · 6 ay",
+        "ru": "Basic · 6 мес.",
+        "en": "Basic · 6 months"
+      },
+      "descriptions": {
+        "tr": "Fitness stüdyosu ve wellness alanına erişim.",
+        "az": "Fitnes studiyası və wellness sahəsinə giriş.",
+        "en": "Access to the fitness studio and wellness area.",
+        "ru": "Доступ в фитнес-студию и wellness-зону."
+      }
+    },
+    "src-basic-12m": {
+      "names": {
+        "tr": "Basic · 12 ay",
+        "az": "Basic · 12 ay",
+        "ru": "Basic · 12 мес.",
+        "en": "Basic · 12 months"
+      },
+      "descriptions": {
+        "tr": "Fitness stüdyosu ve wellness alanına erişim.",
+        "az": "Fitnes studiyası və wellness sahəsinə giriş.",
+        "en": "Access to the fitness studio and wellness area.",
+        "ru": "Доступ в фитнес-студию и wellness-зону."
+      }
+    },
+    "src-fit-fun-3m": {
+      "names": {
+        "tr": "Fit&Fun · 3 ay",
+        "az": "Fit&Fun · 3 ay",
+        "ru": "Fit&Fun · 3 мес.",
+        "en": "Fit&Fun · 3 months"
+      },
+      "descriptions": {
+        "tr": "Resmî listede belirtilen grup derslerine erişim.",
+        "az": "Rəsmi siyahıda göstərilən qrup dərslərinə giriş.",
+        "en": "Access to the group classes listed by the venue.",
+        "ru": "Доступ к групповым занятиям из каталога клуба."
+      }
+    },
+    "src-fit-fun-6m": {
+      "names": {
+        "tr": "Fit&Fun · 6 ay",
+        "az": "Fit&Fun · 6 ay",
+        "ru": "Fit&Fun · 6 мес.",
+        "en": "Fit&Fun · 6 months"
+      },
+      "descriptions": {
+        "tr": "Resmî listede belirtilen grup derslerine erişim.",
+        "az": "Rəsmi siyahıda göstərilən qrup dərslərinə giriş.",
+        "en": "Access to the group classes listed by the venue.",
+        "ru": "Доступ к групповым занятиям из каталога клуба."
+      }
+    },
+    "src-fit-fun-12m": {
+      "names": {
+        "tr": "Fit&Fun · 12 ay",
+        "az": "Fit&Fun · 12 ay",
+        "ru": "Fit&Fun · 12 мес.",
+        "en": "Fit&Fun · 12 months"
+      },
+      "descriptions": {
+        "tr": "Resmî listede belirtilen grup derslerine erişim.",
+        "az": "Rəsmi siyahıda göstərilən qrup dərslərinə giriş.",
+        "en": "Access to the group classes listed by the venue.",
+        "ru": "Доступ к групповым занятиям из каталога клуба."
+      }
+    },
+    "src-gold-3m": {
+      "names": {
+        "tr": "Gold · 3 ay",
+        "az": "Gold · 3 ay",
+        "ru": "Gold · 3 мес.",
+        "en": "Gold · 3 months"
+      },
+      "descriptions": {
+        "tr": "Wellness alanı ve Fit&Fun grup programları.",
+        "az": "Wellness sahəsi və Fit&Fun qrup proqramları.",
+        "en": "Wellness access and Fit&Fun group programmes.",
+        "ru": "Доступ в wellness-зону и групповые программы Fit&Fun."
+      }
+    },
+    "src-gold-6m": {
+      "names": {
+        "tr": "Gold · 6 ay",
+        "az": "Gold · 6 ay",
+        "ru": "Gold · 6 мес.",
+        "en": "Gold · 6 months"
+      },
+      "descriptions": {
+        "tr": "Wellness alanı ve Fit&Fun grup programları.",
+        "az": "Wellness sahəsi və Fit&Fun qrup proqramları.",
+        "en": "Wellness access and Fit&Fun group programmes.",
+        "ru": "Доступ в wellness-зону и групповые программы Fit&Fun."
+      }
+    },
+    "src-gold-12m": {
+      "names": {
+        "tr": "Gold · 12 ay",
+        "az": "Gold · 12 ay",
+        "ru": "Gold · 12 мес.",
+        "en": "Gold · 12 months"
+      },
+      "descriptions": {
+        "tr": "Wellness alanı ve Fit&Fun grup programları.",
+        "az": "Wellness sahəsi və Fit&Fun qrup proqramları.",
+        "en": "Wellness access and Fit&Fun group programmes.",
+        "ru": "Доступ в wellness-зону и групповые программы Fit&Fun."
+      }
+    },
+    "pilates-3m": {
+      "names": {
+        "tr": "3 Aylık Pilates + 3 tesis girişi · demo",
+        "az": "3 aylıq Pilates + 3 giriş · demo",
+        "ru": "Пилатес 3 месяца + 3 входа · демо",
+        "en": "3 months Pilates + 3 facility entries · demo"
+      }
+    },
+    "fitness-body-demo": {
+      "names": {
+        "tr": "Bakım programı + salon erişimi · demo",
+        "az": "Qulluq proqramı + zal girişi · demo",
+        "ru": "Программа ухода + зал · демо",
+        "en": "Body care programme + gym access · demo"
+      }
+    }
+  },
+  "classes": {
+    "pilates-31": {
+      "names": {
+        "tr": "Mat Pilates",
+        "az": "Mat Pilates",
+        "ru": "Мат Пилатес",
+        "en": "Mat Pilates"
+      },
+      "descriptions": {
+        "tr": "Mat Pilates",
+        "az": "Mat Pilates",
+        "ru": "Мат Пилатес",
+        "en": "Mat Pilates"
+      }
+    },
+    "swimming-01": {
+      "names": {
+        "tr": "Yüzme başlangıç",
+        "az": "Başlanğıc üzgüçülük",
+        "ru": "Плавание для начинающих",
+        "en": "Beginner swimming"
+      },
+      "descriptions": {
+        "tr": "Yüzme başlangıç",
+        "az": "Başlanğıc üzgüçülük",
+        "ru": "Плавание для начинающих",
+        "en": "Beginner swimming"
+      }
+    },
+    "pilates-01": {
+      "names": {
+        "tr": "Mat Pilates",
+        "az": "Mat Pilates",
+        "ru": "Мат Пилатес",
+        "en": "Mat Pilates"
+      },
+      "descriptions": {
+        "tr": "Mat Pilates",
+        "az": "Mat Pilates",
+        "ru": "Мат Пилатес",
+        "en": "Mat Pilates"
+      }
+    },
+    "pilates-03": {
+      "names": {
+        "tr": "Mat Pilates",
+        "az": "Mat Pilates",
+        "ru": "Мат Пилатес",
+        "en": "Mat Pilates"
+      },
+      "descriptions": {
+        "tr": "Mat Pilates",
+        "az": "Mat Pilates",
+        "ru": "Мат Пилатес",
+        "en": "Mat Pilates"
+      }
+    },
+    "swimming-advanced-02": {
+      "names": {
+        "tr": "Yüzme devam",
+        "az": "Davam üzgüçülük",
+        "ru": "Продвинутое плавание",
+        "en": "Continuing swimming"
+      },
+      "descriptions": {
+        "tr": "Yüzme devam",
+        "az": "Davam üzgüçülük",
+        "ru": "Продвинутое плавание",
+        "en": "Continuing swimming"
+      }
+    },
+    "src-aerobics-1": {
+      "names": {
+        "tr": "Aerobik",
+        "az": "Aerobika",
+        "ru": "Аэробика",
+        "en": "Aerobics"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-aerobics-2": {
+      "names": {
+        "tr": "Aerobik",
+        "az": "Aerobika",
+        "ru": "Аэробика",
+        "en": "Aerobics"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-aqua-aerobics-1": {
+      "names": {
+        "tr": "Su aerobiği",
+        "az": "Akvaaerobika",
+        "ru": "Аквааэробика",
+        "en": "Aqua aerobics"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-aqua-aerobics-2": {
+      "names": {
+        "tr": "Su aerobiği",
+        "az": "Akvaaerobika",
+        "ru": "Аквааэробика",
+        "en": "Aqua aerobics"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-pilates-1": {
+      "names": {
+        "tr": "Pilates",
+        "az": "Pilates",
+        "ru": "Пилатес",
+        "en": "Pilates"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-pilates-2": {
+      "names": {
+        "tr": "Pilates",
+        "az": "Pilates",
+        "ru": "Пилатес",
+        "en": "Pilates"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-zumba-1": {
+      "names": {
+        "tr": "Zumba",
+        "az": "Zumba",
+        "ru": "Зумба",
+        "en": "Zumba"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-zumba-2": {
+      "names": {
+        "tr": "Zumba",
+        "az": "Zumba",
+        "ru": "Зумба",
+        "en": "Zumba"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-oriental-dance-1": {
+      "names": {
+        "tr": "Oryantal dans",
+        "az": "Şərq rəqsləri",
+        "ru": "Восточные танцы",
+        "en": "Oriental dance"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-oriental-dance-2": {
+      "names": {
+        "tr": "Oryantal dans",
+        "az": "Şərq rəqsləri",
+        "ru": "Восточные танцы",
+        "en": "Oriental dance"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-total-body-workout-1": {
+      "names": {
+        "tr": "Tüm vücut antrenmanı",
+        "az": "Bütün bədən məşqi",
+        "ru": "Тренировка всего тела",
+        "en": "Total body workout"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    },
+    "src-total-body-workout-2": {
+      "names": {
+        "tr": "Tüm vücut antrenmanı",
+        "az": "Bütün bədən məşqi",
+        "ru": "Тренировка всего тела",
+        "en": "Total body workout"
+      },
+      "descriptions": {
+        "tr": "Fit&Fun ile grup derslerine katılın. Ders programı ve katılım koşulları için ekipten bilgi alın.",
+        "az": "Fit&Fun ilə qrup dərslərinə qoşulun. Cədvəl və iştirak qaydaları üçün komandadan məlumat alın.",
+        "ru": "Групповое занятие Fit&Fun. Уточните расписание и порядок участия у команды.",
+        "en": "Explore group classes with Fit&Fun. Ask the team about the timetable and how to take part."
+      }
+    }
+  },
+  "packageOffers": {
+    "massage-5": {
+      "names": {
+        "tr": "5 Seans Sultan Masajı",
+        "az": "5 seans Sultan masajı",
+        "ru": "5 сеансов массажа",
+        "en": "5 Sultan massage sessions"
+      }
+    },
+    "wellness-10": {
+      "names": {
+        "tr": "10 Ders Wellness",
+        "az": "10 wellness dərsi",
+        "ru": "10 занятий",
+        "en": "10 wellness classes"
+      }
+    },
+    "massage-10-mixed": {
+      "names": {
+        "tr": "10 masaj + 2 pressoterapi · demo",
+        "az": "10 masaj + 2 pressoterapiya · demo",
+        "ru": "10 массажей + 2 прессотерапии · демо",
+        "en": "10 massages + 2 pressotherapy sessions · demo"
+      }
+    },
+    "src-massage-5": {
+      "names": {
+        "tr": "5 seans Sultan Saba mum masajı — Örnek paket",
+        "az": "5 seans Sultan Saba şam masajı — Nümunə paket",
+        "ru": "5 сеансов свечного массажа Sultan Saba — Пример пакета",
+        "en": "5 Sultan Saba candle massage sessions · example package"
+      },
+      "descriptions": {
+        "tr": "Sultan Saba mum masajı için beş seanslık örnek paket. Koşullar demo amaçlıdır.",
+        "az": "Sultan Saba şam masajı üçün beş seanslıq nümunə paket. Şərtlər demo üçündür.",
+        "ru": "Пример пакета из пяти сеансов свечного массажа Sultan Saba. Условия демонстрационные.",
+        "en": "An example package of five Sultan Saba candle massage sessions. Terms are for the demo."
+      }
+    }
+  },
+  "giftOffers": {
+    "gift-facial": {
+      "names": {
+        "tr": "Hediye Cilt Bakımı",
+        "az": "Hədiyyə dəri qulluğu",
+        "ru": "Подарочный уход",
+        "en": "Gift facial"
+      }
+    },
+    "gift-money": {
+      "names": {
+        "tr": "Hediye bakiyesi",
+        "az": "Hədiyyə balansı",
+        "ru": "Подарочный баланс",
+        "en": "Gift balance"
+      }
+    }
+  },
+  "campaigns": {
+    "autumn-care": {
+      "names": {
+        "tr": "Sonbahar bakım fırsatı",
+        "az": "Payız qulluğu",
+        "ru": "Осенний уход",
+        "en": "Autumn care offer"
+      }
+    },
+    "first-visit": {
+      "names": {
+        "tr": "İlk ziyaret",
+        "az": "İlk ziyarət",
+        "ru": "Первый визит",
+        "en": "First visit"
+      }
+    }
+  },
+  "loyaltyRewards": {
+    "tea-reward": {
+      "names": {
+        "tr": "Çay ikramı",
+        "az": "Çay hədiyyəsi",
+        "ru": "Чай в подарок",
+        "en": "Complimentary tea"
+      }
+    },
+    "facial-reward": {
+      "names": {
+        "tr": "Cilt bakımı hakkı",
+        "az": "Dəri qulluğu haqqı",
+        "ru": "Право на уход",
+        "en": "Facial benefit"
+      }
+    }
+  },
+  "eventTypes": {
+    "celebration": {
+      "names": {
+        "tr": "Grup kutlaması",
+        "az": "Qrup bayramı",
+        "ru": "Групповой праздник",
+        "en": "Group celebration"
+      }
+    },
+    "workshop": {
+      "names": {
+        "tr": "Wellness atölyesi",
+        "az": "Wellness seminarı",
+        "ru": "Оздоровительный мастер-класс",
+        "en": "Wellness workshop"
+      }
+    },
+    "henna": {
+      "names": {
+        "tr": "Kına etkinliği",
+        "az": "Xına mərasimi",
+        "ru": "Хна-вечеринка",
+        "en": "Henna celebration"
+      },
+      "descriptions": {
+        "tr": "Kına etkinliğiniz için özel bir buluşma planlayın. Program, davetli sayısı ve teklif için ekiple görüşün.",
+        "az": "Xına mərasimi üçün özəl bir görüş planlaşdırın. Proqram, qonaq sayı və təklif üçün komanda ilə danışın.",
+        "en": "Plan a gathering for your henna celebration. Speak with the team about the programme, guest numbers and a quote.",
+        "ru": "Обсудите с командой программу праздника хны, число гостей и стоимость."
+      }
+    },
+    "bridal-hamam": {
+      "names": {
+        "tr": "Gelin hamamı",
+        "az": "Gəlin hamamı",
+        "ru": "Свадебный хаммам",
+        "en": "Bridal hamam"
+      },
+      "descriptions": {
+        "tr": "Gelin hamamını birlikte planlayın. Program, davetli sayısı ve teklif için ekiple iletişime geçin.",
+        "az": "Gəlin hamamını birlikdə planlaşdırın. Proqram, qonaq sayı və təklif üçün komanda ilə əlaqə saxlayın.",
+        "en": "Plan a bridal hamam celebration. Contact the team to discuss the programme, guest numbers and a quote.",
+        "ru": "Обсудите с командой программу свадебного хаммама, число гостей и стоимость."
+      }
+    },
+    "birthday": {
+      "names": {
+        "tr": "Doğum günü",
+        "az": "Ad günü",
+        "ru": "День рождения",
+        "en": "Birthday"
+      }
+    }
+  },
+  "retailProducts": {
+    "rose-oil": {
+      "names": {
+        "tr": "Gül bakım yağı · demo ürün",
+        "az": "Qızılgül qulluq yağı · demo məhsul",
+        "ru": "Розовое масло · демо образец",
+        "en": "Rose care oil · demo product"
+      }
+    },
+    "body-scrub": {
+      "names": {
+        "tr": "Vücut peelingi · demo ürün",
+        "az": "Bədən skrabı · demo məhsul",
+        "ru": "Скраб для тела · демо образец",
+        "en": "Body scrub · demo product"
+      }
+    },
+    "la-sultan-de-saba-sample": {
+      "names": {
+        "tr": "La Sultan de Saba · temsili demo ürün",
+        "az": "La Sultan de Saba · nümunə demo məhsul",
+        "ru": "La Sultan de Saba · демонстрационный образец",
+        "en": "La Sultan de Saba · illustrative demo product"
+      }
+    },
+    "aroma-derm-sample": {
+      "names": {
+        "tr": "Aroma Derm · temsili demo ürün",
+        "az": "Aroma Derm · nümunə demo məhsul",
+        "ru": "Aroma Derm · демонстрационный образец",
+        "en": "Aroma Derm · illustrative demo product"
+      }
+    }
+  },
+  "serviceCategories": {
+    "massage": {
+      "names": {
+        "tr": "Masaj",
+        "az": "Masaj",
+        "ru": "Массаж",
+        "en": "Massage"
+      }
+    },
+    "hamam": {
+      "names": {
+        "tr": "Hamam ritüelleri",
+        "az": "Hamam ritualları",
+        "ru": "Ритуалы хаммама",
+        "en": "Hamam rituals"
+      }
+    },
+    "hair": {
+      "names": {
+        "tr": "Saç",
+        "az": "Saç",
+        "ru": "Волосы",
+        "en": "Hair"
+      }
+    },
+    "makeup": {
+      "names": {
+        "tr": "Makyaj",
+        "az": "Makiyaj",
+        "ru": "Макияж",
+        "en": "Makeup"
+      }
+    },
+    "brows-lashes": {
+      "names": {
+        "tr": "Kaş ve kirpik",
+        "az": "Qaş və kirpik",
+        "ru": "Брови и ресницы",
+        "en": "Brows and lashes"
+      }
+    },
+    "epilation": {
+      "names": {
+        "tr": "Epilasyon",
+        "az": "Epilyasiya",
+        "ru": "Эпиляция",
+        "en": "Hair removal"
+      }
+    },
+    "face": {
+      "names": {
+        "tr": "Yüz bakımı",
+        "az": "Üz qulluğu",
+        "ru": "Уход за лицом",
+        "en": "Face care"
+      }
+    },
+    "body": {
+      "names": {
+        "tr": "Vücut bakımı",
+        "az": "Bədən qulluğu",
+        "ru": "Уход за телом",
+        "en": "Body care"
+      }
+    },
+    "nails": {
+      "names": {
+        "tr": "Tırnak bakımı",
+        "az": "Dırnaq qulluğu",
+        "ru": "Уход за ногтями",
+        "en": "Nail care"
+      }
+    },
+    "cosmetology": {
+      "names": {
+        "tr": "Kozmetoloji",
+        "az": "Kosmetologiya",
+        "ru": "Косметология",
+        "en": "Cosmetology"
+      }
+    }
+  },
+  "treatmentPrograms": {
+    "body-program": {
+      "names": {
+        "tr": "Vücut bakımı programı",
+        "az": "Bədən qulluğu proqramı",
+        "ru": "Программа ухода за телом",
+        "en": "Body care programme"
+      }
+    },
+    "skin-program": {
+      "names": {
+        "tr": "Yüz bakımı programı",
+        "az": "Üz qulluğu proqramı",
+        "ru": "Программа ухода за лицом",
+        "en": "Facial care programme"
+      }
+    }
+  },
+  "officialMapping": {
+    "pressotherapy": {
+      "names": {
+        "tr": null,
+        "az": null,
+        "ru": null,
+        "en": "Pressotherapy"
+      }
+    },
+    "pilates": {
+      "names": {
+        "tr": null,
+        "az": null,
+        "ru": null,
+        "en": "Mat Pilates"
+      }
+    }
+  },
+  "specialists": {
+    "lala": {
+      "names": {
+        "tr": "Lala M.",
+        "az": "Lala M.",
+        "ru": "Lala M.",
+        "en": "Lala M."
+      },
+      "roles": {
+        "tr": "Demo uzman",
+        "az": "Demo mütəxəssis",
+        "ru": "Демо-специалист",
+        "en": "Demo specialist"
+      }
+    },
+    "aylin": {
+      "names": {
+        "tr": "Aylin A.",
+        "az": "Aylin A.",
+        "ru": "Aylin A.",
+        "en": "Aylin A."
+      },
+      "roles": {
+        "tr": "Demo uzman",
+        "az": "Demo mütəxəssis",
+        "ru": "Демо-специалист",
+        "en": "Demo specialist"
+      }
+    },
+    "nigar": {
+      "names": {
+        "tr": "Nigar S.",
+        "az": "Nigar S.",
+        "ru": "Nigar S.",
+        "en": "Nigar S."
+      },
+      "roles": {
+        "tr": "Demo uzman",
+        "az": "Demo mütəxəssis",
+        "ru": "Демо-специалист",
+        "en": "Demo specialist"
+      }
+    }
+  },
+  "cafeProducts": {
+    "salatlar-01": {
+      "names": {
+        "tr": "Dana etli salata",
+        "az": "Beef salatı",
+        "ru": "Салат с говядиной",
+        "en": "Beef salad"
+      },
+      "descriptions": {
+        "tr": "marul, karışık yeşillik, domates, salatalık, salatalık turşusu, bonfile, parmesan peyniri, sos",
+        "az": "kahı, qarışıq göyərti, pomidor, xiyar, turşu xiyar, can əti, parmesan pendiri, sous",
+        "ru": "салат-латук, зелень, помидоры, огурец, маринованный огурец, вырезка, сыр пармезан, соус",
+        "en": "lettuce, mixed greens, tomato, cucumber, pickled cucumber, tenderloin, Parmesan cheese, sauce"
+      }
+    },
+    "salatlar-02": {
+      "names": {
+        "tr": "Yunan salatası",
+        "az": "Yunan salatı",
+        "ru": "Греческий салат",
+        "en": "Greek salad"
+      },
+      "descriptions": {
+        "tr": "domates, salatalık, karışık biber, zeytin, peynir, marul, sos",
+        "az": "pomidor, xiyar, qarışıq bibər, zeytun, pendir, kahı, sous",
+        "ru": "помидоры, огурец, смесь перцев, оливки, сыр, салат-латук, соус",
+        "en": "tomato, cucumber, mixed peppers, olives, cheese, lettuce, sauce"
+      }
+    },
+    "salatlar-03": {
+      "names": {
+        "tr": "Çoban salatası",
+        "az": "Çoban salatı",
+        "ru": "Чобан-салат",
+        "en": "Shepherd salad"
+      },
+      "descriptions": {
+        "tr": "karışık yeşillik, domates, salatalık, sos",
+        "az": "qarışıq göyərti, pomidor, xiyar, sous",
+        "ru": "зелень, помидоры, огурец, соус",
+        "en": "mixed greens, tomato, cucumber, sauce"
+      }
+    },
+    "salatlar-04": {
+      "names": {
+        "tr": "Dil salatası",
+        "az": "Dil salatı",
+        "ru": "Салат с языком",
+        "en": "Tongue salad"
+      },
+      "descriptions": {
+        "tr": "marul, karışık yeşillik, elma, salatalık, biber",
+        "az": "kahı, qarışıq göyərti, alma, xiyar, bibər",
+        "ru": "салат-латук, зелень, яблоко, огурец, перец",
+        "en": "lettuce, mixed greens, apple, cucumber, pepper"
+      }
+    },
+    "salatlar-05": {
+      "names": {
+        "tr": "Thai beef salatası",
+        "az": "Thai beef salatı",
+        "ru": "Тайский салат с говядиной",
+        "en": "Thai beef salad"
+      },
+      "descriptions": {
+        "tr": "dil, kırmızı soğan, domates, salatalık, yeşil soğan, karışık yeşillik, çili biber",
+        "az": "dil, qırmızı soğan, pomidor, xiyar, yaşıl soğan, qarışıq göyərti, çili bibər",
+        "ru": "язык, красный лук, помидоры, огурец, зелёный лук, зелень, перец чили",
+        "en": "tongue, red onion, tomato, cucumber, spring onion, mixed greens, chilli pepper"
+      }
+    },
+    "salatlar-06": {
+      "names": {
+        "tr": "Kinoa salatası",
+        "az": "Kinoa salatı",
+        "ru": "Салат с киноа",
+        "en": "Quinoa salad"
+      },
+      "descriptions": {
+        "tr": "kinoa, ızgara tavuk, avokado, nar, yeşil fasulye, ekşi sos",
+        "az": "kinoa, qril toyuq, avokado, nar, yaşıl lobya, turşulu sous",
+        "ru": "киноа, курица на гриле, авокадо, гранат, стручковая фасоль, кислый соус",
+        "en": "quinoa, grilled chicken, avocado, pomegranate, green beans, sour dressing"
+      }
+    },
+    "salatlar-07": {
+      "names": {
+        "tr": "Kremalı tavuk salatası",
+        "az": "Qaymaqlı toyuq salatı",
+        "ru": "Салат с курицей и сливками",
+        "en": "Creamy chicken salad"
+      },
+      "descriptions": {
+        "tr": "krema, tavuk, karışık yeşillik, marul, kinoa, patlıcan, domates",
+        "az": "qaymaq, toyuq, qarışıq göyərti, kahı, kinoa, badımcan, pomidor",
+        "ru": "сливки, курица, зелень, салат-латук, киноа, баклажан, помидоры",
+        "en": "cream, chicken, mixed greens, lettuce, quinoa, aubergine, tomato"
+      }
+    },
+    "salatlar-08": {
+      "names": {
+        "tr": "Sezar salatası (somon)",
+        "az": "Sezar salatı (salmon)",
+        "ru": "Салат Цезарь (лосось)",
+        "en": "Caesar salad (salmon)"
+      },
+      "descriptions": {
+        "tr": "marul, kruton, domates, parmesan peyniri, Sezar sosu, somon",
+        "az": "kahı, suxarı, pomidor, parmesan pendiri, sezar sousu, salmon",
+        "ru": "салат-латук, сухарики, помидоры, сыр пармезан, соус Цезарь, лосось",
+        "en": "lettuce, croutons, tomato, Parmesan cheese, Caesar dressing, salmon"
+      }
+    },
+    "salatlar-09": {
+      "names": {
+        "tr": "Sezar salatası (karides)",
+        "az": "Sezar salatı (krevetka)",
+        "ru": "Салат Цезарь (креветки)",
+        "en": "Caesar salad (shrimp)"
+      },
+      "descriptions": {
+        "tr": "marul, kruton, domates, parmesan peyniri, Sezar sosu, karides",
+        "az": "kahı, suxarı, pomidor, parmesan pendiri, sezar sousu, krevetka",
+        "ru": "салат-латук, сухарики, помидоры, сыр пармезан, соус Цезарь, креветки",
+        "en": "lettuce, croutons, tomato, Parmesan cheese, Caesar dressing, shrimp"
+      }
+    },
+    "salatlar-10": {
+      "names": {
+        "tr": "Sezar salatası (tavuk)",
+        "az": "Sezar salatı (toyuq)",
+        "ru": "Салат Цезарь (курица)",
+        "en": "Caesar salad (chicken)"
+      },
+      "descriptions": {
+        "tr": "marul, kruton, domates, parmesan peyniri, Sezar sosu, tavuk",
+        "az": "kahı, suxarı, pomidor, parmesan pendiri, sezar sousu, toyuq",
+        "ru": "салат-латук, сухарики, помидоры, сыр пармезан, соус Цезарь, курица",
+        "en": "lettuce, croutons, tomato, Parmesan cheese, Caesar dressing, chicken"
+      }
+    },
+    "salatlar-11": {
+      "names": {
+        "tr": "Sweet chilli tavuk salatası",
+        "az": "Sweet chilli toyuq salatı",
+        "ru": "Салат с курицей Sweet chilli",
+        "en": "Sweet chilli chicken salad"
+      },
+      "descriptions": {
+        "tr": "tavuk fileto, havuç, yeşil soğan, karışık yeşillik, karışık biber, kurutulmuş domates, sos",
+        "az": "toyuq file, kök, yaşıl soğan, qarışıq göyərti, qarışıq bibər, qurudulmuş pomidor, sous",
+        "ru": "куриное филе, морковь, зелёный лук, зелень, смесь перцев, вяленые помидоры, соус",
+        "en": "chicken fillet, carrot, spring onion, mixed greens, mixed peppers, sun-dried tomato, sauce"
+      }
+    },
+    "salatlar-12": {
+      "names": {
+        "tr": "Somon salatası",
+        "az": "Salmon salatı",
+        "ru": "Салат с лососем",
+        "en": "Salmon salad"
+      },
+      "descriptions": {
+        "tr": "somon, havuç, portakal, karışık yeşillik",
+        "az": "salmon, kök, portağal, qarışıq göyərti",
+        "ru": "лосось, морковь, апельсин, зелень",
+        "en": "salmon, carrot, orange, mixed greens"
+      }
+    },
+    "salatlar-13": {
+      "names": {
+        "tr": "Izgara somon salatası",
+        "az": "Qril salmon salatı",
+        "ru": "Салат с лососем на гриле",
+        "en": "Grilled salmon salad"
+      },
+      "descriptions": {
+        "tr": "somon, marul, karışık yeşillik, portakal, çörek otu, sos",
+        "az": "salmon, kahı, qarışıq göyərti, portağal, çörək otu, sous",
+        "ru": "лосось, салат-латук, зелень, апельсин, чернушка, соус",
+        "en": "salmon, lettuce, mixed greens, orange, nigella seeds, sauce"
+      }
+    },
+    "salatlar-14": {
+      "names": {
+        "tr": "Deniz ürünleri salatası",
+        "az": "Sea food salatı",
+        "ru": "Салат с морепродуктами",
+        "en": "Seafood salad"
+      },
+      "descriptions": {
+        "tr": "karışık deniz ürünleri, karışık yeşillik, domates, salatalık turşusu, kızılcık turşusu",
+        "az": "qarışıq dəniz məhsulları, qarışıq göyərti, pomidor, turşu xiyar, zoğal turşusu",
+        "ru": "морепродукты, зелень, помидоры, маринованный огурец, маринованный кизил",
+        "en": "mixed seafood, mixed greens, tomato, pickled cucumber, pickled cornelian cherry"
+      }
+    },
+    "salatlar-15": {
+      "names": {
+        "tr": "Ton balığı salatası",
+        "az": "Tuna salatı",
+        "ru": "Салат с тунцом",
+        "en": "Tuna salad"
+      },
+      "descriptions": {
+        "tr": "ton balığı, kırmızı soğan, marul, patates, zeytin, domates, salatalık, salatalık turşusu, biber, sos",
+        "az": "tuna, qırmızı soğan, kahı, kartof, zeytun, pomidor, xiyar, turşu xiyar, bibər, sous",
+        "ru": "тунец, красный лук, салат-латук, картофель, оливки, помидоры, огурец, маринованный огурец, перец, соус",
+        "en": "tuna, red onion, lettuce, potato, olives, tomato, cucumber, pickled cucumber, pepper, sauce"
+      }
+    },
+    "salatlar-16": {
+      "names": {
+        "tr": "Marine levrek salatası",
+        "az": "Levrek marine salatı",
+        "ru": "Салат с маринованным сибасом",
+        "en": "Marinated sea bass salad"
+      },
+      "descriptions": {
+        "tr": "levrek, marul, beyaz soğan, karışık yeşillik, sos",
+        "az": "levrek, kahı, ağ soğan, qarışıq göyərti, sous",
+        "ru": "сибас, салат-латук, белый лук, зелень, соус",
+        "en": "sea bass, lettuce, white onion, mixed greens, sauce"
+      }
+    },
+    "salatlar-17": {
+      "names": {
+        "tr": "Izgara levrek salatası",
+        "az": "Qril levrek salatı",
+        "ru": "Салат с сибасом на гриле",
+        "en": "Grilled sea bass salad"
+      },
+      "descriptions": {
+        "tr": "marul, domates, salatalık, kızılcık, yeşillik, zeytinyağı",
+        "az": "kahı, pomidor, xiyar, zoğal, göyərti, zeytun yağı",
+        "ru": "салат-латук, помидоры, огурец, кизил, зелень, оливковое масло",
+        "en": "lettuce, tomato, cucumber, cornelian cherry, greens, olive oil"
+      }
+    },
+    "salatlar-18": {
+      "names": {
+        "tr": "Yeşil salata",
+        "az": "Yaşıl salat",
+        "ru": "Зелёный салат",
+        "en": "Green salad"
+      },
+      "descriptions": {
+        "tr": "marul, karışık yeşillik, elma, salatalık, biber",
+        "az": "kahı, qarışıq göyərti, alma, xiyar, bibər",
+        "ru": "салат-латук, зелень, яблоко, огурец, перец",
+        "en": "lettuce, mixed greens, apple, cucumber, pepper"
+      }
+    },
+    "salatlar-19": {
+      "names": {
+        "tr": "Sultan Saba salatası",
+        "az": "Sultan Saba salatı",
+        "ru": "Салат Султан Саба",
+        "en": "Sultan Saba salad"
+      },
+      "descriptions": {
+        "tr": "pancar, havuç, zeytin, karışık yeşillik, tavuk eti, sos",
+        "az": "çuğundur, kök, zeytun, qarışıq göyərti, toyuq əti, sous",
+        "ru": "свёкла, морковь, оливки, зелень, мясо курицы, соус",
+        "en": "beetroot, carrot, olives, mixed greens, chicken meat, sauce"
+      }
+    },
+    "suplar-01": {
+      "names": {
+        "tr": "Mercimek çorbası",
+        "az": "Mərci supu",
+        "ru": "Чечевичный суп",
+        "en": "Lentil soup"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "suplar-02": {
+      "names": {
+        "tr": "Brokoli çorbası",
+        "az": "Brokoli supu",
+        "ru": "Суп из брокколи",
+        "en": "Broccoli soup"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "suplar-03": {
+      "names": {
+        "tr": "Mantar çorbası",
+        "az": "Göbələk supu",
+        "ru": "Грибной суп",
+        "en": "Mushroom soup"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "suplar-04": {
+      "names": {
+        "tr": "Domates çorbası",
+        "az": "Tomat supu",
+        "ru": "Томатный суп",
+        "en": "Tomato soup"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "sendvicler-01": {
+      "names": {
+        "tr": "Club sandviç ve patates kızartması",
+        "az": "Club sandwich & kartof fri",
+        "ru": "Клаб-сэндвич и картофель фри",
+        "en": "Club sandwich and fries"
+      },
+      "descriptions": {
+        "tr": "tost ekmeği, fileto, domates, salatalık, marul, mayonez",
+        "az": "tost, file, pomidor, xiyar, kahı, mayonez",
+        "ru": "тост, филе, помидоры, огурец, салат-латук, майонез",
+        "en": "toast bread, fillet, tomato, cucumber, lettuce, mayonnaise"
+      }
+    },
+    "sendvicler-02": {
+      "names": {
+        "tr": "Somon sandviç",
+        "az": "Salmon sandwich",
+        "ru": "Сэндвич с лососем",
+        "en": "Salmon sandwich"
+      },
+      "descriptions": {
+        "tr": "somon, salatalık, salatalık turşusu, marul, labne",
+        "az": "salmon, xiyar, turşu xiyar, kahı, labne",
+        "ru": "лосось, огурец, маринованный огурец, салат-латук, лабне",
+        "en": "salmon, cucumber, pickled cucumber, lettuce, labneh"
+      }
+    },
+    "qelyanaltilar-01": {
+      "names": {
+        "tr": "Yumurta",
+        "az": "Qayğanaq",
+        "ru": "Яичница",
+        "en": "Eggs"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qelyanaltilar-02": {
+      "names": {
+        "tr": "Nugget",
+        "az": "Naggets",
+        "ru": "Наггетсы",
+        "en": "Nuggets"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qelyanaltilar-03": {
+      "names": {
+        "tr": "Mevsim sebzeleri (ızgara)",
+        "az": "Mövsüm tərəvəzlər (qril)",
+        "ru": "Сезонные овощи на гриле",
+        "en": "Grilled seasonal vegetables"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qelyanaltilar-04": {
+      "names": {
+        "tr": "Peynir tabağı",
+        "az": "Pendir assorti",
+        "ru": "Сырное ассорти",
+        "en": "Cheese platter"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qelyanaltilar-05": {
+      "names": {
+        "tr": "Domatesli yumurta",
+        "az": "Pomidor-yumurta",
+        "ru": "Яйца с помидорами",
+        "en": "Eggs with tomatoes"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qelyanaltilar-06": {
+      "names": {
+        "tr": "Dukan krep (tavuk)",
+        "az": "Dukan blinçik (toyuq)",
+        "ru": "Блинчик Дюкан (курица)",
+        "en": "Dukan pancake (chicken)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qelyanaltilar-07": {
+      "names": {
+        "tr": "Dukan krep (et)",
+        "az": "Dukan blinçik (ət)",
+        "ru": "Блинчик Дюкан (мясо)",
+        "en": "Dukan pancake (meat)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qelyanaltilar-08": {
+      "names": {
+        "tr": "Dukan krep (somon)",
+        "az": "Dukan blinçik (salmon)",
+        "ru": "Блинчик Дюкан (лосось)",
+        "en": "Dukan pancake (salmon)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qelyanaltilar-09": {
+      "names": {
+        "tr": "Guacamole",
+        "az": "Quakamole",
+        "ru": "Гуакамоле",
+        "en": "Guacamole"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "toyuq-01": {
+      "names": {
+        "tr": "Izgara tavuk",
+        "az": "Toyuq qril",
+        "ru": "Курица на гриле",
+        "en": "Grilled chicken"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "toyuq-02": {
+      "names": {
+        "tr": "Barbekü tavuk",
+        "az": "Toyuq barbekü",
+        "ru": "Курица барбекю",
+        "en": "Barbecue chicken"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "toyuq-03": {
+      "names": {
+        "tr": "Tavuk stroganoff",
+        "az": "Toyuq strogonoff",
+        "ru": "Бефстроганов из курицы",
+        "en": "Chicken stroganoff"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "toyuq-04": {
+      "names": {
+        "tr": "Tavuk şnitzel",
+        "az": "Toyuq schnitzel",
+        "ru": "Куриный шницель",
+        "en": "Chicken schnitzel"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "et-01": {
+      "names": {
+        "tr": "Et stroganoff",
+        "az": "Ət strogonoff",
+        "ru": "Бефстроганов",
+        "en": "Beef stroganoff"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "et-02": {
+      "names": {
+        "tr": "Langet",
+        "az": "Langet",
+        "ru": "Лангет",
+        "en": "Langet"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "et-03": {
+      "names": {
+        "tr": "Sultan Saba biftek",
+        "az": "Sultan Saba steyk",
+        "ru": "Стейк Султан Саба",
+        "en": "Sultan Saba steak"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "baliq-01": {
+      "names": {
+        "tr": "Izgara levrek",
+        "az": "Levrek ızqara",
+        "ru": "Сибас на гриле",
+        "en": "Grilled sea bass"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "baliq-02": {
+      "names": {
+        "tr": "Izgara somon",
+        "az": "Qızıl balıq qril",
+        "ru": "Лосось на гриле",
+        "en": "Grilled salmon"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "krevetka-01": {
+      "names": {
+        "tr": "Karides tempura",
+        "az": "Krevetka tempura",
+        "ru": "Креветки темпура",
+        "en": "Shrimp tempura"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "makaron-01": {
+      "names": {
+        "tr": "Spagetti bolonez",
+        "az": "Spagetti-bolonez",
+        "ru": "Спагетти болоньезе",
+        "en": "Spaghetti Bolognese"
+      },
+      "descriptions": {
+        "tr": "et, spagetti, mozzarella peyniri",
+        "az": "ət, spagetti, mozarella pendiri",
+        "ru": "мясо, спагетти, сыр моцарелла",
+        "en": "meat, spaghetti, mozzarella cheese"
+      }
+    },
+    "qarnirler-01": {
+      "names": {
+        "tr": "Pirinç",
+        "az": "Düyü",
+        "ru": "Рис",
+        "en": "Rice"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qarnirler-02": {
+      "names": {
+        "tr": "Bulgur",
+        "az": "Bulqur",
+        "ru": "Булгур",
+        "en": "Bulgur"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qarnirler-03": {
+      "names": {
+        "tr": "Spagetti",
+        "az": "Spagetti",
+        "ru": "Спагетти",
+        "en": "Spaghetti"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qarnirler-04": {
+      "names": {
+        "tr": "Köy usulü patates",
+        "az": "Kənd üsulu kartof",
+        "ru": "Картофель по-деревенски",
+        "en": "Country style potatoes"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qarnirler-05": {
+      "names": {
+        "tr": "Karabuğday",
+        "az": "Qarabaşaq",
+        "ru": "Гречка",
+        "en": "Buckwheat"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qarnirler-06": {
+      "names": {
+        "tr": "Püre",
+        "az": "Püre",
+        "ru": "Пюре",
+        "en": "Mash"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "qarnirler-07": {
+      "names": {
+        "tr": "Sebzeli pirinç",
+        "az": "Tərəvəzli düyü",
+        "ru": "Рис с овощами",
+        "en": "Rice with vegetables"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "caylar-01": {
+      "names": {
+        "tr": "Çay takımı",
+        "az": "Çay dəstgahı",
+        "ru": "Чайный набор",
+        "en": "Tea set"
+      },
+      "descriptions": {
+        "tr": "semaver çayı, leblebi, kuru meyve, reçel, çikolata, limon, tatlı",
+        "az": "samovar çayı, ləb-ləbi, quru meyvə, mürəbbə, şokolad, limon, şirniyyat",
+        "ru": "чай из самовара, жареный нут, сухофрукты, варенье, шоколад, лимон, сладости",
+        "en": "samovar tea, roasted chickpeas, dried fruit, jam, chocolate, lemon, sweets"
+      }
+    },
+    "caylar-02": {
+      "names": {
+        "tr": "Yeşil çay (demlik)",
+        "az": "Yaşıl çay (çaynik)",
+        "ru": "Зелёный чай (чайник)",
+        "en": "Green tea (teapot)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "caylar-03": {
+      "names": {
+        "tr": "Yeşil çay (bardak)",
+        "az": "Yaşıl çay (stəkan)",
+        "ru": "Зелёный чай (стакан)",
+        "en": "Green tea (glass)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "caylar-04": {
+      "names": {
+        "tr": "Siyah çay (demlik)",
+        "az": "Qara çay (çaynik)",
+        "ru": "Чёрный чай (чайник)",
+        "en": "Black tea (teapot)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "caylar-05": {
+      "names": {
+        "tr": "Siyah çay (bardak)",
+        "az": "Qara çay (stəkan)",
+        "ru": "Чёрный чай (стакан)",
+        "en": "Black tea (glass)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "caylar-06": {
+      "names": {
+        "tr": "Detoks çayı (demlik)",
+        "az": "Detoks çay (çaynik)",
+        "ru": "Детокс-чай (чайник)",
+        "en": "Detox tea (teapot)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "caylar-07": {
+      "names": {
+        "tr": "Detoks çayı (bardak)",
+        "az": "Detoks çay (stəkan)",
+        "ru": "Детокс-чай (стакан)",
+        "en": "Detox tea (glass)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "soyuq-ickiler-01": {
+      "names": {
+        "tr": "Ayran",
+        "az": "Ayran",
+        "ru": "Айран",
+        "en": "Ayran"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "soyuq-ickiler-02": {
+      "names": {
+        "tr": "Erikli 0,5 l",
+        "az": "Erikli 0.5l",
+        "ru": "Erikli 0,5 л",
+        "en": "Erikli 0.5 l"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "soyuq-ickiler-03": {
+      "names": {
+        "tr": "Erikli 1 l",
+        "az": "Erikli 1l",
+        "ru": "Erikli 1 л",
+        "en": "Erikli 1 l"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "soyuq-ickiler-04": {
+      "names": {
+        "tr": "Fanta, Cola, Sprite, Ice tea",
+        "az": "Fanta, Cola, Sprite, İce tea",
+        "ru": "Fanta, Cola, Sprite, Ice tea",
+        "en": "Fanta, Cola, Sprite, iced tea"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "soyuq-ickiler-05": {
+      "names": {
+        "tr": "Sarı qız",
+        "az": "Sarı qız",
+        "ru": "Sarı qız",
+        "en": "Sarı qız"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "soyuq-ickiler-06": {
+      "names": {
+        "tr": "Red Bull",
+        "az": "Red bull",
+        "ru": "Red Bull",
+        "en": "Red Bull"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "soyuq-ickiler-07": {
+      "names": {
+        "tr": "Mojito",
+        "az": "Mohito",
+        "ru": "Мохито",
+        "en": "Mojito"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "soyuq-ickiler-08": {
+      "names": {
+        "tr": "Enerji",
+        "az": "Enerji",
+        "ru": "Энергия",
+        "en": "Energy"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "kofe-01": {
+      "names": {
+        "tr": "Americano",
+        "az": "Amerikano",
+        "ru": "Американо",
+        "en": "Americano"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "kofe-02": {
+      "names": {
+        "tr": "Cappuccino",
+        "az": "Cappucino",
+        "ru": "Капучино",
+        "en": "Cappuccino"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "kofe-03": {
+      "names": {
+        "tr": "Espresso",
+        "az": "Espresso",
+        "ru": "Эспрессо",
+        "en": "Espresso"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "kofe-04": {
+      "names": {
+        "tr": "Double espresso",
+        "az": "Espresso double",
+        "ru": "Двойной эспрессо",
+        "en": "Double espresso"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "kofe-05": {
+      "names": {
+        "tr": "Sütlü kahve, Nescafé",
+        "az": "Südlü kofe, nescafe",
+        "ru": "Кофе с молоком, Nescafé",
+        "en": "Coffee with milk, Nescafé"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "kofe-06": {
+      "names": {
+        "tr": "Latte",
+        "az": "Latte",
+        "ru": "Латте",
+        "en": "Latte"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "kofe-07": {
+      "names": {
+        "tr": "Türk kahvesi",
+        "az": "Türk kofesi",
+        "ru": "Турецкий кофе",
+        "en": "Turkish coffee"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "kofe-08": {
+      "names": {
+        "tr": "Double Türk kahvesi",
+        "az": "Türk kofesi double",
+        "ru": "Двойной турецкий кофе",
+        "en": "Double Turkish coffee"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "murebbeler-01": {
+      "names": {
+        "tr": "Reçel çeşitleri",
+        "az": "Mürəbbə assorti",
+        "ru": "Ассорти варенья",
+        "en": "Assorted jam"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "murebbeler-02": {
+      "names": {
+        "tr": "Reçel (küçük)",
+        "az": "Mürəbbə balaca",
+        "ru": "Варенье (маленькое)",
+        "en": "Jam (small)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "murebbeler-03": {
+      "names": {
+        "tr": "Reçel (büyük)",
+        "az": "Mürəbbə böyük",
+        "ru": "Варенье (большое)",
+        "en": "Jam (large)"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "meyve-siresi-01": {
+      "names": {
+        "tr": "Elma",
+        "az": "Alma",
+        "ru": "Яблоко",
+        "en": "Apple"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "meyve-siresi-02": {
+      "names": {
+        "tr": "Portakal",
+        "az": "Portağal",
+        "ru": "Апельсин",
+        "en": "Orange"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "meyve-siresi-03": {
+      "names": {
+        "tr": "Ananas",
+        "az": "Ananas",
+        "ru": "Ананас",
+        "en": "Pineapple"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "meyve-siresi-04": {
+      "names": {
+        "tr": "Greyfurt",
+        "az": "Qreypfrut",
+        "ru": "Грейпфрут",
+        "en": "Grapefruit"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "meyve-siresi-05": {
+      "names": {
+        "tr": "Havuç",
+        "az": "Kök",
+        "ru": "Морковь",
+        "en": "Carrot"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "meyve-siresi-06": {
+      "names": {
+        "tr": "Yeşil detoks",
+        "az": "Yaşıl detoks",
+        "ru": "Зелёный детокс",
+        "en": "Green detox"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "meyve-siresi-07": {
+      "names": {
+        "tr": "Nar",
+        "az": "Nar",
+        "ru": "Гранат",
+        "en": "Pomegranate"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "meyve-siresi-08": {
+      "names": {
+        "tr": "Karışık",
+        "az": "Miks",
+        "ru": "Микс",
+        "en": "Mixed"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "tatlilar-meyve-01": {
+      "names": {
+        "tr": "Elmalı tart",
+        "az": "Apple pie",
+        "ru": "Яблочный пирог",
+        "en": "Apple pie"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "tatlilar-meyve-02": {
+      "names": {
+        "tr": "Kurabiye",
+        "az": "Peçenye",
+        "ru": "Печенье",
+        "en": "Cookies"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "tatlilar-meyve-03": {
+      "names": {
+        "tr": "Kuru meyve, leblebi, şeker (küçük)",
+        "az": "Meyvə qurusu, ləb-ləbi, konfet (balaca)",
+        "ru": "Сухофрукты, жареный нут, конфеты (маленькая порция)",
+        "en": "Dried fruit, roasted chickpeas, sweets (small)"
+      },
+      "descriptions": {
+        "tr": "küçük",
+        "az": "balaca",
+        "ru": "маленькая порция",
+        "en": "small"
+      }
+    },
+    "tatlilar-meyve-04": {
+      "names": {
+        "tr": "Kuru meyve, leblebi, şeker (büyük)",
+        "az": "Meyvə qurusu, ləb-ləbi, konfet (böyük)",
+        "ru": "Сухофрукты, жареный нут, конфеты (большая порция)",
+        "en": "Dried fruit, roasted chickpeas, sweets (large)"
+      },
+      "descriptions": {
+        "tr": "büyük",
+        "az": "böyük",
+        "ru": "большая порция",
+        "en": "large"
+      }
+    },
+    "tatlilar-meyve-05": {
+      "names": {
+        "tr": "Cheesecake",
+        "az": "Cheescake",
+        "ru": "Чизкейк",
+        "en": "Cheesecake"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "tatlilar-meyve-06": {
+      "names": {
+        "tr": "Napolyon",
+        "az": "Napalyon",
+        "ru": "Наполеон",
+        "en": "Napoleon"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "tatlilar-meyve-07": {
+      "names": {
+        "tr": "Mevsim meyveleri",
+        "az": "Mövsüm meyvələri",
+        "ru": "Сезонные фрукты",
+        "en": "Seasonal fruit"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "tatlilar-meyve-08": {
+      "names": {
+        "tr": "Meyve çelengi",
+        "az": "Meyvə çələngi",
+        "ru": "Фруктовый венок",
+        "en": "Fruit wreath"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    },
+    "tatlilar-meyve-09": {
+      "names": {
+        "tr": "Sultan Saba tatlısı",
+        "az": "Sultan Saba deserti",
+        "ru": "Десерт Султан Саба",
+        "en": "Sultan Saba dessert"
+      },
+      "descriptions": {
+        "tr": "Kaynak menüde içerik ayrıntısı belirtilmemiştir.",
+        "az": "Mənbə menyuda tərkib detalları göstərilməyib.",
+        "ru": "Подробный состав в исходном меню не указан.",
+        "en": "The source menu does not list ingredient details."
+      }
+    }
+  },
+  "cafeCategories": {
+    "salatlar": {
+      "names": {
+        "tr": "Salatalar",
+        "az": "Salatlar",
+        "ru": "Салаты",
+        "en": "Salads"
+      }
+    },
+    "suplar": {
+      "names": {
+        "tr": "Çorbalar",
+        "az": "Suplar",
+        "ru": "Супы",
+        "en": "Soups"
+      }
+    },
+    "sendvicler": {
+      "names": {
+        "tr": "Sandviçler",
+        "az": "Sendviçlər",
+        "ru": "Сэндвичи",
+        "en": "Sandwiches"
+      }
+    },
+    "qelyanaltilar": {
+      "names": {
+        "tr": "Atıştırmalıklar",
+        "az": "Qəlyanaltılar",
+        "ru": "Закуски",
+        "en": "Snacks"
+      }
+    },
+    "toyuq": {
+      "names": {
+        "tr": "Tavuk",
+        "az": "Toyuq",
+        "ru": "Курица",
+        "en": "Chicken"
+      }
+    },
+    "et": {
+      "names": {
+        "tr": "Et",
+        "az": "Ət",
+        "ru": "Мясо",
+        "en": "Meat"
+      }
+    },
+    "baliq": {
+      "names": {
+        "tr": "Balık",
+        "az": "Balıq",
+        "ru": "Рыба",
+        "en": "Fish"
+      }
+    },
+    "krevetka": {
+      "names": {
+        "tr": "Karides",
+        "az": "Krevetka",
+        "ru": "Креветки",
+        "en": "Shrimp"
+      }
+    },
+    "makaron": {
+      "names": {
+        "tr": "Makarna",
+        "az": "Makaron",
+        "ru": "Макароны",
+        "en": "Pasta"
+      }
+    },
+    "qarnirler": {
+      "names": {
+        "tr": "Garnitürler",
+        "az": "Qarnirlər",
+        "ru": "Гарниры",
+        "en": "Sides"
+      }
+    },
+    "caylar": {
+      "names": {
+        "tr": "Çaylar",
+        "az": "Çaylar",
+        "ru": "Чай",
+        "en": "Tea"
+      }
+    },
+    "soyuq-ickiler": {
+      "names": {
+        "tr": "Soğuk içecekler",
+        "az": "Soyuq içkilər",
+        "ru": "Холодные напитки",
+        "en": "Cold drinks"
+      }
+    },
+    "kofe": {
+      "names": {
+        "tr": "Kahve",
+        "az": "Kofe",
+        "ru": "Кофе",
+        "en": "Coffee"
+      }
+    },
+    "murebbeler": {
+      "names": {
+        "tr": "Reçeller",
+        "az": "Mürəbbələr",
+        "ru": "Варенье",
+        "en": "Jams"
+      }
+    },
+    "meyve-siresi": {
+      "names": {
+        "tr": "Meyve suyu",
+        "az": "Meyvə şirəsi",
+        "ru": "Фруктовые соки",
+        "en": "Fruit juice"
+      }
+    },
+    "tatlilar-meyve": {
+      "names": {
+        "tr": "Tatlılar / Meyve",
+        "az": "Tatlılar / Meyvə",
+        "ru": "Десерты / Фрукты",
+        "en": "Desserts / Fruit"
+      }
+    }
+  }
+};
+for(const [group,items] of Object.entries(contentTranslations))for(const [id,fields] of Object.entries(items)){
+ const item=(catalogue[group]||[]).find(x=>x.id===id);if(item)Object.assign(item,fields);
+}
+for(const group of ['services','informationItems','supplements'])for(const item of catalogue[group]||[]){
+ const category=item.categoryId||({Masaj:'massage',Hamam:'hamam','Cilt bakımı':'face','Güzellik':'hair'}[item.category])||item.category;
+ item.mediaSubjectId=category==='massage'?'massage':category==='hamam'?'hamam':category==='hair'?'hair':category==='nails'?'beauty':'face';
+}
+for(const item of catalogue.services||[])for(const variant of item.variants||[]){
+ variant.labels=Object.assign({tr:variant.duration+' dakika',az:variant.duration+' dəqiqə',ru:variant.duration+' минут',en:variant.duration+' minutes'},variant.labels);
+ variant.labels.en=variant.duration+' minutes';
+}
+for(const item of catalogue.services||[])for(const extra of item.addOns||[]){
+ const source=(catalogue.supplements||[]).find(s=>s.id===extra.id||s.id===extra.supplementId);
+ if(source){extra.names=Object.assign({},source.names);extra.descriptions=Object.assign({},source.descriptions);}
+ else{const en={'hot-stones':'Hot stones','body-mask':'Body mask','face-mask':'Moisturising mask','hair-oil':'Nourishing care',shellac:'Shellac · demo add-on','shellac-removal':'Removal · demo'}[extra.id];if(en)extra.names=Object.assign({},extra.names,{en});}
+}
+// The source specifies these durations but no procedure steps; keep that limit explicit.
+for(const [id,minutes] of [['src-shirodhara-massage',70],['src-prestige-facial',70],['src-express-skin-burst-up-care',30]]){
+ const item=catalogue.services.find(x=>x.id===id);
+ item.descriptions={tr:item.names.tr+'. Kaynak listede '+minutes+' dakikalık seans olarak yer alır. Uygulama adımlarını uzmanla görüşün.',az:item.names.az+'. Mənbə siyahıda '+minutes+' dəqiqəlik seans kimi göstərilir. Prosedur mərhələlərini mütəxəssislə müzakirə edin.',ru:item.names.ru+'. В исходном каталоге указан сеанс '+minutes+' минут. Этапы процедуры обсудите со специалистом.',en:item.names.en+'. Listed as a '+minutes+' minute session in the source catalogue. Discuss the procedure steps with the specialist.'};
+}
+catalogue.evidence.notice.en='Service names come from the source catalogue; prices, dates, specialists and capacity are demo terms.';
+catalogue.version='demo-simplified-2026-11-04-r3-four-language';
+
 root.SpaCatalogue=catalogue;if(typeof module!=='undefined'&&module.exports)module.exports=catalogue;
 })(typeof globalThis!=='undefined'?globalThis:this);

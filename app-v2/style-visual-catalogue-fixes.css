@@ -28,10 +28,12 @@ body.v2 .visual-service-card p{font-size:12px;line-height:1.5;margin:6px 0 0;col
 body.v2 .visual-service-card .entry-service-card-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}
 body.v2 .visual-service-card .entry-service-card-bottom>strong{font-size:15px;line-height:1.5;font-weight:600;white-space:normal;color:var(--gold)}
 body.v2 .visual-service-card small{font-size:11px;font-weight:400}
-body.v2 .visual-service-card .entry-service-card-bottom>span{display:inline-block;max-width:100%;padding:5px 10px;border-radius:999px;background:var(--stone);color:var(--olive);font-size:11px;font-weight:500;line-height:1.5;text-transform:none;white-space:normal;text-align:center}
+body.v2 .visual-service-card .entry-service-card-bottom>span{display:inline-flex;align-items:center;justify-content:center;min-height:0;height:auto;max-width:100%;padding:5px 10px;border-radius:999px;background:var(--stone);color:var(--olive);font-size:11px;font-weight:500;line-height:1.5;text-transform:none;white-space:normal;text-align:center;flex:0 1 auto}
 .v2 .visual-service-group .service-information-list{margin:0}
 .v2 .visual-service-group .service-information-list>h2{font-size:12px;font-weight:500;color:var(--muted);margin:4px 0 12px}
 .v2 .visual-service-group .service-information-row{margin:0 0 12px}
+body.v2 .service-information-row>img{position:static;width:72px;height:84px;flex:0 0 72px;border-radius:16px;object-fit:cover}
+body.v2 .service-information-row>div{flex:1;min-width:0}
 .v2 .visual-service-detail .visual-detail-label{font-size:13px;line-height:1.5;font-weight:600;letter-spacing:0;margin:20px 0 6px;color:var(--olive)}
 .v2 .visual-service-detail .entry-service-description{margin:0;line-height:1.65}
 .v2 .visual-service-detail .entry-service-info{padding-bottom:24px}
@@ -69,3 +71,21 @@ body.v2 .component-unit-status>div>span{font-size:11px;line-height:1.5;word-brea
 /* The existing basket pill has its own row, so it cannot cover another action. */
 body.prototype-app.v2 .app>.basket-dock{position:static;inset:auto;transform:none;flex:0 0 auto;width:auto;max-width:none;margin:8px 24px 12px;min-height:48px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;line-height:1.5}
 body.prototype-app.v2 .app:has(.source-visit-add)>.basket-dock{display:none}
+
+/* The scrollport must start at its header. Legacy shell padding otherwise
+   leaves a 32px window above sticky headers through which cards are visible.
+   These screen components already own their content/header spacing. */
+body.prototype-app.v2 .app>main.page:has(>:is(.source-category-screen,.source-search-screen,.source-collection-screen,.source-offer,.source-owned-order,.memberfix,.classfix-timetable,.facilityfix-catalog,.visitfix-list,.supportfix-first-visit,.retail-source-catalog,.source-slot-lost,.source-basket-choice-required,.source-visit-choice-screen)){
+  padding:0;scroll-padding-top:0;
+}
+body.prototype-app.v2 .app>main.page>:is(.source-category-screen,.source-search-screen,.source-collection-screen,.source-offer,.source-owned-order,.memberfix,.classfix-timetable,.facilityfix-catalog,.visitfix-list,.supportfix-first-visit,.retail-source-catalog,.source-slot-lost,.source-basket-choice-required,.source-visit-choice-screen){margin-top:0}
+body.prototype-app.v2 .app>main.page:has(>.source-review-header){padding-top:0}
+body.prototype-app.v2 .app>main.page>.source-review-header{margin-top:0}
+body.prototype-app.v2 :is(.source-discover-subheader,.source-search-header,.source-collection-header,.entry-home-header,.entry-discover-header,.entry-schedule-header,.source-owned-header,.memberfix-header,.source-offer-header,.facilityfix-catalog-header,.visitfix-list-header,.supportfix-guide-header,.source-review-header){top:0;isolation:isolate}
+body.prototype-app.v2 .source-discover-subheader{background:var(--bg);backdrop-filter:none}
+body.prototype-app.v2 .visual-category-filters{position:static;z-index:auto}
+/* Language choices are always visible and keep the existing chip appearance. */
+body.prototype-app.v2 .profilefix-additional{display:grid;gap:24px;margin:0;min-width:0}
+body.prototype-app.v2 .profilefix-additional>.profilefix-language{margin:0}
+body.prototype-app.v2 .profilefix-language .language-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+body.prototype-app.v2 .profilefix-language .language-options>.chip{width:100%;min-width:0;min-height:44px;margin:0;display:flex;align-items:center;justify-content:center;white-space:normal;overflow-wrap:anywhere}

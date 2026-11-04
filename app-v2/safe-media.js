@@ -12,8 +12,10 @@ function resolve(role,subjectId='default'){
 function src(role,subjectId='default'){return resolve(role,subjectId)?.path||'';}
 function image(role,subjectId='default',options={}){
  const a=resolve(role,subjectId);if(!a)return '';
+ const language=options.language||root.document?.documentElement?.lang||'az';
+ const alt=a.alt?.[language]??options.alt??'';
  const style=`object-fit:${a.kind==='brand-mark'?'contain':'cover'};object-position:${a.focus.x*100}% ${a.focus.y*100}%`;
- return `<img src="${escape(a.path)}" alt="${escape(options.alt||'')}" data-media-asset="${escape(a.id)}" data-media-role="${escape(role)}"${options.className?` class="${escape(options.className)}"`:''}${options.loading==='lazy'?' loading="lazy"':''} style="${style}">`;
+ return `<img src="${escape(a.path)}" alt="${escape(alt)}" data-media-asset="${escape(a.id)}" data-media-role="${escape(role)}"${options.className?` class="${escape(options.className)}"`:''}${options.loading==='lazy'?' loading="lazy"':''} style="${style}">`;
 }
 function frame(role,subjectId='default',options={}){
  const img=image(role,subjectId,options);return img?`<div data-media-slot="image" class="${escape(options.frameClass||'revision-hero')}">${img}</div>`:'';

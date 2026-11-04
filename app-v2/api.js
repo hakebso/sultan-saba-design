@@ -24,10 +24,10 @@
   }
   function getLanguage() {
     if (!language) { try { language = root.localStorage.getItem(LANGUAGE); } catch (_) {} }
-    return ['tr','az','ru'].includes(language) ? language : 'tr';
+    return ['tr','az','ru','en'].includes(language) ? language : 'az';
   }
   function setLanguage(value) {
-    language = ['tr','az','ru'].includes(value) ? value : 'tr';
+    language = ['tr','az','ru','en'].includes(value) ? value : 'az';
     try { root.localStorage.setItem(LANGUAGE,language); } catch (_) {}
     return language;
   }
