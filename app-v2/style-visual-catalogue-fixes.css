@@ -1,0 +1,71 @@
+/* Mobile catalogue repair. Reuse the app's cards, type, palette and buttons. */
+.v2 .visual-all-services{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;margin:0 0 24px;background:#fff;border:1px solid var(--line);border-radius:24px;text-decoration:none;color:var(--ink)}
+.v2 .visual-all-services>span{min-width:0;display:grid;gap:4px}
+.v2 .visual-all-services strong{font-size:16px;line-height:1.5;font-weight:600}
+.v2 .visual-all-services small{font-size:12px;line-height:1.5;color:var(--muted)}
+.v2 .visual-all-services>.icon,.v2 .visual-utility-list .icon{width:20px;height:20px;flex:0 0 20px}
+.v2 .visual-explore-more{margin:28px 0 0}
+.v2 .visual-explore-more>h2{font-size:18px;font-weight:500;margin:0 0 16px}
+.v2 .visual-utility-list{border:1px solid var(--line);border-radius:24px;background:#fff;overflow:hidden}
+.v2 .visual-utility-list>.list-button{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:16px 20px;margin:0;border:0;border-radius:0;color:var(--ink);font-size:14px;line-height:1.5;text-decoration:none}
+.v2 .visual-utility-list>.list-button+ .list-button{border-top:1px solid var(--line)}
+.v2 .visual-catalogue>.source-discover-subheader{padding:28px 24px 20px;background:var(--bg);backdrop-filter:none}
+.v2 .visual-catalogue-search{padding:20px 24px 0;margin:0}
+.v2 .visual-catalogue .entry-search{margin:0;position:relative}
+.v2 .visual-catalogue .entry-search input{width:100%;height:52px;padding:12px 16px 12px 48px;font-size:14px}
+.v2 .visual-catalogue .entry-search button{position:absolute;top:4px;left:4px;width:44px;height:44px;min-height:44px;padding:12px;background:transparent;color:var(--ink)}
+.v2 .visual-category-filters{display:flex;gap:8px;overflow:auto;padding:16px 24px;margin:0;scrollbar-width:none}
+.v2 .visual-category-filters>.chip{flex:0 0 auto;white-space:nowrap;font-size:13px;line-height:1.5;min-height:40px;text-decoration:none}
+body.v2 .page>.visual-catalogue.photo-free>.source-category-cards{padding:8px 24px 32px;margin:0;gap:24px}
+.v2 .visual-service-group{min-width:0;display:grid;gap:12px;margin:0}
+.v2 .visual-service-group>h2{font-size:18px;font-weight:500;line-height:1.5;margin:0 0 4px}
+body.v2 .visual-service-group>*+*{margin-top:0}
+body.v2 .visual-service-card{display:flex;align-items:flex-start;gap:14px;padding:16px;margin:0;border:1px solid var(--line);border-radius:24px;background:#fff;color:var(--ink);text-decoration:none;min-width:0}
+body.v2 .visual-service-card>img{position:static;width:72px;height:84px;flex:0 0 72px;border-radius:16px;object-fit:cover}
+body.v2 .visual-service-card>div{flex:1;min-width:0;padding:0}
+body.v2 .visual-service-card h3{font-family:inherit;font-size:15px;line-height:1.45;font-weight:600;letter-spacing:0;margin:0;overflow-wrap:break-word}
+body.v2 .visual-service-card p{font-size:12px;line-height:1.5;margin:6px 0 0;color:var(--muted)}
+body.v2 .visual-service-card .entry-service-card-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}
+body.v2 .visual-service-card .entry-service-card-bottom>strong{font-size:15px;line-height:1.5;font-weight:600;white-space:normal;color:var(--gold)}
+body.v2 .visual-service-card small{font-size:11px;font-weight:400}
+body.v2 .visual-service-card .entry-service-card-bottom>span{display:inline-block;max-width:100%;padding:5px 10px;border-radius:999px;background:var(--stone);color:var(--olive);font-size:11px;font-weight:500;line-height:1.5;text-transform:none;white-space:normal;text-align:center}
+.v2 .visual-service-group .service-information-list{margin:0}
+.v2 .visual-service-group .service-information-list>h2{font-size:12px;font-weight:500;color:var(--muted);margin:4px 0 12px}
+.v2 .visual-service-group .service-information-row{margin:0 0 12px}
+.v2 .visual-service-detail .visual-detail-label{font-size:13px;line-height:1.5;font-weight:600;letter-spacing:0;margin:20px 0 6px;color:var(--olive)}
+.v2 .visual-service-detail .entry-service-description{margin:0;line-height:1.65}
+.v2 .visual-service-detail .entry-service-info{padding-bottom:24px}
+.v2 .visual-service-detail .entry-duration-options:has(>.entry-duration-card:only-child){grid-template-columns:1fr}
+.v2 .visual-service-detail .entry-duration-card{min-width:0;padding:16px 12px}
+.v2 .visual-service-detail .entry-duration-card>strong{font-size:16px;line-height:1.5}
+.v2 .visual-service-detail .entry-duration-card>span{font-size:14px;line-height:1.5}
+.v2 .visual-service-detail .entry-addon{display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:10px;align-items:start}
+.v2 .visual-service-detail .entry-addon-icon{display:none}
+.v2 .visual-service-detail .entry-addon-copy{font-size:14px;line-height:1.5}
+.v2 .visual-service-detail .entry-addon>strong{white-space:normal;font-size:13px;line-height:1.5;text-align:right}
+.v2 .visual-service-detail .entry-addon>input{margin-top:3px}
+body.v2 .app:has(>.page>.visual-service-detail)>.flow-footer{display:flex;flex-direction:column;gap:12px;padding:16px 24px max(20px,env(safe-area-inset-bottom));min-width:0}
+body.v2 .app:has(>.page>.visual-service-detail)>.flow-footer .entry-footer-totals{width:100%;margin:0;padding:0;gap:16px;align-items:flex-start}
+body.v2 .app:has(>.page>.visual-service-detail)>.flow-footer .entry-footer-totals>span{min-width:0;flex:1}
+body.v2 .app:has(>.page>.visual-service-detail)>.flow-footer .entry-footer-totals strong{font-size:14px;line-height:1.5}
+body.v2 .app:has(>.page>.visual-service-detail)>.flow-footer>.btn{width:100%;min-height:56px;padding:14px 16px;font-size:16px;line-height:1.5;white-space:normal;gap:10px}
+body.v2 .app:has(>.page>.visual-service-detail)>.flow-footer>.btn>.icon{flex:0 0 22px}
+body.v2 .app:has(>.page>.service-information-detail)>.flow-footer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px 24px max(20px,env(safe-area-inset-bottom))}
+body.v2 .app:has(>.page>.service-information-detail)>.flow-footer>.btn{min-width:0;min-height:52px;padding:12px;font-size:15px;line-height:1.5}
+@media(max-width:370px){body.v2 .visual-service-card{padding:14px;gap:12px}body.v2 .visual-service-card>img{width:64px;height:80px;flex-basis:64px}}
+.demo-large-text.v2 .visual-service-card{flex-wrap:wrap}
+.demo-large-text.v2 .visual-service-card h3{font-size:24px}
+.demo-large-text.v2 .visual-service-card p,.demo-large-text.v2 .visual-service-card .entry-service-card-bottom>span{font-size:18px}
+/* A class with no verified photo gets a normal header, never a blank hero. */
+body.v2 .classfix-group>.group-hero.safe-media-photofree{position:relative;display:flex;flex-direction:column;width:100%;height:auto;min-height:0;margin:0;padding:24px;gap:24px;overflow:visible;background:var(--bg);color:var(--ink)}
+body.v2 .classfix-group>.group-hero.safe-media-photofree>.icon-button{position:static;inset:auto;margin:0;background:var(--stone);color:var(--olive);flex:0 0 40px}
+body.v2 .classfix-group>.group-hero.safe-media-photofree>.classfix-group-title{position:static;inset:auto;padding:0;margin:0;min-width:0;background:none;color:var(--ink);text-shadow:none}
+body.v2 .classfix-group>.group-hero.safe-media-photofree :is(h1,.eyebrow){color:var(--ink)}
+body.v2 .classfix-no-photo>.class-hero.safe-media-photofree{height:88px;min-height:88px}
+body.v2 .classfix-no-photo>.class-hero.safe-media-photofree>.icon-button{position:absolute;top:24px;left:24px;margin:0;background:var(--stone);color:var(--olive);backdrop-filter:none}
+body.v2 .component-unit-status{gap:8px;grid-template-columns:repeat(3,minmax(0,1fr))}
+body.v2 .component-unit-status>div{min-width:0;height:auto;padding:12px 6px}
+body.v2 .component-unit-status>div>span{font-size:11px;line-height:1.5;word-break:normal;overflow-wrap:normal;hyphens:auto;text-align:center}
+/* The existing basket pill has its own row, so it cannot cover another action. */
+body.prototype-app.v2 .app>.basket-dock{position:static;inset:auto;transform:none;flex:0 0 auto;width:auto;max-width:none;margin:8px 24px 12px;min-height:48px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;line-height:1.5}
+body.prototype-app.v2 .app:has(.source-visit-add)>.basket-dock{display:none}

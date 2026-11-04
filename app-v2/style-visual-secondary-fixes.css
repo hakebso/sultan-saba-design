@@ -1,0 +1,56 @@
+/* Simplified informational screens reuse the existing olive/ivory type and controls.
+   Explicit modifiers keep archived booking/source compositions untouched. */
+body.v2 .secondary-information {font-family:inherit;color:var(--ink);min-width:0}
+body.v2 .secondary-information :is(h1,h2,h3,p,a) {overflow-wrap:anywhere}
+body.v2 .secondary-information .facilityfix-catalog-header {padding-top:24px}
+body.v2 .secondary-information .facilityfix-catalog-list {gap:16px;margin-top:20px}
+body.v2 .secondary-information .facilityfix-catalog-card {display:block;aspect-ratio:auto;min-height:0;border:1px solid var(--line);border-radius:20px;background:var(--white,#fff);box-shadow:none;isolation:auto}
+body.v2 .secondary-information .facilityfix-catalog-card::before {display:none}
+body.v2 .secondary-information .facilityfix-catalog-card>img {position:static;display:block;width:100%;height:168px;object-fit:cover;z-index:auto}
+body.v2 .secondary-information .facilityfix-catalog-card .facilityfix-catalog-copy {position:static;display:flex;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:nowrap;min-height:0;width:100%;gap:16px;padding:20px;background:transparent;color:var(--ink)}
+body.v2 .secondary-information .facilityfix-catalog-copy>div {min-width:0;flex:1}
+body.v2 .secondary-information .facilityfix-catalog-copy h2 {font-family:inherit;font-size:calc(18px * var(--facility-scale));font-weight:500;line-height:1.4;letter-spacing:0;margin:0 0 8px;color:var(--olive)}
+body.v2 .secondary-information .facilityfix-catalog-copy p {display:block;font-size:calc(14px * var(--facility-scale));line-height:1.6;opacity:1;color:var(--muted);margin:0}
+body.v2 .secondary-information .facilityfix-catalog-copy>.icon {width:20px;height:20px;flex:0 0 20px;color:var(--olive)}
+body.v2 .secondary-information .secondary-information-actions {display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 0;min-width:0}
+body.v2 .secondary-information-actions>.btn {display:flex;align-items:center;justify-content:center;position:static;width:100%;height:auto;min-height:48px;padding:14px 16px;margin:0;white-space:normal;overflow-wrap:anywhere;line-height:1.5;text-align:center;min-width:0;max-width:100%}
+body.v2 .facilityfix-detail.secondary-information {padding:0 0 24px}
+body.v2 .facilityfix-detail.secondary-information::before {display:none}
+body.v2 .facilityfix-detail.secondary-information>.facilityfix-back {position:static;display:flex;gap:12px;min-height:44px;padding:20px 24px;margin:0;color:var(--muted)}
+body.v2 .facilityfix-detail.secondary-information>.facilityfix-back>span {display:block;min-width:0;font-size:14px;line-height:1.5}
+body.v2 .facilityfix-detail.secondary-information>.facilityfix-back .icon-button {flex:0 0 40px;background:var(--stone);color:var(--olive);backdrop-filter:none}
+body.v2 .facilityfix-detail.secondary-information>.facilityfix-detail-photo {height:240px;margin:0 24px 24px;border-radius:20px}
+body.v2 .facilityfix-detail.secondary-information>.facilityfix-detail-photo::after {display:none}
+body.v2 .facilityfix-detail.secondary-information>.facilityfix-intro {padding:0;margin:0 24px 28px;border:0;background:transparent;box-shadow:none}
+body.v2 .facilityfix-detail.secondary-information .facilityfix-intro>p {font-size:calc(15px * var(--facility-scale));line-height:1.65;color:var(--muted)}
+body.v2 .facilityfix-detail.secondary-information .facilityfix-intro>.facilityfix-eyebrow {font-size:12px;color:var(--gold)}
+body.v2 .secondary-information-section {margin:24px;padding:24px 0 0;border-top:1px solid var(--line)}
+body.v2 .secondary-information-section>h2 {font-size:calc(20px * var(--facility-scale));font-weight:500;line-height:1.4;margin:0 0 14px;color:var(--olive)}
+body.v2 .secondary-information-section>p {font-size:calc(14px * var(--facility-scale));line-height:1.65;color:var(--muted);margin:12px 0}
+body.v2 .secondary-service-links {display:grid}
+body.v2 .secondary-service-links>a {display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;padding:14px 0;border-bottom:1px solid var(--line);font-size:calc(15px * var(--facility-scale));line-height:1.5;text-decoration:none;color:var(--olive)}
+body.v2 .secondary-service-links>a>span {min-width:0}
+body.v2 .secondary-service-links .icon {width:20px;height:20px;flex:0 0 20px}
+/* Descriptions and prices have room at all mobile widths; food is text only. */
+body.v2 .flowfix-cafe-menu .revision-menu-grid {grid-template-columns:1fr;gap:12px;margin:20px 0}
+body.v2 .flowfix-cafe-menu .revision-product-card {min-height:0;padding:18px 20px;border-radius:20px}
+body.v2 .flowfix-cafe-menu .revision-product-card h2 {font-size:17px!important;line-height:1.45;font-weight:500;margin:8px 0}
+body.v2 .flowfix-cafe-menu .revision-product-card .secondary-menu-description {font-size:14px;line-height:1.6;margin:0 0 14px;color:var(--muted)}
+body.v2 .flowfix-cafe-menu .cafe-source-tile-footer {gap:16px}
+body.v2 .flowfix-cafe-menu .cafe-source-tile-footer>strong {font-size:14px;line-height:1.5}
+body.v2 .flowfix-cafe-menu .revision-categories .chip {min-height:44px;line-height:1.5}
+body.v2 .secondary-menu-detail .cafe-source-back {position:static;display:flex;margin:24px 24px 16px;background:var(--stone);color:var(--olive);backdrop-filter:none}
+body.v2 .secondary-menu-detail .cafe-source-information {padding:8px 24px 24px;margin:0}
+body.v2 .secondary-menu-detail .source-note {font-size:13px;line-height:1.6;color:var(--muted);margin-top:24px}
+/* New module links are complete buttons in flow, with no inherited nowrap. */
+body.v2 .revision-discover-links {display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:20px 0}
+body.v2 .revision-discover-links>.btn {min-width:0;max-width:100%;width:100%;height:auto;min-height:48px;padding:14px 16px;margin:0;white-space:normal;overflow-wrap:anywhere;line-height:1.5;text-align:center}
+body.v2 .secondary-information :is(.programfix-catalog-item,.eventfix-list-card) {min-width:0}
+body.v2 .secondary-information .programfix-catalog-item>.btn {margin-top:20px;white-space:normal;line-height:1.5}
+body.v2 .secondary-information .eventfix-list-card>img {width:100%;height:180px;object-fit:cover;border-radius:16px;display:block;margin-bottom:20px}
+body.v2.demo-large-text .flowfix-cafe-menu .revision-product-card h2 {font-size:28px!important}
+body.v2.demo-large-text .flowfix-cafe-menu .revision-product-card .secondary-menu-description {font-size:24px}
+body.v2.demo-large-text .flowfix-cafe-menu .cafe-source-tile-footer>strong {font-size:24px}
+body.v2 .entry-more-links {gap:12px}
+body.v2 .entry-more-links>.revision-discover-links {display:grid;margin:0;gap:12px}
+body.v2 .entry-discover .entry-more-links a:is(.btn,.list-button) {height:auto;white-space:normal;overflow-wrap:anywhere;line-height:1.5}
