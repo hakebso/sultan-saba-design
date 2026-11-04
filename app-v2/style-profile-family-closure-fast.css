@@ -1,0 +1,36 @@
+/* Fresh closure3 profile/edit/preferences pairs, 3 November2026.
+   Preserve the source-matched100% composition. These rules replace only the
+   observed text leaves' fixed computed line boxes with their same L/N ratios. */
+body.prototype-app.v2 .profilefix-identity h1 { line-height:1.33333333333333; } /*32/24*/
+body.prototype-app.v2 .page .profilefix-identity p:not(.eyebrow) { line-height:1.42857142857143; } /*20/14*/
+body.prototype-app.v2 .profilefix-content h2 { line-height:1.5; } /*15/10*/
+body.prototype-app.v2 .profilefix-menu-row > span:nth-child(2) { line-height:1.42857142857143; } /*20/14*/
+body.prototype-app.v2 .profilefix-logout { line-height:1.33333333333333; } /*16/12*/
+
+body.prototype-app.v2 :is(.profilefix-edit,.profilefix-preferences) > .header h1 { line-height:1.55555555555556; } /*28/18*/
+body.prototype-app.v2 .profilefix-edit .field input { line-height:1.42857142857143; } /*20/14*/
+body.prototype-app.v2 .profilefix-phone-prefix { line-height:1.42857142857143; } /*20/14*/
+body.prototype-app.v2 .page .profilefix-phone > p { line-height:1.5; } /*15/10*/
+body.prototype-app.v2 .app:has(>.page .profilefix-edit) > .flow-footer .btn { line-height:1.5; } /*24/16*/
+
+body.prototype-app.v2 .profilefix-permission-note h2 { line-height:1.42857142857143; } /*20/14*/
+body.prototype-app.v2 .page .profilefix-permission-note p { line-height:1.625; } /*19.5/12*/
+body.prototype-app.v2 .profilefix-setting strong { line-height:1.42857142857143; } /*20/14*/
+body.prototype-app.v2 .page .profilefix-setting small { line-height:1.5; } /*15/10*/
+body.prototype-app.v2 .page .profilefix-settings-boundary { line-height:1.5; } /*15/10*/
+
+/* The real readonly phone value must fit at200%. A ten-em input basis scales
+   with the actual input font; when prefix+input no longer fit, the input gets
+   the next full-width flex line. At100%, both still fit on their original row.
+   This preserves the full value and the separate verification action. */
+body.prototype-app.v2 .profilefix-edit .profilefix-input-shell.has-prefix {
+  flex-wrap:wrap;
+}
+body.prototype-app.v2 .profilefix-edit .profilefix-input-shell.has-prefix > input {
+  flex:1 1 10em;
+  min-width:0;
+  max-width:100%;
+}
+
+/* Current policy source phone note is italic at100%; line ratio stays scalable. */
+body.prototype-app.v2 .page .profilefix-phone > p{font-style:italic}

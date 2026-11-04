@@ -1,0 +1,5 @@
+/* Canonical review uses the same local Inter variable upright file and permits
+   italic synthesis. The customer base disabled all synthesis, so computed
+   italic notices were still painted upright. Allow style only; weights stay
+   supplied by the variable font. Normal-text geometry is unchanged. */
+body.prototype-app.v2{font-synthesis:style}

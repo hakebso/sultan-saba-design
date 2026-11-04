@@ -1,0 +1,82 @@
+/* ScreensDesign package_request / composite_offer. Values are from the selected
+   catalogue offer; rendering never creates an order, entitlement or payment. */
+body.v2 .page:has(>.source-offer){padding:0;background:#fcfbf9}
+body.v2 .page>.source-offer{margin:0;--offer-scale:1;min-width:0;color:#2d2d2d;font-family:Inter,sans-serif}
+.demo-large-text.v2 .source-offer{--offer-scale:2}
+.v2 .source-offer :is(h1,h2,p){margin:0;letter-spacing:0;overflow-wrap:anywhere}
+.v2 .source-offer-header{padding:64px 32px 24px}
+.v2 .source-offer .icon-button{display:flex;align-items:center;justify-content:center;width:40px;height:40px;min-width:0;min-height:0;border:0;position:relative;background:#efece7;color:#000;border-radius:50%;padding:0}
+.v2 .source-offer .icon-button:before{content:'';position:absolute;inset:-2px}
+.v2 .source-offer .icon-button>.icon{width:20px;height:20px}
+.v2 .source-offer-header>.icon-button{margin-bottom:32px}
+.v2 .source-offer-header>p{font-size:calc(10px * var(--offer-scale));line-height:1.5;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#c5a059;margin-bottom:4px}
+.v2 .source-offer-header h1{font-size:calc(24px * var(--offer-scale));line-height:1.333333;font-weight:600}
+.v2 .source-offer-content{position:relative;padding:0 32px 48px}
+.v2 .source-offer .source-offer-price{margin:0 0 40px;padding:32px;border-radius:32px;background:#3c422d;color:#fff}
+.v2 .source-offer-price>p{font-size:calc(36px * var(--offer-scale));line-height:1.111111;font-weight:300;display:block}
+.v2 .source-offer-price>.source-offer-price-caption{display:block;font-size:calc(12px * var(--offer-scale));line-height:1.333333;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin:8px 0 32px}
+.v2 .source-offer-price>span{display:flex;gap:8px;align-items:center;margin:0;font-size:calc(14px * var(--offer-scale));line-height:1.428571;font-weight:500}
+.v2 .source-offer-price>span>.icon{width:24px;height:24px;flex:0 0 24px;color:#c5a059}
+.v2 .source-offer .source-offer-section-title{font-size:calc(12px * var(--offer-scale));line-height:1.333333;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#000;margin-bottom:24px}
+.v2 .source-offer-components{display:grid;gap:16px}
+.v2 .source-offer-component{display:flex;align-items:flex-start;gap:16px;position:relative;min-width:0}
+.v2 .source-offer-component>span{display:flex;align-items:center;justify-content:center;width:32px;height:32px;flex:0 0 32px;border-radius:50%;background:#efece7;color:#3c422d}
+.v2 .source-offer-component>span>.icon{width:14px;height:14px}
+.v2 .source-offer-component>div{min-width:0;flex:1}
+.v2 .source-offer-component p{font-size:calc(14px * var(--offer-scale));line-height:1.428571;color:#000}
+.v2 .source-offer-component p+p{margin-top:4px}
+.v2 .source-offer-notice{position:relative;padding:20px;margin-top:48px;border:1px solid #efece7;border-radius:16px;background:transparent}
+.v2 .source-offer-notice>p{font-size:calc(11px * var(--offer-scale));line-height:1.5;text-align:center;font-style:italic;font-synthesis:style;color:#000}
+.v2 .source-offer-notice details{margin-top:12px;font-size:calc(12px * var(--offer-scale));line-height:1.5}
+.v2 .source-offer-notice summary{display:flex;align-items:center;min-height:44px;font:inherit;cursor:pointer;color:#3c422d}
+.v2 .source-offer-notice summary:after{content:'+';margin-left:auto}
+.v2 .source-offer-notice details[open] summary:after{content:'−'}
+.v2 .source-offer-notice details p{font:inherit}
+.v2 .source-offer-hero{height:400px;position:relative;background:#3c422d;isolation:isolate}
+.v2 .source-offer-hero>img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;z-index:-2}
+.v2 .source-offer-hero:after{content:'';position:absolute;inset:0;background:#0000004d;pointer-events:none;z-index:-1}
+.v2 .source-offer-hero>.icon-button{position:absolute;top:56px;left:24px;background:#ffffff33;color:white;backdrop-filter:blur(12px);z-index:2}
+.v2 .source-offer-hero>.icon-button>.icon{width:24px;height:24px}
+.v2 .source-offer-hero-copy{position:absolute;inset:auto 0 0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px;color:white}
+.v2 .source-offer-hero-copy>p{font-size:calc(10px * var(--offer-scale));line-height:1.5;font-weight:700;text-transform:uppercase;letter-spacing:.4em;opacity:.8;margin-bottom:8px}
+.v2 .source-offer-hero-copy>h1{font-size:calc(30px * var(--offer-scale));line-height:1.25;font-weight:300;text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px}
+.v2 .source-offer-hero-copy h1>strong{font-weight:600}
+.v2 .source-offer-hero-copy>span{font-size:calc(10px * var(--offer-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;background:#c5a059;color:white;padding:6px 16px;max-width:100%}
+.v2 .source-composite-offer>.source-offer-content{padding-top:40px}
+.v2 .source-composite-offer .source-offer-section-title{letter-spacing:.2em;margin-bottom:32px}
+.v2 .source-offer-name{font-size:calc(13px * var(--offer-scale));line-height:1.5;margin-bottom:24px!important;color:#3c422d;position:relative}
+.v2 .source-composite-offer .source-offer-components{gap:32px}
+.v2 .source-composite-offer .source-offer-component{gap:20px}
+.v2 .source-composite-offer .source-offer-component>span{width:56px;height:56px;flex-basis:56px}
+.v2 .source-composite-offer .source-offer-component>span>.icon{width:24px;height:24px}
+.v2 .source-composite-offer .source-offer-component h2{font-size:calc(16px * var(--offer-scale));line-height:1.5;font-weight:600;color:#2d2d2d}
+.v2 .source-composite-offer .source-offer-component p{font-size:calc(12px * var(--offer-scale));line-height:1.625;margin-top:4px;color:#000}
+.v2 .source-offer-watermark{position:absolute;top:40px;right:0;width:192px;opacity:.03;transform:rotate(12deg);pointer-events:none}
+body.v2 .app:has(.source-offer)>.flow-footer{padding:32px 32px max(48px,env(safe-area-inset-bottom));border-top:0;background:#ffffffcc;backdrop-filter:blur(12px)}
+body.v2 .app:has(.source-composite-offer)>.flow-footer{border-top:1px solid #efece7;background:#fff;backdrop-filter:none}
+body.v2 .app:has(.source-offer)>.flow-footer>.btn{display:flex;align-items:center;justify-content:center;min-height:64px;width:100%;padding:20px;border:0;border-radius:16px;background:#3c422d;color:#fff;font-size:calc(16px * var(--offer-scale,1));font-weight:600;line-height:1.5;box-shadow:0 20px 25px -5px #0000001a,0 8px 10px -6px #0000001a}
+body.v2 .app:has(.source-offer)>.flow-footer>.btn>span{min-width:0;overflow-wrap:anywhere}
+body.v2 .app:has(.source-offer)>.flow-footer>.btn:active{transform:scale(.98)}
+.v2 .source-offer .icon-button:active{transform:scale(.9)}
+.demo-large-text.v2 .source-offer-hero{height:auto;min-height:400px;padding-top:120px}
+.demo-large-text.v2 .source-offer-hero-copy{position:relative}
+.demo-large-text.v2 .app:has(.source-offer)>.flow-footer>.btn{font-size:32px}
+.v2 .source-offer-hero.safe-media-photofree{height:auto;min-height:280px;padding-top:120px}
+.v2 .source-offer-hero.safe-media-photofree>.source-offer-hero-copy{position:relative}
+
+.v2 .source-offer-price>p>span{font-size:calc(18px * var(--offer-scale));line-height:1.555556;opacity:.6}
+.v2 .source-package-offer .source-offer-notice{margin-top:24px}
+.v2 .source-package-offer .source-offer-notice>p{font-size:calc(10px * var(--offer-scale));line-height:1.625}
+
+.v2 .source-package-offer>.source-offer-header{position:sticky;top:0;z-index:5;background:#fcfbf9}
+
+.v2 .source-offer-name.sr-only{position:absolute;margin:0!important}
+
+.v2 .source-offer-terms>summary{position:relative;cursor:pointer;list-style:none;min-height:0;color:inherit}
+.v2 .source-offer-terms>summary::-webkit-details-marker{display:none}
+.v2 .source-offer-terms>summary:before{content:'';position:absolute;inset:-6px 0}
+.v2 .source-offer-terms>summary:focus-visible{outline:2px solid #3c422d;outline-offset:4px;border-radius:4px}
+.v2 .source-offer-terms>div{display:grid;gap:8px;padding:12px 0 0}
+
+body.v2 .page:has(>.source-offer){scrollbar-width:none}
+body.v2 .page:has(>.source-offer)::-webkit-scrollbar{display:none}

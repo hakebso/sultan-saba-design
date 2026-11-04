@@ -1,0 +1,20 @@
+/* Existing phone field is the native link to the separate verification screen.
+   Non-editable text preserves the full number; no overlay or synthetic click. */
+body.prototype-app.v2 .profilefix-edit .profilefix-phone-link{
+  display:flex;align-items:stretch;flex-wrap:wrap;min-height:64px;
+  border:1px solid var(--stone);border-radius:16px;background:white;
+  color:#000;text-decoration:none;text-indent:0;cursor:pointer;
+  box-shadow:0 1px 2px #0000000d;
+}
+body.prototype-app.v2 .profilefix-edit .profilefix-phone-link:focus-visible{
+  outline:2px solid var(--gold);outline-offset:3px;
+}
+body.prototype-app.v2 .profilefix-edit .profilefix-phone-value{
+  display:block;flex:1 1 10em;min-width:0;max-width:100%;align-self:center;
+  padding:20px;font-size:calc(14px * var(--profile-scale));
+  line-height:1.42857142857143;font-weight:500;letter-spacing:0;
+  text-transform:none;white-space:normal;overflow-wrap:anywhere;color:#000;
+}
+body.prototype-app.v2 .profilefix-edit .profilefix-phone-link.has-prefix>.profilefix-phone-value{
+  padding-left:9px;
+}

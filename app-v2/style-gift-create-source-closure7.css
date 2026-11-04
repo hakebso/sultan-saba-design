@@ -1,0 +1,18 @@
+/* gift_create keeps header_001 outside the canonical inner scroller.
+   Native main owns scrolling, so retain the existing header flow geometry and
+   pin it above the form. The opaque colour approximates source white/50 on
+   #fcfbf9, preventing scrolled fields showing through the fixed header area. */
+body.prototype-app.v2 .page[data-route=gift]>.source-gift-create>.source-gift-create-header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#fefdfc;
+}
+
+/* Canonical labels sit in a 24px parent line box before the 6px field gap.
+   Native anonymous grid-label text inherited 15px, pulling every input up9px.
+   Keep the label/control structure, real required phone/delivery fields, and
+   unitless growth for text-only zoom; input/control line heights stay intact. */
+body.prototype-app.v2 .page[data-route=gift] .source-gift-create .source-gift-create-fields>.field{
+  line-height:2.4;
+}

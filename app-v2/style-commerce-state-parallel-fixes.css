@@ -1,0 +1,99 @@
+/* Three-source commerce pass, 3 November 2026. Derived from cafe_cart actual
+   source/native PNG and the order/catalog canonical HTML. No invented photos,
+   service fee, stock term, checkout or kitchen-system integration. */
+body.prototype-app.v2 .app>.page:has(>.commerce-cart-source),
+body.prototype-app.v2 .app>.page:has(>.commerce-order-focused) {padding:0}
+
+/* cafe_cart: one centered title/close row, with outlined active visit inside
+   the same source header. Actual longer visit labels wrap intrinsically. */
+body.v2 .commerce-cart-header {padding:56px 24px 24px;margin:0;background:var(--bg);border-bottom:1px solid var(--stone)}
+body.v2 .commerce-cart-title {display:grid;grid-template-columns:40px minmax(0,1fr) 40px;align-items:center;gap:16px;margin-bottom:24px}
+body.v2 .commerce-cart-title>.icon-button {width:40px;height:40px;min-height:40px;background:var(--stone);border-radius:50%;color:var(--olive)}
+body.v2 .commerce-cart-title .icon {width:24px;height:24px}
+body.v2 .commerce-cart-title>h1 {margin:0;font-size:calc(18px * var(--cafe-parallel-scale,1));line-height:1.5556;font-weight:500;letter-spacing:0;text-align:center;overflow-wrap:anywhere}
+body.v2 .commerce-cart-header>.cafefix-active-visit {margin:0;padding:12px;gap:12px;border:1px solid var(--stone);background:none;border-radius:16px}
+body.v2 .commerce-cart-header .cafefix-active-visit>.icon {width:40px;height:40px;flex:0 0 40px;padding:10px;border-radius:50%;background:#c5a0591a;color:#c5a059}
+body.v2 .commerce-cart-header .cafefix-active-visit small {font-size:calc(10px * var(--cafe-parallel-scale,1));line-height:1.5;letter-spacing:-.025em;color:#c5a059}
+body.v2 .commerce-cart-header .cafefix-active-visit strong,
+body.v2 .commerce-cart-header .cafefix-active-visit p {font-size:calc(12px * var(--cafe-parallel-scale,1));line-height:1.3333;color:var(--olive)}
+body.v2 .commerce-cart-header .cafefix-active-visit p {margin-top:4px}
+body.v2 .commerce-cart-content {padding:24px}
+body.v2 .commerce-cart-items {display:grid;gap:16px}
+body.v2 .commerce-cart-item {display:flex;flex-direction:column;justify-content:center;gap:8px;min-height:96px;padding:16px;background:white;border:1px solid var(--stone);border-radius:24px;min-width:0}
+body.v2 .commerce-cart-item-title {position:relative;min-width:0;padding-right:32px;min-height:20px}
+body.v2 .commerce-cart-item h2 {margin:0;font-size:calc(14px * var(--cafe-parallel-scale,1));line-height:1.4286;font-weight:500;letter-spacing:0;overflow-wrap:anywhere}
+body.v2 .commerce-cart-item-title>.commerce-cart-remove {position:absolute;top:-12px;right:-12px;width:44px;min-width:44px;height:44px;min-height:44px;padding:12px;border:0;background:none;color:#9ca3af;box-shadow:none;border-radius:12px}
+body.v2 .commerce-cart-remove>.icon {width:18px;height:18px;flex-shrink:0}
+body.v2 .commerce-cart-item-price {display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-width:0;flex-wrap:wrap}
+body.v2 .commerce-cart-item-price>span {font-size:calc(12px * var(--cafe-parallel-scale,1));line-height:1.5;color:#6b7280;overflow-wrap:anywhere}
+body.v2 .commerce-cart-item-price>strong {font-size:calc(14px * var(--cafe-parallel-scale,1));line-height:1.4286;font-weight:600;color:var(--olive);overflow-wrap:anywhere;margin-left:auto}
+body.v2 .commerce-cart-content>.cafefix-cart-total {margin:40px 0 0;padding-top:24px}
+body.v2 .commerce-cart-content>.cafefix-cart-total .revision-summary {margin:0;padding:0;border:0;background:none}
+body.v2 .commerce-cart-content>.cafefix-cart-total :is(dt,dd) {font-size:calc(16px * var(--cafe-parallel-scale,1));line-height:1.5;font-weight:600}
+body.v2 .commerce-cart-content>.cafefix-cart-total dd {font-size:calc(20px * var(--cafe-parallel-scale,1));line-height:1.4;font-weight:700;color:var(--olive)}
+body.v2 .commerce-cart-content>.commerce-cart-billing-note {display:flex;align-items:flex-start;gap:12px;margin:32px 0 0;padding:16px;background:white;border:1px dashed #c5a05966;border-radius:16px;font-size:calc(11px * var(--cafe-parallel-scale,1));line-height:1.625}
+body.v2 .commerce-cart-billing-note>.icon {width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:var(--gold)}
+body.v2 .commerce-cart-billing-note>span {min-width:0;line-height:1.625;overflow-wrap:anywhere}
+body.v2 .commerce-cart-content>.revision-form {margin:24px 0 0;gap:16px}
+body.v2 .commerce-cart-preferences {padding:0;border:0;font-size:calc(12px * var(--cafe-parallel-scale,1));line-height:1.5}
+body.v2 .commerce-cart-preferences>summary {min-height:44px;padding:12px 0;cursor:pointer;color:#686b60;overflow-wrap:anywhere}
+body.v2 .commerce-cart-preferences>.field {margin-top:16px;min-width:0}
+body.v2 .commerce-cart-preferences :is(input,select) {max-width:100%;min-width:0;font-size:calc(14px * var(--cafe-parallel-scale,1));line-height:1.5}
+body.v2 .commerce-cart-content .choice {align-items:flex-start;font-size:calc(12px * var(--cafe-parallel-scale,1));line-height:1.5}
+body.v2 .commerce-cart-content .choice>span {line-height:1.5;min-width:0;overflow-wrap:anywhere}
+body.v2 .commerce-cart-unpriced {font-size:calc(12px * var(--cafe-parallel-scale,1));line-height:1.5}
+body.v2 .app:has(>.page>.commerce-cart-source)>.flow-footer {padding:24px 32px max(48px,env(safe-area-inset-bottom));background:white;border-top:1px solid var(--stone)}
+body.v2 .app:has(>.page>.commerce-cart-source)>.flow-footer>.btn {min-height:68px;padding:20px;font-size:18px;line-height:1.5556;font-weight:500;border-radius:16px;white-space:normal;overflow-wrap:anywhere;box-shadow:0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a}
+
+/* cafe_order_status: focused detail has one brand/status header and a separate
+   real linked-account footer. Dots represent stages, not fabricated progress. */
+body.v2 .commerce-order-focused>.cafefix-order>.cafefix-order-header {padding:56px 24px 16px;margin:0;background:var(--bg)}
+body.v2 .commerce-order-focused .cafefix-order-header>h1 {font-size:calc(20px * var(--cafe-parallel-scale,1));line-height:1.4;font-weight:300;letter-spacing:0;margin:4px 0 0;overflow-wrap:anywhere}
+body.v2 .commerce-order-focused .cafefix-order-header>p {font-size:calc(10px * var(--cafe-parallel-scale,1));line-height:1.5;color:#c5a059;letter-spacing:.1em}
+body.v2 .commerce-order-focused .cafefix-order-timeline {margin:40px 40px 56px}
+body.v2 .commerce-order-focused .cafefix-step-mark {width:12px;height:12px;flex:0 0 12px;min-height:12px;margin-top:3px;background:var(--olive);box-shadow:0 0 0 4px #3c422d1a}
+body.v2 .commerce-order-focused .is-current .cafefix-step-mark {background:var(--olive);box-shadow:0 0 0 4px #3c422d1a}
+body.v2 .commerce-order-focused .is-upcoming .cafefix-step-mark {background:var(--stone);box-shadow:none}
+body.v2 .commerce-order-focused .cafefix-order-timeline>li:not(:last-child):before {left:5px;top:15px;bottom:-35px}
+body.v2 .commerce-order-focused .cafefix-order-timeline>.is-complete:before {border-color:var(--olive)}
+body.v2 .commerce-order-focused .cafefix-order-detail .revision-menu-item>span {line-height:1.5}
+body.v2 .commerce-order-focused>.cafefix-order>.revision-form {padding:0;border:0;background:none}
+body.v2 .commerce-order-focused .cafefix-posting-note {line-height:1.625}
+body.v2 .app:has(>.page>.commerce-order-focused)>.flow-footer {padding:24px 32px max(48px,env(safe-area-inset-bottom));border:0;background:var(--bg)}
+body.v2 .commerce-order-footer>.btn {min-height:56px;padding:16px;border:1px solid var(--stone);border-radius:16px;background:white;color:var(--olive);font-size:14px;line-height:1.4286;font-weight:600;white-space:normal;overflow-wrap:anywhere}
+/* Existing full-width anchors inside margin boxes otherwise overflow by their
+   horizontal margins, especially translated menu/account labels at200%. */
+body.v2 .commerce-order-focused>.btn,
+body.v2 .commerce-order-focused>.cafefix-order>.btn {width:auto;max-width:calc(100% - 64px)}
+
+/* Retail is a real catalog/request adaptation, not the source's unsupported
+   verified-SKU checkout. Preserve all actual terms and state explanations. */
+body.v2 .retailfix-request-card[data-retail-state] .retailfix-request-terms {font-size:calc(12px * var(--retail-scale,1));line-height:1.625;overflow-wrap:anywhere}
+body.v2 .retailfix-request-card[data-retail-state] .retailfix-request-actions {display:flex;flex-direction:column;gap:12px}
+body.v2 .retailfix-request-card[data-retail-state] .retailfix-request-actions>.btn {min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.5}
+body.demo-large-text.v2 .app:has(>.page>.commerce-cart-source)>.flow-footer>.btn {font-size:36px;line-height:1.5556}
+body.demo-large-text.v2 .commerce-cart-title>h1 {font-size:36px}
+@media(max-width:360px) {
+ body.v2 .commerce-cart-header,body.v2 .commerce-cart-content {padding-left:20px;padding-right:20px}
+ body.v2 .commerce-order-focused .cafefix-order-timeline {margin-left:32px;margin-right:24px}
+}
+@media(max-height:620px) {
+ body.v2 .commerce-cart-header,body.v2 .commerce-order-focused>.cafefix-order>.cafefix-order-header {padding-top:24px}
+ body.v2 .app:has(>.page>.commerce-cart-source)>.flow-footer {padding-top:16px;padding-bottom:24px}
+}
+
+/* Source pairing: generic section/sibling spacing must not shift this screen. */
+body.prototype-app.v2 .page>.commerce-cart-source,body.prototype-app.v2 .page>.commerce-order-focused{margin-top:0}
+body.v2 .commerce-cart-source>.commerce-cart-content{margin-top:0}
+body.v2 .commerce-cart-header .cafefix-active-visit>.icon{background:transparent}
+
+/* Corrected commerce source's three summary rows. Both numeric rows describe
+   the same actual item sum; pending extra-fee information is never a charge. */
+body.v2 .commerce-cart-content>.cafefix-cart-total>.commerce-cart-amounts {display:grid;gap:12px;margin:0;padding:0}
+body.v2 .commerce-cart-amounts>div {display:flex;align-items:baseline;justify-content:space-between;gap:16px;min-width:0}
+body.v2 .commerce-cart-content>.cafefix-cart-total .commerce-cart-amounts dt {flex:1;min-width:0;margin:0;font-size:calc(14px * var(--cafe-parallel-scale,1));line-height:1.4286;font-weight:400;color:#6b7280;overflow-wrap:anywhere}
+body.v2 .commerce-cart-content>.cafefix-cart-total .commerce-cart-amounts dd {min-width:0;max-width:65%;margin:0;font-size:calc(14px * var(--cafe-parallel-scale,1));line-height:1.4286;font-weight:500;text-align:right;color:var(--ink);overflow-wrap:anywhere}
+body.v2 .commerce-cart-content>.cafefix-cart-total .commerce-cart-fee-pending dd {color:#686b60}
+body.v2 .commerce-cart-amounts>.commerce-cart-items-total {padding-top:8px}
+body.v2 .commerce-cart-content>.cafefix-cart-total .commerce-cart-items-total dt {font-size:calc(16px * var(--cafe-parallel-scale,1));line-height:1.5;font-weight:600;color:var(--ink)}
+body.v2 .commerce-cart-content>.cafefix-cart-total .commerce-cart-items-total dd {font-size:calc(20px * var(--cafe-parallel-scale,1));line-height:1.4;font-weight:700;color:var(--olive)}

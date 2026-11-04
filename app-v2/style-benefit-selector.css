@@ -1,0 +1,44 @@
+/* Dedicated payment selector, following benefit_selector header_001–footer_006. */
+.v2 main[data-route="benefit-selector"]{padding:0;background:#fcfbf9;overflow-x:hidden}
+.benefit-selector{color:#2d2d2d;min-width:0}
+.benefit-selector-header{display:flex;align-items:center;gap:16px;padding:40px 32px 24px;background:#fff;border-bottom:1px solid #efece7}
+.benefit-selector-header .icon-button{flex:0 0 40px;width:40px;height:40px;background:#efece7;border:0;border-radius:50%;color:#3c422d}
+.benefit-selector-header p{margin:0 0 4px;color:#8b6b32;font-size:12px;font-weight:600}
+.benefit-selector-header h1{margin:0;font-size:18px;font-weight:600;line-height:1.45;overflow-wrap:anywhere}
+.benefit-selector-content{padding:24px;min-width:0}
+.benefit-selector-content section{margin:0 0 32px}
+.benefit-selector-content h2{margin:0 0 16px;font-size:14px;font-weight:600;color:#66655e}
+.benefit-choice{display:flex;position:relative;align-items:center;gap:16px;width:100%;min-width:0;min-height:98px;margin:0 0 16px;padding:20px;border:1px solid #ddd9d1;border-radius:32px;background:#fff;color:#2d2d2d;text-align:left;font:inherit;line-height:1.45;box-sizing:border-box}
+button.benefit-choice{cursor:pointer;transition:border-color .15s,background .15s}
+button.benefit-choice:hover{background:#f7f6f1}
+.benefit-choice.is-selected{border:2px solid #3c422d;padding:19px}
+.benefit-choice.is-unavailable{background:#f9f8f5;color:#494941}
+.benefit-icon{display:flex;align-items:center;justify-content:center;flex:0 0 48px;width:48px;height:48px;border-radius:16px;background:#efece7;color:#3c422d}
+.benefit-icon .icon{width:26px;height:26px}
+.benefit-choice-copy{display:grid;gap:5px;min-width:0;flex:1;overflow-wrap:anywhere}
+.benefit-choice-copy strong{font-size:16px;font-weight:600}
+.benefit-balance,.benefit-amount{font-size:13px;color:#3c422d}
+.benefit-selected{font-size:12px;font-weight:600;color:#3c422d}
+.benefit-reason,.benefit-inline-reason{font-size:13px;line-height:1.55;color:#8c3a27;margin:0}
+.benefit-check{display:flex;align-items:center;justify-content:center;align-self:flex-start;flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:#3c422d;color:white;font-size:14px}
+.benefit-venue{border-top:1px solid #efece7;padding-top:24px;margin-top:40px!important}
+.benefit-venue .benefit-icon{background:#f5efdf;color:#947336}
+.benefit-live{font-size:14px;line-height:1.6;color:#3c422d}
+.benefit-live p{margin:0 0 12px}
+.benefit-preview,.benefit-empty{font-size:13px;line-height:1.6;color:#65645d}
+.benefit-selector-footer{padding:8px 16px 16px}
+.benefit-selector-footer .btn{width:100%;min-height:60px;background:#3c422d;border-radius:16px;font-size:16px;white-space:normal;line-height:1.5}
+.benefit-apply-reason{margin:0 0 12px;font-size:13px;line-height:1.55;color:#8c3a27}
+.benefit-entry{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;flex:1}
+.benefit-entry>div{display:grid;gap:5px;min-width:0;overflow-wrap:anywhere}
+.benefit-entry strong{font-size:14px}
+.benefit-entry .btn{max-width:50%;white-space:normal;text-align:right;font-size:13px;line-height:1.5;flex-shrink:0;min-height:44px}
+.benefit-entry select[hidden]{display:none!important}
+.benefit-choice:focus-visible,.benefit-selector button:focus-visible{outline:3px solid #a58142;outline-offset:4px}
+@media(max-width:360px){.benefit-selector-header{padding:28px 20px 20px;gap:12px}.benefit-selector-header h1{font-size:17px}.benefit-selector-content{padding:22px 16px}.benefit-choice{gap:12px;padding:16px;border-radius:28px}.benefit-choice.is-selected{padding:15px}.benefit-icon{width:42px;height:42px;flex-basis:42px}.benefit-choice-copy strong{font-size:15px}.benefit-check{position:absolute;right:14px;top:14px}.benefit-choice.is-selected .benefit-choice-copy{padding-right:18px}.benefit-selector-footer{padding:4px}}
+.demo-large-text .benefit-selector-header h1{font-size:1.5rem}.demo-large-text .benefit-choice-copy strong{font-size:1.2rem}.demo-large-text .benefit-balance,.demo-large-text .benefit-amount,.demo-large-text .benefit-reason,.demo-large-text .benefit-preview,.demo-large-text .benefit-selected{font-size:1rem}
+@media(prefers-reduced-motion:reduce){.benefit-choice{transition:none}}
+body.prototype-app.v2 .app>main.page[data-route="benefit-selector"]{padding:0}
+.benefit-selector-header{padding-top:64px}
+body.prototype-app.v2 .app:has(>main[data-route="benefit-selector"])>.flow-footer{padding:16px 16px max(20px,env(safe-area-inset-bottom));background:#fcfbf9;border-top:0}
+@media(max-width:360px){.benefit-selector-header{padding-top:40px}}

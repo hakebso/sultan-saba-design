@@ -1,0 +1,25 @@
+/* booking_slot_lost source composition; real conflict text and recovery actions remain. */
+body.prototype-app.v2 .app>.page[data-route=slot-lost]{padding:0;background:#fcfbf9}
+body.prototype-app.v2 .source-slot-lost-header{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:16px;margin:0;padding:64px 32px 24px;background:#fff;border-bottom:1px solid #efece7}
+body.prototype-app.v2 .source-slot-lost-header h1{min-width:0;margin:0;font-size:18px;font-weight:500;line-height:1.5555555556;letter-spacing:0;color:#000;overflow-wrap:anywhere}
+body.prototype-app.v2 .source-slot-lost-close{display:flex;align-items:center;justify-content:center;flex:0 0 40px;width:40px;height:40px;min-height:40px;border-radius:50%;background:#efece7;color:#000;text-decoration:none}
+body.prototype-app.v2 .source-slot-lost-close .icon{width:20px;height:20px}
+body.prototype-app.v2 .source-slot-lost-body{padding:48px 32px}
+body.prototype-app.v2 .source-slot-lost .outcome{padding:0;margin:0;text-align:center}
+body.prototype-app.v2 .source-slot-lost .outcome .symbol{display:flex;align-items:center;justify-content:center;width:80px;height:80px;margin:0 auto 32px;border:0;background:#fff7ed;color:#ea580c}
+body.prototype-app.v2 .source-slot-lost .outcome .symbol .icon{width:36px;height:36px}
+body.prototype-app.v2 .source-slot-lost .outcome h2{margin:0 0 16px;font-size:20px;font-weight:700;line-height:1.4;color:#000;letter-spacing:0;overflow-wrap:anywhere}
+body.prototype-app.v2 .source-slot-lost .outcome p{margin:0 0 40px;padding:0 16px;font-size:14px;line-height:1.625;color:#000;overflow-wrap:anywhere}
+body.prototype-app.v2 .source-slot-lost .stack{margin:0;gap:32px}
+body.prototype-app.v2 .source-slot-lost .source-slot-lost-recap{display:flex;align-items:center;gap:16px;margin:0 0 40px;padding:24px;border:1px solid #efece7;border-radius:24px;background:#fff;box-shadow:0 1px 2px #0000000d}
+body.prototype-app.v2 .source-slot-lost-service-icon{display:flex;align-items:center;justify-content:center;flex:0 0 48px;width:48px;height:48px;border-radius:16px;background:#efece7;color:#3c422d}
+body.prototype-app.v2 .source-slot-lost-service-icon .icon{width:24px;height:24px}
+body.prototype-app.v2 .source-slot-lost-recap>div{min-width:0;margin:0}
+body.prototype-app.v2 .source-slot-lost-recap h3{margin:0;font-size:14px;font-weight:700;line-height:1.4285714286;color:#000;overflow-wrap:anywhere}
+body.prototype-app.v2 .source-slot-lost-recap p{margin:0;font-size:12px;line-height:1.3333333333;color:#000;overflow-wrap:anywhere}
+body.prototype-app.v2 .source-slot-lost section>.eyebrow{margin:0 0 24px;font-size:10px;font-weight:700;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;color:#000}
+body.prototype-app.v2 .source-slot-lost .visitfix-alternative-slots{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+body.prototype-app.v2 .source-slot-lost .visitfix-alternative-slots .btn{min-width:0;min-height:48px;height:auto;padding:12px 4px;border:1px solid #efece7;border-radius:16px;background:#fff;color:#000;font-size:14px;font-weight:700;line-height:1.4285714286;white-space:normal;overflow-wrap:anywhere;box-shadow:0 1px 2px #0000000d}
+body.prototype-app.v2 .source-slot-lost section>.btn.text{margin:12px 0 0;font-size:14px;line-height:1.5;height:auto}
+@media(max-width:360px){body.prototype-app.v2 .source-slot-lost-header{padding-left:24px;padding-right:24px}body.prototype-app.v2 .source-slot-lost-body{padding-left:24px;padding-right:24px}}
+@media(max-height:620px){body.prototype-app.v2 .source-slot-lost-header{position:static;padding-top:24px}}

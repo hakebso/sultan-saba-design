@@ -1,0 +1,2 @@
+/* Only the legacy overlay remains after the source class title correction. */
+body.v2 .classfix-group>.group-hero::after{content:none;display:none}

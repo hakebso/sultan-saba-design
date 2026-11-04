@@ -1,0 +1,5 @@
+Inter variable font
+Downloaded 2026-11-01 for the local Sultan Saba prototype.
+Official font: https://rsms.me/inter/font-files/InterVariable.woff2
+Official license: https://raw.githubusercontent.com/rsms/inter/master/LICENSE.txt
+Redistribution license is saved alongside as Inter-LICENSE.txt.

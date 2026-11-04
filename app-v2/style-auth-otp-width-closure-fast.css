@@ -1,0 +1,5 @@
+/* Six-box OTP layer already supplies canonical digit spacing. The native input
+   still inherited legacy single-field .24em tracking, which overflows six
+   entered digits at 320px / 200% text. Preserve its real 28px -> 56px scaling,
+   focus, selection, validation, dimensions and current opacity. */
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .otp-entry input[name=code]{letter-spacing:normal}

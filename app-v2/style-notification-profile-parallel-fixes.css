@@ -1,0 +1,12 @@
+/* Profile edit source #save-success-indicator_006, rendered only after a real save.
+   Keep account/draft/phone flows and unchanged source-matched main compositions. */
+body.v2 .profilefix-edit-content>.success[data-source=save-success-indicator_006]{display:flex;align-items:center;gap:8px;padding:0 4px;margin:24px 0 0;background:none;border:0;border-radius:0;color:#16a34a;font-size:calc(12px * var(--profile-scale));line-height:calc(16px * var(--profile-scale));font-weight:600}
+body.v2 .profilefix-edit-content>.success[data-source=save-success-indicator_006]>.icon{width:18px;height:18px;flex:0 0 18px;color:currentColor}
+/* notification_inbox's commented reference placeholder, only for a genuinely
+   empty owned notification collection. Recovery link remains outside its frame. */
+body.v2 .supportfix-notifications .supportfix-empty{height:500px;min-height:500px;padding:32px 48px;box-sizing:border-box;opacity:.4}
+body.v2 .supportfix-notifications .supportfix-empty>.icon{display:block;width:60px;height:60px;flex:0 0 60px;margin:0 0 16px;color:inherit}
+body.v2 .supportfix-notifications .supportfix-empty>h2{font-size:calc(14px * var(--support-scale));line-height:1.5;font-weight:500;margin:0}
+body.v2 .supportfix-notifications .supportfix-empty-actions{padding:0 32px 32px;display:flex;justify-content:center}
+.demo-large-text.v2 .supportfix-notifications .supportfix-empty{height:auto;min-height:500px;padding:32px 24px}
+@media(max-width:360px){body.v2 .supportfix-notifications .supportfix-empty{padding-left:32px;padding-right:32px}}

@@ -1,0 +1,137 @@
+/* Canonical 1 November sources: visits_list, visit_detail, cancellation_flow,
+   reschedule_flow, request_received and visit_receipt. Customer canvas only.
+   The app shell owns scrolling and extracts .flow-footer; no fixed overlay here. */
+.v2 .page:is([data-route=visits],[data-route=visit],[data-route=request],[data-route=receipt],[data-route=request-received]){--visit-scale:1;min-width:0}
+.v2 .page[data-route=visits],.v2 .page[data-route=request]{padding:0 0 32px}
+.v2 .visitfix-list{min-width:0}
+.v2 .visitfix-list-header{position:sticky;top:0;z-index:3;background:var(--bg);padding:64px 32px 24px}
+.v2 .visitfix-list-header h1{font-size:calc(24px * var(--visit-scale));line-height:1.3;font-weight:300;letter-spacing:-.02em}
+.v2 .visitfix-list .visit-filters{margin-top:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:4px;background:#efece780;border-radius:16px}
+.v2 .visitfix-list .visit-filters button{min-width:0;min-height:44px;padding:8px 5px;font-size:calc(13px * var(--visit-scale));line-height:1.35;white-space:normal;overflow-wrap:anywhere;border-radius:12px}
+.v2 .visitfix-list .visit-filters button.selected{font-weight:600;background:#fff;color:var(--olive);box-shadow:0 1px 3px #2d2d2d06}
+.v2 .visitfix-records{display:grid;gap:24px;padding:0 24px}
+.v2 .visitfix-card{min-width:0;padding:20px;background:#fff;border:1px solid var(--stone);border-radius:32px}
+.v2 .visitfix-status{margin-bottom:16px}
+.v2 .visitfix-status .badge{display:inline-flex;gap:8px;align-items:center;background:none;padding:0;color:var(--gold);font-size:calc(13px * var(--visit-scale));line-height:1.4;font-weight:600;white-space:normal}
+.v2 .visitfix-status .badge:before{content:'';width:8px;height:8px;flex:0 0 8px;background:currentColor;border-radius:50%}
+.v2 .visitfix-card h2{font-size:calc(18px * var(--visit-scale));font-weight:600;line-height:1.4;letter-spacing:0}
+.v2 .visitfix-card-meta{margin-top:16px;display:grid;gap:12px;color:var(--muted)}
+.v2 .visitfix-card-meta p{display:flex;align-items:flex-start;gap:12px;font-size:calc(16px * var(--visit-scale));line-height:1.5}
+.v2 .visitfix-card-meta .icon,.v2 .visitfix-card-meta svg{width:20px;height:20px;flex:0 0 20px;color:var(--gold);margin-top:2px}
+.v2 .visitfix-card-meta p>span{min-width:0;overflow-wrap:anywhere}
+.v2 .visitfix-service-row{display:grid;gap:12px;min-width:0}
+.v2 .visitfix-service-row h3{font-size:calc(16px * var(--visit-scale));line-height:1.5;color:var(--ink);font-weight:500}
+.v2 .visitfix-service-row+.visitfix-service-row{border-top:1px solid var(--stone);padding-top:16px}
+.v2 .visitfix-card .actions{margin-top:24px;display:grid;grid-template-columns:1fr;gap:12px}
+.v2 .visitfix-card .actions.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.v2 .visitfix-card .actions>.btn{min-width:0;min-height:48px;padding:12px 8px;font-size:calc(13px * var(--visit-scale));line-height:1.5;font-weight:600;white-space:normal;text-align:center;overflow-wrap:anywhere}
+.v2 .visitfix-card .actions>.btn.secondary{background:var(--stone);border-color:var(--stone)}
+.v2 .visitfix-related{margin:24px 24px 0;border-top:1px solid var(--stone);padding-top:8px}
+.v2 .visitfix-related>summary{font-size:calc(13px * var(--visit-scale));line-height:1.5;color:var(--muted);padding:12px 0}
+.v2 .visitfix-related .stack{margin-top:12px;gap:12px}
+/* Visit itinerary, retaining dynamic rights/payment details rather than source promises. */
+.v2 .page[data-route=visit]{padding:64px 32px 32px}
+.v2 .page[data-route=visit]>.header{margin:0 -4px 24px;gap:12px;align-items:center}
+.v2 .page[data-route=visit]>.header h1{font-size:calc(18px * var(--visit-scale));line-height:1.4;font-weight:600;min-width:0}
+.v2 .page[data-route=visit]>.visit-date{padding:0 0 24px;border-bottom:1px solid var(--stone);margin-top:0;gap:12px;flex-wrap:wrap}
+.v2 .page[data-route=visit]>.visit-date p{font-size:calc(13px * var(--visit-scale));line-height:1.5}
+.v2 .page[data-route=visit] .visit-itinerary{gap:32px;margin-top:32px}
+.v2 .page[data-route=visit] .visit-itinerary-item{padding-left:36px;margin-left:12px;padding-bottom:8px;min-width:0}
+.v2 .page[data-route=visit] .visit-itinerary-item>.badge{margin-bottom:12px}
+.v2 .page[data-route=visit] .itinerary-time{font-size:calc(13px * var(--visit-scale));line-height:1.5;margin-bottom:6px}
+.v2 .page[data-route=visit] .visit-itinerary-item h3{font-size:calc(18px * var(--visit-scale));line-height:1.4}
+.v2 .page[data-route=visit] .visit-itinerary-item .meta{font-size:calc(16px * var(--visit-scale));line-height:1.5}
+.v2 .page[data-route=visit] .visit-coverage{max-width:100%;font-size:calc(13px * var(--visit-scale));line-height:1.5;white-space:normal;overflow-wrap:anywhere}
+.v2 .page[data-route=visit] .visit-coverage .icon{flex-shrink:0}
+.v2 .page[data-route=visit] .visit-account-details>summary{min-height:44px;padding:10px 0;font-size:calc(13px * var(--visit-scale));line-height:1.5}
+.v2 .visitfix-preparation{padding:24px;margin-top:32px;background:#efece74d;border-radius:24px}
+.v2 .visitfix-preparation h2{font-size:calc(13px * var(--visit-scale));line-height:1.5;font-weight:600;color:var(--muted);letter-spacing:.05em}
+.v2 .visitfix-preparation p{margin-top:16px;font-size:calc(13px * var(--visit-scale));line-height:1.6;color:var(--muted)}
+.v2 .visitfix-preparation .btn{margin-top:16px;background:var(--stone);font-size:calc(13px * var(--visit-scale));line-height:1.5;min-height:48px;padding:12px;border-radius:12px}
+.v2 .page[data-route=visit]>.btn{margin-top:20px;font-size:calc(16px * var(--visit-scale));line-height:1.5}
+.v2 .page[data-route=visit]>.add-service-source{margin-top:32px;min-height:68px;padding:20px;border-color:var(--gold)}
+.v2 .app:has(>.page[data-route=visit])>.flow-footer{padding:24px 32px max(32px,env(safe-area-inset-bottom))}
+.v2 .visit-footer-actions{gap:12px;flex-wrap:wrap}
+.v2 .visit-footer-actions>.btn{flex:1 1 120px;min-width:0;font-size:16px;line-height:1.5;white-space:normal;text-align:center}
+.v2 .visit-footer-actions>.btn.secondary{border:2px solid var(--olive);color:var(--olive)}
+.v2 .visit-footer-actions>.btn.danger{background:#fff1f2;color:#a33531;border:1px solid #fff1f2}
+/* Cancellation and rescheduling share request mechanics, with distinct current/proposed scope. */
+.v2 .visitfix-request>.header{margin:0;padding:64px 32px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.v2 .visitfix-request>.header .icon-button{width:44px;height:44px;min-height:44px;flex:0 0 auto;background:var(--stone);border-radius:50%}
+.v2 .visitfix-request>.header h1{font-size:calc(24px * var(--visit-scale));line-height:1.3;font-weight:300;letter-spacing:-.02em}
+.v2 .visitfix-policy{margin:8px 32px 32px;padding:24px;border:1px solid var(--stone);border-radius:24px;background:#fff}
+.v2 .visitfix-policy>.icon{width:32px;height:32px;color:var(--gold);margin-bottom:16px}
+.v2 .visitfix-policy h2{font-size:calc(18px * var(--visit-scale));line-height:1.4;font-weight:600}
+.v2 .visitfix-policy p{font-size:calc(16px * var(--visit-scale));line-height:1.6;color:var(--muted);margin-top:8px}
+.v2 .visitfix-request>.form-stack{margin:0 32px;gap:24px}
+.v2 .visitfix-request .field{min-width:0}
+.v2 .visitfix-request :is(input,select,textarea){max-width:100%;min-width:0;font-size:calc(16px * var(--visit-scale));line-height:1.5}
+.v2 .visitfix-request .field>label,.v2 .visitfix-request label.field>span{font-size:calc(13px * var(--visit-scale));line-height:1.5}
+.v2 .visitfix-current,.v2 .visitfix-proposed{min-width:0;padding:24px;border-radius:24px;border:1px solid var(--stone)}
+.v2 .visitfix-current{background:#efece74d;color:var(--muted)}
+.v2 .visitfix-current .eyebrow,.v2 .visitfix-proposed .eyebrow{font-size:calc(13px * var(--visit-scale));line-height:1.5;font-weight:500;letter-spacing:.02em}
+.v2 .visitfix-current h3{font-size:calc(18px * var(--visit-scale));font-weight:500;line-height:1.4;margin-top:12px;color:var(--ink)}
+.v2 .visitfix-current p:not(.eyebrow){font-size:calc(16px * var(--visit-scale));line-height:1.5;margin-top:8px}
+.v2 .visitfix-proposed{border-color:var(--olive);background:white;display:grid;gap:20px}
+.v2 .visitfix-request .review-line{padding:20px 24px!important;border:1px solid var(--stone);border-radius:24px;background:#efece74d}
+.v2 .visitfix-request .review-line strong{font-size:calc(18px * var(--visit-scale));line-height:1.5;font-weight:500}
+.v2 .visitfix-request .review-line p{font-size:calc(16px * var(--visit-scale));line-height:1.5;margin-top:8px;color:var(--muted)}
+.v2 .app:has(>.page[data-route=request])>.flow-footer{padding:24px 32px max(32px,env(safe-area-inset-bottom));background:var(--bg);border-top:0}
+/* Request acknowledgement and account composition, without implying approved decisions. */
+.v2 .page[data-route=request-received]{padding:64px 32px 32px}
+.v2 .page[data-route=request-received]>.outcome{padding-top:0}
+.v2 .page[data-route=request-received] .outcome .symbol{width:96px;height:96px;background:var(--stone);margin-bottom:32px}
+.v2 .page[data-route=request-received] .outcome h1{font-size:calc(24px * var(--visit-scale));font-weight:300;line-height:1.35}
+.v2 .page[data-route=request-received] .outcome p{font-size:calc(16px * var(--visit-scale));line-height:1.6;margin-top:16px;color:var(--muted)}
+.v2 .page[data-route=request-received]>.outcome-summary{margin-top:40px;padding:24px;border-radius:24px;background:#fff}
+.v2 .page[data-route=request-received]>.outcome-summary h2{font-size:calc(16px * var(--visit-scale));line-height:1.5;font-weight:600}
+.v2 .page[data-route=request-received]>.outcome-summary>p{margin-top:12px}
+.v2 .page[data-route=request-received] .summary-list{border-top:1px solid var(--stone);padding-top:16px;margin-top:16px}
+.v2 .app:has(>.page[data-route=request-received])>.flow-footer{background:var(--bg);border-top:0;padding:24px 32px max(32px,env(safe-area-inset-bottom))}
+.v2 .page[data-route=receipt]{padding:64px 32px 32px}
+.v2 .page[data-route=receipt]>.header{margin:0 0 24px;gap:12px}
+.v2 .page[data-route=receipt]>.header h1{font-size:calc(24px * var(--visit-scale));font-weight:500;line-height:1.3}
+.v2 .page[data-route=receipt]>.note{font-size:calc(13px * var(--visit-scale));line-height:1.6}
+.v2 .page[data-route=receipt]>.stack{padding:24px;border-radius:24px;background:#fff;border:1px solid var(--stone);gap:0}
+.v2 .page[data-route=receipt] .receipt-line{min-width:0;padding:20px 0}
+.v2 .page[data-route=receipt] .receipt-line:last-child{border-bottom:0;padding-bottom:0}
+.v2 .page[data-route=receipt] .receipt-line h3{font-size:calc(16px * var(--visit-scale));font-weight:600;line-height:1.5;margin-bottom:16px}
+.v2 .page[data-route=receipt] .receipt-line .summary-list{gap:10px}
+.v2 .page[data-route=receipt] .receipt-line>strong{display:block;text-align:right;font-size:calc(18px * var(--visit-scale));font-weight:500;margin-top:16px}
+.v2 .page[data-route=receipt]>.card{padding:24px;background:var(--olive);color:#fff;border:0;border-radius:24px}
+.v2 .page[data-route=receipt]>.card .summary-list dt{color:#e6e6dc}
+.v2 .page[data-route=receipt]>.card .summary-list dd{color:#fff}
+.v2 .page[data-route=receipt]>.card .summary-list+.summary-list{padding-top:20px;border-top:1px solid #ffffff40}
+.v2 .page[data-route=receipt]>.btn{font-size:calc(16px * var(--visit-scale));line-height:1.5;white-space:normal}
+/* Reflow large text and compact viewports; content remains in main's native scroll. */
+.demo-large-text.v2 .page:is([data-route=visits],[data-route=visit],[data-route=request],[data-route=receipt],[data-route=request-received]){--visit-scale:2}
+.demo-large-text.v2 .visitfix-list .visit-filters{grid-template-columns:1fr}
+.demo-large-text.v2 .visitfix-list-header{position:static}
+.demo-large-text.v2 .visitfix-card .actions.two{grid-template-columns:1fr}
+.demo-large-text.v2 .visitfix-card-meta p{flex-wrap:wrap}
+.demo-large-text.v2 .visit-footer-actions>.btn{flex-basis:100%;font-size:32px}
+.demo-large-text.v2 .visitfix-request :is(.visitfix-current,.visitfix-proposed){padding:20px}
+.demo-large-text.v2 .visitfix-request .eyebrow{overflow-wrap:anywhere}
+.demo-large-text.v2 .page:is([data-route=receipt],[data-route=request-received]) .summary-list>div{flex-direction:column;align-items:flex-start;gap:8px}
+.demo-large-text.v2 .page:is([data-route=receipt],[data-route=request-received]) .summary-list :is(dt,dd){font-size:26px;max-width:100%;text-align:left}
+@media(max-width:360px){
+ .v2 .visitfix-list-header{padding-left:24px;padding-right:24px}
+ .v2 .visitfix-records{padding-left:20px;padding-right:20px}
+ .v2 .visitfix-related{margin-left:20px;margin-right:20px}
+ .v2 .page:is([data-route=visit],[data-route=receipt],[data-route=request-received]){padding-left:24px;padding-right:24px}
+ .v2 .visitfix-request>.header{padding-left:24px;padding-right:24px}
+ .v2 .visitfix-policy,.v2 .visitfix-request>.form-stack{margin-left:24px;margin-right:24px}
+ .v2 .visitfix-policy,.v2 .visitfix-current,.v2 .visitfix-proposed,.v2 .visitfix-preparation{padding:20px}
+ .v2 .page[data-route=visit] .visit-itinerary-item{padding-left:24px}
+ .v2 .app:has(>.page:is([data-route=request],[data-route=visit],[data-route=request-received]))>.flow-footer{padding-left:24px;padding-right:24px}
+}
+@media(max-height:620px){
+ .v2 .visitfix-list-header{position:static;padding-top:24px}
+ .v2 .page:is([data-route=visit],[data-route=receipt],[data-route=request-received]),.v2 .visitfix-request>.header{padding-top:24px}
+ .v2 .app:has(>.page:is([data-route=request],[data-route=visit],[data-route=request-received]))>.flow-footer{padding-top:16px;padding-bottom:max(16px,env(safe-area-inset-bottom));max-height:40dvh;overflow:auto}
+}
+.v2 .visitfix-balance{padding:24px;background:var(--stone);border-radius:24px}.v2 .visitfix-balance h3{font-size:16px}.v2 .visitfix-balance-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.v2 .visitfix-balance-grid strong{display:block;font-size:28px}.v2 .visitfix-balance-grid span{display:block;font-size:13px}.v2 .visitfix-balance p{font-size:13px;line-height:1.6}.v2 .visitfix-emblem{display:block;width:72px;height:auto;margin:32px auto;opacity:.18}.v2 .visitfix-feedback{padding:24px;background:var(--stone);border-radius:24px;margin-top:24px}.v2 .visitfix-feedback h2{font-size:18px;margin-bottom:16px}.v2 .outcome-service{font-weight:600}.v2 .visitfix-pick-lines{min-width:0}
+/* Intrinsic sizing also handles real text-only enlargement, not only the demo toggle. */
+.v2 .visit-account-details .review-line>.row{flex-wrap:wrap}.v2 .visit-account-details .review-line>.row>strong{flex:0 0 auto;max-width:100%;overflow-wrap:anywhere;white-space:normal}.v2 .visit-footer-actions>.btn{flex-basis:7.5em;overflow-wrap:anywhere}
+.v2 .visitfix-slot-lost .outcome{padding:36px 0}.v2 .visitfix-slot-lost .outcome h2{font-size:20px;line-height:1.4;margin:24px 0 16px}.v2 .visitfix-slot-lost .outcome .symbol{background:#fff4e8;color:#b85b15;border-radius:50%;width:80px;height:80px;margin:auto}.v2 .visitfix-slot-lost .outcome p{color:var(--muted);line-height:1.6}.v2 .visitfix-slot-lost .card{background:white;border-radius:24px;padding:24px}.v2 .visitfix-slot-lost section>.eyebrow{margin:32px 0 16px;font-size:13px}.v2 .visitfix-alternative-slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(5em,1fr));gap:12px}.v2 .visitfix-alternative-slots .btn{min-height:48px;padding:12px;border-radius:16px}
+.v2 .visitfix-cancel-summary{padding:0 4px;font-size:16px;line-height:1.5}.v2 .visitfix-cancel-summary p{font-size:13px;color:var(--muted);margin-top:6px}.v2 .visitfix-request-note summary{font-size:13px;display:flex;align-items:center;min-height:44px;cursor:pointer}.v2 .visitfix-request-note textarea{margin-top:8px}

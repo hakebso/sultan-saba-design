@@ -1,0 +1,5 @@
+/* Existing venue title carries its official-site link without adding layout. */
+body.v2 .supportfix-help .supportfix-venue h2>.supportfix-venue-site{display:inline;color:inherit;font:inherit;letter-spacing:inherit;text-decoration:none}
+body.v2 .supportfix-help .supportfix-venue h2>.supportfix-venue-site:focus-visible{outline:3px solid #9a763b;outline-offset:3px;border-radius:2px}
+/* Actual canonical source title renders nearblack, not the native olive. */
+body.v2 .supportfix-first-visit>.supportfix-guide-hero>h1{color:#000}

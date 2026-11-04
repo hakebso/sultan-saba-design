@@ -1,0 +1,3 @@
+/* Canonical empty-state paragraphs fill their component before 48px padding.
+   Clear the unrelated generic .empty p max-width:330px inherited from style.css. */
+body.prototype-app.v2 .page .source-empty-state:is([data-empty=visits],[data-empty=rights],[data-empty=search])>p{max-width:none}

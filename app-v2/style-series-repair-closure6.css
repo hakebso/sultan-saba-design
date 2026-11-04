@@ -1,0 +1,31 @@
+/* recurring_series compact repair actions. Native details preserves keyboard activation. */
+body.v2 .series-source-final .series-source-repair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:8px;margin-top:16px;min-width:0}
+body.v2 .series-source-final .series-source-repair>.series-source-edit{min-width:0;margin:0}
+body.v2 .series-source-final .recurring-dates>.card:has(>.series-source-repair)>.series-source-row{padding-right:0}
+body.v2 .series-source-final .series-source-repair>.series-source-edit>summary,
+body.v2 .series-source-final .series-source-repair>.series-source-remove{position:relative;inset:auto;display:flex;align-items:center;justify-content:center;width:100%;height:auto;min-height:36px;margin:0;padding:10px 6px;border:0;border-radius:12px;background:var(--stone);color:#000;font-size:calc(10px * var(--class-scale));font-weight:700;line-height:1.5;text-transform:uppercase;text-align:center;white-space:normal;overflow-wrap:anywhere;cursor:pointer}
+/* 36px source shape with44px vertical hit region. Adjacent columns remain separate. */
+body.v2 .series-source-final .series-source-repair>.series-source-edit>summary::before,
+body.v2 .series-source-final .series-source-repair>.series-source-remove::before{content:'';position:absolute;inset:-4px 0}
+body.v2 .series-source-final .series-source-repair>.series-source-remove{border:1px solid var(--stone);background:white;color:var(--olive)}
+body.v2 .series-source-final .conflict-card .series-source-repair>.series-source-remove{border-color:#fecaca;color:#ef4444}
+body.v2 .series-source-final .series-source-repair:has(>.series-source-edit[open]){grid-template-columns:minmax(0,1fr)}
+body.v2 .series-source-final .series-source-repair>.series-source-edit[open]>div{padding-top:20px;min-width:0}
+body.v2 .series-source-final .series-source-repair .field{display:grid;gap:6px;min-width:0}
+body.v2 .series-source-final .series-source-repair input{width:100%;box-sizing:border-box;min-width:0;max-width:100%;font-size:calc(14px * var(--class-scale));line-height:1.5}
+body.v2 .series-source-final .series-source-repair>.series-source-remove:focus-visible,
+body.v2 .series-source-final .series-source-repair>.series-source-edit>summary:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+body.v2.demo-large-text .series-source-final .series-source-repair{grid-template-columns:minmax(0,1fr);gap:12px}
+/* Source places the date-specific failure under its date, inside the status row. */
+body.prototype-app.v2 .series-source-final .series-source-row .classfix-date-reason{margin:0;font-size:calc(10px * var(--class-scale));line-height:1.5;color:#ef4444}
+body.prototype-app.v2 .series-source-final .pending-card .series-source-row .classfix-date-reason{color:#a58142}
+
+/* Source footer explanation is compact and centered; wording retains the separate final-confirmation step. */
+body.prototype-app.v2 .classfix-series-footer>p{font-size:calc(10px * var(--class-scale));line-height:1.5;text-align:center;color:#2d2d2d66;margin:0 0 16px}
+body.prototype-app.v2 .classfix-series-footer{--class-scale:1}
+body.demo-large-text.prototype-app.v2 .classfix-series-footer{--class-scale:2}
+/* Match the actual normalized canonical footer, including disabled treatment. */
+body.prototype-app.v2 .classfix-series-footer>p{color:#000}
+body.prototype-app.v2 .classfix-series-footer>.btn{font-size:calc(16px * var(--class-scale));line-height:1.5;font-weight:600;min-height:64px;padding:20px;border:0}
+body.prototype-app.v2 .classfix-series-footer>.btn:disabled{opacity:.4}
+body.v2 .series-source-final .series-source-repair>.series-source-remove{padding:9px 6px}

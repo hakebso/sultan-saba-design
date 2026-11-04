@@ -1,0 +1,14 @@
+/* Root measured source title32.5px and inline payment parent24px.
+   No fixed card height; real names, values and conditional paid states remain. */
+body.prototype-app.v2 .basket-tools-source .parallel-basket-remove{width:26px;flex-basis:26px;height:32.5px;min-height:32.5px;padding:4px}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-remove::before{inset:-5.75px -9px}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-meta{color:#000}
+body.prototype-app.v2 .basket-tools-source .basket-tools-payment-line{margin-top:8px;font-size:calc(16px * var(--basket-scale,1));line-height:1.5}
+body.prototype-app.v2 .basket-tools-source .basket-tools-payment-line>.parallel-basket-payment{display:inline-block;vertical-align:baseline;min-height:0;height:auto;max-width:100%;margin:0;padding:0;border:0;border-radius:0;background:transparent;color:inherit;font-size:inherit;line-height:inherit;font-weight:400;letter-spacing:normal;white-space:normal}
+body.prototype-app.v2 .basket-tools-source .basket-tools-payment-badge{display:inline;padding:2px 8px;border:1px solid transparent;border-radius:999px;background:#efece7;color:#3c422d;font-size:calc(9px * var(--basket-scale,1));line-height:1.5;font-weight:700;letter-spacing:-.025em;text-transform:uppercase;overflow-wrap:anywhere;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+body.prototype-app.v2 .basket-tools-source .is-venue>.basket-tools-payment-badge{background:#fff;border-color:#efece7;color:#000}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-price{background:transparent}
+/*20px visual source line; pseudoelement keeps44px physical hit height. */
+body.prototype-app.v2 .basket-tools-source .basket-tools-add-service>.btn{position:relative;min-height:0;padding:0;margin:0}
+body.prototype-app.v2 .basket-tools-source .basket-tools-add-service>.btn::before{content:'';position:absolute;inset:-12px 0}
+body.prototype-app.v2 .app:has(>main.page>.basket-tools-source)>.flow-footer>.visit-choice-basket-footer>.footer-totals>span{color:#000}

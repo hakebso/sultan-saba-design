@@ -1,0 +1,44 @@
+/* Fresh welcome pair: photo, 192px emblem, crop and layout already match.
+   Restore only the observed CTA shadow and source-invisible inactive marker. */
+body.v2 .entry-welcome .entry-welcome-copy>.btn{box-shadow:0 20px 25px -5px #0000001a,0 8px 10px -6px #0000001a}
+body.v2 .entry-welcome .entry-progress i:not(.active){background:transparent}
+/* No photo means no media placeholder; the real rebook action retains its target. */
+body.v2 .entry-repeat>div>button:not(:has(>span)){min-height:44px}
+
+/* Fresh guest pair: the additional guide stays reachable after the source panel,
+   without compressing its approved hero. Keep the actual160px emblem unchanged. */
+body.v2 .entry-guest .entry-guest-copy{padding-bottom:48px}
+body.v2 .entry-guest .entry-handle{background:transparent}
+body.v2 .entry-guest .entry-guest-description{color:#000}
+body.v2 .entry-guest .entry-guest-actions>.btn:first-child{box-shadow:0 20px 25px -5px #0000001a,0 8px 10px -6px #0000001a}
+body.v2 .entry-guest .entry-guest-actions>.btn.secondary>.icon{width:18px;height:18px}
+/* Fresh returning pair: record-dependent pending strips stay conditional. */
+body.v2 .entry-home .entry-upcoming>a{box-shadow:0 1px 2px #0000000d}
+body.v2 .entry-home .entry-appointment-meta{flex-wrap:nowrap}
+body.v2 .entry-home .entry-appointment-meta>span{min-width:0}
+@media(max-width:360px){body.v2 .entry-home .entry-appointment-meta{flex-wrap:wrap}}
+.demo-large-text.v2 .entry-home .entry-appointment-meta{flex-wrap:wrap}
+/* Fresh guest after-pair: the source's secondary button is66px (24px text +
+   40px padding +2px border), while the native minimum collapsed it to64px.
+   Restore the source box model; its extra2px also restores the panel start. */
+body.v2 .entry-guest .entry-guest-actions>.btn{padding:20px;line-height:1.5}
+body.v2 .entry-guest .entry-guest-actions>.btn:first-child{border-width:0}
+/* Real text-only200% probes: preserve the100% source line metrics while letting
+   the helper/device enlarge font size without retaining a fixed px line box. */
+body.v2 .entry-guest .entry-guest-copy>.entry-eyebrow{line-height:1.5}
+body.v2 .entry-welcome .entry-skip{line-height:1.4285714286}
+/* Strict text-only resize: retain each100% source ratio, rather than freezing
+   its computed pixel line box when individual descendant fonts enlarge. */
+body.v2 :is(.entry-onboarding,.entry-home) .entry-eyebrow{line-height:1.5} /*15/10*/
+body.v2 .entry-onboarding .entry-intro-title h1{line-height:1.333333333333} /*32/24*/
+body.v2 .entry-onboarding .entry-features h2{line-height:1.555555555556} /*28/18*/
+body.v2 .entry-onboarding .entry-features p{line-height:1.625} /*22.75/14*/
+body.v2 .app:has(>.page>.entry-onboarding)>.flow-footer .btn{line-height:1.555555555556} /*28/18*/
+body.v2 .entry-home .entry-appointment-top>span{line-height:1.5} /*15/10*/
+body.v2 .entry-home .entry-appointment-meta{line-height:1.428571428571} /*20/14; inherited by its actual spans*/
+body.v2 .entry-home .entry-balance h2{line-height:1.333333333333} /*16/12*/
+body.v2 .entry-home .entry-balance p{line-height:1.333333333333} /*32/24; inherited by the balance strong*/
+body.v2 .entry-home .entry-balance small{line-height:1.5} /*15/10*/
+body.v2 .entry-home .entry-repeat strong{line-height:1.428571428571} /*20/14*/
+body.v2 .entry-home .entry-repeat small{line-height:1.333333333333} /*16/12*/
+body.prototype-app.v2 .app:has(>.page>.entry-home)>.bottom-nav a{line-height:1.5} /*15/10; inherited by labels*/

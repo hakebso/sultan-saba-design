@@ -1,0 +1,9 @@
+/* Source headers are siblings of the scrolling detail body. */
+body.prototype-app.v2 .page[data-route="service-info"]{display:flex;flex-direction:column;overflow:hidden;min-height:0}
+body.prototype-app.v2 .page[data-route="service-info"]>.flash,body.prototype-app.v2 .page[data-route="service-info"]>.pending{flex:0 0 auto}
+body.v2 .service-information-detail{display:flex;flex-direction:column;position:relative;flex:1 1 auto;min-height:0;overflow:hidden}
+body.v2 .service-information-detail>.entry-photofree-header{flex:0 0 auto}
+body.v2 .service-information-scroll{flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;margin:0;scroll-padding:24px}
+body.v2 .service-information-scroll>.entry-service-hero{flex:none}
+body.v2 .service-information-photo-header{position:absolute;inset:0 0 auto;height:0;z-index:3}
+body.v2 .service-information-photo-header>.icon-button{position:absolute;top:56px;left:24px;background:#ffffff33;color:white}

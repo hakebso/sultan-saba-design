@@ -1,0 +1,16 @@
+/* notification_inbox / current policy-corrected help_contact only.
+   Source100% ratios remain exact while independently enlarged text grows. */
+body.v2 :is(.supportfix-notifications,.supportfix-help)>.supportfix-header h1{line-height:1.5555555556}
+body.v2 .supportfix-notifications>.supportfix-header>.btn{line-height:1.5}
+body.v2 .supportfix-notifications .supportfix-notification-heading>strong{line-height:1.4285714286}
+body.v2 .supportfix-notifications .supportfix-notification-heading time{line-height:1.5}
+body.v2 .supportfix-notifications .supportfix-notification-body{line-height:1.625}
+body.v2 .supportfix-help .supportfix-venue h2{line-height:1.5555555556}
+body.v2 .page .supportfix-help .supportfix-venue p{line-height:1.3333333333}
+body.v2 .supportfix-help .supportfix-contact-actions>button{line-height:1.3333333333;opacity:.4}
+body.v2 .supportfix-help .supportfix-contact-actions{margin-bottom:16px}
+body.v2 .page .supportfix-help .supportfix-venue>.supportfix-contact-notice{margin:0;padding:12px;border:1px solid #fef3c7;border-radius:12px;background:#fffbeb;font-size:calc(10px * var(--support-scale));line-height:1.25;font-style:italic;color:#92400e}
+body.v2 .supportfix-help .supportfix-faq>h2{line-height:1.3333333333}
+body.v2 .supportfix-help .supportfix-faq summary{line-height:1.4285714286}
+/* Guide source header uses tracking[0.2em]; approved real hero photo stays intact. */
+body.v2 .supportfix-first-visit>.supportfix-guide-header>span{letter-spacing:.2em}

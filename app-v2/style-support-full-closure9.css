@@ -1,0 +1,16 @@
+/* service_information_support_full history; load after style-info-source-closure8.css.
+   Scope: existing current-owner information context only. Context/policy/single
+   external footer remain in their existing, working positions. Source /opacity
+   classes require root computed-style verification; no guessed faded copy. */
+/* Existing closure8 composer remains margin:0/padding:32px; textarea stays160px. */
+body.v2 .service-information-support .supportfix-request-note{margin:32px 4px 0;font-size:calc(10px * var(--information-form-scale,1));line-height:1.625;color:#000;overflow-wrap:anywhere}
+body.v2 .service-information-support .supportfix-demo-note{margin:12px 4px 0;font-size:calc(10px * var(--information-form-scale,1));line-height:1.5;font-style:italic;color:#000;overflow-wrap:anywhere}
+body.v2 .service-information-support>.supportfix-tracking{margin:0 32px 32px;padding-top:32px;border-top:1px solid #efece7;min-width:0}
+body.v2 .service-information-support>.supportfix-tracking>h2{margin:0 0 24px 4px;font-size:calc(11px * var(--information-form-scale,1));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#000;overflow-wrap:anywhere}
+body.v2 .service-information-support .service-information-history-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 16px;border:2px dashed #efece7;border-radius:32px;background:transparent;min-width:0;text-align:center}
+body.v2 .service-information-support .service-information-history-empty>span{display:flex;align-items:center;justify-content:center;flex:0 0 64px;width:64px;height:64px;margin-bottom:16px;background:#fff;border-radius:50%;box-shadow:0 1px 2px #0000000d;color:#efece7}
+body.v2 .service-information-support .service-information-history-empty>span>.icon{width:30px;height:30px}
+body.v2 .service-information-support .service-information-history-empty>p{margin:0;max-width:100%;font-size:calc(14px * var(--information-form-scale,1));line-height:1.42857143;font-weight:500;color:#000;overflow-wrap:anywhere}
+body.v2 .service-information-support .supportfix-tracking>article{max-width:100%;overflow-wrap:anywhere}
+body.v2 .service-information-support .supportfix-tracking>article>.btn{white-space:normal;max-width:100%}
+@media(max-width:360px){body.v2 .service-information-support>.supportfix-tracking{margin-inline:24px}}

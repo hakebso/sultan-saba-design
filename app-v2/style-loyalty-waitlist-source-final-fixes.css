@@ -1,0 +1,105 @@
+/* Canonical loyalty/waitlist family pass, 3 November 2026.
+   Real points/goal/reward scope and waitlist phase/expiry/rights remain data-owned. */
+body.prototype-app.v2 .app>.page:has(>.source-loyalty-screen) {padding:0;margin:0}
+body.prototype-app.v2 .page>.source-loyalty-screen {margin-top:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-screen {--loyalty-source-scale:1;min-width:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-header {padding:56px 24px 16px;background:white;border-bottom:1px solid var(--stone)}
+body.v2 .page[data-route=loyalty] .source-loyalty-title {display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+body.v2 .page[data-route=loyalty] .source-loyalty-title>h1 {margin:0;font-size:calc(24px * var(--loyalty-source-scale));line-height:1.3333;font-weight:300;letter-spacing:0;color:var(--olive);overflow-wrap:anywhere}
+body.v2 .page[data-route=loyalty] .source-loyalty-title>span {display:grid;place-items:center;width:40px;height:40px;flex:0 0 40px;background:var(--stone);border-radius:50%;color:#c5a059}
+body.v2 .page[data-route=loyalty] .source-loyalty-title .icon {width:20px;height:20px}
+body.v2 .page[data-route=loyalty] .source-loyalty-header>.loyalty-points {position:relative;margin:0;padding:24px;border:0;border-radius:28px;background:var(--olive);box-shadow:0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a}
+body.v2 .page[data-route=loyalty] .source-loyalty-header .loyalty-points>.eyebrow {font-size:calc(10px * var(--loyalty-source-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;color:#ffffff99;margin:0 0 4px}
+body.v2 .page[data-route=loyalty] .source-loyalty-header .points-number {display:flex;align-items:baseline;gap:8px;margin:0 0 16px;font-size:calc(36px * var(--loyalty-source-scale));line-height:1.1111;font-weight:300;color:white;overflow-wrap:anywhere;flex-wrap:wrap}
+body.v2 .page[data-route=loyalty] .source-loyalty-header .points-number>span {font-size:calc(12px * var(--loyalty-source-scale));line-height:1.3333;font-weight:400;color:#ffffff99}
+body.v2 .page[data-route=loyalty] .source-loyalty-stats {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+body.v2 .page[data-route=loyalty] .source-loyalty-stats>div {display:flex;flex-direction:column;gap:4px;margin:0;padding:12px;border:0;border-radius:12px;background:#ffffff1a;min-width:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-stats>div>span {font-size:calc(9px * var(--loyalty-source-scale));line-height:1.5;font-weight:700;text-transform:uppercase;color:#ffffff66;overflow-wrap:anywhere}
+body.v2 .page[data-route=loyalty] .source-loyalty-stats>div>strong {font-size:calc(14px * var(--loyalty-source-scale));line-height:1.4286;font-weight:600;color:white;overflow-wrap:anywhere}
+body.v2 .page[data-route=loyalty] .source-loyalty-content {padding:24px;margin:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-content>section {margin:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-content>section+section {margin-top:32px!important}
+body.v2 .page[data-route=loyalty] .source-loyalty-content>section>h2 {font-size:calc(10px * var(--loyalty-source-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c5a059;margin:0 0 16px}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-goal {margin:0;padding:20px;border:1px solid var(--stone);border-radius:24px;background:white;box-shadow:0 1px 2px #0000000d}
+body.v2 .page[data-route=loyalty] .source-loyalty-goal-heading {display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 16px;min-width:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-goal-heading>span {display:flex;align-items:center;gap:8px;min-width:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-goal-heading .icon {width:20px;height:20px;flex:0 0 20px;color:var(--olive)}
+body.v2 .page[data-route=loyalty] .source-loyalty-goal-heading strong {font-size:calc(12px * var(--loyalty-source-scale));line-height:1.3333;font-weight:600;overflow-wrap:anywhere}
+body.v2 .page[data-route=loyalty] .source-loyalty-goal-heading>b {font-size:calc(10px * var(--loyalty-source-scale));line-height:1.5;font-weight:700;color:var(--olive)}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-goal progress {display:block;width:100%;height:6px;margin:0;border:0;border-radius:9999px;overflow:hidden;background:var(--stone)}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-goal progress::-webkit-progress-bar {background:var(--stone)}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-goal progress::-webkit-progress-value {background:#c5a059}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-goal progress::-moz-progress-bar {background:#c5a059}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-goal>p {font-size:calc(10px * var(--loyalty-source-scale));line-height:1.5;color:#2d2d2d66;margin:12px 0 0}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .referral-card {margin:0;padding:20px;background:#efece74d;border:1px dashed var(--stone);border-radius:24px}
+body.v2 .page[data-route=loyalty] .source-loyalty-referral-code {display:flex;align-items:center;justify-content:space-between;gap:16px;min-width:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-referral-code>div {min-width:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-referral-code p {font-size:calc(12px * var(--loyalty-source-scale));line-height:1.3333;font-weight:600;margin:0 0 4px}
+body.v2 .page[data-route=loyalty] .source-loyalty-referral-code .gift-code {font-size:calc(12px * var(--loyalty-source-scale));line-height:1.3333;font-weight:500;overflow-wrap:anywhere}
+body.v2 .page[data-route=loyalty] .source-loyalty-referral-code>.icon {width:20px;height:20px;flex:0 0 20px;color:var(--olive)}
+body.v2 .page[data-route=loyalty] .source-loyalty-refer {font-size:calc(12px * var(--loyalty-source-scale));line-height:1.5;margin-top:8px}
+body.v2 .page[data-route=loyalty] .source-loyalty-refer>summary {min-height:44px;padding:12px 0;cursor:pointer;overflow-wrap:anywhere}
+body.v2 .page[data-route=loyalty] .source-loyalty-refer>.form-stack {margin-top:16px}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward {display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:start;gap:16px;padding:16px;border:1px solid var(--stone);border-radius:24px;background:white;min-width:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward>span {display:grid;place-items:center;width:40px;height:40px;background:var(--stone);border-radius:16px;color:#c5a059}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward>span>.icon {width:20px;height:20px}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward>div {min-width:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward h3 {font-size:calc(12px * var(--loyalty-source-scale));line-height:1.3333;font-weight:700;letter-spacing:0;margin:0 0 4px;overflow-wrap:anywhere}
+body.v2 .page[data-route=loyalty] .source-loyalty-reward-price {font-size:calc(10px * var(--loyalty-source-scale));line-height:1.5;font-weight:600;color:var(--olive)}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .source-loyalty-reward-scope,
+body.v2 .page[data-route=loyalty] .source-loyalty-reward-unavailable {font-size:calc(10px * var(--loyalty-source-scale));line-height:1.625;margin-top:8px;color:#686b60;overflow-wrap:anywhere}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward>.btn {min-width:0;width:auto;min-height:44px;padding:12px 16px;border:0;border-radius:12px;background:var(--olive);color:white;font-size:calc(10px * var(--loyalty-source-scale));line-height:1.5;font-weight:700;text-transform:uppercase;white-space:normal;overflow-wrap:anywhere}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward>.btn:disabled {background:var(--stone);color:var(--olive);opacity:1}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .stack {gap:12px}
+body.v2 .page[data-route=loyalty] .source-loyalty-ledger {min-width:0}
+body.demo-large-text.v2 .page[data-route=loyalty] .source-loyalty-screen {--loyalty-source-scale:2}
+body.demo-large-text.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward {grid-template-columns:40px minmax(0,1fr)}
+body.demo-large-text.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward>.btn {grid-column:2;justify-self:start}
+@media(max-width:360px) {
+ body.v2 .page[data-route=loyalty] .source-loyalty-header,body.v2 .page[data-route=loyalty] .source-loyalty-content {padding-left:20px;padding-right:20px}
+ body.v2 .page[data-route=loyalty] .source-loyalty-stats {gap:12px}
+ body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward {gap:10px}
+}
+@media(max-height:620px) {body.v2 .page[data-route=loyalty] .source-loyalty-header {padding-top:24px}}
+
+/* Fresh real joined pair: keep corrected inbox-only copy and unknown rank,
+   while matching canonical readable black secondary text instead of applying
+   a second opacity reduction over the already restrained card hierarchy. */
+body.v2 .page .source-wait-screen.is-waiting .source-wait-intro,
+body.v2 .page .source-wait-screen.is-waiting .source-wait-identity p,
+body.v2 .source-wait-screen.is-waiting .source-wait-position>span {color:#000}
+/* Source points header is outside its scroll region; the native page shares
+   one scroller, so preserve that same header/card region during lower review. */
+body.v2 .page[data-route=loyalty] .source-loyalty-header {position:sticky;top:0;z-index:5}
+/* Intrinsic wrapping must also work for actual text-only resizing, which does
+   not enable the approximate demo-large-text class. Longer translated actions
+   wrap after the real reward description instead of crushing it to zero width. */
+body.v2 .page[data-route=loyalty] .source-loyalty-header .points-number>span {opacity:1}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward {display:flex;flex-wrap:wrap;align-items:flex-start}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward>span {flex:0 0 40px}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward>div {flex:1 1 120px;min-width:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-content .loyalty-reward>.btn {flex:0 1 auto;max-width:100%;margin-left:auto}
+
+/* Fresh post-integration pair: beat the legacy route-specific rights rules,
+   which otherwise restore the gray goal and larger type after composition. */
+body.v2 .page[data-route=loyalty] .source-loyalty-header .loyalty-points::after {content:none}
+body.v2 .page[data-route=loyalty] .source-loyalty-stats>div>strong {line-height:1.7143}
+body.v2 .page[data-route=loyalty] .source-loyalty-referral-code .gift-code {
+ display:block;position:static;margin:0;padding:0;background:none;border:0;
+ border-radius:0;text-align:left;font-size:calc(12px * var(--loyalty-source-scale));
+ line-height:1.3333;color:#000;max-width:100%;user-select:all;
+}
+body.v2 .page[data-route=loyalty] .source-loyalty-referral-code>div {
+ display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0;
+}
+body.v2 .page[data-route=loyalty] .source-loyalty-referral-code p {margin:0}
+body.v2 .page[data-route=loyalty] .source-loyalty-refer {margin-top:0}
+
+/* Fresh actual offered-class pair: canonical medal floats without a beige
+   tile. Restore its black detail labels; command state/disabled opacity stay
+   controlled by the runtime and the base button rules. */
+body.v2 .page .source-offer-screen .source-offer-symbol {background:transparent}
+body.v2 .page .source-offer-screen .source-offer-identity>h2,
+body.v2 .page .source-offer-screen .source-offer-identity .source-wait-identity p,
+body.v2 .page .source-offer-screen .source-offer-payment .benefit-entry .small {color:#000}
+body.v2 .app:has(>.page>.source-offer-screen)>.flow-footer>.btn.secondary:not(:disabled) {color:#000}

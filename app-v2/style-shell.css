@@ -1,0 +1,13 @@
+/* Customer canvas: QA controls live on their own page, outside the app viewport. */
+body.prototype-app.v2{gap:0;padding:0;height:100dvh;min-height:0;overflow:hidden}
+body.prototype-app.v2>#demo-bar{display:none}
+body.prototype-app.v2>.app{width:100%;max-width:430px;min-height:0;height:100%;max-height:none;margin:0 auto;flex:1;border:0;border-radius:0;display:flex;flex-direction:column;overflow:hidden}
+body.prototype-app.v2 .app>main{min-height:0;flex:1 1 auto;overflow:auto;overscroll-behavior:contain;scroll-padding:24px}
+body.prototype-app.v2 .app>.flow-footer,body.prototype-app.v2 .app>.bottom-nav{flex:0 0 auto}
+.v2 .entry-replay{margin-top:24px}.v2 .customer-demo-info{margin-top:24px;padding:16px;border-top:1px solid var(--line);font-size:13px}.v2 .customer-demo-info summary{min-height:44px;display:flex;align-items:center;cursor:pointer}.v2 .customer-demo-info p{margin:12px 0}.v2 .customer-demo-info a{display:inline-flex;align-items:center;min-height:44px}
+@media(min-width:600px){body.prototype-app.v2{padding:12px 20px;justify-content:center}body.prototype-app.v2>.app{width:393px;max-width:100%;height:min(852px,calc(100dvh - 24px));max-height:852px;flex:0 1 852px;border:1px solid var(--line);border-radius:24px}}
+/* Keep translated tab labels within their own touch target at enlarged text. */
+body.prototype-app.v2 .bottom-nav a{min-width:0}
+body.prototype-app.v2 .bottom-nav a>span{display:block;max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;text-align:center}
+/* Unitless nav rhythm preserves the source at100% and grows with text-only zoom. */
+body.prototype-app.v2 .app>.bottom-nav a{line-height:1.5}

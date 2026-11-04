@@ -1,0 +1,144 @@
+/* Canonical 2 November cafe/cart/status, retail catalog and event compositions.
+   Product photos remain omitted unless an actual product asset exists. */
+.v2 .flowfix-cafe .revision-categories .chip{font-size:calc(12px * var(--flowfix-scale,1));line-height:1.4;font-weight:500;padding:10px 20px}
+.v2 .flowfix-cafe .revision-product-card{padding:12px;border-radius:24px;box-shadow:0 1px 2px #0000000d}
+.v2 .flowfix-cafe .revision-product-card h2{font-size:calc(14px * var(--flowfix-scale,1))!important;line-height:1.5;font-weight:500;margin:8px 0 12px}
+.v2 .flowfix-cafe .revision-product-card>strong{font-size:calc(12px * var(--flowfix-scale,1));line-height:1.5;font-weight:700}
+.v2 .flowfix-cafe .revision-product-card .eyebrow{font-size:calc(9px * var(--flowfix-scale,1));line-height:1.5;letter-spacing:.08em}
+.v2 .flowfix-cafe-item .flowfix-product-information{padding:0 8px}
+.v2 .flowfix-cafe-item .flowfix-product-information .price{font-size:calc(18px * var(--flowfix-scale,1));line-height:1.5;font-weight:500;margin:0 0 24px}
+.v2 .flowfix-cafe-item .flowfix-product-description h2{font-size:calc(12px * var(--flowfix-scale,1));line-height:1.5;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px}
+.v2 .flowfix-cafe-item .flowfix-product-description p{font-size:calc(14px * var(--flowfix-scale,1));line-height:1.625}
+.v2 .page:has(>.cafefix-cart),.v2 .page:has(>.cafefix-orders){padding:0}
+.v2 :is(.cafefix-cart,.cafefix-orders){min-width:0;--cafe-parallel-scale:1}
+.v2 .cafefix-cart>.header,.v2 .cafefix-orders>.header{padding:56px 24px 24px;margin:0;background:var(--bg);border-bottom:1px solid var(--stone)}
+.v2 :is(.cafefix-cart,.cafefix-orders)>.header h1{font-size:calc(18px * var(--cafe-parallel-scale));line-height:1.5;font-weight:500;margin:0}
+.v2 :is(.cafefix-cart,.cafefix-orders)>.header .icon-button{width:40px;height:40px;flex:0 0 40px;background:var(--stone);border-radius:50%}
+.v2 .cafefix-active-visit{display:flex;align-items:center;gap:12px;margin:24px;padding:12px;border-radius:16px;background:var(--stone);border:1px solid #c5a0591a;min-width:0}
+.v2 .cafefix-active-visit>.icon{width:40px;height:40px;padding:10px;border-radius:50%;color:var(--gold);background:#c5a0591a;flex:0 0 40px}
+.v2 .cafefix-active-visit>div{min-width:0}
+.v2 .cafefix-active-visit small{display:block;font-size:calc(10px * var(--cafe-parallel-scale));line-height:1.5;font-weight:700;color:var(--gold);text-transform:uppercase}
+.v2 .cafefix-active-visit strong{display:block;font-size:calc(12px * var(--cafe-parallel-scale));line-height:1.5;font-weight:600;overflow-wrap:anywhere}
+.v2 .cafefix-active-visit p{font-size:calc(12px * var(--cafe-parallel-scale));line-height:1.5;margin:4px 0 0;overflow-wrap:anywhere}
+.v2 .cafefix-cart>.revision-menu{margin:24px;display:grid;gap:16px}
+.v2 .cafefix-cart .revision-menu-item{padding:16px;border:1px solid var(--stone);border-radius:24px;background:white;gap:16px;margin:0;min-width:0}
+.v2 .cafefix-cart .revision-menu-item>div{flex:1;min-width:0}
+.v2 .cafefix-cart .revision-menu-item h2{font-size:calc(14px * var(--cafe-parallel-scale));line-height:1.5;font-weight:500;overflow-wrap:anywhere;margin:0 0 4px}
+.v2 .cafefix-cart .revision-menu-item p{font-size:calc(12px * var(--cafe-parallel-scale));line-height:1.5;margin:0}
+.v2 .cafefix-cart-total{margin:40px 24px 24px;padding-top:24px;border-top:1px solid var(--stone)}
+.v2 .cafefix-cart-total .revision-summary{margin:0;padding:0;border:0;background:transparent}
+.v2 .cafefix-cart>.note{margin:32px 24px 24px;padding:16px;border:1px dashed #c5a05966;border-radius:16px;background:white;font-size:calc(11px * var(--cafe-parallel-scale));line-height:1.625}
+.v2 .cafefix-cart>.revision-form{margin:24px;gap:24px}
+.v2 .cafefix-cart>.revision-form>.btn{min-height:64px;padding:20px;font-size:calc(18px * var(--cafe-parallel-scale));line-height:1.5;font-weight:500;border-radius:16px}
+.v2 .cafefix-cart>p,.v2 .cafefix-cart>.btn{margin:24px}
+.v2 .cafefix-orders>.cafefix-order{margin:0;padding:0;border:0;border-radius:0;background:var(--bg);box-shadow:none}
+.v2 .cafefix-order-header{display:flex;align-items:center;flex-direction:column;text-align:center;padding:24px;border-bottom:1px solid var(--stone)}
+.v2 .cafefix-order-header>img{width:48px;height:48px;object-fit:contain;margin:0 0 8px}
+.v2 .cafefix-order-header>p{font-size:calc(10px * var(--cafe-parallel-scale));line-height:1.5;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:0;color:var(--gold)}
+.v2 .cafefix-order-header>h2{font-size:calc(20px * var(--cafe-parallel-scale));line-height:1.4;font-weight:300;margin:4px 0 0}
+.v2 .cafefix-order-timeline{margin:40px 40px 56px;padding:0;list-style:none;display:grid;gap:32px}
+.v2 .cafefix-order-timeline>li{position:relative;display:flex;gap:24px;align-items:flex-start;min-width:0}
+.v2 .cafefix-order-timeline>li:not(:last-child)::before{content:'';position:absolute;left:13px;top:28px;bottom:-34px;border-left:2px solid var(--stone)}
+.v2 .cafefix-step-mark{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:50%;background:var(--olive);color:white;font-size:14px;position:relative;z-index:1}
+.v2 .cafefix-order-timeline .is-upcoming .cafefix-step-mark{background:var(--stone);border:1px solid var(--stone)}
+.v2 .cafefix-order-timeline .is-current .cafefix-step-mark{box-shadow:0 0 0 5px #c5a0591a;background:var(--gold)}
+.v2 .cafefix-order-timeline strong{font-size:calc(14px * var(--cafe-parallel-scale));line-height:1.5;font-weight:600;overflow-wrap:anywhere}
+.v2 .cafefix-order-timeline time,.v2 .cafefix-order-timeline p{display:block;font-size:calc(12px * var(--cafe-parallel-scale));line-height:1.5;color:var(--muted);margin:2px 0 0}
+.v2 .cafefix-order-timeline .is-upcoming>div{opacity:.55}
+.v2 .cafefix-order-detail{margin:0 32px;padding:24px;border:1px solid var(--stone);border-radius:24px;background:white;min-width:0}
+.v2 .cafefix-order-detail h3{font-size:calc(12px * var(--cafe-parallel-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 16px;color:var(--gold)}
+.v2 .cafefix-order-detail>p{font-size:calc(12px * var(--cafe-parallel-scale));line-height:1.5;overflow-wrap:anywhere;margin:0 0 16px}
+.v2 .cafefix-order-detail .revision-menu-item{padding:0;border:0;background:transparent;font-size:calc(13px * var(--cafe-parallel-scale));line-height:1.5;gap:12px;margin:12px 0}
+.v2 .cafefix-order-detail .revision-menu-item>*{min-width:0;overflow-wrap:anywhere}
+.v2 .cafefix-order-detail .revision-menu-item strong{font-size:inherit;text-align:right}
+.v2 .cafefix-order-detail>strong{display:block;padding-top:16px;margin-top:16px;border-top:1px solid var(--stone);text-align:right;font-size:calc(16px * var(--cafe-parallel-scale));line-height:1.5}
+.v2 .cafefix-posting-note{margin:32px 48px 24px;text-align:center;font-size:calc(10px * var(--cafe-parallel-scale));line-height:1.625;color:var(--muted)}
+.v2 .cafefix-order-history{margin:24px 32px}
+.v2 .cafefix-order-history>summary{min-height:44px;font-size:calc(12px * var(--cafe-parallel-scale));line-height:1.5;cursor:pointer}
+.v2 .cafefix-order>.btn,.v2 .cafefix-orders>.btn{display:flex;margin:24px 32px}
+.v2 .cafefix-order>.revision-form{margin:24px 32px}
+/* Retail source is a catalog, not a fabricated SKU photograph or confirmed cart. */
+.v2 .retailfix-catalog .retail-tile{padding:12px;gap:12px;box-shadow:0 1px 2px #0000000d}
+.v2 .retailfix-catalog .retailfix-product-face{padding:16px 12px;border-radius:20px;min-height:120px}
+.v2 .retailfix-catalog .retail-tile h3{font-size:calc(12px * var(--retail-scale));line-height:1.35;font-weight:600}
+.v2 .retailfix-catalog .retailfix-collection-name{font-size:calc(9px * var(--retail-scale));line-height:1.5;letter-spacing:.05em}
+.v2 .retailfix-catalog .retailfix-product-kind{font-size:calc(10px * var(--retail-scale));line-height:1.5}
+.v2 .retailfix-catalog .retailfix-tile-action{padding-top:0;gap:8px}
+.v2 .retailfix-catalog .retailfix-tile-action strong{font-size:calc(12px * var(--retail-scale));line-height:1.5}
+.v2 .retailfix-catalog .retailfix-order-notes{border-radius:24px;padding:20px}
+/* Event source hierarchy, with actual scopes/times only. */
+.v2 .eventfix-header h1{font-size:calc(18px * var(--event-scale));line-height:1.5}
+.v2 .eventfix-header p{font-size:calc(10px * var(--event-scale));line-height:1.5;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:0}
+.v2 .eventfix-types label>span{min-height:88px;border-radius:16px;gap:8px}
+.v2 .eventfix-types strong{font-size:calc(10px * var(--event-scale));line-height:1.5}
+.v2 :is(.eventfix-timing,.eventfix-details,.eventfix-scope-request)>h2,.v2 .eventfix-quote section>h3,.v2 .eventfix-itinerary>h3{font-size:calc(11px * var(--event-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.v2 .eventfix-detail-card{border-radius:24px;padding:20px}
+.v2 .eventfix-quote-id{gap:8px;padding:0 0 24px}
+.v2 .eventfix-quote-id>img{width:96px;height:96px;margin:0 0 8px;object-fit:contain}
+.v2 .eventfix-quote-id h2{font-size:calc(24px * var(--event-scale));line-height:1.35;font-weight:300}
+.v2 .eventfix-quote-id>p{font-size:calc(10px * var(--event-scale));line-height:1.5;font-weight:700;text-transform:uppercase}
+.v2 .eventfix-itemized h3{font-size:calc(12px * var(--event-scale));line-height:1.5;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.v2 .eventfix-itemized>header>span{font-size:calc(10px * var(--event-scale));line-height:1.5;font-weight:700;text-transform:uppercase}
+.v2 .eventfix-itemized>div{font-size:calc(14px * var(--event-scale));line-height:1.5;align-items:flex-start}
+.v2 .eventfix-item-description{display:grid;gap:4px;min-width:0;flex:1}
+.v2 .eventfix-item-description>strong{font-weight:500;overflow-wrap:anywhere}
+.v2 .eventfix-item-description>small{font-size:calc(11px * var(--event-scale));line-height:1.5;font-weight:400;color:var(--muted);overflow-wrap:anywhere}
+.v2 .eventfix-quote-note{padding:16px;border-radius:16px;font-size:calc(11px * var(--event-scale));line-height:1.625}
+.v2 .eventfix-plan-status{padding:16px;display:flex;align-items:flex-start;gap:12px;border-radius:16px;margin-bottom:32px}
+.v2 .eventfix-plan-status>.eventfix-status-mark{width:20px;height:20px;flex:0 0 20px}
+.v2 .eventfix-plan-status h2{font-size:calc(12px * var(--event-scale));line-height:1.5;font-weight:700;margin:0 0 2px}
+.v2 .eventfix-plan-status p{font-size:calc(11px * var(--event-scale));line-height:1.25}
+.v2 .eventfix-plan-summary{margin-bottom:32px}
+.v2 .eventfix-plan-summary article{padding:16px;gap:4px}
+.v2 .eventfix-plan-summary .icon{width:24px;height:24px;margin-bottom:4px}
+.v2 .eventfix-plan-summary span{font-size:calc(9px * var(--event-scale));line-height:1.5;font-weight:700;text-transform:uppercase}
+.v2 .eventfix-plan-summary strong{font-size:calc(14px * var(--event-scale));line-height:1.5;font-weight:700}
+.v2 .eventfix-plan-summary small{font-size:calc(10px * var(--event-scale));line-height:1.5}
+@media(max-width:360px){.v2 .cafefix-order-timeline{margin-left:32px;margin-right:24px}.v2 .cafefix-order-detail{margin-left:24px;margin-right:24px}.v2 .retailfix-catalog .retailfix-product-face{padding:12px 8px}.v2 .eventfix-itemized>div{gap:12px}}
+.demo-large-text.v2 :is(.cafefix-cart,.cafefix-orders){--cafe-parallel-scale:2}
+.demo-large-text.v2 .cafefix-cart .revision-menu-item{flex-wrap:wrap}
+.demo-large-text.v2 .cafefix-order-detail .revision-menu-item{flex-wrap:wrap}
+.demo-large-text.v2 .cafefix-order-timeline>li{gap:16px}
+.v2 .cafefix-cart-total .summary-list{margin:0;padding:0;border:0;background:transparent}
+.v2 .cafefix-cart-total .summary-list>div{font-size:calc(16px * var(--cafe-parallel-scale));line-height:1.5;display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.v2 .cafefix-cart-total .summary-list dd{font-size:calc(18px * var(--cafe-parallel-scale));line-height:1.5;font-weight:600}
+.demo-large-text.v2 .flowfix-cafe{--flowfix-scale:2}
+.demo-large-text.v2 .cafefix-cart-total .summary-list>div{flex-wrap:wrap}
+/* PNG pair 3 Nov: quote has its own full-width title bar and fixed acceptance. */
+body.v2.prototype-app .app>main.page[data-route=event-detail]:has(>.eventfix-detail){padding:0}
+body.v2.prototype-app .page>.eventfix-detail{margin-top:0}
+.v2 .eventfix-detail>.eventfix-header{padding:56px 24px 16px;margin:0;background:white;border-bottom:1px solid var(--stone)}
+.v2 .eventfix-detail>.eventfix-quote{padding:24px}
+.v2 .eventfix-detail>.eventfix-plan{padding:24px}
+.v2 .eventfix-quote-header{justify-content:space-between;gap:16px}
+.v2 .eventfix-quote-header>div{flex:1;min-width:0}
+.v2 .eventfix-quote-header h1{text-align:center;font-size:calc(14px * var(--event-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.v2 .eventfix-quote-header::after{content:'';width:40px;flex:0 0 40px}
+.v2 .eventfix-quote-header>.icon-button{border:0;background:transparent}
+.v2 .eventfix-quote-header>.icon-button>.icon{width:24px;height:24px}
+.v2 .eventfix-quote .eventfix-allocation-list{display:flex;gap:8px;overflow:auto;padding-bottom:8px}
+.v2 .eventfix-quote .eventfix-allocation-list>.eventfix-allocation{flex:0 0 auto;max-width:100%;padding:12px 16px;border-radius:16px}
+.v2 .eventfix-quote .eventfix-allocation h3{font-size:calc(12px * var(--event-scale));line-height:1.5;font-weight:600;margin:0}
+.v2 .eventfix-quote .eventfix-allocation p{font-size:calc(10px * var(--event-scale));line-height:1.5}
+.v2 .eventfix-detail>.source-note,.v2 .eventfix-detail>.btn{margin:16px 24px 24px}
+.v2 .eventfix-accept-footer{padding:24px 24px max(48px,env(safe-area-inset-bottom));border-top:1px solid var(--stone);background:white}
+.v2 .eventfix-accept-footer>.btn{width:100%;min-height:64px;padding:20px;font-size:calc(16px * var(--event-scale,1));line-height:1.5;font-weight:600;border-radius:16px;box-shadow:0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a}
+.demo-large-text.v2 .eventfix-quote-header::after{display:none}
+
+body.v2 .app:has(.eventfix-quote)>.flow-footer{padding:0;border-top:0}
+body.demo-large-text.v2 .eventfix-accept-footer{--event-scale:2}
+/* Final observed quote pair: intrinsic emblem height and a single metadata line. */
+body.v2 .eventfix-quote-id{padding:24px 0;gap:0}
+body.v2 .eventfix-quote-id>img{display:block;width:96px;max-width:100%;height:auto;max-height:none;margin:0 0 16px;object-fit:contain}
+body.v2 .eventfix-quote-id>h2{font-size:calc(24px * var(--event-scale));line-height:1.333333;font-weight:300;margin:0 0 4px}
+body.v2 .eventfix-quote-meta{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:4px 8px;min-width:0}
+body.v2 .eventfix-quote-meta>span,body.v2 .eventfix-quote-meta time{font-size:calc(10px * var(--event-scale));line-height:1.5;font-weight:700;text-transform:uppercase;overflow-wrap:anywhere}
+body.v2 .eventfix-quote-id>.eventfix-expired,body.v2 .eventfix-quote-id>.badge{margin-top:8px}
+body.v2 .eventfix-detail>.eventfix-quote-header{padding:56px 24px 24px;min-height:104px;box-sizing:border-box}
+body.v2 .eventfix-quote-header>.icon-button{position:relative;width:24px;height:24px;flex:0 0 24px;padding:0;min-height:24px}
+body.v2 .eventfix-quote-header>.icon-button::before{content:'';position:absolute;inset:-10px}
+body.v2 .eventfix-quote-header h1{line-height:1.714286}
+body.v2 .eventfix-quote-header::after{width:24px;flex-basis:24px}
+.demo-large-text.v2 .eventfix-quote-header h1{line-height:1.714286}
+
+body.v2 .eventfix-quote-id{margin-bottom:24px}

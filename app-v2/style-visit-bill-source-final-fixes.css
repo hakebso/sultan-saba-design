@@ -1,0 +1,42 @@
+/* Visit-linked service selection: source add_service_to_visit composition.
+   Existing service/schedule/quote commands retain all availability decisions.
+   Load after discover/source/visit styles. No fabricated conflict or imagery. */
+body.prototype-app.v2 .app > .page:has(> .source-visit-add) {padding:0}
+body.v2 .source-visit-add {--visit-add-scale:1;margin:0;min-width:0;color:#000}
+body.v2 .source-visit-add-header {display:flex;align-items:center;gap:16px;padding:64px 32px 24px;background:white;border-bottom:1px solid var(--stone);margin:0}
+body.v2 .source-visit-add-header > .icon-button {display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;min-height:40px;border-radius:50%;background:var(--stone);color:#000;position:relative}
+body.v2 .source-visit-add-header > .icon-button::before {content:'';position:absolute;inset:-2px}
+body.v2 .source-visit-add-header > .icon-button > .icon {width:20px;height:20px}
+body.v2 .source-visit-add-header > div {min-width:0;flex:1}
+body.v2 .source-visit-add-header p {font-size:calc(10px * var(--visit-add-scale));line-height:1.5;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin:0;overflow-wrap:anywhere}
+body.v2 .source-visit-add-header h1 {font-size:calc(18px * var(--visit-add-scale));line-height:1.55555556;font-weight:500;letter-spacing:0;margin:0;overflow-wrap:anywhere}
+body.v2 .source-visit-add-body {padding:24px 24px 32px;margin:0;min-width:0}
+body.v2 .source-visit-add-body h2 {font-size:calc(12px * var(--visit-add-scale));line-height:1.33333333;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 16px}
+body.v2 .source-visit-add-existing {margin:0 0 32px}
+body.v2 .source-visit-add-existing > div {display:grid;gap:12px}
+body.v2 .source-visit-add-existing article {display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:16px;border:1px solid var(--stone);border-radius:16px;background:transparent;font-size:calc(16px * var(--visit-add-scale));line-height:1.5;min-width:0}
+body.v2 .source-visit-add-existing article > strong {font-weight:600;min-width:0;overflow-wrap:anywhere}
+body.v2 .source-visit-add-existing article > span {overflow-wrap:anywhere}
+body.v2 .source-visit-add-existing article > small {flex-basis:100%;font-size:calc(11px * var(--visit-add-scale));line-height:1.5}
+body.v2 .source-visit-add-options {margin:0;display:grid;gap:16px}
+body.v2 .source-visit-add-options > h2 {margin:0}
+body.v2 .source-visit-add-options > article {display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px;border:1px solid var(--stone);border-radius:28px;background:white;min-width:0}
+body.v2 .source-visit-add-options > article > div {flex:1;min-width:0}
+body.v2 .source-visit-add-options h3 {font-size:calc(16px * var(--visit-add-scale));line-height:1.5;font-weight:600;letter-spacing:0;margin:0;overflow-wrap:anywhere}
+body.v2 .source-visit-add-options p {font-size:calc(12px * var(--visit-add-scale));line-height:1.33333333;margin:0;overflow-wrap:anywhere}
+body.v2 .source-visit-add-options article > a {display:grid;place-items:center;width:40px;height:40px;flex:0 0 40px;border-radius:50%;background:var(--olive);color:white;box-shadow:0 10px 15px -3px #0000001a;position:relative}
+body.v2 .source-visit-add-options article > a::before {content:'';position:absolute;inset:-2px}
+body.v2 .source-visit-add-options article > a > .icon {width:20px;height:20px}
+body.v2 .page:has(> .source-visit-add) > .basket-dock {display:none}
+body.prototype-app.v2 .app:has(> .page > .source-visit-add) > .flow-footer {padding:32px 32px max(48px,env(safe-area-inset-bottom));background:var(--bg);border:0}
+body.v2 .app:has(> .page > .source-visit-add) > .flow-footer > .btn {padding:20px;min-height:64px;font-size:16px;line-height:1.5;font-weight:600;border-radius:16px;white-space:normal;overflow-wrap:anywhere}
+body.demo-large-text.v2 .source-visit-add {--visit-add-scale:2}
+body.demo-large-text.v2 .app:has(> .page > .source-visit-add) > .flow-footer > .btn {font-size:32px}
+@media(max-width:350px) {
+  body.v2 .source-visit-add-header {padding-inline:24px}
+  body.v2 .source-visit-add-body {padding-inline:20px}
+}
+@media(max-height:620px) {
+  body.v2 .source-visit-add-header {padding-top:24px}
+  body.prototype-app.v2 .app:has(> .page > .source-visit-add) > .flow-footer {padding-top:20px;padding-bottom:24px}
+}

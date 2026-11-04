@@ -1,0 +1,14 @@
+/* The four approved decorative brand-image nodes only; no primary logo rules. */
+body.v2 .rights-source-detail .benefit-hero,
+body.v2 .source-package-offer .source-offer-price,
+body.v2 .source-bill-screen.is-open .source-bill-card,
+body.v2 .source-loyalty-header>.loyalty-points{position:relative;overflow:hidden;isolation:isolate}
+body.v2 .emblem-source-watermark{position:absolute;display:block;height:auto;max-width:none;object-fit:contain;margin:0;pointer-events:none;user-select:none;z-index:0}
+body.v2 .rights-source-detail .benefit-hero>.emblem-source-watermark,
+body.v2 .source-package-offer .source-offer-price>.emblem-source-watermark{width:180px;right:-40px;bottom:-40px;opacity:.1;transform:rotate(12deg)}
+body.v2 .source-bill-screen.is-open .source-bill-card>.emblem-source-watermark{width:200px;right:-48px;top:-48px;opacity:.03;transform:rotate(12deg)}
+body.v2 .source-loyalty-header>.loyalty-points>.emblem-source-watermark{width:120px;right:-20px;top:-20px;opacity:.1;transform:none}
+body.v2 .rights-source-detail .benefit-hero>:not(.emblem-source-watermark),
+body.v2 .source-package-offer .source-offer-price>:not(.emblem-source-watermark),
+body.v2 .source-bill-screen.is-open .source-bill-card>:not(.emblem-source-watermark),
+body.v2 .source-loyalty-header>.loyalty-points>:not(.emblem-source-watermark){position:relative;z-index:1}

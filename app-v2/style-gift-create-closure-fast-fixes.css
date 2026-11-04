@@ -1,0 +1,95 @@
+/* Canonical gift_create composition. Load after style-rights-fixes.css.
+   Required recipient phone and actual delivery choice remain additional fields. */
+body.v2 .page[data-route=gift]:has(>.source-gift-create) { padding:0; }
+body.v2 .source-gift-create { --gift-create-scale:1; color:#2d2d2d; }
+body.v2 .source-gift-create-header {
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:56px 24px 16px; border-bottom:1px solid #efece7; background:#ffffff80;
+  backdrop-filter:blur(12px);
+}
+body.v2 .source-gift-create-header > .icon-button {
+  display:grid; place-items:center; width:40px; height:40px; min-height:40px;
+  flex:0 0 40px; border:1px solid #efece7; border-radius:50%; background:transparent;
+}
+body.v2 .source-gift-create-header > .icon-button > .icon { width:20px; height:20px; }
+body.v2 .source-gift-create-header > .source-gift-create-logo {
+  display:block; width:auto; max-width:120px; height:32px; object-fit:contain;
+}
+body.v2 .source-gift-create-header > span { flex:0 0 40px; width:40px; }
+body.v2 .source-gift-create-content { padding:24px; }
+body.v2 .source-gift-create-eyebrow {
+  margin:0 0 4px; color:#c5a059; font-size:calc(10px * var(--gift-create-scale));
+  font-weight:700; line-height:1.5; letter-spacing:.2em; text-transform:uppercase;
+}
+body.v2 .source-gift-create .rights-gift-heading {
+  margin:0 0 24px; font-size:calc(24px * var(--gift-create-scale)); line-height:1.333333;
+  font-weight:300; text-align:left; letter-spacing:0; color:#3c422d;
+}
+body.v2 .page[data-route=gift] .source-gift-create .gift-type-options { gap:12px; margin-bottom:32px; }
+body.v2 .page[data-route=gift] .source-gift-create .gift-type-options a {
+  min-height:82px; padding:16px 12px; gap:8px; border:1px solid #efece7;
+  border-radius:16px; background:white; color:#2d2d2d;
+  font-size:calc(12px * var(--gift-create-scale)); line-height:1.333333; font-weight:500;
+}
+body.v2 .source-gift-create .gift-type-options a > .icon { width:24px; height:24px; color:#c5a059; }
+body.v2 .page[data-route=gift] .source-gift-create .gift-type-options a.selected {
+  border:1px solid #3c422d; background:#3c422d; color:white; font-weight:600;
+  box-shadow:0 1px 2px #0000000d;
+}
+body.v2 .source-gift-create .gift-type-options a.selected > .icon { color:white; }
+body.v2 .source-gift-create .form-stack { gap:0; }
+body.v2 .source-gift-create-fields { display:grid; gap:20px; }
+body.v2 .page[data-route=gift] .source-gift-create .field {
+  position:relative; margin:0; gap:6px; font-size:calc(10px * var(--gift-create-scale));
+  line-height:1.5; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#2d2d2d66;
+}
+body.v2 .page[data-route=gift] .source-gift-create :is(input,select,textarea) {
+  min-width:0; width:100%; margin:0; padding:16px; border:1px solid #efece7;
+  border-radius:16px; background:white; font-size:calc(14px * var(--gift-create-scale));
+  line-height:1.428571; font-weight:400; color:#2d2d2d;
+}
+body.v2 .source-gift-create input[name=amount] { padding-right:42px; }
+body.v2 .source-gift-create-currency {
+  position:absolute; right:16px; bottom:16px; color:#3c422d;
+  font-size:calc(14px * var(--gift-create-scale)); line-height:1.428571; font-weight:600;
+  pointer-events:none;
+}
+body.v2 .page[data-route=gift] .source-gift-create textarea { resize:vertical; min-height:94px; }
+body.v2 .source-gift-create .rights-gift-process {
+  margin:32px 0 0; padding:20px; border:1px solid #efece7; border-radius:24px; background:#efece766;
+}
+body.v2 .source-gift-create .rights-gift-process h2 {
+  margin:0 0 16px; font-size:calc(10px * var(--gift-create-scale)); line-height:1.5;
+  font-weight:700; letter-spacing:.1em; color:#3c422d; text-transform:uppercase;
+}
+body.v2 .source-gift-create .rights-gift-process ol { margin:0; gap:16px; }
+body.v2 .source-gift-create .rights-gift-process li {
+  padding-left:36px; min-height:24px; font-size:calc(11px * var(--gift-create-scale));
+  line-height:1.625; color:#2d2d2db3;
+}
+body.v2 .source-gift-create .rights-gift-process li:before {
+  width:24px; height:24px; border:1px solid #efece7; background:white; color:#2d2d2d;
+  font-size:calc(10px * var(--gift-create-scale)); line-height:1.5; font-weight:700;
+}
+body.v2 .app:has(>.page>.source-gift-create) > .flow-footer { padding:32px 24px; background:white; border-top:1px solid #efece7; }
+body.v2 .app:has(>.page>.source-gift-create) > .flow-footer > .btn {
+  min-height:64px; padding:20px; border-radius:16px; background:#3c422d; color:white;
+  font-size:16px; line-height:1.5; font-weight:600; box-shadow:0 20px 25px -5px #0000001a,0 8px 10px -6px #0000001a;
+}
+body.demo-large-text.v2 .source-gift-create { --gift-create-scale:2; }
+body.demo-large-text.v2 .source-gift-create .gift-type-options { grid-template-columns:1fr; }
+body.demo-large-text.v2 .source-gift-create .rights-gift-process li { padding-left:52px; }
+body.demo-large-text.v2 .source-gift-create .rights-gift-process li:before { width:40px; height:40px; }
+@media(max-height:620px) { body.v2 .source-gift-create-header { padding-top:24px; } }
+
+/* Actual paired capture: generic direct-section margins shifted the complete
+   source wrapper by 32px and its content by a further 16px. */
+body.v2 .page[data-route=gift] > .source-gift-create { margin-top:0; }
+body.v2 .page[data-route=gift] > .source-gift-create > .source-gift-create-content { margin-top:0; }
+/* A label wraps its control here; grid makes its declared 6px field gap real.
+   The canonical rendered labels are black, despite their muted utility token. */
+body.v2 .page[data-route=gift] .source-gift-create .source-gift-create-fields > .field {
+  display:grid;
+  gap:6px;
+  color:#000;
+}

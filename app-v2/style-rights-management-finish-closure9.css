@@ -1,0 +1,9 @@
+/* Corrected rights source: existing loyalty/ledger navigation, no fake previews. */
+body.v2 .page[data-route=rights] .rights-tools>.rights-feature-links{display:grid;gap:16px;margin:28px 0 0}
+body.v2 .page[data-route=rights] .rights-feature-links>a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 8px;min-height:44px;color:var(--ink);text-decoration:none;min-width:0}
+body.v2 .page[data-route=rights] .rights-feature-copy{display:flex;align-items:center;gap:16px;min-width:0}
+body.v2 .page[data-route=rights] .rights-feature-copy>strong{font-size:calc(14px * var(--rights-wallet-scale));line-height:1.42857143;font-weight:600;min-width:0;overflow-wrap:anywhere}
+body.v2 .page[data-route=rights] .rights-feature-icon{display:grid;place-items:center;width:40px;height:40px;flex:0 0 40px;border:1px solid var(--stone);border-radius:12px;background:white;color:var(--olive)}
+body.v2 .page[data-route=rights] .rights-feature-icon>.icon{width:20px;height:20px}
+body.v2 .page[data-route=rights] .rights-feature-links>a>.icon{width:18px;height:18px;flex:0 0 18px}
+body.v2 .page[data-route=rights] .rights-feature-links>a:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:8px}

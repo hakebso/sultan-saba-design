@@ -1,0 +1,15 @@
+/* auth_phone/auth_otp: source shadow-xl visible in the saved source/native pairs.
+   Keep the current OTP error-state opacity and actual disabled/timer behavior. */
+body.v2 .app:has(>.page:is([data-route=auth],[data-route=phone-change]))>.flow-footer>.btn{
+  box-shadow:0 20px 25px -5px rgb(0 0 0 / .1),0 8px 10px -6px rgb(0 0 0 / .1);
+}
+/* The operation_recovery source has a broken white-on-white Query utility.
+   Preserve a visible control while its source is corrected; no change to guards. */
+body.v2 .source-recovery-actions>.btn:not(.secondary),
+body.v2 .source-connection-actions>.btn:not(.secondary){background:#3c422d;color:#fff}
+
+/* Match the corrected recovery source, keeping real operation identifiers. */
+body.v2 .source-recovery-header>.icon-button{background:transparent}
+body.v2 .source-recovery-symbol,body.v2 .source-recovery-body>h1,body.v2 .source-recovery-export{color:#000}
+body.v2 .source-recovery-operation code{font-family:inherit;color:#000}
+body.v2 .source-recovery-reset:disabled{color:#000;opacity:.4}

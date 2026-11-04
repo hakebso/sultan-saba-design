@@ -1,0 +1,29 @@
+/* Canonical unavailable cards use40% opacity and a compact status line.
+   Full balance/reason stays in the referenced accessible explanation.
+   A selected invalid choice retains its visible warning and may grow naturally. */
+body.prototype-app.v2 .page[data-route=benefit-selector] .benefit-choice.is-unavailable{
+  opacity:.4;
+  min-height:90px;
+}
+body.prototype-app.v2 .page[data-route=benefit-selector] .benefit-choice.is-unavailable .benefit-icon{
+  opacity:1;
+}
+body.prototype-app.v2 .page[data-route=benefit-selector] .benefit-choice.is-unavailable .benefit-reason{
+  font-size:calc(10px * var(--rights-selector-scale,1));
+  line-height:1.5;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:-.025em;
+  color:#dc2626;
+}
+body.prototype-app.v2 .page[data-route=benefit-selector] .benefit-choice.is-unavailable:is([data-benefit-reason=ENTITLEMENT_EMPTY],[data-benefit-reason=GIFT_EMPTY]) .benefit-reason{
+  color:#ea580c;
+}
+/* Keep the focus ring legible even while the source's disabled card is faded. */
+body.prototype-app.v2 .page[data-route=benefit-selector] .benefit-choice.is-unavailable:focus-visible{
+  opacity:1;
+  outline:3px solid #a58142;
+  outline-offset:4px;
+}
+/* Source expiry cards are grayscale as well as faded; the text still names the actual date condition. */
+body.prototype-app.v2 .page[data-route=benefit-selector] .benefit-choice.is-unavailable:is([data-benefit-reason=ENTITLEMENT_EXPIRED],[data-benefit-reason=GIFT_EXPIRED],[data-benefit-reason=MEMBERSHIP_EXPIRED]){filter:grayscale(1)}

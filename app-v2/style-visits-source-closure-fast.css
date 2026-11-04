@@ -1,0 +1,5 @@
+/* visits_list / visit_detail bounded source closure. Append last. */
+body.prototype-app.v2 .app:has(>.page[data-route=visits])>.bottom-nav a{color:#000}
+body.prototype-app.v2 .app:has(>.page[data-route=visits])>.bottom-nav a.active{color:#3c422d}
+body.prototype-app.v2 .page[data-route=visit] .visitfix-preparation .btn{border:0;gap:8px}
+body.prototype-app.v2 .page[data-route=visit] .visitfix-preparation .btn>.icon{width:18px;height:18px;flex:0 0 18px}

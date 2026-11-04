@@ -1,0 +1,7 @@
+/* visits_list only: canonical100% line ratios, scalable text line boxes.
+   Keep cards, filters, actual booking data and navigation spacing unchanged. */
+body.v2 .visitfix-list .visitfix-list-header h1{line-height:1.3333333333}
+body.prototype-app.v2 .page .visitfix-list .visitfix-status .badge{line-height:1.5}
+body.v2 .visitfix-list .visitfix-status{height:auto;min-height:26.5px}
+body.v2 .visitfix-list .visitfix-card h2{line-height:1.5555555556}
+body.v2 .visitfix-list .visitfix-card .actions>.btn{line-height:1.3333333333}

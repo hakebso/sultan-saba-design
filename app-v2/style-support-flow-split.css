@@ -1,0 +1,15 @@
+/* Local support entry + focused request view. Does not restyle canonical help blocks. */
+body.v2 .supportfix-help>.supportfix-request-entry{margin:0 32px 32px}
+body.v2 .supportfix-request-entry>a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;color:var(--olive);font-size:calc(14px * var(--support-scale));line-height:1.5;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+body.v2 .supportfix-request-entry>a>.icon{width:20px;height:20px;flex:0 0 20px}
+body.v2 .supportfix-request-entry>a:focus-visible{outline:2px solid var(--olive);outline-offset:5px;border-radius:4px}
+body.v2 .page:has(>.supportfix-request){padding:0}
+body.v2 .page>.supportfix-request{margin:0}
+body.v2 .supportfix-request>.supportfix-header{padding:32px 24px 24px;margin:0;border-bottom:1px solid var(--stone);background:white;gap:16px}
+body.v2 .supportfix-request>.supportfix-header h1{font-size:calc(18px * var(--support-scale));line-height:1.5;font-weight:500}
+body.v2 .supportfix-request>.supportfix-composer{margin:24px 24px 32px}
+body.v2 .supportfix-request>.supportfix-tracking{margin:32px 24px}
+body.v2 .supportfix-request .supportfix-demo-note{font-size:calc(12px * var(--support-scale));line-height:1.5;color:var(--muted);margin:12px 0;overflow-wrap:anywhere}
+body.v2 .supportfix-request .supportfix-related{flex-wrap:wrap}
+body.v2 .supportfix-request .supportfix-related .btn{max-width:100%}
+body.v2.demo-large-text .supportfix-request>.supportfix-header{align-items:flex-start;flex-wrap:nowrap}

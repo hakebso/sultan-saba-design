@@ -1,0 +1,20 @@
+/* Source visit_detail primary composition; preserve native account/rating extension. */
+body.v2 .page[data-route=visit]>.visit-outcome-account{margin:24px 0 0;border-top:1px solid var(--stone);min-width:0}
+body.v2 .visit-outcome-account>summary{cursor:pointer;min-height:44px;padding:14px 0;font-size:calc(12px * var(--visit-scale));line-height:1.5;color:var(--olive);overflow-wrap:anywhere}
+body.v2 .visit-outcome-account>div{display:grid;gap:12px;padding:8px 0 16px;min-width:0}
+body.v2 .visit-outcome-account>div>.btn{margin:0;min-width:0;white-space:normal;overflow-wrap:anywhere;font-size:calc(14px * var(--visit-scale));line-height:1.5}
+body.v2 .visit-outcome-account>div>.small{margin:0;font-size:calc(12px * var(--visit-scale));line-height:1.5}
+/* Keep the source 100% metrics while letting enlarged text grow rather than overlap. */
+body.v2 .page[data-route=visit] .visit-itinerary-item h3{line-height:1.555555556}
+body.v2 .page[data-route=visit] .itinerary-time{line-height:1.5}
+body.v2 .page[data-route=visit] .visit-itinerary-item .meta{line-height:1.428571429}
+body.v2 .page[data-route=visit] .visit-coverage{line-height:1.5}
+body.v2 .page[data-route=visit]>.add-service-source{line-height:1.666666667}
+body.v2 .visitfix-preparation h2{line-height:1.333333333}
+body.v2 .visitfix-preparation p{line-height:1.625}
+body.v2 .visitfix-preparation .btn{line-height:1.333333333}
+body.v2 .visit-footer-actions>.btn{line-height:1.428571429}
+/* Identity and totals can contain long localized snapshots; preserve both source columns. */
+body.v2 .source-bill-line>div{overflow-wrap:anywhere}
+body.v2 .source-bill-line>strong{min-width:0}
+body.demo-large-text.v2 .visit-footer-actions>.btn{font-size:28px}

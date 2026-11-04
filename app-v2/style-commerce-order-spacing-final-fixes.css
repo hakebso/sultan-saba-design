@@ -1,0 +1,25 @@
+/* Focused cafe order only. Load after the commerce/cafe parallel styles.
+   Canonical: design-source-20261103-commerce/screens/cafe_order_status-html.html.
+   The shared revision-record grid adds 16px between already-spaced sections.
+   Keep intrinsic rows and existing scale variables; do not invent progress,
+   timestamps or completed stages to match the source's example state. */
+body.v2 .commerce-order-focused > .cafefix-order {
+  row-gap: 0;
+}
+body.v2 .commerce-order-focused .cafefix-order-timeline > li > div {
+  min-width: 0;
+}
+body.v2 .commerce-order-focused .cafefix-order-timeline strong {
+  display: block;
+  line-height: 1.42857143;
+}
+body.v2 .commerce-order-focused .cafefix-order-timeline :is(time, p) {
+  line-height: 1.33333333;
+}
+body.v2 .commerce-order-focused .cafefix-step-mark {
+  margin-top: 0;
+}
+body.v2 .commerce-order-focused .cafefix-order-timeline > li:not(:last-child)::before {
+  top: 12px;
+  bottom: -20px;
+}

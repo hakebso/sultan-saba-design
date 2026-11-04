@@ -1,0 +1,27 @@
+/* Canonical service_detail: truthful service information and optional extras. */
+.v2 .entry-service .entry-duration-card{min-height:88px}
+.v2 .entry-service .entry-service-info{padding-bottom:0}
+.v2 .entry-service-facts{padding-bottom:24px}
+.v2 .entry-service-facts>h2{font-size:calc(12px * var(--detail-scale,1));line-height:1.333333;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:0 4px;margin:0 0 16px;color:#000}
+.v2 .entry-service-facts>ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.v2 .entry-service-facts li{display:flex;align-items:center;gap:16px;padding:0 4px;font-size:calc(14px * var(--detail-scale,1));line-height:1.428571;color:#000}
+.v2 .entry-service-facts li>.icon{width:18px;height:18px;flex:0 0 18px;color:#c5a059}
+.v2 .entry-service-facts li>span{min-width:0}
+.v2 .entry-service-demo{border-top:1px solid #efece7;padding:16px 0 48px}
+.v2 .entry-service-demo .entry-service-terms{margin:0;color:#6b7280}
+.v2 .entry-service-demo .entry-service-terms>summary{display:flex;justify-content:space-between;gap:12px;min-height:44px;padding:8px 0;font-size:calc(13px * var(--detail-scale,1));line-height:1.5;color:#6b7280;font-weight:400;list-style:none;text-underline-offset:auto;outline:none}
+.v2 .entry-service-demo .entry-service-terms>summary:focus-visible{outline:2px solid #3c422d;outline-offset:2px}
+.v2 .entry-service-demo .entry-service-terms p{font-size:calc(13px * var(--detail-scale,1));line-height:1.625;margin:12px 0 0;color:#6b7280}
+.v2 .entry-service-demo .entry-service-terms>p:first-of-type{margin-top:8px}
+.v2 .entry-service-toggle{display:flex;align-items:center;flex:0 0 18px}
+.v2 .entry-service-toggle>.icon{width:18px;height:18px}
+.v2 .entry-service-terms:not([open]) .entry-service-toggle>.icon:last-child,.v2 .entry-service-terms[open] .entry-service-toggle>.icon:first-child{display:none}
+.v2 .entry-service .entry-package-alert>span:last-child{font-weight:500}
+.v2 .entry-service .entry-package-alert{border-color:#e5e7eb}
+.v2 .entry-package-alert>.entry-package-icon{flex:0 1 auto}
+.v2 .entry-service .entry-addon-copy{font-weight:500}
+.v2 .app:has(>.page>.entry-service)>.flow-footer .btn{border:0;line-height:1.555556}
+body.v2 .page:has(>.entry-service){scrollbar-width:none}
+body.v2 .page:has(>.entry-service)::-webkit-scrollbar{display:none}
+.v2 .entry-service .entry-duration-card>strong,.v2 .entry-service .entry-addon-copy{color:#000}
+.v2 .entry-service .entry-duration-card:has(input:checked)>strong{color:#3c422d}

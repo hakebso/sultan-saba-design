@@ -1,0 +1,18 @@
+/* first_visit_guide keeps its header outside the canonical content scroller.
+   The native header is inside main: sticky preserves its existing flow height,
+   translated wrapping and back target while the guide content scrolls beneath. */
+body.prototype-app.v2 .page[data-route=first-visit]>.supportfix-first-visit>.supportfix-guide-header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#fcfbf9;
+}
+
+/* At the 393px baseline the rights host is 329px wide; the source component is 345px.
+   329 - 2*40 = 345 - 2*48 = 249px of text, without moving the host UI.
+   Preserve the existing <=350px padding and text-scale rules for narrow devices. */
+@media(min-width:361px){
+  body.prototype-app.v2 .page[data-route=rights] .source-empty-state[data-empty=rights]>p{
+    padding-inline:40px;
+  }
+}

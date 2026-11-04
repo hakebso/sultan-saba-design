@@ -1,0 +1,16 @@
+/* cancellation_flow / reschedule_flow only.
+   Preserve measured 100% source ratios; line boxes grow with independently
+   resized fonts. No stored policy, selection, progress value or control change. */
+body.v2 .visitfix-request>.header h1,
+body.v2 .visitfix-request>.header h1>strong{line-height:1.3333333333}
+body.v2 .visitfix-request[data-request-type=cancel] .visitfix-policy h2{line-height:1.5555555556}
+body.v2 .visitfix-request[data-request-type=cancel] .visitfix-policy p{line-height:1.625}
+body.v2 .visitfix-request .source-cancel-balance h3,
+body.v2 .visitfix-request .source-cancel-balance-row span{line-height:1.5}
+body.v2 .visitfix-request .source-cancel-balance-row strong{line-height:1.3333333333}
+body.v2 .visitfix-request .source-change-description{line-height:1.5}
+body.prototype-app.v2 .page .visitfix-request .source-change-current>.eyebrow,
+body.prototype-app.v2 .page .visitfix-request .source-change-proposed>.eyebrow{line-height:1.5}
+body.prototype-app.v2 .page .visitfix-request .source-change-preview .source-change-day{line-height:1.4285714286}
+body.prototype-app.v2 .page .visitfix-request .source-change-preview .source-change-time{line-height:1.3333333333}
+body.prototype-app.v2 .app:has(>.page>.visitfix-request)>.flow-footer>.btn{line-height:1.5}

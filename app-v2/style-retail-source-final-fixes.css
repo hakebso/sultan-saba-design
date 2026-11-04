@@ -1,0 +1,53 @@
+/* Actual retail source/native pair repair, 3 November 2026.
+   Catalog identity cards have no unverified SKU image/icon placeholders.
+   Real detail links occupy the source's bottom-right action position. */
+body.prototype-app.v2 .app>.page:has(>.retail-source-catalog) {padding:0;margin:0}
+body.prototype-app.v2 .page>.retail-source-catalog {margin-top:0}
+body.v2 .retail-source-catalog>.retailfix-catalog-header {
+  position:sticky;top:0;z-index:5;display:grid;
+  grid-template-columns:40px minmax(0,1fr) 40px;align-items:center;gap:16px;
+  padding:56px 24px 16px;background:white;border-bottom:1px solid var(--stone);
+}
+body.v2 .retail-source-catalog .retailfix-catalog-header>.icon-button {display:flex;align-items:center;justify-content:center;width:40px;height:40px;min-height:40px;min-width:40px;padding:0;border:0;border-radius:50%;background:var(--stone);color:var(--ink)}
+body.v2 .retail-source-catalog .retailfix-catalog-header h1 {margin:0;min-width:0;flex:none;font-size:calc(18px * var(--retail-scale));line-height:1.5556;font-weight:600;text-align:center;letter-spacing:0;overflow-wrap:anywhere}
+body.v2 .retail-source-catalog .retailfix-catalog-header>.icon-button>.icon {width:24px;height:24px}
+body.v2 .retail-source-catalog>.retailfix-catalog-content {margin-top:0;padding:24px}
+body.v2 .retail-source-catalog .retailfix-intro {min-height:180px;height:auto;margin:0 0 32px;overflow:visible}
+body.v2 .retail-source-catalog .retailfix-intro .eyebrow {font-size:calc(10px * var(--retail-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;margin:0 0 4px}
+body.v2 .retail-source-catalog .retailfix-intro h2 {font-size:calc(20px * var(--retail-scale));line-height:1.4;font-weight:500;letter-spacing:0;margin:0}
+body.v2 .retail-source-catalog .retailfix-collections {display:flex;gap:8px;overflow-x:auto;margin:0 0 32px;padding:0;scrollbar-width:none}
+body.v2 .retail-source-catalog .retailfix-collections .chip {flex:0 0 auto;min-height:44px;padding:12px 24px;border-radius:9999px;font-size:calc(12px * var(--retail-scale));line-height:1.3333;font-weight:500;white-space:nowrap}
+body.v2 .retail-source-catalog .retail-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0}
+body.v2 .retail-source-catalog .retail-source-tile {display:flex;flex-direction:column;gap:12px;min-width:0;min-height:120px;padding:12px;border:1px solid var(--stone);border-radius:28px;background:white;box-shadow:0 1px 2px #0000000d}
+/* Retain the identity wrapper API, but remove the former fake photo-shaped
+   square; the actual product title now leads the card above price/action. */
+body.v2 .retail-source-catalog .retailfix-product-face {display:block;aspect-ratio:auto;min-height:0;height:auto;margin:0;padding:0;background:none;border:0;border-radius:0}
+body.v2 .retail-source-catalog .retailfix-product-face>h3 {margin:0;font-size:calc(12px * var(--retail-scale));line-height:1.25;font-weight:600;letter-spacing:0;color:var(--ink);overflow-wrap:anywhere}
+body.v2 .retail-source-catalog .retailfix-tile-action {display:grid;grid-template-columns:minmax(0,1fr) 44px;align-items:end;gap:8px;min-width:0;margin-top:auto;padding:0}
+body.v2 .retail-source-catalog .retailfix-tile-action>strong {min-width:0;max-width:100%;font-size:calc(12px * var(--retail-scale));line-height:1.3333;font-weight:700;white-space:normal;overflow-wrap:anywhere;color:var(--olive)}
+body.v2 .retail-source-catalog .retailfix-tile-action>.retail-source-detail {display:flex;align-items:center;justify-content:center;gap:0;min-width:44px;width:44px;height:44px;min-height:44px;padding:0;border-radius:50%;background:var(--olive);color:white}
+body.v2 .retail-source-detail>.icon {width:18px;height:18px;flex-shrink:0}
+body.v2 .retail-source-catalog .retailfix-order-notes {margin-top:40px;padding:20px;border-radius:24px;background:#eff6ff;border:1px solid #dbeafe}
+body.v2 .retail-source-catalog .retailfix-order-notes>h2 {font-size:calc(10px * var(--retail-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1e3a8a;margin:0 0 8px}
+body.v2 .retail-source-catalog .retailfix-order-notes>p {font-size:calc(10px * var(--retail-scale));line-height:1.625;color:#1e40af;margin:0;overflow-wrap:anywhere}
+body.v2 .retail-source-catalog .retailfix-order-notes>p+p {margin-top:8px}
+body.v2 .app:has(>.page>.retail-source-catalog)>.flow-footer {padding:0;background:white;border-top:1px solid var(--stone)}
+body.v2 .app>.flow-footer>.retail-source-footer {padding:32px 24px;background:white;border:0}
+body.v2 .retail-source-footer .retailfix-footer-summary {display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:0 4px 16px}
+body.v2 .retail-source-footer .retailfix-footer-summary>span {font-size:calc(12px * var(--retail-scale,1));line-height:1.3333;font-weight:400;color:#9ca3af;min-width:0;overflow-wrap:anywhere}
+body.v2 .retail-source-footer .retailfix-footer-summary>strong {font-size:calc(18px * var(--retail-scale,1));line-height:1.5556;font-weight:700;color:var(--olive)}
+body.v2 .retail-source-footer>.btn {min-height:64px;padding:20px;border-radius:16px;font-size:16px;line-height:1.5;font-weight:600;white-space:normal;overflow-wrap:anywhere;box-shadow:0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a}
+body.demo-large-text.v2 .retail-source-catalog .retail-grid {grid-template-columns:1fr}
+body.demo-large-text.v2 .retail-source-footer>.btn {font-size:32px;line-height:1.5}
+@media(max-width:360px) {
+ body.v2 .retail-source-catalog>.retailfix-catalog-header,body.v2 .retail-source-catalog>.retailfix-catalog-content {padding-left:20px;padding-right:20px}
+ body.v2 .retail-source-catalog .retail-source-tile {padding:12px}
+}
+@media(max-height:620px) {
+ body.v2 .retail-source-catalog>.retailfix-catalog-header {padding-top:24px}
+ body.v2 .app>.flow-footer>.retail-source-footer {padding-top:20px;padding-bottom:24px}
+}
+/* Extracted footer is a sibling of the catalog, so retain the text preset's
+   scale explicitly instead of losing the catalog's inherited variable. */
+body.v2 .retail-source-footer {--retail-scale:1}
+body.demo-large-text.v2 .retail-source-footer {--retail-scale:2}

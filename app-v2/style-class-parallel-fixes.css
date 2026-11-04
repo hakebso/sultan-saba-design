@@ -1,0 +1,183 @@
+/* Source-derived class/waitlist pass, 3 November 2026.
+   Load after style-source-fidelity.css and style-class-fixes.css.
+   All figures, availability, participant rights and actions remain model-owned. */
+
+/* class_timetable: source header, photograph tag, initials and compact cards. */
+body.v2 .classfix-timetable-header {
+  padding:64px 24px 16px;
+}
+body.v2 .classfix-timetable-header>div:first-child {gap:16px}
+body.v2 .classfix-timetable-header h1 {margin:0;font-size:calc(20px * var(--class-scale));line-height:1.4;font-weight:500}
+body.v2 .classfix-timetable-header .icon-button {width:40px;height:40px;min-height:40px;flex-basis:40px}
+body.v2 .classfix-days {padding:16px 0 8px;gap:12px;scrollbar-width:none}
+body.v2 .classfix-day {min-width:56px;min-height:72px;padding:10px 8px;gap:0;border-radius:16px}
+body.v2 .classfix-day small {font-size:calc(10px * var(--class-scale));line-height:1.5;font-weight:500;text-transform:uppercase;color:#2d2d2d66}
+body.v2 .classfix-day.selected small {color:#ffffff99}
+body.v2 .classfix-day strong {font-size:calc(18px * var(--class-scale));line-height:1.5556;font-weight:700}
+body.v2 .classfix-timetable-content {padding:24px}
+body.v2 .classfix-class-cards {gap:16px}
+body.v2 .classfix-card {box-shadow:0 1px 2px #0000000d}
+body.v2 .classfix-card-media {position:relative;height:160px}
+body.v2 .classfix-card-program {
+  position:absolute;top:16px;left:16px;max-width:calc(100% - 32px);margin:0;
+  padding:6px 12px;border-radius:9999px;background:#ffffffe6;color:#3c422d;
+  font-size:calc(10px * var(--class-scale));line-height:1.5;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;overflow-wrap:anywhere;
+}
+body.v2 .classfix-card-program-text {position:static;display:table;margin:16px 20px 0;background:var(--stone)}
+body.v2 .classfix-card-heading {gap:12px;flex-direction:row;flex-wrap:wrap;align-items:flex-start}
+body.v2 .classfix-card-heading h2 {flex:1 1 120px;margin:0;font-size:calc(18px * var(--class-scale));line-height:1.5556;font-weight:600}
+body.v2 .classfix-card-heading>p {flex:0 1 auto;text-align:right;margin:0}
+body.v2 .classfix-card-heading strong {font-size:calc(14px * var(--class-scale));line-height:1.4286;font-weight:700}
+body.v2 .classfix-card-heading small {font-size:calc(10px * var(--class-scale));line-height:1.5;font-weight:700;text-transform:uppercase;color:#2d2d2d66}
+body.v2 .classfix-card-meta {margin-top:16px;gap:12px;align-items:center}
+body.v2 .classfix-card-meta>.classfix-card-teacher {display:flex;align-items:center;gap:8px;font-size:calc(12px * var(--class-scale));line-height:1.3333;color:#2d2d2d99}
+body.v2 .classfix-teacher-initials {
+  display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border-radius:50%;
+  background:var(--stone);border:1px solid white;color:var(--olive);
+  font-size:calc(10px * var(--class-scale));line-height:1.5;font-weight:700;
+}
+body.v2 .classfix-card-meta>.classfix-capacity {
+  padding:4px 12px;border-radius:9999px;background:#f0fdf4;color:#15803d;
+  font-size:calc(10px * var(--class-scale));line-height:1.5;font-weight:700;text-transform:uppercase;
+}
+body.v2 .classfix-card-meta>.classfix-capacity.full {background:#fef2f2;color:#b91c1c}
+body.v2 .classfix-card-full .classfix-card-heading strong {color:#2d2d2d66}
+body.v2 .classfix-card-content>.btn {
+  gap:8px;margin-top:20px;min-height:48px;padding:14px;
+  font-size:calc(14px * var(--class-scale));line-height:1.4286;font-weight:600;border-radius:16px;
+}
+body.v2 .classfix-card-content>.btn.secondary {font-weight:700}
+body.v2 .classfix-card-content>.btn.secondary>.icon {width:18px;height:18px;flex-shrink:0}
+body.v2 .classfix-card-information {margin-top:10px;font-size:calc(12px * var(--class-scale));line-height:1.5;color:#2d2d2d99}
+body.v2 .classfix-card-information>summary {min-height:44px;padding:12px 0;cursor:pointer}
+body.v2 .classfix-card-information .classfix-card-date {margin:4px 0 0}
+body.v2 .classfix-card-information .classfix-price {margin:8px 0 0}
+body.v2 .classfix-timetable-content>.classfix-filters {margin:24px 0 0;border-top:1px solid var(--stone);border-bottom:0;padding:12px 0 0}
+
+/* class_group_term: full-bleed 340px photograph and source's three facts.
+   Dates, durations and capacity values come from the actual catalog. */
+body.v2 .page[data-route=class-group]:has(>.classfix-group) {padding:0}
+body.v2 .classfix-group>.group-hero {
+  position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:340px;height:auto;margin:0;padding:160px 0 0;overflow:hidden;background:var(--stone);
+}
+body.v2 .classfix-group>.group-hero>img {position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+body.v2 .classfix-group>.group-hero>.icon-button {
+  position:absolute;top:64px;left:24px;z-index:2;width:40px;height:40px;min-height:40px;
+  margin:0;background:#ffffff33;color:white;border-radius:50%;
+}
+body.v2 .classfix-group>.group-hero>.classfix-group-title {
+  position:relative;inset:auto;z-index:1;min-width:0;margin:0;padding:32px;
+  background:linear-gradient(to top,#fcfbf9,transparent);color:#2d2d2d;
+}
+body.v2 .classfix-group .group-hero h1 {margin:0;color:#2d2d2d;font-size:calc(30px * var(--class-scale));line-height:1.2;font-weight:300;letter-spacing:0;overflow-wrap:anywhere}
+body.v2 .classfix-group .group-hero .badge {margin:0 0 12px;padding:4px 12px;background:#fee2e2;color:#b91c1c;font-size:calc(10px * var(--class-scale));line-height:1.5;font-weight:700;text-transform:uppercase;border-radius:9999px}
+body.v2 .classfix-group>.group-hero.safe-media-photofree {min-height:220px;padding-top:120px;gap:0;background:var(--stone)}
+body.v2 .classfix-group>.group-hero.safe-media-photofree>.icon-button {background:white;color:var(--olive)}
+body.v2 .classfix-group>.group-hero.safe-media-photofree>.classfix-group-title {background:none;color:var(--ink)}
+body.v2 .classfix-group-content {padding:24px 32px}
+body.v2 .classfix-group-content>.classfix-group-facts {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0;padding:0 0 24px;
+  border-bottom:1px solid var(--stone);
+}
+body.v2 .classfix-group-facts>div {min-width:0}
+body.v2 .classfix-group-facts dt {margin:0 0 4px;font-size:calc(9px * var(--class-scale));line-height:1.5;font-weight:700;text-transform:uppercase;color:var(--gold)}
+body.v2 .classfix-group-facts dd {margin:0;font-size:calc(14px * var(--class-scale));line-height:1.4286;font-weight:500;color:var(--ink);overflow-wrap:anywhere}
+body.v2 .classfix-group-content>.classfix-prerequisite {display:flex;align-items:flex-start;gap:12px;padding:16px;margin:32px 0 0}
+body.v2 .classfix-group-content>.classfix-prerequisite>.icon {flex:0 0 20px;width:20px;height:20px;margin-top:2px;color:var(--olive)}
+body.v2 .classfix-group-content .classfix-prerequisite h2 {margin:0 0 4px;font-size:calc(12px * var(--class-scale));line-height:1.3333;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+body.v2 .classfix-group-content .classfix-prerequisite p {font-size:calc(12px * var(--class-scale));line-height:1.3333;color:#2d2d2db3}
+body.v2 .classfix-group-content .classfix-prerequisite .btn {margin-top:12px}
+body.v2 .classfix-group-calendar {margin-top:32px}
+body.v2 .classfix-group-calendar>h2 {margin:0 0 16px;font-size:calc(12px * var(--class-scale));line-height:1.3333;letter-spacing:.1em;font-weight:700;text-transform:uppercase;color:#2d2d2d66}
+body.v2 .classfix-calendar-row {flex-direction:row;align-items:center;gap:12px;margin-top:12px;padding:16px;border-radius:12px}
+body.v2 .classfix-calendar-dot {display:block;flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:var(--stone)}
+body.v2 .classfix-calendar-dot.first {background:var(--gold)}
+body.v2 .classfix-calendar-row>div {flex:1}
+body.v2 .classfix-calendar-row strong {font-size:calc(14px * var(--class-scale));line-height:1.4286;font-weight:500}
+body.v2 .classfix-calendar-row>div>span {font-size:calc(10px * var(--class-scale));line-height:1.5;color:#2d2d2d66}
+body.v2 .classfix-calendar-row>span:last-child {max-width:35%;font-size:calc(10px * var(--class-scale));line-height:1.5;font-weight:500;color:#2d2d2d66;overflow-wrap:anywhere}
+body.v2 .classfix-group-content>.classfix-policy-note {margin:32px 0 40px;font-size:calc(11px * var(--class-scale));line-height:1.5;color:#2d2d2d80;font-style:italic}
+body.v2 .app:has(>.page>.classfix-group)>.flow-footer {padding:40px 32px;background:white;border-top:1px solid var(--stone)}
+body.v2 .classfix-group-footer>.btn {min-height:68px;padding:20px;font-size:18px;line-height:1.5556;font-weight:500;border-radius:16px;box-shadow:0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a}
+
+/* class_detail already has the canonical photograph/card structure. Restore
+   source hierarchy instead of flattening secondary text to pure black. */
+body.v2 .classfix-header-description {color:#2d2d2db3}
+body.v2 .classfix-instructor>h2 {color:#2d2d2d66;letter-spacing:.1em}
+body.v2 .classfix-instructor .instructor-card p {color:#2d2d2d99}
+body.v2 .classfix-package-alert p {color:#2d2d2d99}
+body.v2 .classfix-description>h2 {font-size:calc(12px * var(--class-scale));line-height:1.3333;text-transform:uppercase}
+
+/* Existing waiting/offer/expired compositions retain real queue/quote records.
+   These colors and icon surfaces come directly from their canonical sources. */
+body.v2 .page .source-wait-intro {color:#2d2d2d99}
+body.v2 .page .source-wait-identity p {color:#2d2d2d66}
+body.v2 .source-wait-position>span {color:#2d2d2d99}
+body.v2 .source-wait-screen.is-terminal .source-wait-symbol {flex-shrink:0}
+body.v2 .source-wait-label {color:#2d2d2d66}
+body.v2 .source-wait-expired-card .source-wait-identity>span {color:#2d2d2d66}
+body.v2 .page .source-wait-expired-card .source-wait-identity p {color:#2d2d2d80}
+body.v2 .source-offer-symbol {background:#c5a0591a}
+body.v2 .source-offer-identity>h2 {color:#2d2d2d66}
+body.v2 .page .source-offer-identity .source-wait-identity p {color:#2d2d2d99}
+body.v2 .page .source-offer-payment .benefit-entry .small {color:#2d2d2d99}
+body.v2 .app:has(>.page>.source-offer-screen)>.flow-footer>.btn.secondary {color:#2d2d2d66}
+
+/* class_booking_success is scoped by actual customer route; shared service
+   outcomes remain untouched. Prevent the nested success circle from shrinking. */
+body.v2 .page[data-route=class-booking-success] .source-outcome-symbol {flex-shrink:0}
+body.v2 .page[data-route=class-booking-success] .source-outcome-intro {color:#2d2d2d99}
+body.v2 .page[data-route=class-booking-success] .source-outcome-identity p,
+body.v2 .page[data-route=class-booking-success] .source-outcome-rows dt {color:#2d2d2d80}
+body.v2 .app:has(>.page[data-route=class-booking-success])>.flow-footer>.btn.text {color:var(--olive)}
+
+/* Reflow keeps the same information available at narrow widths and 200% text.
+   It is deliberately fluid, without viewport-only truncation or hidden facts. */
+body.v2 .classfix-card :is(h2,strong,small),
+body.v2 .classfix-group :is(h1,h2,p,dt,dd),
+body.v2 .source-offer-screen :is(h1,h2,h3,p) {overflow-wrap:anywhere}
+body.demo-large-text.v2 .classfix-group-facts {grid-template-columns:1fr}
+body.demo-large-text.v2 .classfix-group-facts>div {display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+body.demo-large-text.v2 .classfix-group-facts dd {text-align:right}
+body.demo-large-text.v2 .classfix-calendar-row {flex-wrap:wrap}
+body.demo-large-text.v2 .classfix-calendar-row>span:last-child {max-width:100%;margin-left:20px}
+body.demo-large-text.v2 .classfix-group-footer>.btn {font-size:36px;line-height:1.5556}
+@media(max-width:360px) {
+  body.v2 .classfix-timetable-header,body.v2 .classfix-timetable-content {padding-left:20px;padding-right:20px}
+  body.v2 .classfix-group-content {padding-left:24px;padding-right:24px}
+  body.v2 .classfix-group>.group-hero>.classfix-group-title {padding-left:24px;padding-right:24px}
+  body.v2 .classfix-group-facts {gap:12px}
+}
+@media(max-height:620px) {
+  body.v2 .classfix-timetable-header {padding-top:24px}
+  body.v2 .classfix-group>.group-hero>.icon-button {top:24px}
+  body.v2 .app:has(>.page>.classfix-group)>.flow-footer {padding-top:20px;padding-bottom:24px}
+}
+
+/* Actual paired PNG iteration, 3 November. Keep All-date disambiguation, but
+   move the price disclosure into the metadata row rather than a 54px tail. */
+body.v2 .classfix-card-meta {gap:8px}
+body.v2 .classfix-card-meta>.classfix-card-information {margin:0 0 0 auto;color:#2d2d2d;flex:0 1 auto;max-width:100%}
+body.v2 .classfix-card-meta>.classfix-card-information>summary {
+  display:flex;align-items:center;justify-content:flex-end;gap:4px;min-height:44px;
+  padding:8px 0;font-size:calc(12px * var(--class-scale));line-height:1.3333;font-weight:500;
+}
+body.v2 .classfix-card-meta>.classfix-card-information>summary:after {content:'';width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-3px;flex-shrink:0}
+body.v2 .classfix-card-meta>.classfix-card-information[open] {flex-basis:100%}
+body.v2 .classfix-card-meta>.classfix-card-information[open]>summary {justify-content:flex-start}
+body.v2 .classfix-card-meta>.classfix-card-information .classfix-card-date {margin:0 0 8px}
+/* The rendered canonical group source has no lower white fade or beige
+   prerequisite surface. Retain the correct actual pool photograph. */
+body.v2 .classfix-group>.group-hero>.classfix-group-title {background:none;text-shadow:0 1px 2px #ffffff80}
+body.v2 .classfix-group-content>.classfix-prerequisite {background:none;border:0;border-radius:0}
+body.v2 .classfix-group-content .classfix-prerequisite :is(h2,p),
+body.v2 .classfix-group-content>.classfix-prerequisite>.icon,
+body.v2 .classfix-group-facts :is(dt,dd),
+body.v2 .classfix-group-calendar>h2,
+body.v2 .classfix-calendar-row strong,
+body.v2 .classfix-calendar-row>div>span,
+body.v2 .classfix-calendar-row>span:last-child {color:#000}
+/* Source's blank white-on-white footer is defective. The runtime's visible
+   olive CTA is deliberately retained; source correction is tracked separately. */

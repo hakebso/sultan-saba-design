@@ -1,0 +1,27 @@
+/* Exact source hierarchy, preserving actual catalogue entries/committed bookings. */
+body.v2.prototype-app .app>main.page[data-route=event]:has(>.eventfix-request){padding:0}
+body.v2.prototype-app .page>.eventfix-request{margin:0}
+body.v2 .eventfix-request>.eventfix-header{padding:56px 24px 16px;margin:0;min-height:0;background:white;border-bottom:1px solid #efece7}
+body.v2 .eventfix-request>.eventfix-hero{margin:0;height:220px}
+body.v2 .eventfix-request>.revision-form{margin-left:24px;margin-right:24px;gap:32px}
+body.v2 .eventfix-request.photo-free>.revision-form{margin-top:32px}
+body.v2 .eventfix-request>.btn{margin:24px}
+body.v2 .eventfix-request .eventfix-types label>span{min-height:82px;padding:16px 8px;gap:8px;border-color:#efece7}
+body.v2 .eventfix-request .eventfix-types input:checked+span{padding:15px 7px;border-color:#c5a059}
+body.v2 .eventfix-request .eventfix-types .icon{width:24px;height:24px;flex-basis:24px;color:#c5a059}
+body.v2 .eventfix-request .eventfix-types strong{color:#000}
+body.v2 .eventfix-request .eventfix-timing>h2{color:#000}
+body.v2 .eventfix-request .eventclosure-timing-field{position:relative;display:grid;gap:4px;min-width:0;padding:16px;border:1px solid #efece7;border-radius:16px;background:white;font-size:calc(9px * var(--event-scale));line-height:1.5;font-weight:700;text-transform:uppercase;color:#c5a059}
+body.v2 .eventfix-request .eventclosure-timing-field>input{width:100%;min-width:0;min-height:21px;margin:0;border:0;border-radius:0;padding:0 18px 0 0;background:transparent;box-shadow:none;font-size:calc(14px * var(--event-scale));line-height:1.5;font-weight:600;text-transform:none;color:#000}
+body.v2 .eventfix-request .eventclosure-timing-field>.icon{position:absolute;bottom:18px;right:16px;width:18px;height:18px;pointer-events:none;color:#c5a059}
+body.v2 .eventfix-request .eventclosure-timing-field>input::-webkit-calendar-picker-indicator{opacity:0;position:absolute;right:12px;bottom:12px;width:24px;height:24px;cursor:pointer}
+body.v2 .eventfix-detail>.eventclosure-plan-header>div{min-width:0}
+body.v2 .eventclosure-plan-header h1{font-size:calc(18px * var(--event-scale));line-height:1.5}
+body.v2 .eventclosure-plan-header .eventclosure-header-subtitle{font-size:calc(10px * var(--event-scale));line-height:1.5;margin:0;color:#c5a059;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+body.v2 .eventfix-detail:has(.eventfix-plan)>.eventclosure-plan-header{padding:56px 24px 16px;min-height:0;margin:0}
+body.v2 .eventfix-plan>.eventfix-plan-status{background:#f0fdf4;border-color:#d1fae5;color:#065f46}
+body.v2 .eventfix-plan-status h2,body.v2 .eventfix-plan-status p{color:#065f46}
+body.v2 .eventfix-plan-status>.eventfix-status-mark{fill:#10b981;stroke:white;border-radius:50%;background:#10b981;width:18px;height:18px;flex:0 0 18px;margin-top:2px}
+body.v2 .eventfix-plan-summary article{border-color:#efece7}
+body.v2 .eventfix-plan-summary .icon{color:#c5a059}
+body.demo-large-text.v2 .eventfix-request .eventclosure-timing-field>input{min-height:42px}

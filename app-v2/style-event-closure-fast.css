@@ -1,0 +1,21 @@
+/* Canonical event request footer, two quote decisions, recorded plan dates.
+   Load after existing event styles. Record ownership/occupancy remain unchanged. */
+body.v2 .eventfix-request.with-photo>.revision-form{position:relative;margin-top:-32px;z-index:1}
+body.v2 .eventfix-request.with-photo .eventfix-hero{position:relative;margin-bottom:0}
+body.v2 .eventfix-request.with-photo .eventfix-hero:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 55%,var(--bg,#fcfbf9))}
+body.v2 .eventfix-participant-limit{display:block;font-size:calc(10px * var(--event-scale,1));font-weight:400;line-height:1.5;color:var(--muted,#686b60);margin-top:4px;overflow-wrap:anywhere}
+body.v2 .app:has(.eventfix-request)>.flow-footer{padding:0;border-top:0}
+body.v2 .eventclosure-request-footer{padding:20px 24px max(24px,env(safe-area-inset-bottom));border-top:1px solid var(--stone,#efece7);background:white;min-width:0}
+body.v2 .eventclosure-request-footer>p{font-size:calc(10px * var(--event-scale,1));line-height:1.6;text-align:center;color:var(--muted,#686b60);margin:0 0 16px;overflow-wrap:anywhere}
+body.v2 .eventclosure-request-footer>.btn{width:100%;min-height:64px;padding:20px;white-space:normal;border-radius:16px;font-size:calc(16px * var(--event-scale,1));line-height:1.5}
+body.v2 .eventclosure-decisions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0 0}
+body.v2 .eventclosure-decisions>details{min-width:0;border:1px solid var(--stone,#efece7);border-radius:16px;background:white}
+body.v2 .eventclosure-decisions summary{display:flex;align-items:center;justify-content:center;min-height:48px;padding:12px;font-size:calc(11px * var(--event-scale,1));font-weight:600;line-height:1.5;text-align:center;cursor:pointer;overflow-wrap:anywhere;list-style:none}
+body.v2 .eventclosure-decisions summary::-webkit-details-marker{display:none}
+body.v2 .eventclosure-decisions summary:focus-visible{outline:3px solid var(--gold,#9a763b);outline-offset:3px;border-radius:16px}
+body.v2 .eventclosure-decisions>details[open]{grid-column:1/-1}
+body.v2 .eventclosure-decisions .revision-form{padding:0 16px 16px;margin:0;gap:16px}
+body.v2 .eventclosure-decisions .btn{white-space:normal;min-width:0}
+body.v2 .eventclosure-plan-dates{display:block;font-size:inherit;line-height:1.5;margin-top:4px;letter-spacing:0;text-transform:none;color:var(--muted,#686b60)}
+body.demo-large-text.v2 .eventclosure-request-footer{--event-scale:2}
+body.demo-large-text.v2 .eventclosure-decisions{grid-template-columns:1fr}

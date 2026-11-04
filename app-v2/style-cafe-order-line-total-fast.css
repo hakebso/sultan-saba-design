@@ -1,0 +1,11 @@
+/* cafe_order_status: actual line amounts and explicit source-shaped total. */
+body.v2 .cafefix-order-detail>.cafefix-order-total {display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-top:16px;margin-top:16px;border-top:1px solid var(--stone);font-size:calc(16px * var(--cafe-parallel-scale,1));line-height:1.5;font-weight:600;min-width:0}
+body.v2 .cafefix-order-total>span {min-width:0;overflow-wrap:anywhere}
+body.v2 .cafefix-order-total>strong {min-width:0;text-align:right;overflow-wrap:anywhere;font-size:inherit}
+body.demo-large-text.v2 .cafefix-order-detail>.cafefix-order-total {flex-wrap:wrap}
+/* Source order rows are text-sm: names medium, line amounts muted regular. */
+body.prototype-app.v2 .cafefix-order-detail>.revision-menu>.revision-menu-item{font-size:calc(14px * var(--cafe-parallel-scale,1));line-height:1.4285714286}
+body.prototype-app.v2 .cafefix-order-detail>.revision-menu>.revision-menu-item>span{font-weight:500}
+body.prototype-app.v2 .cafefix-order-detail>.revision-menu>.revision-menu-item>strong{font-size:inherit;font-weight:400;color:#6b7280}
+body.prototype-app.v2 .cafefix-order-detail>.cafefix-order-total>span{color:#000}
+body.prototype-app.v2 .cafefix-order-detail>.cafefix-order-total>strong{font-weight:700;color:#3c422d}

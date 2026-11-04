@@ -1,0 +1,23 @@
+/* auth_phone / auth_otp: retain canonical 100% type ratios while allowing
+   independently resized text and the real OTP input to determine their height. */
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .source-auth-header h1{line-height:1.25}
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .source-auth-header p,
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .source-edit-phone{line-height:1.5}
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .source-phone-prefix b{line-height:1.4285714286}
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .source-phone-field input{line-height:1.5;height:1.5em}
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .source-auth-legal{line-height:1.625}
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .source-auth-error{line-height:1.3333333333}
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .source-auth-resend p,
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .source-auth-resend button{line-height:1.4285714286}
+body.v2 .app:has(>.page:is([data-route=auth],[data-route=phone-change]))>.flow-footer .btn{line-height:1.5}
+
+/* Both layers share one grid cell. The editable native input remains focusable
+   and hit-testable above its visual six-box layer; its line now grows the row.
+   Removing inherited general form padding preserves the original 64px row. */
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .otp-entry{display:grid;grid-template-columns:minmax(0,1fr)}
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .otp-entry input[name=code]{position:relative;inset:auto;grid-area:1/1;height:auto;min-height:64px;min-width:0;padding:0;line-height:1.5}
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .otp-boxes{grid-area:1/1;min-width:0;align-self:stretch}
+body.v2 .page:is([data-route=auth],[data-route=phone-change]) .otp-boxes i{line-height:1.4}
+
+/* Exact canonical64px baseline: source button has no transparent1px border. */
+body.v2 .app:has(>.page:is([data-route=auth],[data-route=phone-change]))>.flow-footer .btn{border:0;padding:20px 0}

@@ -1,0 +1,102 @@
+/* recurring_series: compact source session cards. Only .series-source-final;
+   no request/cancellation, quote, slot, photo or footer-policy changes.
+   Closed disclosures keep successful dates compact; repair controls remain open
+   for model conflicts and pending decisions. Intrinsic sizing supports 200% text. */
+body.v2 .series-source-final .classfix-series-plan > h2 {
+  font-size:calc(11px * var(--class-scale));line-height:1.5;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+}
+body.v2 .series-source-final .recurring-dates > .card {
+  padding:16px;border-radius:24px;position:relative;
+  box-shadow:0 1px 2px #0000000d;
+}
+body.v2 .series-source-final .recurring-dates > .card > .series-source-row {
+  align-items:center;gap:16px;margin:0;padding-right:36px;
+}
+body.v2 .series-source-final .series-source-row > .series-source-state {
+  width:40px;height:40px;flex:0 0 40px;margin:0;
+  border-radius:16px;background:#f0fdf4;color:#22c55e;
+}
+body.v2 .series-source-final .series-source-state > .icon {width:20px;height:20px}
+body.v2 .series-source-final .pending-card .series-source-state {background:var(--stone);color:var(--olive)}
+body.v2 .series-source-final .conflict-card .series-source-state {background:#fef2f2;color:#ef4444}
+body.v2 .series-source-final .series-source-row strong {
+  display:block;font-size:calc(12px * var(--class-scale));line-height:1.33333333;
+  font-weight:700;overflow-wrap:anywhere;
+}
+body.v2 .series-source-final .series-source-row p {
+  font-size:calc(10px * var(--class-scale));line-height:1.5;margin:0;
+}
+body.v2 .series-source-final .classfix-date-reason {
+  font-size:calc(11px * var(--class-scale));line-height:1.625;
+  margin:12px 0 0;overflow-wrap:anywhere;
+}
+body.v2 .series-source-final .conflict-card {border-color:#fecaca}
+body.v2 .series-source-final .conflict-card .classfix-date-reason {color:#b91c1c}
+body.v2 .series-source-final .series-source-first-edit,
+body.v2 .series-source-final .series-source-edit > summary {
+  position:absolute;top:14px;right:8px;width:44px;height:44px;
+  display:grid;place-items:center;color:#9ca3af;cursor:pointer;list-style:none;
+}
+body.v2 .series-source-final .series-source-first-edit > .icon,
+body.v2 .series-source-final .series-source-edit > summary > .icon {width:16px;height:16px}
+body.v2 .series-source-final .series-source-edit {margin:0}
+body.v2 .series-source-final .series-source-edit > summary::marker {content:''}
+body.v2 .series-source-final .series-source-edit > summary::-webkit-details-marker {display:none}
+body.v2 .series-source-final .series-source-edit > div {display:grid;gap:12px;padding-top:16px}
+body.v2 .series-source-final .series-source-edit .field {margin:0;min-width:0;font-size:calc(12px * var(--class-scale));line-height:1.5}
+body.v2 .series-source-final .series-source-edit input {min-width:0;max-width:100%}
+body.v2 .series-source-final .series-source-edit .btn {margin:0;font-size:calc(10px * var(--class-scale));line-height:1.5;font-weight:700;text-transform:uppercase}
+body.v2 .series-source-final .conflict-card .series-source-edit .btn {border:1px solid #fecaca;border-radius:12px;color:#ef4444}
+body.v2 .series-source-final > .classfix-series-warning {
+  display:flex;align-items:flex-start;gap:12px;padding:16px;border:1px solid #fee2e2;
+  border-radius:16px;background:#fef2f2;color:#7f1d1d;
+}
+body.v2 .series-source-final > .classfix-series-warning > .icon {width:20px;height:20px;flex:0 0 20px;color:#ef4444}
+body.v2 .series-source-final > .classfix-series-warning > p {font-size:calc(11px * var(--class-scale));line-height:1.625;margin:0;min-width:0}
+body.v2 .series-source-final > .classfix-series-warning.is-pending {background:var(--stone);border-color:var(--stone);color:var(--olive)}
+body.v2 .series-source-final > .classfix-series-warning.is-pending > .icon {color:var(--olive)}
+
+/* Fresh #recurring pair: source header is 56 + 40 + 16px, followed by a
+   full-width 180px photo. Keep the actual service image and conditional rows.
+   The page retains its inset for pending/flash siblings outside this wrapper. */
+body.v2 .page[data-route=recurring]:has(> .series-source-final) {
+  padding:0 24px 48px;
+}
+body.v2 .page[data-route=recurring] > .series-source-final {margin:0 -24px}
+body.v2 .series-source-final > .header {
+  position:sticky;top:0;z-index:20;
+  margin:0;padding:56px 24px 16px;gap:16px;
+  background:rgb(255 255 255 / 90%);backdrop-filter:blur(12px);
+}
+body.v2 .series-source-final > .header > .icon-button {
+  width:40px;height:40px;min-height:40px;flex:0 0 40px;
+  margin:0;border:1px solid var(--stone);border-radius:50%;color:#000;
+}
+body.v2 .series-source-final > .header > .icon-button > .icon {width:20px;height:20px}
+body.v2 .series-source-final > .header h1 {
+  margin:0;font-size:calc(18px * var(--class-scale));line-height:1.55555556;
+  font-weight:600;min-width:0;color:#000;
+}
+body.v2 .series-source-final > .recurring-hero {
+  margin:0 0 24px;border-radius:0;
+}
+body.v2 .series-source-final > .recurring-hero:not(.safe-media-photofree) {height:180px}
+body.v2 .series-source-final > .recurring-hero > img {border-radius:0;display:block}
+body.v2 .series-source-final > .recurring-hero:not(.safe-media-photofree) > div {
+  padding:24px;background:rgb(0 0 0 / 30%);
+}
+body.v2 .series-source-final > .recurring-hero h2 {
+  margin:0;font-size:calc(20px * var(--class-scale));line-height:1.4;font-weight:700;
+}
+body.v2 .series-source-final > .recurring-hero p {
+  margin:0;font-size:calc(12px * var(--class-scale));line-height:1.33333333;
+}
+body.v2 .series-source-final > .recurring-hero:not(.safe-media-photofree) p {color:rgb(255 255 255 / 80%)}
+body.v2 .series-source-final > form {margin:0 24px}
+body.v2 .series-source-final > .classfix-series-warning {margin:24px}
+body.v2 .series-source-final .classfix-series-plan > h2 {color:#000}
+body.v2 .series-source-final > .btn {margin:24px;width:calc(100% - 48px)}
+@media(max-height:620px) {
+  body.v2 .series-source-final > .header {position:static;padding-top:24px}
+}

@@ -1,0 +1,11 @@
+/* home_returning pending-actions_003; real records only. */
+body.v2 .entry-home .entry-pending{--home-pending-scale:1}
+body.v2 .entry-home .entry-pending-strip>a{box-shadow:0 1px 2px #0000000d}
+body.v2 .entry-home .entry-pending-strip>a>.entry-pending-icon{display:grid;place-items:center;width:32px;height:32px;flex:0 0 32px;border-radius:50%;background:color-mix(in srgb,var(--entry-gold) 10%,transparent);color:var(--entry-gold)}
+body.v2 .entry-home .entry-pending-icon>.icon{width:16px;height:16px;padding:0;background:none;border-radius:0}
+body.v2 .entry-home .entry-pending-strip>a>span:last-child{min-width:0;overflow-wrap:anywhere}
+body.v2 .entry-home .entry-pending-strip small{font-size:calc(10px * var(--home-pending-scale));line-height:1.5;font-weight:700;letter-spacing:-.025em;text-transform:uppercase}
+body.v2 .entry-home .entry-pending-strip strong{font-size:calc(12px * var(--home-pending-scale));line-height:1.3333333333;font-weight:600}
+body.v2 .entry-home .entry-pending-strip>[data-pending-kind=offer]>.entry-pending-icon{background:#dcfce7;color:#16a34a}
+body.v2 .entry-home .entry-pending-strip>[data-pending-kind=offer] small{color:#16a34a}
+body.v2.demo-large-text .entry-home .entry-pending{--home-pending-scale:2}

@@ -1,0 +1,60 @@
+/* Existing Slim Kafe table photograph is atmosphere only, never a food SKU.
+   Sources: cafe_product/cafe_menu 2 November; actual catalogue and pilot policy preserved. */
+body.prototype-app.v2 .app>main.page:has(>.cafe-source-product){padding:0;display:flex;flex-direction:column}
+body.v2 .page>.cafe-source-product{position:relative;margin:0;flex:1;min-height:0;overflow-y:auto;padding-bottom:48px;--cafe-product-scale:1}
+body.v2 .cafe-source-product .cafe-source-hero{height:440px;width:100%;position:relative;margin:0;overflow:hidden}
+body.v2 .cafe-source-hero>img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+body.v2 .cafe-source-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg),transparent 60%);pointer-events:none}
+body.v2 .cafe-source-product .cafe-source-back{position:absolute;top:56px;left:24px;width:40px;height:40px;min-height:40px;z-index:3;border-radius:50%;background:#0003;backdrop-filter:blur(12px);color:white}
+body.v2 .cafe-source-product .cafe-source-back::before{content:'';position:absolute;inset:-2px}
+body.v2 .cafe-source-back>.icon{width:24px;height:24px}
+body.v2 .cafe-source-caption{position:absolute;top:344px;left:32px;max-width:calc(100% - 64px);padding:4px 8px;border-radius:4px;color:white;background:#0009;font-size:calc(10px * var(--cafe-product-scale));line-height:1.5;z-index:2;overflow-wrap:anywhere}
+body.v2 .cafe-source-product .cafe-source-information{position:relative;z-index:2;padding:112px 32px 0;margin:0;border:0}
+body.v2 .cafe-source-product:has(.cafe-source-hero img) .cafe-source-information{margin-top:-48px;padding-top:0}
+body.v2 .cafe-source-product:not(:has(.cafe-source-hero img)) .cafe-source-caption{display:none}
+body.v2 .cafe-source-product:not(:has(.cafe-source-hero img)) .cafe-source-back{background:var(--stone);color:var(--olive)}
+body.v2 .cafe-source-information .cafe-source-eyebrow{display:flex;align-items:center;gap:8px;margin:0 0 8px;color:var(--gold);font-size:calc(10px * var(--cafe-product-scale));line-height:1.5;font-weight:700;text-transform:uppercase;letter-spacing:.2em}
+body.v2 .cafe-source-eyebrow>.icon{width:16px;height:16px;flex:0 0 16px}
+body.v2 .cafe-source-product .cafe-source-information>h1{font-size:calc(30px * var(--cafe-product-scale));line-height:1.2;font-weight:300;letter-spacing:0;color:var(--ink);margin:0 0 8px;overflow-wrap:anywhere}
+body.v2 .cafe-source-product .cafe-source-information>.price{font-size:calc(18px * var(--cafe-product-scale));line-height:1.5555555556;font-weight:500;color:var(--olive);margin:0 0 24px}
+body.v2 .cafe-source-product .flowfix-product-description{margin:0 0 24px}
+body.v2 .cafe-source-product .flowfix-product-description>h2,
+body.v2 .cafe-source-quantity>h2{font-size:calc(12px * var(--cafe-product-scale));line-height:1.3333333333;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#000;margin:0 0 12px}
+body.v2 .cafe-source-product .flowfix-product-description>p{font-size:calc(14px * var(--cafe-product-scale));line-height:1.625;color:#000;margin:0;overflow-wrap:anywhere}
+body.v2 .cafe-source-information .revision-form{margin:24px 0;gap:24px}
+body.v2 .cafe-source-quantity{display:flex;align-items:center;justify-content:space-between;gap:16px}
+body.v2 .cafe-source-quantity>h2{margin:0}
+body.v2 .cafe-source-quantity .revision-quantity{display:flex;align-items:center;gap:12px;border-radius:9999px;background:var(--stone);padding:0 8px}
+body.v2 .cafe-source-quantity .revision-quantity>.field{font-size:12px;flex:none;margin:0}
+body.v2 .cafe-source-quantity .revision-quantity input{width:40px;min-height:44px;padding:0;border:0;background:transparent;font-size:calc(18px * var(--cafe-product-scale));line-height:1.5;font-weight:600;text-align:center;margin:0}
+body.v2 .cafe-source-quantity .revision-quantity>.btn{width:32px;min-width:32px;min-height:44px;border:0;background:transparent;padding:0;font-size:calc(20px * var(--cafe-product-scale));line-height:1.4;color:var(--olive)}
+body.v2 .cafe-source-location>.field{font-size:calc(12px * var(--cafe-product-scale));line-height:1.5;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+body.v2 .cafe-source-location input{font-size:calc(14px * var(--cafe-product-scale));line-height:1.5;text-transform:none;letter-spacing:0;font-weight:400;max-width:100%}
+body.v2 .cafe-source-product .source-note{font-size:calc(10px * var(--cafe-product-scale));line-height:1.5;color:#9ca3af;font-style:italic;margin:32px 0 0;border:0;padding:0}
+body.prototype-app.v2 .app:has(>.page>.cafe-source-product)>.flow-footer{padding:24px 32px 48px;background:white;border-top:1px solid var(--stone)}
+body.v2 .cafe-source-footer{width:100%}
+body.prototype-app.v2 .app:has(>.page>.cafe-source-product)>.flow-footer>.btn,
+body.prototype-app.v2 .app:has(>.page>.cafe-source-product)>.flow-footer .cafe-source-footer>.btn{width:100%;min-height:68px;font-size:18px;line-height:1.5555555556;font-weight:500;padding:20px 12px;margin:0;border-radius:16px;box-shadow:0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a;white-space:normal;overflow-wrap:anywhere}
+/* Source search affordance is at left. It remains a real submit control. */
+body.v2 .flowfix-cafe-menu .flowfix-menu-search{position:relative}
+body.v2 .flowfix-cafe-menu .flowfix-menu-search input{padding:14px 16px 14px 48px;font-size:14px;line-height:1.4285714286}
+body.v2 .flowfix-cafe-menu .flowfix-menu-search>button{position:absolute;left:4px;top:50%;transform:translateY(-50%);width:44px;min-height:44px;color:#9ca3af;padding:0}
+body.v2 .flowfix-cafe-menu .flowfix-menu-search>button>.icon{width:20px;height:20px}
+body.v2 .flowfix-cafe-menu .revision-categories{margin:24px 0 16px;padding-bottom:8px}
+body.v2 .flowfix-cafe-menu .revision-categories .chip{min-height:38px;padding:10px 20px;font-size:12px;line-height:1.3333333333;position:relative}
+body.v2 .flowfix-cafe-menu .revision-categories .chip::before{content:'';position:absolute;inset:-3px 0}
+body.v2 .flowfix-cafe-menu .revision-cafe-banner>div{background:#0003}
+body.v2 .flowfix-cafe-menu .revision-cafe-banner span{font-size:10px;line-height:1.5;font-weight:700;letter-spacing:.1em}
+body.v2 .flowfix-cafe-menu .revision-cafe-banner h2{font-size:20px;line-height:1.4;margin:0}
+/* Compact photo-free SKU cards keep actual title + price + real detail target.
+   The atmosphere photograph is never repeated as a product photograph. */
+body.v2 .flowfix-cafe-menu .revision-product-card{min-height:112px;padding:12px;gap:0}
+body.v2 .flowfix-cafe-menu .revision-product-card h2{font-size:14px!important;line-height:1.4285714286;margin:8px 0}
+body.v2 .flowfix-cafe-menu .cafe-source-tile-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+body.v2 .flowfix-cafe-menu .cafe-source-tile-footer>strong{font-size:12px;line-height:1.3333333333;font-weight:600;letter-spacing:-.025em;color:var(--olive);overflow-wrap:anywhere}
+body.v2 .cafe-source-tile-open{flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:var(--stone);color:var(--olive);display:grid;place-items:center}
+body.v2 .cafe-source-tile-open>.icon{width:18px;height:18px}
+body.demo-large-text.v2 .cafe-source-product{--cafe-product-scale:2}
+body.demo-large-text.v2 .cafe-source-quantity{flex-wrap:wrap}
+body.demo-large-text.v2 .flowfix-cafe-menu .revision-menu-grid{grid-template-columns:1fr}
+@media(max-width:350px){body.v2 .cafe-source-product .cafe-source-information{padding-left:24px;padding-right:24px}.v2 .cafe-source-caption{left:24px;max-width:calc(100% - 48px)}}

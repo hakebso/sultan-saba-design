@@ -1,0 +1,51 @@
+/* Canonical cafe_menu geometry, adapted to a read-only menu and honest, photo-free products.
+   393px canvas: 24px gutters + 345px content; two columns = (345 - 16) / 2. */
+.v2 .app>main.page:has(>.flowfix-cafe){padding:56px 24px 32px;background:#fcfbf9}
+.v2 .app>main.page:has(>.flowfix-cafe)>*{margin-top:0}
+.v2 .flowfix-cafe{color:#2d2d2d;font-family:Inter,Arial,sans-serif;--cafe-olive:#3c422d;--cafe-gold:#c5a059;--cafe-stone:#efece7}
+.v2 .flowfix-cafe>*+*{margin-top:0}
+.v2 .flowfix-cafe .flowfix-cafe-header{padding:0 0 24px}
+.v2 .flowfix-cafe-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.v2 .flowfix-cafe-top .icon-button{width:44px;height:44px;background:var(--cafe-stone);border-radius:50%;color:var(--cafe-olive)}
+.v2 .flowfix-cafe-top img{display:block;width:40px;height:40px;object-fit:contain}
+.v2 .flowfix-header-spacer{width:44px;height:44px}
+.v2 .flowfix-cafe-header .eyebrow{font-size:11px;line-height:15px;font-weight:600;letter-spacing:.2em;color:var(--cafe-gold);margin:0 0 4px;text-transform:uppercase}
+.v2 .flowfix-cafe-header h1{font:300 30px/1.2 Inter,Arial,sans-serif;margin:0;letter-spacing:-.5px;overflow-wrap:anywhere}
+.v2 .page>.flowfix-cafe>.flowfix-menu-search{margin:0}
+.v2 .flowfix-menu-search{display:flex;align-items:center;background:var(--cafe-stone);border-radius:16px;min-height:48px;margin:0}
+.v2 .flowfix-menu-search input{flex:1;min-width:0;width:100%;background:transparent;border:0;border-radius:16px;padding:13px 0 13px 16px;margin:0;min-height:48px;box-shadow:none;font-size:14px;line-height:1.57142857142857;color:#2d2d2d}
+.v2 .flowfix-menu-search input:focus{outline:0}
+.v2 .flowfix-menu-search:focus-within{outline:2px solid var(--cafe-gold);outline-offset:2px}
+.v2 .flowfix-menu-search button{border:0;background:transparent;width:48px;min-height:48px;flex-shrink:0;color:var(--cafe-olive);display:grid;place-items:center}
+.v2 .flowfix-cafe .revision-categories{display:flex;gap:8px;overflow-x:auto;margin:24px 0 8px;padding-bottom:8px;flex-wrap:nowrap;scrollbar-width:none}
+.v2 .flowfix-cafe .revision-categories .chip{flex-shrink:0;white-space:nowrap;min-height:44px;padding:10px 20px;border:1px solid var(--cafe-stone);border-radius:999px;font:500 13px/1.3 Inter,Arial,sans-serif;background:#fff;color:#2d2d2d}
+.v2 .flowfix-cafe .revision-categories .chip.selected{background:var(--cafe-olive);color:white;border-color:var(--cafe-olive)}
+.v2 .flowfix-cafe .revision-cafe-banner{position:relative;height:180px;border-radius:32px;overflow:hidden;margin:0 0 32px;background:none}
+.v2 .flowfix-cafe .revision-cafe-banner img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.v2 .flowfix-cafe .revision-cafe-banner>div{position:absolute;inset:0;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(transparent 30%,rgba(0,0,0,.5));color:white}
+.v2 .flowfix-cafe .revision-cafe-banner span{position:static;inset:auto;padding:0;background:none;font:600 11px/1.4 Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:.16em}
+.v2 .flowfix-cafe .revision-cafe-banner h2{font:500 20px/1.25 Inter,Arial,sans-serif;margin:4px 0 0;color:white}
+.v2 .flowfix-cafe .revision-menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0}
+.v2 .flowfix-cafe .revision-product-card{display:flex;flex-direction:column;min-width:0;gap:8px;min-height:160px;border:1px solid var(--cafe-stone);background:white;padding:16px 12px;border-radius:24px;color:#2d2d2d;text-decoration:none;box-shadow:none}
+.v2 .flowfix-cafe .revision-product-card .eyebrow{font-size:10px;line-height:1.4;letter-spacing:.08em;color:#6b6b62;margin:0}
+.v2 .flowfix-cafe .revision-product-card h2{font:500 16px/1.4 Inter,Arial,sans-serif;font-size:16px!important;margin:0;overflow-wrap:anywhere}
+.v2 .flowfix-cafe .revision-product-card strong{font-size:14px;line-height:1.4;font-weight:600;color:var(--cafe-olive);margin-top:auto}
+.v2 .flowfix-product-detail{font-size:12px;line-height:1.4;color:#626853}
+.v2 .flowfix-cafe .source-note{font:400 12px/1.5 Inter,Arial,sans-serif;color:#74746f;margin:24px 0}
+.v2 .flowfix-menu-empty{grid-column:1/-1;padding:24px 0}
+.v2 .flowfix-cafe-account{display:flex;flex-direction:column;gap:6px;color:var(--cafe-olive);text-decoration:none;padding:18px 0;border-top:1px solid var(--cafe-stone);margin-top:24px;font-size:13px}
+.v2 .flowfix-cafe-account strong{font-size:15px;font-weight:500}
+.v2 .flowfix-product-information{padding:24px 8px 0;border-top:1px solid var(--cafe-stone)}
+.v2 .flowfix-product-information>.eyebrow{margin:0 0 12px;color:var(--cafe-gold);font-size:11px}
+.v2 .flowfix-product-information>.price{font:500 22px/1.4 Inter,Arial,sans-serif;color:var(--cafe-olive);margin:0 0 32px}
+.v2 .flowfix-product-description h2{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#71716c;margin:0 0 12px}
+.v2 .flowfix-product-description p{font-size:15px;line-height:1.7;margin:0}
+.v2 .flowfix-menu-return{padding-top:20px}
+.v2 .flowfix-visit-choice{border:1px solid #e3dfd8;border-radius:16px;padding:16px;margin:12px 0}
+.v2 .flowfix-visit-choice legend{font-size:15px;font-weight:500;padding:0 6px}
+.v2 .flowfix-visit-choice>p{font-size:13px;line-height:1.5;margin:0 0 16px;color:#686860}
+.v2 .flowfix-visit-choice .choice{align-items:flex-start;padding:12px 0;min-height:44px}
+.v2 .flowfix-visit-choice .choice span{display:flex;flex-direction:column;gap:5px;line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.v2 .flowfix-visit-choice .choice strong{font-size:14px;font-weight:500}
+.v2 .flowfix-visit-choice .choice small{font-size:13px;color:#686860}
+@media(max-width:350px){.v2 .flowfix-cafe .revision-menu-grid{gap:10px}.v2 .flowfix-cafe .revision-product-card{padding:14px 10px}.v2 .flowfix-cafe .revision-cafe-banner>div{padding:20px}.v2 .flowfix-cafe-header h1{font-size:28px}}

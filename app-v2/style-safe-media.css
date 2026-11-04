@@ -1,0 +1,25 @@
+/* Semantic photo omission removes the image slot; text/actions remain in flow. */
+.v2 .page[data-route=facility]:not(:has(>.revision-hero))>.header{position:static;margin:0 0 24px;background:none}
+.v2 .page[data-route=facility]:not(:has(>.revision-hero))>.header h1{position:static;width:auto;height:auto;clip-path:none;overflow:visible;font-size:20px;line-height:1.4}
+.v2 .page[data-route=facility]:not(:has(>.revision-hero))>.header .icon-button{background:var(--stone)}
+.v2 .safe-media-photofree.revision-cafe-banner{height:auto;min-height:0;padding:24px;background:var(--stone);overflow:visible}
+.v2 .safe-media-photofree.revision-cafe-banner>div{position:static;inset:auto;background:none;padding:0;color:var(--ink)}
+.v2 .safe-media-photofree.revision-cafe-banner :is(span,h2){color:var(--ink)}
+.v2 .page[data-route=event]:not(:has(>.revision-hero))>.header{position:static}
+.v2 .safe-media-cafe-mark{width:40px;height:40px;object-fit:contain}
+.v2 :is(.entry-service-hero,.class-hero,.recurring-hero,.composite-offer-hero).safe-media-photofree{height:auto;min-height:0;background:none;padding:24px;overflow:visible}
+.v2 :is(.entry-service-hero,.class-hero,.recurring-hero,.composite-offer-hero).safe-media-photofree:after{display:none}
+.v2 :is(.entry-service-hero,.class-hero,.recurring-hero,.composite-offer-hero).safe-media-photofree>.icon-button{position:static;background:var(--stone);color:var(--olive);margin-bottom:16px}
+.v2 :is(.class-hero,.recurring-hero,.composite-offer-hero).safe-media-photofree>div{position:static;inset:auto;background:none;color:var(--ink);padding:0}
+.v2 .group-hero.safe-media-photofree{height:auto;min-height:0;padding:32px;background:none}
+.v2 .group-hero.safe-media-photofree:after{display:none}
+.v2 .group-hero.safe-media-photofree>.icon-button{position:static;background:var(--stone);color:var(--olive);margin-bottom:24px}
+.v2 .group-hero.safe-media-photofree>div{position:static;inset:auto;color:var(--ink)}
+.v2 .entry-category.safe-media-photofree{aspect-ratio:auto;min-height:112px;display:flex;align-items:flex-end;padding:20px;background:var(--stone)}
+.v2 .entry-category.safe-media-photofree:after{display:none}
+.v2 .entry-category.safe-media-photofree>span{position:static;color:var(--olive)}
+.v2 :is(.entry-welcome-hero,.entry-guest-hero).safe-media-photofree{height:auto;min-height:0;flex:0 0 auto;padding:32px;background:var(--stone)}
+.v2 :is(.entry-welcome-hero,.entry-guest-hero).safe-media-photofree:after{display:none}
+.v2 :is(.entry-welcome-hero,.entry-guest-hero).safe-media-photofree>.entry-emblem{position:static;display:block;max-width:160px;height:auto;margin:24px auto 48px}
+.v2 .entry-welcome-hero.safe-media-photofree>.entry-skip{position:static;display:flex;width:max-content;margin-left:auto;background:white;color:var(--olive)}
+.v2 .safe-media-label-action{width:auto;max-width:100%;padding:8px;font-size:13px;line-height:1.4;white-space:normal;overflow-wrap:anywhere}

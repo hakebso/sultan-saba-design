@@ -1,0 +1,97 @@
+/* Source family only: my_benefits / benefit_selector / benefit_detail.
+   Actual ownership, expiry, available/reserved/used and explicit payment apply
+   remain in the existing runtime/model. No package/composite/membership rules. */
+body.v2 .page[data-route=rights]>.rights-title {margin-bottom:24px}
+body.v2 .page[data-route=rights]>.rights-title .eyebrow {font-size:calc(10px * var(--rights-wallet-scale));line-height:1.5;font-weight:700;letter-spacing:.2em}
+body.v2 .page[data-route=rights]>.rights-title h1 {line-height:1.3333;color:#2d2d2d}
+body.v2 .page[data-route=rights]>.rights-wallet {margin-top:0}
+body.v2 .page[data-route=rights] .rights-benefit-expiry,
+body.v2 .page[data-route=rights] .rights-gift-available,
+body.v2 .page[data-route=rights] .rights-gift-usage {font-size:calc(12px * var(--rights-wallet-scale));line-height:1.5;color:#000}
+body.v2 .page[data-route=rights] .rights-stat-grid :is(span,strong,small) {font-size:calc(12px * var(--rights-wallet-scale));line-height:1.5}
+body.v2 .page[data-route=rights] .rights-stat-grid small {display:inline}
+body.v2 .page[data-route=rights] .rights-reserved {font-size:calc(10px * var(--rights-wallet-scale));line-height:1.5;font-weight:700;text-transform:uppercase;letter-spacing:-.025em;color:#c5a059}
+body.v2 .page[data-route=rights] .rights-package-card>.btn {font-size:calc(14px * var(--rights-wallet-scale));line-height:1.5;padding:16px;min-height:54px}
+
+body.v2 .page[data-route=benefit-selector] .benefit-selector {--rights-selector-scale:1}
+body.v2 .page[data-route=benefit-selector] .benefit-selector-header {padding:64px 32px 24px;gap:16px;align-items:center}
+body.v2 .page[data-route=benefit-selector] .benefit-selector-header p {font-size:calc(10px * var(--rights-selector-scale));line-height:1.5;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#c5a059;margin:0}
+body.v2 .page[data-route=benefit-selector] .benefit-selector-header h1 {font-size:calc(18px * var(--rights-selector-scale));line-height:1.5556;font-weight:500}
+body.v2 .page[data-route=benefit-selector] .benefit-selector-content h2 {font-size:calc(12px * var(--rights-selector-scale));line-height:1.3333;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#000}
+body.v2 .page[data-route=benefit-selector] .benefit-choice {border-color:#efece7;box-shadow:none;min-height:90px}
+body.v2 .page[data-route=benefit-selector] .benefit-choice.is-selected {border-color:#3c422d;box-shadow:0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a}
+body.v2 .page[data-route=benefit-selector] .benefit-choice-copy {gap:4px}
+body.v2 .page[data-route=benefit-selector] .benefit-choice-copy strong {font-size:calc(16px * var(--rights-selector-scale));line-height:1.5;font-weight:600}
+body.v2 .page[data-route=benefit-selector] .is-selected .benefit-choice-copy {padding-right:28px}
+body.v2 .page[data-route=benefit-selector] .is-selected .benefit-choice-copy strong {font-weight:700}
+body.v2 .page[data-route=benefit-selector] .benefit-balance,
+body.v2 .page[data-route=benefit-selector] .benefit-amount {font-size:calc(12px * var(--rights-selector-scale));line-height:1.5}
+body.v2 .page[data-route=benefit-selector] .benefit-icon .icon {width:24px;height:24px}
+body.v2 .page[data-route=benefit-selector] .benefit-check {position:absolute;top:20px;right:20px}
+body.v2 .page[data-route=benefit-selector] .benefit-check>.icon {width:14px;height:14px}
+body.v2 .page[data-route=benefit-selector] .benefit-venue .benefit-icon {background:#c5a0591a;color:#c5a059}
+body.v2 .page[data-route=benefit-selector] .benefit-choice.is-unavailable {background:#fff}
+body.v2 .page[data-route=benefit-selector] .is-unavailable .benefit-icon {filter:grayscale(1);opacity:.6}
+body.v2 .page[data-route=benefit-selector] .benefit-venue .benefit-choice>.icon {width:20px;height:20px;flex:0 0 20px;color:#000}
+body.v2 .app:has(>.page[data-route=benefit-selector])>.flow-footer {padding:32px 32px max(48px,env(safe-area-inset-bottom));background:#fcfbf9;max-height:45dvh;overflow-y:auto}
+body.v2 .benefit-selector-footer {padding:0}
+body.v2 .benefit-selector-footer .btn {min-height:64px;padding:20px;font-weight:600;box-shadow:0 20px 25px -5px #0000001a,0 8px 10px -6px #0000001a}
+
+body.v2 .app>.page[data-route=right]:has(>.rights-source-detail) {padding:0}
+body.v2 .page[data-route=right]>.rights-source-detail {margin:0;min-width:0;--rights-detail-scale:1}
+body.v2 .page[data-route=right] .rights-source-detail>.benefit-header {padding:64px 32px 24px;margin:0}
+body.v2 .page[data-route=right] .rights-source-detail>.benefit-header>.icon-button {width:40px;height:40px;margin:0 0 32px;background:#efece7;border-radius:50%;display:flex}
+body.v2 .page[data-route=right] .rights-source-detail>.benefit-header>.eyebrow {font-size:calc(10px * var(--rights-detail-scale));line-height:1.5;font-weight:700;letter-spacing:.2em;color:#c5a059;margin:0 0 4px}
+body.v2 .page[data-route=right] .rights-source-detail>.benefit-header>h1 {font-size:calc(24px * var(--rights-detail-scale));line-height:1.3333;letter-spacing:0;font-weight:600;color:#000;overflow-wrap:anywhere}
+body.v2 .page[data-route=right] .rights-source-detail-content {padding:0 32px 48px;min-width:0}
+body.v2 .page[data-route=right] .rights-source-detail-content>.benefit-hero {padding:32px;margin:0 0 40px;border:0;border-radius:32px;background:#3c422d;color:#fff}
+body.v2 .page[data-route=right] .rights-source-detail-content .benefit-number {font-size:calc(36px * var(--rights-detail-scale));line-height:1.1111;font-weight:300}
+body.v2 .page[data-route=right] .rights-source-detail-content .benefit-number>span {font-size:calc(18px * var(--rights-detail-scale));line-height:1.5556;color:#ffffff99}
+body.v2 .page[data-route=right] .rights-source-detail-content .rights-detail-reserved {font-size:calc(12px * var(--rights-detail-scale));line-height:1.3333;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin:8px 0 16px;color:#ffffff99}
+body.v2 .page[data-route=right] .rights-source-detail-content .benefit-hero progress {display:block;width:100%;height:4px;margin:0;border:0;border-radius:999px;overflow:hidden;background:#ffffff33;accent-color:#c5a059}
+body.v2 .page[data-route=right] .rights-source-detail-content .benefit-hero progress::-webkit-progress-bar {background:#ffffff33}
+body.v2 .page[data-route=right] .rights-source-detail-content .benefit-hero progress::-webkit-progress-value {background:#c5a059}
+body.v2 .page[data-route=right] .rights-source-detail-content .benefit-hero progress::-moz-progress-bar {background:#c5a059}
+body.v2 .page[data-route=right] .rights-source-detail-content .benefit-hero>.small {font-size:calc(10px * var(--rights-detail-scale));line-height:1.5;text-transform:uppercase;text-align:right;letter-spacing:-.025em;color:#ffffff99;margin:8px 0 0}
+body.v2 .page[data-route=right] .rights-source-detail-content>section {margin:0 0 40px}
+body.v2 .page[data-route=right] .rights-source-detail-content>section>h2 {font-size:calc(12px * var(--rights-detail-scale));line-height:1.3333;font-weight:700;letter-spacing:.1em;color:#000;margin:0 0 16px;text-transform:uppercase}
+body.v2 .page[data-route=right] .rights-source-detail-content .eligible-service-chips>.btn {font-size:calc(12px * var(--rights-detail-scale));line-height:1.3333;padding:10px 12px;font-weight:500}
+body.v2 .page[data-route=right] .rights-source-detail-content>.rights-source-history>h2 {font-size:calc(14px * var(--rights-detail-scale));line-height:1.4286;margin-bottom:24px}
+body.v2 .page[data-route=right] .rights-source-history-list {display:grid;gap:16px}
+body.v2 .page[data-route=right] .rights-source-history-card {display:flex;align-items:center;gap:12px;padding:16px;border:1px solid #efece7;border-radius:16px;background:#fff;color:#000;text-decoration:none;min-width:0}
+body.v2 .page[data-route=right] .rights-source-history-card.is-reserved {padding:15px;border:2px solid #c5a059;box-shadow:0 1px 2px #0000000d}
+body.v2 .page[data-route=right] .rights-source-history-icon {width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:12px;background:#efece7;color:#3c422d}
+body.v2 .page[data-route=right] .rights-source-history-icon>.icon {width:20px;height:20px}
+body.v2 .page[data-route=right] .rights-source-history-card>div {flex:1;min-width:0;display:grid;gap:4px;overflow-wrap:anywhere}
+body.v2 .page[data-route=right] .rights-source-history-card strong {font-size:calc(14px * var(--rights-detail-scale));line-height:1.4286;font-weight:600}
+body.v2 .page[data-route=right] .rights-source-history-card :is(span:not(.rights-source-history-icon),small) {font-size:calc(10px * var(--rights-detail-scale));line-height:1.5}
+body.v2 .page[data-route=right] .rights-source-history-card.is-reserved>div>span {color:#c5a059;font-weight:700;text-transform:uppercase}
+body.v2 .page[data-route=right] .rights-source-history-card.is-past {color:#686b60}
+body.v2 .page[data-route=right] .rights-source-history-card>.icon {width:20px;height:20px;flex:0 0 20px;color:#c5a059}
+body.v2 .page[data-route=right] .rights-source-ledger {margin-top:16px;font-size:calc(12px * var(--rights-detail-scale));line-height:1.5}
+body.v2 .page[data-route=right] .rights-source-ledger>summary {min-height:44px;padding:12px 0;cursor:pointer}
+body.v2 .app:has(>.page[data-route=right])>.flow-footer {padding:32px 32px max(48px,env(safe-area-inset-bottom));max-height:45dvh;overflow-y:auto;background:#fcfbf9}
+body.v2 .rights-detail-footer>.btn,body.v2 .rights-detail-footer>.rights-footer-scope-picker>summary {min-height:64px;padding:20px}
+body.demo-large-text.v2 .page[data-route=right]>.rights-source-detail {--rights-detail-scale:2}
+body.demo-large-text.v2 .page[data-route=benefit-selector] .benefit-selector {--rights-selector-scale:2}
+@media(max-width:360px) {
+ body.v2 .page[data-route=right] .rights-source-detail-content {padding-left:24px;padding-right:24px}
+ body.v2 .page[data-route=right] .rights-source-detail>.benefit-header,
+ body.v2 .page[data-route=benefit-selector] .benefit-selector-header {padding-left:24px;padding-right:24px}
+ body.v2 .page[data-route=right] .rights-source-detail-content>.benefit-hero {padding:24px}
+}
+@media(max-height:620px) {
+ body.v2 .page[data-route=right] .rights-source-detail>.benefit-header,
+ body.v2 .page[data-route=benefit-selector] .benefit-selector-header {padding-top:24px}
+}
+
+/* The text-only measure scales direct-text anchors while their H2 parent
+   remains at its baseline size. Give the linked title its own relative line
+   height so it does not inherit a fixed computed 25.2px at 200% text. */
+body.v2 .page[data-route=rights] .rights-benefit-identity h2>a {line-height:1.4}
+/* Source 14px button text uses a 20px line; preserve that exact 100% ratio. */
+body.v2 .page[data-route=rights] .rights-package-card>.btn {line-height:1.4285714286}
+/* Source inactive tab icons/labels are black. Only these three source-family
+   contexts participate; other app navigation retains its current palette. */
+body.v2 .app:has(>.page[data-route=rights]>.rights-title,>.page[data-route=right]>.rights-source-detail,>.page[data-route=benefit-selector]>.benefit-selector)>.bottom-nav a:not(.active) {color:#000}
+body.v2 .app:has(>.page[data-route=rights]>.rights-title,>.page[data-route=right]>.rights-source-detail,>.page[data-route=benefit-selector]>.benefit-selector)>.bottom-nav a.active {color:#3c422d}

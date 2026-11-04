@@ -1,0 +1,11 @@
+/* Actual #schedule / closure2-schedule-final.png and its text-scale evidence.
+   schedule() renders a plain-text h1 and plain-text day-card strong numbers.
+   Their font sizes come from style-entry.css, while later source-fidelity
+   rules pin line-height to28px without repeating font-size in that rule.
+   Keep the exact100% metrics; let each leaf scale with its own real font. */
+body.v2 .entry-schedule-header h1 {
+  line-height:1.55555555555556; /*28/18*/
+}
+body.v2 .entry-schedule .entry-day-card strong {
+  line-height:1.4; /*28/20*/
+}

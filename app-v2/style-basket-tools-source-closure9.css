@@ -1,0 +1,55 @@
+/* Two retained management sources. Scope is the nonempty basket only.
+   Actual controls remain44px; the source32px reorder targets grow accordingly. */
+body.prototype-app.v2 .basket-tools-source .visit-choice-basket-range{border-radius:32px 32px 0 0}
+body.prototype-app.v2 .basket-tools-source .visit-choice-basket-hint{border-radius:0 0 32px 32px}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments{min-width:0;margin:0;padding:0;border:1px solid #efece7;border-radius:32px;background:#fff;box-shadow:0 1px 2px #0000000d}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px;padding:20px;margin:0;list-style:none;font-size:calc(14px * var(--basket-scale,1));line-height:1.42857143;font-weight:600;color:#000;border-radius:32px;cursor:pointer}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments>summary::-webkit-details-marker{display:none}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments>summary::after{content:none}
+body.prototype-app.v2 .basket-tools-source .basket-tools-summary-copy{display:flex;align-items:center;gap:12px;min-width:0}
+body.prototype-app.v2 .basket-tools-source .basket-tools-summary-copy>span:last-child{min-width:0;overflow-wrap:anywhere}
+body.prototype-app.v2 .basket-tools-source :is(.basket-tools-settings-closed,.basket-tools-settings-open,.basket-tools-chevron){display:flex;align-items:center;justify-content:center;flex:0 0 20px;width:20px;height:20px;color:#3c422d}
+body.prototype-app.v2 .basket-tools-source :is(.basket-tools-settings-closed,.basket-tools-settings-open,.basket-tools-chevron)>.icon{width:20px;height:20px}
+body.prototype-app.v2 .basket-tools-source .basket-tools-settings-open{display:none}
+body.prototype-app.v2 .basket-tools-source .basket-tools-chevron{color:#000}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments[open]>summary{font-weight:700;border-bottom:1px solid #efece7;border-radius:32px 32px 0 0}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments[open] .basket-tools-settings-closed{display:none}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments[open] .basket-tools-settings-open{display:flex}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments[open] .basket-tools-chevron{transform:rotate(180deg)}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments>.basket-tools-body{display:grid;gap:24px;padding:20px;min-width:0}
+body.prototype-app.v2 .basket-tools-source .parallel-basket-order{display:flex;align-items:flex-start;gap:16px;min-width:0;margin:0}
+body.prototype-app.v2 .basket-tools-source .basket-tools-service-photo{flex:0 0 64px;width:64px;height:64px}
+body.prototype-app.v2 .basket-tools-source .basket-tools-service-photo:empty{display:none}
+body.prototype-app.v2 .basket-tools-source .basket-tools-service-photo>img{display:block;width:64px;height:64px;border-radius:16px;object-fit:cover}
+body.prototype-app.v2 .basket-tools-source .basket-tools-service-copy{flex:1;min-width:0}
+body.prototype-app.v2 .basket-tools-source .basket-tools-service-copy>strong{display:block;font-size:calc(14px * var(--basket-scale,1));line-height:1.42857143;font-weight:600;color:#000;overflow-wrap:anywhere}
+body.prototype-app.v2 .basket-tools-source .basket-tools-edit-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;min-width:0}
+body.prototype-app.v2 .basket-tools-source .basket-tools-edit-actions>button{display:flex;align-items:center;justify-content:center;gap:4px;min-width:44px;min-height:44px;max-width:100%;padding:6px 12px;border:1px solid #efece7;border-radius:8px;background:#fff;color:#3c422d;font-size:calc(10px * var(--basket-scale,1));line-height:1.5;font-weight:700;white-space:normal;overflow-wrap:anywhere}
+body.prototype-app.v2 .basket-tools-source .basket-tools-edit-actions>button>.icon{width:10px;height:10px;flex:0 0 10px}
+body.prototype-app.v2 .basket-tools-source .basket-tools-order-actions{display:flex;flex:0 0 44px;flex-direction:column;gap:4px;min-width:0}
+body.prototype-app.v2 .basket-tools-source .basket-tools-order-actions>button{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:8px;border:0;border-radius:8px;background:#efece7;color:#000}
+body.prototype-app.v2 .basket-tools-source .basket-tools-order-actions>button>.icon{width:12px;height:12px}
+body.prototype-app.v2 .basket-tools-source .basket-tools-order-actions>button:disabled{opacity:.4;cursor:default}
+body.prototype-app.v2 .basket-tools-source .basket-tools-campaign{display:grid;gap:16px;min-width:0;margin:0;padding:16px 0 0;border:0;border-top:1px solid #efece7}
+body.prototype-app.v2 .basket-tools-source .basket-tools-campaign>legend{float:left;width:100%;margin:0;padding:0;font-size:calc(11px * var(--basket-scale,1));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#000}
+body.prototype-app.v2 .basket-tools-source .basket-tools-campaign>.field{display:grid;gap:8px;min-width:0;margin:0;font-size:calc(11px * var(--basket-scale,1));line-height:1.5}
+body.prototype-app.v2 .basket-tools-source .basket-tools-campaign :is(input,select){width:100%;min-width:0;min-height:50px;padding:16px;border:1px solid #efece7;border-radius:16px;background:#fff;color:#000;font-size:calc(12px * var(--basket-scale,1));line-height:1.33333333;font-weight:500}
+body.prototype-app.v2 .basket-tools-source .basket-tools-body>.small,.basket-tools-source .basket-tools-campaign>.small{font-size:calc(12px * var(--basket-scale,1));line-height:1.5;margin:0;color:#000;overflow-wrap:anywhere}
+body.prototype-app.v2 .basket-tools-source .basket-tools-add-service{display:flex;justify-content:center;padding-top:8px;min-width:0}
+body.prototype-app.v2 .basket-tools-source .basket-tools-add-service>.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;max-width:100%;padding:8px 0;border:0;background:transparent;box-shadow:none;color:#c5a059;font-size:calc(14px * var(--basket-scale,1));line-height:1.42857143;font-weight:700;white-space:normal;overflow-wrap:anywhere}
+body.prototype-app.v2 .basket-tools-source .basket-tools-add-service>.btn>.icon{width:18px;height:18px;flex:0 0 18px}
+body.prototype-app.v2 .basket-tools-source :is(summary,button,a,input,select):focus-visible{outline:3px solid #9a763b;outline-offset:3px}
+body.demo-large-text.prototype-app.v2 .basket-tools-source .parallel-basket-order{flex-wrap:wrap}
+body.demo-large-text.prototype-app.v2 .basket-tools-source .basket-tools-service-copy{flex:1 1 100%}
+body.demo-large-text.prototype-app.v2 .basket-tools-source .basket-tools-order-actions{flex-direction:row;flex-basis:auto;flex-wrap:wrap}
+@media(max-width:360px){body.prototype-app.v2 .basket-tools-source .parallel-basket-adjustments>summary{gap:8px}body.prototype-app.v2 .basket-tools-source .basket-tools-summary-copy{gap:8px}body.prototype-app.v2 .basket-tools-source .parallel-basket-order{gap:12px}body.prototype-app.v2 .basket-tools-source .basket-tools-edit-actions>button{padding-inline:8px}}
+/* Updated expanded canonical retains upper cards and puts all management links
+   below campaign. Only one add-service navigation link is visible per state. */
+body.prototype-app.v2 .basket-tools-source .basket-tools-management-links{display:grid;gap:12px;min-width:0;margin:0;padding-top:16px;border-top:1px solid #efece7}
+body.prototype-app.v2 .basket-tools-source .basket-tools-management-links>a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;max-width:100%;padding:4px 0;background:transparent;border:0;color:#3c422d;font-size:calc(11px * var(--basket-scale,1));line-height:1.5;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;overflow-wrap:anywhere}
+body.prototype-app.v2 .basket-tools-source .basket-tools-management-links>a>span{min-width:0}
+body.prototype-app.v2 .basket-tools-source .basket-tools-management-links>a>.icon{width:16px;height:16px;flex:0 0 16px}
+body.prototype-app.v2 .basket-tools-source .basket-tools-management-links>.basket-tools-expanded-add-service{color:#c5a059}
+body.prototype-app.v2 .basket-tools-source:has(.parallel-basket-adjustments[open]) .basket-tools-add-service{display:none}
+body.prototype-app.v2 .basket-tools-source .basket-tools-campaign>.basket-tools-campaign-help{font-size:calc(9px * var(--basket-scale,1));line-height:1.5;font-style:italic;color:#9ca3af;padding:0 4px}
+body.prototype-app.v2 .basket-tools-source .basket-tools-order-actions>button:disabled{color:#d1d5db;background:transparent;opacity:1}

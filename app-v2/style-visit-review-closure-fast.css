@@ -1,0 +1,16 @@
+/* Source: visit_review_support, 2 Nov canonical; bounded observed-pair fixes.
+   Root cause: style-v2.css .page>section adds 32px above the whole screen. */
+body.v2.prototype-app .app>main.page[data-route=rate]:has(>.supportfix-rating){padding:0}
+body.v2.prototype-app .page>.supportfix-rating{margin-top:0}
+body.v2 .supportfix-rating-header>.icon-button{color:#9ca3af}
+body.v2 .supportfix-rating>.supportfix-related{border-color:#efece7}
+body.v2 .supportfix-rating>.supportfix-related>span:first-child{background:transparent;color:#000;border-radius:0}
+body.v2 .supportfix-rating .supportfix-download{background:transparent;color:#000}
+body.v2 .supportfix-rating>.supportfix-related strong,body.v2 .supportfix-rating>.supportfix-related p{color:#000}
+body.v2 .supportfix-rating .supportfix-stars legend{color:#000}
+body.v2 .supportfix-rating .supportfix-stars label>span[aria-hidden]{color:#e5e7eb}
+body.v2 .supportfix-rating .supportfix-stars label>input:checked+span,body.v2 .supportfix-rating .supportfix-stars label:has(~label input:checked)>span[aria-hidden]{color:#000}
+body.v2 .supportfix-rating textarea{height:calc(112px * var(--support-scale));min-height:calc(112px * var(--support-scale));resize:none;border-color:#efece7}
+body.v2 .supportfix-rating textarea::placeholder{color:#9ca3af;opacity:1}
+body.v2 .supportfix-rating>.supportfix-issue>.icon:first-child{width:40px;height:40px;flex:0 0 40px;padding:10px;border-radius:50%;background:#fff;color:#ef4444;box-shadow:0 1px 2px #0000000d}
+body.v2 .supportfix-rating>.supportfix-issue>span{gap:0}

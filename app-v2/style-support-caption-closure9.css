@@ -1,0 +1,7 @@
+/* Information context only: preserve native fields and match source inline label
+   inside a16px/24px parent line, rather than shifting glyphs with transforms. */
+body.v2 .service-information-support #support-form .information-support-caption-line{display:block;font-size:calc(16px * var(--information-form-scale,1));line-height:1.5;font-weight:400;letter-spacing:normal;text-transform:none}
+body.v2 .service-information-support #support-form .information-support-caption{margin-left:4px;font-size:calc(11px * var(--information-form-scale,1));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#000;overflow-wrap:anywhere}
+body.v2 .service-information-support #support-form .information-support-select{position:relative;display:block;min-width:0}
+body.v2 .service-information-support #support-form .information-support-select>select{appearance:none;-webkit-appearance:none;background:#fff;padding-right:40px;cursor:pointer}
+body.v2 .service-information-support #support-form .information-support-select>.icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#9ca3af;pointer-events:none}

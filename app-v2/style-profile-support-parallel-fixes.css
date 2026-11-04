@@ -1,0 +1,71 @@
+/* Source: design-source-20261102/screens/{first_visit_guide,visit_review_support}.
+   Scoped composition corrections; customer data, route handlers and local-demo boundaries stay authoritative. */
+.v2 .page:has(>.supportfix:is(.supportfix-first-visit,.supportfix-rating)){padding:0}
+.v2 .supportfix-first-visit>.supportfix-guide-header{padding:56px 24px 16px;margin:0;gap:16px}
+.v2 .supportfix-guide-header>.icon-button{width:40px;height:40px;flex:0 0 40px;background:white;border-radius:50%;box-shadow:0 1px 2px #0000000d}
+.v2 .supportfix-guide-header>span{flex:1;text-align:center;font-size:calc(10px * var(--support-scale));line-height:1.5;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.v2 .supportfix-guide-header::after{content:'';width:40px;flex:0 0 40px}
+.v2 .supportfix-first-visit>.supportfix-guide-hero{margin:16px 32px 32px}
+.v2 .supportfix-guide-hero h1{font-size:calc(30px * var(--support-scale));line-height:1.25;font-weight:300;margin:0 0 16px}
+.v2 .supportfix-guide-hero>img{height:192px;border-radius:40px;box-shadow:0 1px 2px #0000000d}
+.v2 .supportfix-first-visit>.supportfix-guide-sections{padding:0 32px 48px}
+.v2 .supportfix-guide-sections>article{gap:16px;margin:0 0 40px}
+.v2 .supportfix-guide-sections>article>span>.icon{width:24px;height:24px}
+.v2 .supportfix-guide-sections h2{font-size:calc(16px * var(--support-scale));line-height:1.5;font-weight:600;margin:0 0 4px}
+.v2 .supportfix-guide-sections p{font-size:calc(12px * var(--support-scale));line-height:1.625}
+.v2 .supportfix-guide-sections>aside{margin:0;border-radius:24px;padding:24px}
+.v2 .supportfix-guide-sections>aside h2{display:flex;align-items:center;gap:8px;font-size:calc(12px * var(--support-scale));line-height:1.5;font-weight:700;margin-bottom:8px}
+.v2 .supportfix-guide-sections>aside h2>.icon{width:16px;height:16px;flex:0 0 16px;color:var(--gold)}
+.v2 .supportfix-guide-sections>aside p{font-size:calc(11px * var(--support-scale));line-height:1.625}
+.v2 .supportfix-first-visit>.flow-footer{padding:32px 24px max(32px,env(safe-area-inset-bottom));background:white;border-top:1px solid var(--stone)}
+.v2 .supportfix-rating>.supportfix-rating-header{display:flex;align-items:center;gap:16px;padding:56px 24px 16px;background:white;border-bottom:1px solid var(--stone)}
+.v2 .supportfix-rating-header>.icon-button{width:40px;height:40px;flex:0 0 40px;border:1px solid var(--stone);border-radius:50%;background:white}
+.v2 .supportfix-rating-header>.icon-button .icon{width:20px;height:20px}
+.v2 .supportfix-rating-header h1{flex:1;min-width:0;text-align:center;font-size:calc(14px * var(--support-scale));line-height:1.5;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin:0}
+.v2 .supportfix-rating-header::after{content:'';width:40px;flex:0 0 40px}
+.v2 .supportfix-rating>.supportfix-related{margin:32px 24px;padding:16px;gap:16px;border-radius:24px;box-shadow:0 1px 2px #0000000d}
+.v2 .supportfix-rating>.supportfix-related>span:first-child{width:56px;height:56px;flex-basis:56px}
+.v2 .supportfix-rating>.supportfix-related>span:first-child>.icon{width:30px;height:30px}
+.v2 .supportfix-rating>.supportfix-related strong{font-size:calc(12px * var(--support-scale));line-height:1.5;font-weight:700}
+.v2 .supportfix-rating>.supportfix-related p{font-size:calc(10px * var(--support-scale));line-height:1.5;margin:0}
+.v2 .supportfix-rating .supportfix-download{display:grid;place-items:center;padding:8px;border-radius:12px;background:var(--stone);color:var(--olive);border:0;flex:0 0 36px;width:36px;height:36px;position:relative}
+.v2 .supportfix-download::before{content:'';position:absolute;inset:-4px}
+.v2 .supportfix-download>.icon{width:18px;height:18px}
+.v2 .supportfix-rating>#rating-form{margin:0 24px;gap:32px}
+.v2 .supportfix-rating .supportfix-stars{margin:0;border:0;padding:0}
+.v2 .supportfix-rating .supportfix-stars legend{font-size:calc(16px * var(--support-scale));line-height:1.5;font-weight:300;margin-bottom:16px;color:var(--olive)}
+.v2 .supportfix-rating .supportfix-stars label{width:36px;height:44px}
+.v2 .supportfix-rating .supportfix-stars label>span[aria-hidden]{display:grid;place-items:center}
+.v2 .supportfix-rating .supportfix-stars label>span[aria-hidden]>.icon{width:36px;height:36px}
+.v2 .supportfix-rating .supportfix-stars label:has(input:checked){border-bottom:0}
+.v2 .supportfix-rating .field{font-size:calc(10px * var(--support-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase;gap:6px}
+.v2 .supportfix-rating textarea{min-height:130px;padding:16px;border-radius:24px;font-size:calc(14px * var(--support-scale));line-height:1.5;font-weight:400;letter-spacing:0;text-transform:none;box-shadow:inset 0 2px 4px #0000000d}
+.v2 .supportfix-rating>.supportfix-request-note{margin:16px 24px;font-size:calc(11px * var(--support-scale))}
+.v2 .supportfix-rating>.supportfix-issue{margin:32px 24px;padding:20px;border-radius:24px;background:#fef2f2;border-color:#fee2e2}
+.v2 .supportfix-rating .supportfix-issue strong{font-size:calc(12px * var(--support-scale));line-height:1.5;font-weight:700}
+.v2 .supportfix-rating .supportfix-issue small{font-size:calc(10px * var(--support-scale));line-height:1.5}
+.v2 .supportfix-rating>.supportfix-tracking{margin:32px 24px;padding-top:24px;border-top:1px solid var(--stone)}
+.v2 .supportfix-rating>.supportfix-tracking>h2{font-size:calc(10px * var(--support-scale));line-height:1.5;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+.v2 .supportfix-rating>.flow-footer{padding:32px 24px max(32px,env(safe-area-inset-bottom));background:white;border-top:1px solid var(--stone)}
+.v2 .supportfix:is(.supportfix-first-visit,.supportfix-rating)>.flow-footer .btn{min-height:64px;padding:20px;font-size:calc(16px * var(--support-scale));line-height:1.5;font-weight:600;border-radius:16px;box-shadow:0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a}
+/* The source inset divider also applies to its unavailable privacy row. */
+.v2 .profilefix-menu-row+button.profilefix-unavailable::after{content:'';position:absolute;top:-1px;left:20px;right:20px;height:1px;background:var(--stone)}
+@media(max-width:360px){.v2 .supportfix-rating-header{gap:8px}.v2 .supportfix-rating-header h1{letter-spacing:.06em}.v2 .supportfix-guide-header{gap:8px}}
+.demo-large-text.v2 .supportfix-guide-header::after,.demo-large-text.v2 .supportfix-rating-header::after{display:none}
+.demo-large-text.v2 .supportfix-rating-header{flex-wrap:wrap}
+.demo-large-text.v2 .supportfix-rating-header h1{flex-basis:calc(100% - 56px)}
+.demo-large-text.v2 .supportfix-rating .supportfix-stars label{width:48px;height:56px}
+/* PNG pair 3 Nov: inherited .page>section margin shifted the guide 32px. */
+body.v2.prototype-app .app>main.page[data-route=first-visit]{padding:0}
+body.v2.prototype-app .page>.supportfix-first-visit{margin-top:0}
+body.v2 .page .supportfix-guide-header>span{color:#000}
+body.v2 .page .supportfix-guide-sections>article>span{background:transparent;border-radius:0;color:#000}
+body.v2 .page .supportfix-guide-sections h2,body.v2 .page .supportfix-guide-sections p{color:#000}
+body.v2 .page .supportfix-guide-sections>aside{background:transparent}
+body.v2 .page .supportfix-guide-sections>aside h2{font-size:calc(10px * var(--support-scale));line-height:1.5;letter-spacing:.1em;text-transform:uppercase}
+body.v2 .page .supportfix-guide-sections>aside h2>.icon{color:#000}
+
+/* The renderer moves persistent footers out of the screen section. */
+body.v2.prototype-app .app:has(>main>.supportfix:is(.supportfix-first-visit,.supportfix-rating))>.flow-footer{--support-scale:1;padding:32px 24px max(32px,env(safe-area-inset-bottom));background:white;border-top:1px solid #e5e7eb}
+body.v2.prototype-app .app:has(>main>.supportfix:is(.supportfix-first-visit,.supportfix-rating))>.flow-footer .btn{min-height:64px;padding:20px 0;border:0;font-size:calc(16px * var(--support-scale));line-height:1.5;font-weight:600;border-radius:16px;box-shadow:0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a}
+body.demo-large-text.v2.prototype-app .app:has(>main>.supportfix:is(.supportfix-first-visit,.supportfix-rating))>.flow-footer{--support-scale:2}

@@ -1,0 +1,205 @@
+/* Canonical facility/program composition pass, 3 November 2026.
+   Load after existing facility/program/source styles. Figures and actions remain
+   model-owned. No placeholder map, unverified address or service promise. */
+
+/* facility_catalog: the source places the real photograph behind title/price. */
+body.v2 .page:has(>.facilityfix-catalog) {padding:0}
+body.v2 .facilityfix-catalog-header {padding:64px 24px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--stone);background:var(--bg)}
+body.v2 .facilityfix-catalog-header>div {min-width:0}
+body.v2 .facilityfix-catalog-header p {margin:0 0 4px;color:var(--gold);font-size:calc(10px * var(--facility-scale));line-height:1.5;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+body.v2 .facilityfix-catalog-header h1 {margin:0;font-size:calc(24px * var(--facility-scale));line-height:1.3333;font-weight:600;letter-spacing:0}
+body.v2 .facilityfix-catalog-header .icon-button {width:40px;height:40px;min-height:40px;flex:0 0 40px;border-radius:50%;background:var(--stone);color:var(--olive)}
+body.v2 .facilityfix-catalog-content {padding:0 24px 96px}
+body.v2 .facilityfix-catalog-content>.facilityfix-info {margin:24px 0 32px;padding:16px;gap:12px;border-radius:16px;font-size:calc(11px * var(--facility-scale));line-height:1.625;font-weight:500;color:var(--olive)}
+body.v2 .facilityfix-catalog-content>.facilityfix-info>.icon {flex:0 0 20px;width:20px;height:20px;color:var(--gold)}
+body.v2 .facilityfix-catalog-list {margin:0;gap:24px}
+body.v2 .facilityfix-catalog-card {border:0;border-radius:32px;box-shadow:0 1px 2px #0000000d}
+body.v2 .facilityfix-catalog-card.has-photo {aspect-ratio:16/10;display:flex;align-items:flex-end;background:#3c422d;isolation:isolate}
+body.v2 .facilityfix-catalog-card.has-photo>img {position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+body.v2 .facilityfix-catalog-card.has-photo:before {content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to top,#000c,#0003,transparent)}
+body.v2 .facilityfix-catalog-card.has-photo .facilityfix-catalog-copy {background:none;color:white;padding:80px 24px 20px}
+body.v2 .facilityfix-catalog-copy {display:flex;align-items:flex-end;justify-content:space-between;gap:12px;width:100%;min-width:0}
+body.v2 .facilityfix-catalog-copy>div {min-width:0}
+body.v2 .facilityfix-catalog-copy h2 {margin:0 0 4px;font-size:calc(18px * var(--facility-scale));line-height:1.5556;font-weight:500}
+body.v2 .facilityfix-catalog-copy p {display:flex;align-items:center;justify-content:flex-start;gap:8px;margin:0;font-size:calc(12px * var(--facility-scale));line-height:1.3333;opacity:.8}
+body.v2 .facilityfix-catalog-copy p>.icon {width:12px;height:12px;flex:0 0 12px}
+body.v2 .facilityfix-catalog-copy>strong {font-size:calc(18px * var(--facility-scale));line-height:1.5556;font-weight:600;text-align:right;overflow-wrap:anywhere;max-width:40%;flex-shrink:0}
+body.v2 .facilityfix-catalog-card.photo-free .facilityfix-catalog-copy {min-height:190px;flex-direction:row;align-items:flex-end}
+
+/* facility_detail already matches the 420px real-media/floating card structure.
+   Restore the canonical muted description and section-label hierarchy. */
+body.v2 .facilityfix-detail .facilityfix-intro>p:last-child {color:#2d2d2db3}
+body.v2 .facilityfix-detail .revision-form>section h2,
+body.v2 .facilityfix-detail :is(.facilityfix-payments legend,.facilityfix-times legend) {color:#2d2d2d66}
+
+/* facility_review: source header and calm, compact summary facts, retaining
+   the real window, visit choice, selected right and total beyond source data. */
+body.v2 .page:has(>.facilityfix-review) {padding:0 32px 48px}
+body.v2 .facilityfix-review-header {padding:64px 0 24px;margin:0}
+body.v2 .facilityfix-review-header>.icon-button {width:40px;height:40px;min-height:40px;margin:0 0 32px;border-radius:50%;background:var(--stone)}
+body.v2 .facilityfix-review-header>p {margin:0 0 4px;font-size:calc(10px * var(--facility-scale));line-height:1.5;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+body.v2 .facilityfix-review-header h1 {margin:0;font-size:calc(24px * var(--facility-scale));line-height:1.3333;font-weight:600}
+body.v2 .facilityfix-review .facilityfix-summary {padding:24px;border-color:var(--stone);margin:0 0 32px;box-shadow:0 1px 2px #0000000d}
+body.v2 .facilityfix-review .facilityfix-summary-heading {padding:0 0 24px;margin:0 0 16px;gap:16px;border-color:#efece780}
+body.v2 .facilityfix-review .facilityfix-summary-heading h2 {font-size:calc(14px * var(--facility-scale));line-height:1.4286;font-weight:600}
+body.v2 .facilityfix-review .facilityfix-summary-heading p {margin:0;font-size:calc(12px * var(--facility-scale));line-height:1.3333;color:#2d2d2d80}
+body.v2 .facilityfix-review .summary-list {gap:16px}
+body.v2 .facilityfix-review .summary-list>div {padding:0;border:0;gap:16px;align-items:baseline}
+body.v2 .facilityfix-review .summary-list dt {font-size:calc(12px * var(--facility-scale));line-height:1.3333;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:#2d2d2d66}
+body.v2 .facilityfix-review .summary-list dd {font-size:calc(14px * var(--facility-scale));line-height:1.4286;font-weight:600}
+body.v2 .facilityfix-review>.facilityfix-info {padding:24px;margin:0 0 32px;background:#3c422d0d;border:1px solid #3c422d1a;border-radius:24px;font-size:calc(12px * var(--facility-scale));line-height:1.625;color:var(--olive)}
+body.v2 .facilityfix-right-summary>h2 {margin:0 4px 12px;font-size:calc(12px * var(--facility-scale));line-height:1.3333;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#2d2d2d66}
+body.v2 .facilityfix-right-summary>article {padding:20px;border-radius:24px}
+body.v2 .facilityfix-right-summary>article>strong {font-size:calc(14px * var(--facility-scale));line-height:1.4286;font-weight:500}
+body.v2 .facilityfix-right-summary p {font-size:calc(10px * var(--facility-scale));line-height:1.5;opacity:.7}
+
+/* facility_visit: actual access/check-in/cancel history remains visible. No
+   invented map/location block fills the unsupported canonical placeholder. */
+body.v2 .facilityfix-visit>.header {padding-top:64px;margin-bottom:24px;align-items:flex-start}
+body.v2 .facilityfix-visit>.header h1 {font-size:calc(24px * var(--facility-scale));line-height:1.3333;font-weight:600}
+body.v2 .facilityfix-visit .facilityfix-time-card {padding:24px;border:1px solid var(--stone);border-radius:32px;box-shadow:0 1px 2px #0000000d}
+body.v2 .facilityfix-visit .facilityfix-time-card>div {align-items:center;gap:16px;margin-bottom:24px}
+body.v2 .facilityfix-visit .facilityfix-time-card>div>.icon {width:24px;height:24px;padding:12px;background:var(--stone);border-radius:16px;flex-shrink:0}
+body.v2 .facilityfix-visit .facilityfix-time-card small {font-size:calc(12px * var(--facility-scale));line-height:1.3333;font-weight:500;text-transform:uppercase;letter-spacing:-.025em;color:#2d2d2d80}
+body.v2 .facilityfix-visit .facilityfix-time-card strong {font-size:calc(18px * var(--facility-scale));line-height:1.5556;font-weight:600}
+body.v2 .facilityfix-timeline>h3 {font-size:calc(12px * var(--facility-scale));line-height:1.3333;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#2d2d2d66;margin-bottom:24px}
+body.v2 .facilityfix-timeline li strong {font-size:calc(14px * var(--facility-scale));line-height:1.4286;font-weight:600}
+body.v2 .facilityfix-timeline li p {font-size:calc(10px * var(--facility-scale));line-height:1.5;color:#2d2d2d80}
+
+/* program_detail: preserve original real-photo/scope composition; CTA wrapper
+   now follows the exact shared footer extraction contract. */
+body.v2 .app:has(>.page>.programfix-detail)>.flow-footer {padding:40px 32px;background:white;border-top:1px solid var(--stone)}
+body.v2 .app:has(>.page>.programfix-detail)>.flow-footer>.programfix-footer {padding:0;border:0}
+
+/* Actual consultation record and quote. Source's invented preferred time,
+   author, reference and preferences are replaced by real record fields. */
+body.v2 .page:has(>.programfix-source-screen),
+body.v2 .page:has(>.programfix-plan-header) {padding:0}
+body.v2 .programfix-source-header {display:flex;align-items:center;justify-content:space-between;gap:16px;padding:64px 32px 24px;background:white;border-bottom:1px solid var(--stone)}
+body.v2 .programfix-source-header>div {min-width:0}
+body.v2 .programfix-source-header h1 {margin:0;font-size:18px;line-height:1.5556;font-weight:600;letter-spacing:0;overflow-wrap:anywhere}
+body.v2 .programfix-source-header p {margin:0;color:var(--gold);font-size:10px;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;font-weight:700;overflow-wrap:anywhere}
+body.v2 .programfix-source-header>.icon-button {width:32px;height:32px;min-height:32px;flex:0 0 32px;background:var(--stone);border-radius:50%;color:var(--olive)}
+body.v2 .programfix-source-screen>.programfix-record {margin:0;padding:32px 32px 40px}
+body.v2 .programfix-source-screen.is-request>.programfix-record {padding-top:40px}
+body.v2 .programfix-source-screen .programfix-request-status {padding:0;margin:0 0 48px;text-align:center}
+body.v2 .programfix-request-symbol {display:grid;place-items:center;width:96px;height:96px;margin:0 auto 24px;background:white;border:4px solid #c5a0594d;border-radius:50%;color:var(--gold)}
+body.v2 .programfix-request-symbol>.icon {width:48px;height:48px}
+body.v2 .programfix-request-status h2 {margin:0;font-size:24px;line-height:1.3333;font-weight:300}
+body.v2 .programfix-source-screen .programfix-request-status p {margin:8px 16px 0;font-size:14px;line-height:1.4286;color:#2d2d2d80}
+body.v2 .programfix-source-screen .programfix-request-details {gap:0;padding:24px;border-color:var(--stone);border-radius:24px}
+body.v2 .programfix-source-screen .programfix-request-details h3 {font-size:10px;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:24px 0 4px}
+body.v2 .programfix-source-screen .programfix-request-details h3:first-child {margin-top:0}
+body.v2 .programfix-source-screen .programfix-request-details p {font-size:14px;line-height:1.4286;font-weight:500}
+body.v2 .programfix-record-support {margin-top:32px}
+body.v2 .programfix-record-support>.btn {font-size:12px;line-height:1.3333;min-height:44px;white-space:normal}
+body.v2 .programfix-record-details {margin-top:24px;font-size:12px;line-height:1.5}
+body.v2 .programfix-record-details>summary {min-height:44px;padding:12px 0;cursor:pointer;color:#2d2d2d99}
+body.v2 .programfix-record-details .programfix-request-details {margin-top:8px}
+body.v2 .programfix-state-label {margin:0 0 16px}
+body.v2 .programfix-quote-intro {margin:0 0 32px}
+body.v2 .programfix-quote-intro h2 {font-size:24px;line-height:1.3333;font-weight:300;color:var(--olive);margin:0 0 8px}
+body.v2 .programfix-quote-intro p {font-size:14px;line-height:1.4286;color:#2d2d2d99;margin:0}
+body.v2 .programfix-source-screen .programfix-section-title {font-size:12px;line-height:1.3333;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin:0 0 16px;color:#2d2d2d66}
+body.v2 .programfix-source-screen .programfix-sessions {margin:0 0 32px}
+body.v2 .programfix-source-screen .programfix-date {min-height:48px;width:48px;padding:4px;gap:0}
+body.v2 .programfix-source-screen .programfix-date>span {font-size:10px;line-height:1;font-weight:700;text-transform:uppercase;opacity:.6}
+body.v2 .programfix-source-screen .programfix-date>strong {font-size:18px;line-height:1.25;font-weight:700}
+body.v2 .programfix-source-screen .programfix-session-content h3 {font-size:14px;line-height:1.4286;font-weight:600;margin:0 0 2px}
+body.v2 .programfix-source-screen .programfix-session-content p {font-size:11px;line-height:1.5;color:#2d2d2d80}
+body.v2 .programfix-source-screen .programfix-total {margin:0;padding:24px;border-radius:24px}
+body.v2 .programfix-source-screen .programfix-total>div {align-items:center}
+body.v2 .programfix-source-screen .programfix-total>div>span {font-size:12px;line-height:1.3333;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+body.v2 .programfix-source-screen .programfix-total strong {font-size:24px;line-height:1.3333;font-weight:600}
+body.v2 .programfix-source-screen .programfix-total>p {display:flex;align-items:center;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid #ffffff1a;font-size:11px;line-height:1.5;opacity:.6}
+body.v2 .programfix-total>p>.icon {flex:0 0 18px;width:18px;height:18px}
+body.v2 .programfix-source-screen .programfix-total>p:last-child {border:0;padding:0;margin-top:8px}
+body.v2 .programfix-consultation-link {padding:24px;margin-bottom:16px;background:white;border:1px solid var(--stone);border-radius:24px}
+body.v2 .programfix-consultation-link h2 {font-size:20px;line-height:1.4;font-weight:300;margin:16px 0}
+body.v2 .app:has(>.page>.programfix-source-screen)>.flow-footer {padding:24px 32px 48px;border-top:1px solid var(--stone);background:white;max-height:52dvh;overflow:auto}
+body.v2 .app>.flow-footer>.programfix-quote-footer {padding:0;border:0;background:none}
+body.v2 .programfix-quote-footer .programfix-payment-note {font-size:11px;line-height:1.5;color:#2d2d2d99}
+body.v2 .programfix-quote-footer .revision-form {margin-top:12px;gap:12px}
+body.v2 .programfix-quote-footer .choice {font-size:12px;line-height:1.5}
+body.v2 .programfix-quote-footer .btn {min-height:68px;padding:20px;font-size:18px;line-height:1.5556;font-weight:500}
+body.v2 .programfix-quote-footer .programfix-decisions {margin-top:12px}
+body.v2 .programfix-quote-footer .programfix-decisions summary {font-size:12px;line-height:1.3333;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:16px 8px}
+body.v2 .programfix-quote-footer .programfix-decisions details:last-child>summary {border-color:#fee2e2;color:#ef4444}
+body.v2 .programfix-request-footer>.btn {min-height:68px;padding:20px;border:1px solid var(--stone);border-radius:16px;background:white;color:var(--ink);font-size:18px;line-height:1.5556;font-weight:500}
+
+/* program_plan: actual computed progress and next booking, not fixed source
+   1/3 data; preserve all snapshot, variant and add-on descriptions. */
+body.v2 .programfix-plan-header {justify-content:flex-start}
+body.v2 .programfix-plan-header>.icon-button {background:none;border-radius:0}
+body.v2 .page>.programfix-plan {padding:32px}
+body.v2 .programfix-plan .programfix-progress {position:relative;padding:24px;border:1px solid var(--stone);border-radius:24px;box-shadow:0 1px 2px #0000000d}
+body.v2 .programfix-progress>h3 {margin:0 0 4px;color:var(--gold);font-size:10px;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+body.v2 .programfix-progress>div {margin-bottom:24px;align-items:center}
+body.v2 .programfix-progress strong {font-size:20px;line-height:1.4;font-weight:600}
+body.v2 .programfix-progress>div>.programfix-progress-ring {position:relative;isolation:isolate;display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border-radius:50%;background:conic-gradient(var(--gold) var(--program-progress),var(--stone) 0);font-size:12px;line-height:1.3333;font-weight:700;color:var(--ink)}
+body.v2 .programfix-progress-ring:before {content:'';position:absolute;inset:4px;z-index:-1;border-radius:50%;background:white}
+body.v2 .programfix-progress progress {height:8px;background:var(--stone);border:0;border-radius:9999px;overflow:hidden}
+body.v2 .programfix-progress progress::-webkit-progress-bar {background:var(--stone)}
+body.v2 .programfix-progress progress::-webkit-progress-value {background:var(--gold)}
+body.v2 .programfix-progress progress::-moz-progress-bar {background:var(--gold)}
+body.v2 .programfix-progress p {margin-top:16px;font-size:11px;line-height:1.25;color:#2d2d2d80}
+body.v2 .programfix-plan .programfix-section-title {font-size:12px;line-height:1.3333;letter-spacing:.1em;text-transform:uppercase;color:#2d2d2d66}
+body.v2 .programfix-plan .programfix-timeline {margin-left:24px;padding-left:30px;border-color:var(--stone);gap:24px}
+body.v2 .programfix-plan .programfix-timeline>.programfix-session:before {left:-37px;top:8px;width:10px;height:10px;border:4px solid white;box-sizing:content-box;background:var(--stone)}
+body.v2 .programfix-plan .programfix-timeline>.programfix-session.is-completed:before {background:var(--gold)}
+body.v2 .programfix-plan .programfix-timeline>.programfix-session.is-next:before {background:var(--olive)}
+body.v2 .programfix-plan .programfix-session.is-next {border:2px solid var(--olive);box-shadow:0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a}
+body.v2 .programfix-plan .programfix-session.is-completed {opacity:.6;background:white}
+body.v2 .app:has(>.page>.programfix-plan-header)>.flow-footer {padding:40px 32px;border-top:1px solid var(--stone);background:white}
+body.v2 .programfix-plan-footer>.btn {min-height:56px;padding:16px;border:2px solid var(--olive);border-radius:16px;background:white;color:var(--olive);font-size:14px;line-height:1.4286;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:normal}
+body.v2 .programfix-plan-footer>.programfix-support-note {margin-top:16px;font-size:10px!important;line-height:1.25;color:#9ca3af}
+
+/* Preserve intrinsic wrapping for translated and text-only enlarged controls. */
+body.v2 :is(.facilityfix,.programfix-source-screen,.programfix-plan) :is(p,h1,h2,h3,strong,summary) {overflow-wrap:anywhere}
+body.v2 .programfix-quote-footer :is(.revision-form,.programfix-decisions) {min-width:0}
+body.demo-large-text.v2 .programfix-source-header h1 {font-size:36px}
+body.demo-large-text.v2 .programfix-source-header p {font-size:20px}
+body.demo-large-text.v2 .facilityfix-catalog-card {aspect-ratio:auto;min-height:220px}
+body.demo-large-text.v2 .facilityfix-catalog-copy {flex-wrap:wrap}
+body.demo-large-text.v2 .facilityfix-catalog-copy>strong {max-width:100%}
+@media(max-width:360px) {
+ body.v2 .facilityfix-catalog-header,body.v2 .facilityfix-catalog-content {padding-left:20px;padding-right:20px}
+ body.v2 .page:has(>.facilityfix-review) {padding-left:24px;padding-right:24px}
+ body.v2 .programfix-source-header,body.v2 .programfix-source-screen>.programfix-record,body.v2 .page>.programfix-plan {padding-left:24px;padding-right:24px}
+ body.v2 .programfix-plan .programfix-timeline {margin-left:12px;padding-left:22px}
+ body.v2 .programfix-plan .programfix-timeline>.programfix-session:before {left:-29px}
+}
+@media(max-height:620px) {
+ body.v2 .facilityfix-catalog-header,body.v2 .facilityfix-review-header,body.v2 .facilityfix-visit>.header,body.v2 .programfix-source-header {padding-top:24px}
+}
+
+/* Actual 393px pair review, 3 November: source header is a sibling of its
+   scroller. Native uses one page scroller, so keep the identical 139px title
+   region pinned when inspecting lower cards. The extra actual demo/history
+   controls retain their information, with no additional empty 96px tail. */
+body.v2 .facilityfix-catalog-header {position:sticky;top:0;z-index:20}
+body.v2 .facilityfix-catalog-content {padding-bottom:0}
+body.prototype-app.v2 .app:has(>.page>.facilityfix-catalog)>.bottom-nav a {color:#000}
+body.prototype-app.v2 .app:has(>.page>.facilityfix-catalog)>.bottom-nav a.active {color:#3c422d}
+/* The actual body-program has no verified photograph. Its compact real-content
+   layout is retained; no 420px empty spacer or unrelated facial photo is added.
+   The source program screenshot has a white-on-white CTA; native's readable
+   olive CTA is retained pending correction/confirmation of the source tokens. */
+
+/* Actual text-only 200% layout repair. The absolute real photograph fills an
+   intrinsic grid card; enlarged title/price/duration determine its full height.
+   A fixed aspect ratio must never force this text behind overflow:hidden. */
+body.v2 .facilityfix-catalog-card.has-photo {
+  display:grid;grid-template-columns:minmax(0,1fr);align-items:end;
+  aspect-ratio:auto;min-height:240px;height:auto;
+}
+body.v2 .facilityfix-catalog-card.has-photo .facilityfix-catalog-copy {
+  display:grid;grid-template-columns:minmax(0,1fr) fit-content(40%);
+  align-items:end;gap:12px;min-height:min-content;
+}
+body.v2 .facilityfix-catalog-card.has-photo .facilityfix-catalog-copy>strong {
+  max-width:none;min-width:0;justify-self:end;
+}
+body.v2 .facilityfix-catalog span {line-height:1.5}
+body.v2 .facilityfix-catalog-copy p>span {font-size:inherit;line-height:1.33333333}
+body.v2 .facilityfix-catalog-content>.facilityfix-info>span {line-height:1.625}

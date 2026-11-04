@@ -1,0 +1,11 @@
+/* Independent bounded cafe gate, 3 November 2026.
+   Append after style-cafe-product-source-final-fixes.css.
+   Banner grows with text, keeping the 180px canonical minimum. */
+body.v2 .flowfix-cafe-menu .flowfix-cafe-header .eyebrow{line-height:1.3636363636}
+body.v2 .flowfix-cafe-menu .revision-cafe-banner{height:auto;min-height:180px}
+body.v2 .flowfix-cafe-menu .revision-cafe-banner>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body.v2 .flowfix-cafe-menu .revision-cafe-banner>div{position:relative;inset:auto;min-height:180px}
+body.v2 .flowfix-cafe-menu .revision-cafe-banner>div>span,
+body.v2 .flowfix-cafe-menu .revision-cafe-banner>div>h2{flex-shrink:0;overflow-wrap:anywhere}
+/* Generic page section sibling margin was adding 16px to canonical top:56px. */
+body.v2 .cafe-source-product>.cafe-source-back{margin:0}

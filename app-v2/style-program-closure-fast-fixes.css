@@ -1,0 +1,142 @@
+/* Program closure candidates, 3 November 2026.
+   Load after style-facility-program-parallel-fixes.css. Canonical composition,
+   actual request/booking data, no invented preferred date or health policy. */
+body.v2 .programfix-source-screen .programfix-request-details {
+  display: grid;
+  gap: 24px;
+}
+body.v2 .programfix-source-screen .programfix-request-fact {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+}
+body.v2 .programfix-request-fact > div { min-width: 0; }
+body.v2 .programfix-source-screen .programfix-request-details h3 {
+  margin: 0 0 4px;
+}
+body.v2 .programfix-request-fact > .icon {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  color: var(--stone);
+}
+body.v2 .programfix-request-preferences { padding-top: 8px; }
+body.v2 .programfix-request-help {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 8px;
+}
+body.v2 .programfix-request-help-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  color: var(--gold);
+  background: #c5a0591a;
+  border-radius: 50%;
+}
+body.v2 .programfix-request-help-icon > .icon { width: 20px; height: 20px; }
+body.v2 .programfix-request-help > div { min-width: 0; }
+body.v2 .programfix-request-help p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.25;
+  color: #2d2d2d99;
+}
+body.v2 .programfix-request-help a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--olive);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+/* Group the eyebrow/count together opposite the real percentage ring. */
+body.v2 .programfix-progress-top > .programfix-progress-heading {
+  flex: 1;
+  min-width: 0;
+}
+body.v2 .programfix-progress-heading > h3 {
+  margin: 0 0 4px;
+  color: var(--gold);
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+/* The plan source uses a timeline card with an inline date/status heading.
+   The separate quote source retains its existing date chip. */
+body.v2 .programfix-plan .programfix-timeline > .programfix-session {
+  display: block;
+}
+body.v2 .programfix-plan .programfix-session-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-bottom: 4px;
+}
+body.v2 .programfix-plan .programfix-session-heading > .programfix-session-date {
+  flex: 1 1 90px;
+  min-width: 0;
+  margin: 0;
+  color: inherit;
+  font-size: 10px;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+body.v2 .programfix-plan .programfix-session-heading > .badge {
+  flex: 0 1 auto;
+  margin: 0;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+body.v2 .programfix-plan .programfix-session-content > h3 { margin: 0 0 4px; }
+body.v2 .programfix-plan .programfix-session-content > p {
+  font-size: 11px;
+  line-height: 1.5;
+}
+body.v2 .programfix-plan .programfix-session.is-next .programfix-session-heading > .badge {
+  background: var(--olive);
+  color: white;
+}
+body.v2 .programfix-plan .programfix-session.is-completed .programfix-session-heading > .badge {
+  background: #dcfce7;
+  color: #15803d;
+}
+body.demo-large-text.v2 .programfix-request-help { align-items: flex-start; }
+body.demo-large-text.v2 .programfix-request-help a,
+body.demo-large-text.v2 .programfix-progress-heading > h3,
+body.demo-large-text.v2 .programfix-plan .programfix-session-heading > :is(.badge,.programfix-session-date) {
+  font-size: inherit;
+  line-height: 1.5;
+}
+
+/* Actual program_plan pair: a direct section inherited a 32px top margin,
+   while its header inherited a generic bottom margin. The source scroller
+   begins directly below its header and supplies the sole 32px inner padding. */
+body.v2 .page > .programfix-plan-header { margin-bottom:0; }
+body.v2 .page > .programfix-plan { margin-top:0; }
+body.v2 .programfix-plan-header > .icon-button { height:40px; min-height:40px; }
+/* The canonical rendered source has a ring and a 48px interval from the
+   heading/ring group to the next-session line; its linear utility is invisible.
+   One named accessible ring now carries progress, without a duplicate bar. */
+body.v2 .programfix-plan .programfix-progress > .programfix-progress-top { margin-bottom:48px; }
+body.v2 .programfix-plan .programfix-progress > p { margin:0; }
+body.v2 .programfix-plan .programfix-progress-heading > h3,
+body.v2 .programfix-plan .programfix-progress-heading > strong,
+body.v2 .programfix-plan .programfix-progress > p { color:#000; }

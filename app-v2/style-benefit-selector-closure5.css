@@ -1,0 +1,27 @@
+/* The earlier prototype-app selector outranks the generic rights footer rule.
+   main.page makes this route-specific override win without changing other flows.
+   The extracted outer footer owns spacing; the inner wrapper adds none. */
+body.prototype-app.v2 .app:has(>main.page[data-route=benefit-selector])>.flow-footer{
+  padding:32px 32px max(48px,env(safe-area-inset-bottom));
+  border:0;
+  background:#fcfbf9;
+}
+body.prototype-app.v2 .app:has(>main.page[data-route=benefit-selector])>.flow-footer>.benefit-selector-footer{
+  padding:0;
+  margin:0;
+}
+/* Source text-base/leading-6 + py-5 = 64px; no transparent border expansion. */
+body.prototype-app.v2 .app:has(>main.page[data-route=benefit-selector])>.flow-footer .benefit-selector-footer>.btn{
+  min-height:64px;
+  padding:20px;
+  border:0;
+  font-size:16px;
+  line-height:1.5;
+  font-weight:600;
+}
+body.demo-large-text.prototype-app.v2 .app:has(>main.page[data-route=benefit-selector])>.flow-footer .benefit-selector-footer>.btn{
+  font-size:32px;
+}
+/* Canonical selected card keeps p-5 inside its two-pixel border. */
+body.prototype-app.v2 .page[data-route=benefit-selector] .benefit-choice.is-selected{padding:20px}
+@media(max-width:360px){body.prototype-app.v2 .page[data-route=benefit-selector] .benefit-choice.is-selected{padding:16px}}

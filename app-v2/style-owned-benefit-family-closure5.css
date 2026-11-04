@@ -1,0 +1,36 @@
+/* my_benefits text-xs uses a 16px baseline line, not the inherited 18px.
+   Unitless ratios continue to grow with the existing text-scale variables. */
+body.v2 .page[data-route=rights] .rights-stat-grid :is(span,strong,small){
+  line-height:1.3333333333;
+}
+
+/* benefit_detail source pills are 30px visually: 16px text + 12px padding + 2px border.
+   Keep a 44px hit area outside that visual pill. Extra row spacing prevents those
+   hit areas overlapping when translated labels wrap onto multiple rows. */
+body.v2 .page[data-route=right] .rights-source-detail-content .eligible-service-chips{
+  row-gap:22px;
+}
+body.v2 .page[data-route=right] .rights-source-detail-content .eligible-service-chips>.btn{
+  position:relative;
+  min-height:30px;
+  padding:6px 12px;
+}
+body.v2 .page[data-route=right] .rights-source-detail-content .eligible-service-chips>.btn::before{
+  content:'';
+  position:absolute;
+  inset:-7px 0;
+}
+body.demo-large-text.v2 .page[data-route=right] .rights-source-detail-content .eligible-service-chips>.btn::before{
+  inset:0;
+}
+/* Canonical benefit_detail footer uses shadow-xl, already used by the selector. */
+body.v2 .app:has(>.page[data-route=right]>.rights-source-detail)>.flow-footer .rights-detail-footer>.btn,
+body.v2 .app:has(>.page[data-route=right]>.rights-source-detail)>.flow-footer .rights-footer-scope-picker>summary{
+  box-shadow:0 20px 25px -5px #0000001a,0 8px 10px -6px #0000001a;
+}
+
+/* benefit_selector source balance is text-xs/font-medium (12px/16px). */
+body.v2 .page[data-route=benefit-selector] .benefit-balance{
+  line-height:1.3333333333;
+  font-weight:500;
+}

@@ -1,0 +1,84 @@
+/* Seven source outcome/request compositions, 3 November 2026.
+   Source coordinates and hierarchy retained; all content and action targets are owned records.
+   Load after existing source/class fidelity styles. */
+body.v2 .page>.source-outcome {--outcome-scale:1;color:var(--ink)}
+body.v2 .page .source-outcome-symbol {width:128px;height:96px;flex:0 0 96px}
+body.v2 .page .source-outcome>:is(h1,p,article,a,dl,img) {flex-shrink:0;max-width:100%}
+body.v2 .page .source-outcome h1 {font-size:calc(30px * var(--outcome-scale));line-height:1.2;color:var(--ink);overflow-wrap:anywhere}
+body.v2 .page .source-outcome:is(.is-request,.is-applied) h1 {font-size:calc(24px * var(--outcome-scale));line-height:1.3333333333}
+body.v2 .page .source-outcome-intro {font-size:calc(16px * var(--outcome-scale));line-height:1.5;color:#000}
+body.v2 .page .source-outcome.is-request .source-outcome-intro,
+body.v2 .page .source-outcome.is-cancelled .source-outcome-intro {line-height:1.625}
+body.v2 .page .source-outcome-identity>div {min-width:0}
+body.v2 .page .source-outcome-identity h2 {font-size:calc(16px * var(--outcome-scale));line-height:1.5;color:var(--ink);overflow-wrap:anywhere}
+body.v2 .page .source-outcome-identity p {font-size:calc(12px * var(--outcome-scale));line-height:1.3333333333;color:#000}
+body.v2 .page .source-outcome-identity.compact h2 {font-size:calc(14px * var(--outcome-scale));line-height:1.4285714286}
+body.v2 .page .source-outcome-identity.compact .source-outcome-label {font-size:calc(9px * var(--outcome-scale));line-height:1.5;color:#000}
+body.v2 .page .source-outcome.is-package-request .source-outcome-label {font-size:calc(12px * var(--outcome-scale));line-height:1.3333333333}
+body.v2 .page .source-outcome-rows>div {align-items:flex-start;gap:12px}
+body.v2 .page .source-outcome-rows dt,
+body.v2 .page .source-outcome-rows dd {font-size:calc(12px * var(--outcome-scale));line-height:1.3333333333;min-width:0;overflow-wrap:anywhere}
+body.v2 .page .source-outcome-rows dt {color:#000}
+body.v2 .page .source-outcome-rows dd {color:var(--ink);max-width:65%}
+body.v2 .page .source-outcome.is-package-request .source-outcome-rows {align-items:center}
+body.v2 .page .source-outcome.is-package-request .source-outcome-rows dt {color:var(--ink)}
+body.v2 .page .source-outcome.is-package-request .source-outcome-rows dd {font-size:calc(16px * var(--outcome-scale));line-height:1.5;color:var(--olive)}
+body.v2 .page .source-outcome-followup,
+body.v2 .page .source-outcome-message,
+body.v2 .page .source-outcome-participants {font-size:calc(12px * var(--outcome-scale));line-height:1.5;overflow-wrap:anywhere}
+body.v2 .page .source-approved-label {font-size:calc(10px * var(--outcome-scale));line-height:1.5;color:#000}
+body.v2 .page .source-approved-comparison .source-approved-label {font-size:calc(9px * var(--outcome-scale));line-height:1.5}
+body.v2 .page .source-approved-balance-grid strong {font-size:calc(30px * var(--outcome-scale));line-height:1.2;color:var(--ink)}
+body.v2 .page .source-approved-balance-grid>div:first-child strong {color:var(--olive)}
+body.v2 .page .source-approved-balance-grid span {font-size:calc(9px * var(--outcome-scale));line-height:1.5;color:#000}
+body.v2 .page .source-approved-new>.source-approved-label {color:var(--gold)}
+body.v2 .page .source-approved-time-row p {font-size:calc(14px * var(--outcome-scale));line-height:1.4285714286;color:var(--ink);overflow-wrap:anywhere}
+body.v2 .page .source-approved-time-row small {font-size:calc(12px * var(--outcome-scale));line-height:1.3333333333;color:var(--ink);overflow-wrap:anywhere}
+body.v2 .page .source-approved-new .source-approved-time-row p {font-size:calc(16px * var(--outcome-scale));line-height:1.5}
+body.v2 .page .source-approved-new .source-approved-time-row small {font-size:calc(14px * var(--outcome-scale));line-height:1.4285714286;color:#000}
+body.v2 .page .source-approved-arrow {height:32px;margin:16px 0}
+body.v2 .page .source-request-status p {color:#000}
+body.v2 .page .source-request-status>div:last-child strong {color:var(--ink)}
+body.v2 .page :is(.source-request-service,.source-request-changes,.source-request-message)>h2 {color:#000}
+body.v2 .page .source-request-service h3 {color:var(--ink)}
+body.v2 .page .source-request-service p {color:#000}
+body.v2 .page .source-request-time>span {color:#000}
+body.v2 .page .source-request-time.is-proposed>span {color:var(--gold)}
+body.v2 .page .source-request-time p,
+body.v2 .page .source-request-time>div>.icon {color:var(--ink)}
+body.v2 .page .source-request-time.is-proposed>div>.icon {color:var(--gold)}
+body.v2 .page .source-request-time.is-proposed p:not(:first-child) {color:#000}
+body.v2 .page .source-request-note {background:#efece780}
+body.v2 .page .source-request-note h2 {color:var(--ink)}
+body.v2 .page .source-request-note p {color:#000}
+body.v2 .app:has(>.page>.source-outcome)>.flow-footer>.btn.text {color:var(--olive)}
+body.demo-large-text.v2 .page>.source-outcome {--outcome-scale:2}
+body.demo-large-text.v2 .page .source-outcome-rows>div {flex-wrap:wrap}
+body.demo-large-text.v2 .page .source-outcome-rows dd {max-width:100%}
+body.demo-large-text.v2 .page .source-outcome-identity {flex-wrap:wrap}
+body.demo-large-text.v2 .app:has(>.page>.source-outcome)>.flow-footer>.btn {font-size:32px;line-height:1.5;padding:20px 0;white-space:normal;overflow-wrap:anywhere}
+
+/* Actual canonical browser output: the flexed source ring occupies 96px,
+   with a 128px width; unsupported variable/opacity utility text renders black.
+   Preserve that measured composition rather than idealizing source utilities. */
+body.v2 .page .source-outcome-identity h2,
+body.v2 .page .source-outcome-rows dd {color:#000}
+/* The review scaler changes font-size inline without a body class. Unitless
+   line-height must therefore live on the ordinary footer rule as well. */
+body.prototype-app.v2 .app:has(>.page>.source-outcome)>.flow-footer>.btn,
+body.prototype-app.v2 .app:has(>.page>.source-request-screen)>.flow-footer>.btn {line-height:1.5}
+
+/* Reschedule retains its canonical24/16 ratio over the older applied-state px rule. */
+body.v2 .page .source-outcome.is-rescheduled .source-outcome-intro{line-height:1.5}
+
+/* Canonical cancellation keeps its full128px ring; success uses96px. */
+body.v2 .page .source-outcome.is-cancelled .source-outcome-symbol{height:128px;flex-basis:128px}
+/* Preserve actual rendered class-source black over older route-scoped rules. */
+body.prototype-app.v2 .page[data-route=class-booking-success] .source-outcome-intro,
+body.prototype-app.v2 .page[data-route=class-booking-success] .source-outcome-identity p,
+body.prototype-app.v2 .page[data-route=class-booking-success] .source-outcome-rows dt{color:#000}
+
+body.v2 .page .source-outcome.is-package-request .source-outcome-symbol{height:128px;flex-basis:128px}
+
+/* Reschedule source ring starts at128px and flexes to available content height. */
+body.v2 .page .source-outcome.is-rescheduled .source-outcome-symbol{height:128px;flex:0 1 128px}

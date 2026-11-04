@@ -1,0 +1,34 @@
+/* Program detail: match the rendered canonical photo-free source.
+   Reference: design-source-20261103-source-policy/screens/program_detail-html.html.
+   The source's custom-color utilities render transparent surfaces and black type;
+   the planning rule is independently confirmed as #e5e7eb by live computed style.
+   Load after style-program-fixes.css. Retain actual service names, disclosure,
+   footer actions, responsive inline padding and text enlargement metrics. */
+body.v2 .programfix-detail.photo-free > .programfix-compact-back {
+  padding: 64px 32px 16px;
+}
+body.v2 .programfix-detail.photo-free > .programfix-content {
+  padding-top: 16px;
+}
+body.v2 .programfix-detail.photo-free .programfix-compact-back > .programfix-back-link {
+  background: transparent;
+  color: #000;
+}
+body.v2 .programfix-detail.photo-free .programfix-header-card > :is(.programfix-eyebrow, h1, .programfix-intro),
+body.v2 .programfix-detail.photo-free .programfix-planning > .icon,
+body.v2 .programfix-detail.photo-free .programfix-planning :is(h2, p),
+body.v2 .programfix-detail.photo-free .programfix-steps > h2,
+body.v2 .programfix-detail.photo-free .programfix-steps li > a,
+body.v2 .programfix-detail.photo-free .programfix-scope-icon {
+  color: #000;
+}
+body.v2 .programfix-detail.photo-free .programfix-planning {
+  background: transparent;
+  border-left-color: #e5e7eb;
+}
+body.v2 .programfix-detail.photo-free .programfix-planning h2 {
+  letter-spacing: .05em;
+}
+body.v2 .programfix-detail.photo-free .programfix-scope-icon {
+  background: transparent;
+}

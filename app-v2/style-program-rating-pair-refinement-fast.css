@@ -1,0 +1,66 @@
+/* 3 November, bounded review of remaining-program-plan-final.png and
+   remaining-visit-review-final.png against their canonical source HTML.
+   Load after style-program-closure-fast-fixes.css and
+   style-visit-review-closure-fast.css. Actual records and controls stay intact. */
+
+/* program_plan: source-rendered borders are the neutral preflight color;
+   custom underscore-token border/background utilities do not render olive.
+   Keep the existing real next-booking class and 2px emphasis width. */
+body.v2 .programfix-plan .programfix-timeline > .programfix-session,
+body.v2 .programfix-plan .programfix-timeline > .programfix-session.is-next {
+  border-color:#e5e7eb;
+}
+body.v2 .programfix-plan .programfix-timeline {
+  border-left-color:transparent;
+}
+/* Native card x matches the source. Its absolute pseudo-dot was displaced by
+   the card's 2px border plus 4px ring; move only that dot, not the card/text. */
+body.v2 .programfix-plan .programfix-timeline > .programfix-session::before,
+body.v2 .programfix-plan .programfix-timeline > .programfix-session.is-next::before,
+body.v2 .programfix-plan .programfix-timeline > .programfix-session.is-completed::before {
+  left:-45px;
+  top:-2px;
+  background:transparent;
+}
+body.v2 .programfix-plan .programfix-session-heading > .badge {
+  padding:2px 8px;
+  border-radius:4px;
+}
+/* The source's active label has white type on an unresolved transparent fill.
+   Preserve the actual status with black type rather than making it invisible. */
+body.v2 .programfix-plan .programfix-session.is-next .programfix-session-heading > .badge {
+  background:transparent;
+  color:#000;
+}
+body.v2 .programfix-plan .programfix-session-content > :is(h3,p) { color:#000; }
+body.v2 .programfix-plan-footer > .btn {
+  border-color:#e5e7eb;
+  color:#000;
+}
+
+/* visit_review_support: text-sm is 14px/20px in the source. The native
+   screenshot's larger text wraps the identical Turkish placeholder. */
+body.prototype-app.v2 .page[data-route=rate] > .supportfix-rating #rating-form .field {
+  font-size:calc(10px * var(--support-scale));
+  line-height:1.5;
+  color:#000;
+}
+body.prototype-app.v2 .page[data-route=rate] > .supportfix-rating #rating-form textarea {
+  font:400 calc(14px * var(--support-scale))/1.42857143 Inter,Arial,sans-serif;
+  letter-spacing:0;
+  border-color:#e5e7eb;
+  color:#000;
+}
+body.prototype-app.v2 .page[data-route=rate] > .supportfix-rating #rating-form textarea::placeholder {
+  font:inherit;
+  letter-spacing:inherit;
+  color:#9ca3af;
+  opacity:1;
+}
+@media(max-width:360px) {
+  body.v2 .programfix-plan .programfix-timeline > .programfix-session::before,
+  body.v2 .programfix-plan .programfix-timeline > .programfix-session.is-next::before,
+  body.v2 .programfix-plan .programfix-timeline > .programfix-session.is-completed::before {
+    left:-37px;
+  }
+}
