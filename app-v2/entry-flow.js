@@ -8,9 +8,9 @@ function initialRoute({hash='',session={},completed=false}={}){
  if(session.pending)return 'connection';
  const explicit=hash.replace(/^#/,'');
  if(explicit)return explicit;
- if(session.draft?.items?.length)return 'basket';
- if(session.ui?.selection?.serviceId)return 'schedule';
- return session.customerId||completed?'home':'welcome';
+ // The public base link always opens sign-in. Drafts and the account remain
+ // stored; explicit screen links still restore their current flow on refresh.
+ return 'auth';
 }
 const api={key,read,complete,initialRoute};
 if(typeof module==='object'&&module.exports)module.exports=api;

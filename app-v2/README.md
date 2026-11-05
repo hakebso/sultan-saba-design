@@ -3,7 +3,7 @@
 Static review copy of the simplified spa app.
 
 - Open `index.html` or the GitHub Pages `/app-v2/` address.
-- Demo sign-in code: `123456`. No SMS is sent.
+- The base app link opens sign-in. Enter any nonempty phone number and any nonempty code; no SMS is sent. Profile phone changes retain their separate verification rules.
 - Reservations, orders and QA actions are simulated in the current browser’s IndexedDB.
 - `test-panel.html` provides the local reception/payment simulation.
 - No server, credentials, customer database export or internal design reports are included.

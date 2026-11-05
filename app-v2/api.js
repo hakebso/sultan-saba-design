@@ -112,7 +112,14 @@
     return /^994\d{9}$/.test(digits) ? '+' + digits : null;
   }
   async function sendCode(phone,purpose='login') {
-    const normalized = normalizePhone(phone), current = getSession(), now = Date.now();
+    const displayPhone = String(phone ?? '').trim(), normalized = normalizePhone(phone), current = getSession(), now = Date.now();
+    if (purpose !== 'profile') {
+      if (!displayPhone) return result('invalid','phone_invalid');
+      // Demo entry is deliberately permissive. The displayed input is never
+      // persisted as a customer's real contact number.
+      setSession({auth:{phone:null,displayPhone,purpose:'login',customerId:current.customerId,operationId:uid('auth')}});
+      return result('success','otp_sent');
+    }
     if (!normalized) return result('invalid','phone_invalid');
     if (purpose === 'profile' && !current.customerId) return result('invalid','login_required');
     if (current.auth?.sentAt && now-current.auth.sentAt < 30000) return result('invalid','otp_throttled');
@@ -120,12 +127,12 @@
     return result('success','otp_sent');
   }
   async function verifyCode(code) {
-    const current = getSession(), auth = current.auth;
+    const current = getSession(), auth = current.auth, ticket = epoch;
     if (!auth) return result('invalid','otp_missing');
-    if (Date.now() >= auth.expiresAt) return result('invalid','otp_expired');
-    if (auth.attempts >= 5) return result('invalid','otp_locked');
-    if (String(code).trim() !== auth.code) { setSession({auth:{...auth,attempts:auth.attempts+1}}); return result('invalid','otp_wrong'); }
     if (auth.purpose === 'profile') {
+      if (Date.now() >= auth.expiresAt) return result('invalid','otp_expired');
+      if (auth.attempts >= 5) return result('invalid','otp_locked');
+      if (String(code).trim() !== auth.code) { setSession({auth:{...auth,attempts:auth.attempts+1}}); return result('invalid','otp_wrong'); }
       if (!current.customerId || current.customerId !== auth.customerId) return result('invalid','session_changed');
       const state = await read(), customer = state.customers.find(x=>x.id===current.customerId);
       if (getSession().auth?.operationId !== auth.operationId || getSession().customerId !== current.customerId) return result('invalid','session_changed');
@@ -134,15 +141,23 @@
       if (answer.status === 'success') setSession({auth:null});
       return answer;
     }
-    const answer = await run('ensureCustomer',{phone:auth.phone},auth.operationId,null);
-    if (getSession().auth?.operationId !== auth.operationId || getSession().customerId !== current.customerId) return result('invalid','session_changed');
+    if (!String(code ?? '').trim()) return result('invalid','otp_wrong');
+    const stateBefore = await read();
+    if (epoch !== ticket || getSession().auth?.operationId !== auth.operationId || getSession().customerId !== current.customerId) return result('invalid','session_changed');
+    const entered = auth.displayPhone ?? auth.phone, normalized = normalizePhone(entered);
+    const customerBefore = stateBefore.customers.find(x=>x.phone===entered || (normalized && x.phone===normalized)) || stateBefore.customers.find(x=>x.id==='selcan');
+    const accountPhone = customerBefore?.phone || '+994500000000';
+    const answer = await run('ensureCustomer',{phone:accountPhone},auth.operationId,null);
+    if (epoch !== ticket || getSession().auth?.operationId !== auth.operationId || getSession().customerId !== current.customerId) return result('invalid','session_changed');
     if (answer.status === 'success') {
       const id = answer.data?.customerId || answer.target?.id;
       if (!id) return result('invalid','account_invalid');
       const changed = current.customerId && current.customerId !== id;
       setSession({customerId:id,auth:null,...(changed?{draft:null,pending:null,ui:{}}:{})});
+      const loginTicket = epoch;
       await recoverPending();
       const state = await read(), customer = state.customers.find(x=>x.id===id);
+      if (epoch !== loginTicket || getSession().customerId !== id) return result('invalid','session_changed');
       return {...answer,customerId:id,needsName:!customer?.name || customer.name === 'Yeni Misafir' || customer.name === 'New guest'};
     }
     return answer;

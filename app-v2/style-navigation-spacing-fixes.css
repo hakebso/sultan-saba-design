@@ -1,0 +1,53 @@
+/* Navigation spacing, 5 November 2026. Load after the catalogue repair.
+   These components own their header padding. The shell must not add another
+   top inset. Keep their existing sticky/scroll behaviour and visual language. */
+body.prototype-app.v2 .app>main.page[data-route=visit]{padding-top:0}
+body.prototype-app.v2 .app>main.page:has(>.source-review-header){padding-top:0}
+
+/* Named navigation headers only; photo heroes and transition/outcome artwork
+   retain their own composition. The safe area is counted once at the header. */
+body.prototype-app.v2 :is(
+  .entry-home-header,.entry-discover-header,.entry-schedule-header,.source-auth-header,
+  .source-search-header,.source-collection-header,.source-owned-header,
+  .memberfix-header,.source-offer-header,.visitfix-list-header,
+  .classfix-timetable-header,.facilityfix-catalog-header,
+  .source-slot-lost-header,.facility-source-header,.source-visit-add-header,
+  .facilityfix-review-header,.facilityfix-visit>.header,
+  .programfix-source-header,.programfix-detail.photo-free>.programfix-compact-back,
+  .visitfix-request>.header,.profilefix-identity,
+  .profilefix-edit>.header,.profilefix-preferences>.header,
+  .supportfix-notifications>.supportfix-header,.supportfix-help>.supportfix-header,
+  .service-information-support .supportfix-header,
+  .service-information-detail.entry-service-photofree>.entry-photofree-header
+){padding-top:max(24px,env(safe-area-inset-top))}
+body.prototype-app.v2 .page[data-route=visit]>.source-visit-header,
+body.prototype-app.v2 .page[data-route=review]>.source-review-header,
+body.prototype-app.v2 .page[data-route=benefit-selector] .benefit-selector-header,
+body.prototype-app.v2 .page[data-route=right] .rights-source-detail>.benefit-header,
+body.prototype-app.v2 .source-visit-choice-screen>.visit-choice-header{
+  padding-top:max(24px,env(safe-area-inset-top));
+}
+body.prototype-app.v2 .source-owned-header>.icon-button,
+body.prototype-app.v2 .source-auth-header>.icon-button{margin-bottom:20px}
+body.prototype-app.v2 .source-owned-order{--offer-scale:var(--owned-scale,1)}
+
+/* A pending order has distinct summary, activation, action and terms sections.
+   No card heights: all blocks grow with translated/enlarged text. */
+body.prototype-app.v2 .source-owned-content>.source-owned-summary{margin:0 0 24px;min-width:0}
+body.prototype-app.v2 .source-owned-summary>h2{margin:0 0 16px}
+body.prototype-app.v2 .source-owned-summary>.summary-list{margin:0}
+body.prototype-app.v2 .source-owned-content>.source-offer-notice{margin:0 0 20px}
+body.prototype-app.v2 .source-owned-content>.source-owned-pending-actions{margin:0 0 24px}
+body.prototype-app.v2 .source-owned-pending-actions>.btn{width:100%;white-space:normal}
+body.prototype-app.v2 .source-owned-content>.source-owned-scope{margin:0 0 24px;line-height:1.6}
+body.prototype-app.v2 .source-owned-content>.source-owned-terms{margin:0 0 28px}
+body.prototype-app.v2 .source-owned-terms>.source-note{margin:0;line-height:1.6}
+body.prototype-app.v2 .source-owned-content>.source-owned-history{margin:0 0 24px}
+body.prototype-app.v2 .source-owned-history>h2{margin-bottom:16px}
+body.prototype-app.v2 .source-owned-history>.source-owned-empty{margin:0;line-height:1.6}
+body.prototype-app.v2 .source-owned-history>p+p{margin-top:12px}
+
+/* The native category select uses the app's existing form control. */
+body.prototype-app.v2 .visual-category-select{display:block;margin:16px 24px;min-width:0}
+body.prototype-app.v2 .visual-category-select>span{display:block;margin-bottom:8px;font-size:13px;line-height:1.5}
+body.prototype-app.v2 .visual-category-select>select{width:100%;min-width:0;max-width:100%;min-height:48px;font:inherit;line-height:1.5}
